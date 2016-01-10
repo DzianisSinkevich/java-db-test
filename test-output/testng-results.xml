@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite1" duration-ms="15881" started-at="2015-11-10T13:47:08Z" finished-at="2015-11-10T13:47:24Z">
+    <groups>
+    </groups>
+    <test name="Test000_AddFilmValid" duration-ms="15881" started-at="2015-11-10T13:47:08Z" finished-at="2015-11-10T13:47:24Z">
+      <class name="denis.trening.DeleteFilm">
+        <test-method status="PASS" signature="init()[pri:0, instance:denis.trening.DeleteFilm@180bc464]" name="init" is-config="true" duration-ms="6997" started-at="2015-11-10T16:47:08Z" finished-at="2015-11-10T16:47:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method status="PASS" signature="testUntitled()[pri:0, instance:denis.trening.DeleteFilm@180bc464]" name="testUntitled" duration-ms="8872" started-at="2015-11-10T16:47:15Z" finished-at="2015-11-10T16:47:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUntitled -->
+        <test-method status="PASS" signature="stop()[pri:0, instance:denis.trening.DeleteFilm@180bc464]" name="stop" is-config="true" duration-ms="578" started-at="2015-11-10T16:47:24Z" finished-at="2015-11-10T16:47:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- stop -->
+      </class> <!-- denis.trening.DeleteFilm -->
+    </test> <!-- Test000_AddFilmValid -->
+  </suite> <!-- Suite1 -->
+</testng-results>
