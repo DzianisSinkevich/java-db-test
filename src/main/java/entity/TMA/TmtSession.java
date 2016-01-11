@@ -36,6 +36,40 @@ public class TmtSession implements Serializable {
 	private int openSessionSend;
 	private int closeSessionSend;
 
+	public TmtSession() {
+	}
+
+	public TmtSession(int id, Date started, Date ended, String status, int totalTransactions, String sessionId, int s74, int s75, int s76, int s77, int s80,
+			int s81, int s85, int s86, int s87, int s88, int s89, int s97, int s105, int s106, int s107, int s108, int s109, int s110, int openSessionSend,
+			int closeSessionSend) {
+		this.setId(id);
+		this.setStarted(started);
+		this.setEnded(ended);
+		this.setStatus(status);
+		this.setTotalTransactions(totalTransactions);
+		this.setSessionId(sessionId);
+		this.setS74(s74);
+		this.setS75(s75);
+		this.setS76(s76);
+		this.setS77(s77);
+		this.setS80(s80);
+		this.setS81(s81);
+		this.setS85(s85);
+		this.setS86(s86);
+		this.setS87(s87);
+		this.setS88(s88);
+		this.setS89(s89);
+		this.setS97(s97);
+		this.setS105(s105);
+		this.setS106(s106);
+		this.setS107(s107);
+		this.setS108(s108);
+		this.setS109(s109);
+		this.setS110(s110);
+		this.setOpenSessionSend(openSessionSend);
+		this.setCloseSessionSend(closeSessionSend);
+	}
+
 	public int getId() {
 		return id;
 	}

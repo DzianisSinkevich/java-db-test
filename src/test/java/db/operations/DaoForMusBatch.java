@@ -20,8 +20,7 @@ public class DaoForMusBatch extends ADao<MusBatch> {
 	private static final String MUSBATCH_GET_SORTED_LIST = "SELECT * FROM mus_batch order by ";
 	private static final String WHERE = " WHERE ";
 	private static final String MUSBATCH_SELECT_ID_DINERS_SESSION = "SELECT id FROM mus_batch WHERE SESSION_ID LIKE '24_0444-%'";
-	private static final String MUSBATCH_UPDATE_SESSION_ID = "UPDATE mus_batch "
-			+ "SET SESSION_ID=? " + "WHERE id=? ";
+	private static final String MUSBATCH_UPDATE_SESSION_ID = "UPDATE mus_batch " + "SET SESSION_ID=? " + "WHERE id=? ";
 
 	public int getIdDinersSession() {
 		int id = 0;
@@ -77,7 +76,7 @@ public class DaoForMusBatch extends ADao<MusBatch> {
 		String qs = MUSBATCH_UPDATE;
 		try {
 			ps = Connector.getInstance().getConnNPS().prepareStatement(qs);
-			ps.setInt(1, musBatch.getFielId());
+			ps.setInt(1, musBatch.getFileId());
 			ps.setString(2, musBatch.getOriginator());
 			ps.setString(3, musBatch.getDestinator());
 			ps.setString(4, musBatch.getDataRecord());
@@ -106,8 +105,7 @@ public class DaoForMusBatch extends ADao<MusBatch> {
 		return ps;
 	}
 
-	public PreparedStatement getUpdateSessionIdPreparedStatement(int id,
-			String sessionId) {
+	public PreparedStatement getUpdateSessionIdPreparedStatement(int id, String sessionId) {
 		String qs = MUSBATCH_UPDATE_SESSION_ID;
 		try {
 			ps = Connector.getInstance().getConnNPS().prepareStatement(qs);
@@ -119,7 +117,6 @@ public class DaoForMusBatch extends ADao<MusBatch> {
 		}
 		return ps;
 	}
-
 
 	@Override
 	protected PreparedStatement getDeletePreparedStatement(int id) {
@@ -139,7 +136,7 @@ public class DaoForMusBatch extends ADao<MusBatch> {
 		try {
 			ps = Connector.getInstance().getConnNPS().prepareStatement(qs);
 			ps.setInt(1, musBatch.getId());
-			ps.setInt(2, musBatch.getFielId());
+			ps.setInt(2, musBatch.getFileId());
 			ps.setString(3, musBatch.getOriginator());
 			ps.setString(4, musBatch.getDestinator());
 			ps.setString(5, musBatch.getDataRecord());
@@ -170,13 +167,9 @@ public class DaoForMusBatch extends ADao<MusBatch> {
 	protected MusBatch createObject(ResultSet rs) {
 		MusBatch musBatch = null;
 		try {
-			musBatch = new MusBatch(rs.getInt(1), rs.getInt(2),
-					rs.getString(3), rs.getString(4), rs.getString(5),
-					rs.getString(6), rs.getDate(7), rs.getString(8),
-					rs.getString(9), rs.getInt(10), rs.getInt(11),
-					rs.getInt(12), rs.getInt(13), rs.getInt(14), rs.getInt(15),
-					rs.getInt(16), rs.getInt(17), rs.getInt(18), rs.getInt(19),
-					rs.getInt(20), rs.getInt(21), rs.getInt(22));
+			musBatch = new MusBatch(rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getDate(7),
+					rs.getString(8), rs.getString(9), rs.getInt(10), rs.getInt(11), rs.getInt(12), rs.getInt(13), rs.getInt(14), rs.getInt(15), rs.getInt(16),
+					rs.getInt(17), rs.getInt(18), rs.getInt(19), rs.getInt(20), rs.getInt(21), rs.getInt(22));
 		} catch (SQLException e) {
 			log.error(e);
 		}
@@ -195,8 +188,7 @@ public class DaoForMusBatch extends ADao<MusBatch> {
 	}
 
 	@Override
-	protected PreparedStatement getSortedListPreparedStatement(
-			String nameOfColumn) {
+	protected PreparedStatement getSortedListPreparedStatement(String nameOfColumn) {
 		String qs = MUSBATCH_GET_SORTED_LIST + nameOfColumn;
 		try {
 			ps = Connector.getInstance().getConnNPS().prepareStatement(qs);
@@ -242,8 +234,7 @@ public class DaoForMusBatch extends ADao<MusBatch> {
 	// }
 
 	@Override
-	protected PreparedStatement getListByFieldPreparedStatement(
-			String nameOfColumn, String value) {
+	protected PreparedStatement getListByFieldPreparedStatement(String nameOfColumn, String value) {
 		String qs = MUSBATCH_GET_LIST + WHERE + nameOfColumn + " = " + value;
 		try {
 			ps = Connector.getInstance().getConnNPS().prepareStatement(qs);
@@ -255,27 +246,22 @@ public class DaoForMusBatch extends ADao<MusBatch> {
 	}
 
 	@Override
-	protected PreparedStatement getCountPreparedStatement(String nameOfColumn,
-			String value, java.util.Date date1, java.util.Date date2) {
+	protected PreparedStatement getCountPreparedStatement(String nameOfColumn, String value, java.util.Date date1, java.util.Date date2) {
 		return null;
 	}
 
 	@Override
-	protected PreparedStatement getSummPreparedStatement(String nameOfColumn,
-			String value, java.util.Date date1, java.util.Date date2) {
+	protected PreparedStatement getSummPreparedStatement(String nameOfColumn, String value, java.util.Date date1, java.util.Date date2) {
 		return null;
 	}
 
 	@Override
-	protected PreparedStatement getSetFieldValuePreparedStatement(int id,
-			String nameOfColumn, String value) {
+	protected PreparedStatement getSetFieldValuePreparedStatement(int id, String nameOfColumn, String value) {
 		return null;
 	}
 
 	@Override
-	protected PreparedStatement getListByFieldPreparedStatement(
-			String nameOfColumn, String value, java.util.Date date1,
-			java.util.Date date2) {
+	protected PreparedStatement getListByFieldPreparedStatement(String nameOfColumn, String value, java.util.Date date1, java.util.Date date2) {
 		return null;
 	}
 }

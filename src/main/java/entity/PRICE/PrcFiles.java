@@ -20,6 +20,23 @@ public class PrcFiles implements Serializable {
 	private String status;
 	private String type;
 
+	public PrcFiles() {
+	}
+
+	public PrcFiles(int id, String fileName, Date uploadDate, Date processingDate, int totalRecords, int totalBatches, int recievedBatches, String sessionId,
+			String status, String type) {
+		this.setId(id);
+		this.setFileName(fileName);
+		this.setUploadDate(uploadDate);
+		this.setProcessingDate(processingDate);
+		this.setTotalRecords(totalRecords);
+		this.setTotalBatches(totalBatches);
+		this.setRecievedBatches(recievedBatches);
+		this.setSessionId(sessionId);
+		this.setStatus(status);
+		this.setType(type);
+	}
+
 	public int getId() {
 		return id;
 	}

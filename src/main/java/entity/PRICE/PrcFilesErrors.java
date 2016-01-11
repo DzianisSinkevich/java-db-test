@@ -12,6 +12,15 @@ public class PrcFilesErrors implements Serializable {
 	private int fileId;
 	private String error;
 
+	public PrcFilesErrors() {
+	}
+
+	public PrcFilesErrors(int id, int fileId, String error) {
+		this.setId(id);
+		this.setFileId(fileId);
+		this.setError(error);
+	}
+
 	public int getId() {
 		return id;
 	}

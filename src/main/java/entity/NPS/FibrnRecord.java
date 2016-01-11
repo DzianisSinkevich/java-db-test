@@ -2,7 +2,7 @@ package entity.NPS;
 
 import java.io.Serializable;
 
-public class FibrnRecord implements Serializable{
+public class FibrnRecord implements Serializable {
 	/**
 	 * 
 	 */
@@ -12,6 +12,12 @@ public class FibrnRecord implements Serializable{
 	private String recordType;
 
 	public FibrnRecord() {
+	}
+
+	public FibrnRecord(int id, int fileId, String recordType) {
+		this.setId(id);
+		this.setFileId(fileId);
+		this.setRecordType(recordType);
 	}
 
 	public int getId() {

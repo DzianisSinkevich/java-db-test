@@ -11,6 +11,22 @@ public class TmtData implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private int id;
 	private String uploadSessionId;
+	private String status;
+	private Date started;
+	private Date ended;
+	private String sessionId;
+
+	public TmtData() {
+	}
+
+	public TmtData(int id, String uploadSessionId, String status, Date started, Date ended, String sessionId) {
+		this.setId(id);
+		this.setUploadSessionId(uploadSessionId);
+		this.setStatus(status);
+		this.setStarted(started);
+		this.setEnded(ended);
+		this.setSessionId(sessionId);
+	}
 
 	public int getId() {
 		return id;
@@ -59,9 +75,4 @@ public class TmtData implements Serializable {
 	public void setSessionId(String sessionId) {
 		this.sessionId = sessionId;
 	}
-
-	private String status;
-	private Date started;
-	private Date ended;
-	private String sessionId;
 }

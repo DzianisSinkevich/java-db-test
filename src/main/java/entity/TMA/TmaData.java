@@ -16,6 +16,28 @@ public class TmaData implements Serializable {
 	private int priority;
 	private int acqSessionId;
 	private int manualProcessed;
+	private String uploadSessionId;
+	private int issSessionId;
+	private int dccValue;
+	private int dccDiscrepancy;
+
+	public TmaData() {
+	}
+
+	public TmaData(int id, String status, Date started, Date ended, int priority, int acqSessionId, int manualProcessed, String uploadSessionId,
+			int issSessionId, int dccValue, int dccDiscrepancy) {
+		this.setId(id);
+		this.setStatus(status);
+		this.setStarted(started);
+		this.setEnded(ended);
+		this.setPriority(priority);
+		this.setAcqSessionId(acqSessionId);
+		this.setManualProcessed(manualProcessed);
+		this.setUploadSessionId(uploadSessionId);
+		this.setIssSessionId(issSessionId);
+		this.setDccValue(dccValue);
+		this.setDccDiscrepancy(dccDiscrepancy);
+	}
 
 	public int getId() {
 		return id;
@@ -104,9 +126,4 @@ public class TmaData implements Serializable {
 	public void setDccDiscrepancy(int dccDiscrepancy) {
 		this.dccDiscrepancy = dccDiscrepancy;
 	}
-
-	private String uploadSessionId;
-	private int issSessionId;
-	private int dccValue;
-	private int dccDiscrepancy;
 }

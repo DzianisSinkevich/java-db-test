@@ -11,6 +11,14 @@ public class PrcInst implements Serializable {
 	private int instId;
 	private int isActive;
 
+	public PrcInst() {
+	}
+
+	public PrcInst(int instId, int isActive) {
+		this.setInstId(instId);
+		this.setIsActive(isActive);
+	}
+
 	public int getInstId() {
 		return instId;
 	}

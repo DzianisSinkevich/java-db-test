@@ -15,6 +15,12 @@ public class MusRecord implements Serializable {
 	public MusRecord() {
 	}
 
+	public MusRecord(int id, String recordStatus, Date started) {
+		this.setId(id);
+		this.setRecordStatus(recordStatus);
+		this.setStarted(started);
+	}
+
 	public int getId() {
 		return id;
 	}

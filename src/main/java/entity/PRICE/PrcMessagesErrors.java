@@ -11,6 +11,17 @@ public class PrcMessagesErrors implements Serializable {
 	private int id;
 	private int version;
 	private int msgId;
+	private String error;
+
+	public PrcMessagesErrors() {
+	}
+
+	public PrcMessagesErrors(int instId, int version, int msgId, String error) {
+		this.setId(id);
+		this.setVersion(version);
+		this.setMsgId(msgId);
+		this.setError(error);
+	}
 
 	public int getId() {
 		return id;
@@ -43,6 +54,4 @@ public class PrcMessagesErrors implements Serializable {
 	public void setError(String error) {
 		this.error = error;
 	}
-
-	private String error;
 }

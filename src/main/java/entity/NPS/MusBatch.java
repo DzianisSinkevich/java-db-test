@@ -9,7 +9,7 @@ public class MusBatch implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	private int id;
-	private int fielId;
+	private int fileId;
 	private String originator;
 	private String destinator;
 	private String dataRecord;
@@ -34,13 +34,11 @@ public class MusBatch implements Serializable {
 	public MusBatch() {
 	}
 
-	public MusBatch(int id, int fielId, String originator, String destinator,
-			String dataRecord, String sessionNumber, Date transactionDateTime,
-			String applicationId, String sessionId, int s74, int s75, int s76,
-			int s77, int s80, int s81, int s86, int s87, int s88, int s89,
-			int s97, int s109, int s110) {
+	public MusBatch(int id, int fileId, String originator, String destinator, String dataRecord, String sessionNumber, Date transactionDateTime,
+			String applicationId, String sessionId, int s74, int s75, int s76, int s77, int s80, int s81, int s86, int s87, int s88, int s89, int s97, int s109,
+			int s110) {
 		this.setId(id);
-		this.setFielId(fielId);
+		this.setFileId(fileId);
 		this.setOriginator(originator);
 		this.setDestinator(destinator);
 		this.setDataRecord(dataRecord);
@@ -71,12 +69,12 @@ public class MusBatch implements Serializable {
 		this.id = id;
 	}
 
-	public int getFielId() {
-		return fielId;
+	public int getFileId() {
+		return fileId;
 	}
 
-	public void setFielId(int fielId) {
-		this.fielId = fielId;
+	public void setFileId(int fielId) {
+		this.fileId = fielId;
 	}
 
 	public String getOriginator() {

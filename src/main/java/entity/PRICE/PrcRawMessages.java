@@ -14,6 +14,30 @@ public class PrcRawMessages implements Serializable {
 	private int line;
 	private Date createdAt;
 	private String type;
+	private int sendCount;
+	private String status;
+	private String sessionId;
+	private int svOperId;
+	private int sequenceFile;
+	private int sequinceLote;
+
+	public PrcRawMessages() {
+	}
+
+	public PrcRawMessages(int id, int fileId, int line, Date createdAt, String type, int sendCount, String status, String sessionId, int svOperId,
+			int sequenceFile, int sequinceLote) {
+		this.setId(id);
+		this.setFileId(fileId);
+		this.setLine(line);
+		this.setCreatedAt(createdAt);
+		this.setType(type);
+		this.setSendCount(sendCount);
+		this.setStatus(status);
+		this.setSessionId(sessionId);
+		this.setSvOperId(svOperId);
+		this.setSequenceFile(sequenceFile);
+		this.setSequinceLote(sequinceLote);
+	}
 
 	public int getId() {
 		return id;
@@ -102,11 +126,4 @@ public class PrcRawMessages implements Serializable {
 	public void setSequinceLote(int sequinceLote) {
 		this.sequinceLote = sequinceLote;
 	}
-
-	private int sendCount;
-	private String status;
-	private String sessionId;
-	private int svOperId;
-	private int sequenceFile;
-	private int sequinceLote;
 }

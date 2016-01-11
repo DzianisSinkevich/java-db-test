@@ -19,6 +19,16 @@ public class BatchFile implements Serializable {
 	public BatchFile() {
 	}
 
+	public BatchFile(int id, String fileName, int fileSize, String fileStatus, Date started, Date ended, String fileType) {
+		this.setId(id);
+		this.setFileName(fileName);
+		this.setFileSize(fileSize);
+		this.setFileStatus(fileStatus);
+		this.setStarted(started);
+		this.setEnded(ended);
+		this.setFileType(fileType);
+	}
+
 	public int getId() {
 		return id;
 	}

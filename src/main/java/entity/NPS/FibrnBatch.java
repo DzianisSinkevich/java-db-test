@@ -3,7 +3,7 @@ package entity.NPS;
 import java.io.Serializable;
 import java.sql.Date;
 
-public class FibrnBatch implements Serializable{
+public class FibrnBatch implements Serializable {
 	/**
 	 * 
 	 */
@@ -27,6 +27,28 @@ public class FibrnBatch implements Serializable{
 	private int recordsTotal;
 
 	public FibrnBatch() {
+	}
+
+	public FibrnBatch(int id, int fileId, String originator, String destinator, Date fileDate, int fileSequence, String fileName, String currencyType,
+			int totalAmount, int numberOfRecords, int netAmount, String amountSign, int totalComissions, String comissionSign, String applicationId,
+			String sessionId, int recordsTotal) {
+		this.setId(id);
+		this.setFileId(fileId);
+		this.setOriginator(originator);
+		this.setDestinator(destinator);
+		this.setFileDate(fileDate);
+		this.setFileSequence(fileSequence);
+		this.setFileName(fileName);
+		this.setCurrencyType(currencyType);
+		this.setTotalAmount(totalAmount);
+		this.setNumberOfRecords(numberOfRecords);
+		this.setNetAmount(netAmount);
+		this.setAmountSign(amountSign);
+		this.setTotalComissions(totalComissions);
+		this.setComissionSign(comissionSign);
+		this.setApplicationId(applicationId);
+		this.setSessionId(sessionId);
+		this.setRecordsTotal(recordsTotal);
 	}
 
 	public int getId() {

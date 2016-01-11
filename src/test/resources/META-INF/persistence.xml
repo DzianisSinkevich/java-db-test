@@ -7,9 +7,6 @@
     <persistence-unit name="COLIBRI" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
 
-        <class>com.devcolibri.entity.Car</class>
-        <class>com.devcolibri.entity.Seller</class>
-
         <properties>
             <property name="hibernate.connection.driver_class" value="com.oracle.jdbc.Driver"/>
             <property name="hibernate.connection.url" value="jdbc:oracle://redsys.bt.bpc.in:1521/sv"/>

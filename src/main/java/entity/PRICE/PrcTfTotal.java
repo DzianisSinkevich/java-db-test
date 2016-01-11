@@ -12,6 +12,17 @@ public class PrcTfTotal implements Serializable {
 	private int fileId;
 	private String sessionId;
 	private int totalAmount;
+	private Date storeDate;
+
+	public PrcTfTotal() {
+	}
+
+	public PrcTfTotal(int fileId, String sessionId, int totalAmount, Date storeDate) {
+		this.setFileId(fileId);
+		this.setSessionId(sessionId);
+		this.setTotalAmount(totalAmount);
+		this.setStoreDate(storeDate);
+	}
 
 	public int getFileId() {
 		return fileId;
@@ -44,6 +55,4 @@ public class PrcTfTotal implements Serializable {
 	public void setStoreDate(Date storeDate) {
 		this.storeDate = storeDate;
 	}
-
-	private Date storeDate;
 }
