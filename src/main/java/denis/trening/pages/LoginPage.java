@@ -12,13 +12,13 @@ public class LoginPage extends AnyPage {
 		super(pages);
 	}
 
-	@FindBy(name = "username")
+	@FindBy(name = "j_username")
 	private WebElement usernameField;
 
-  @FindBy(name = "password")
+  @FindBy(name = "j_password")
   private WebElement passwordField;
 
-  @FindBy(name = "submit")
+  @FindBy(id = "submitBtn")
   private WebElement submitButton;
   
   public LoginPage setUsernameField(String text) {
@@ -37,7 +37,7 @@ public class LoginPage extends AnyPage {
 
   public LoginPage ensurePageLoaded() {
     super.ensurePageLoaded();
-    wait.until(presenceOfElementLocated(By.id("loginform")));
+    wait.until(presenceOfElementLocated(By.id("loginPanel")));
     return this;
   }
 }

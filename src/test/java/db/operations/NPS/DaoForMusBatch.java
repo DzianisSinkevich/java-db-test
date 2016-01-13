@@ -1,15 +1,16 @@
-package db.operations;
+package db.operations.NPS;
 
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import db.operations.ADao;
 import db.utils.Connector;
 import entity.NPS.MusBatch;
 
 public class DaoForMusBatch extends ADao<MusBatch> {
-	private static final String MUSBATCH_GET_BY_ID = "SELECT * FROM books WHERE id_book=? ";
+	private static final String MUSBATCH_GET_BY_ID = "SELECT * FROM mus_batch WHERE id=? ";
 	private static final String MUSBATCH_UPDATE = "UPDATE mus_batch "
 			+ "SET FILE_ID=?,ORIGINATOR=?,DESTINATOR=?,DATA_RECORD=?,SESSION_NUMBER=?,TRANSACTION_DATE_TIME=?,APPLICATION_ID=?,SESSION_ID=?,S74=?,S75=?,S76=?,S77=?,S80=?,S81=?,S86=?,S87=?,S88=?,S89=?,S97=?,S109=?,S110=? "
 			+ "WHERE id=? ";

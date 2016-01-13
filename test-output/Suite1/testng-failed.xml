@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite1]" data-provider-thread-count="1">
-  <test name="Test000_AddFilmValid(failed)">
+  <test name="TestDB(failed)">
     <classes>
-      <class name="denis.trening.DeleteFilm">
+      <class name="db.tests.TestDB">
         <methods>
-          <include name="init"/>
           <include name="testUntitled"/>
-          <include name="stop"/>
+          <include name="init"/>
         </methods>
-      </class> <!-- denis.trening.DeleteFilm -->
+      </class> <!-- db.tests.TestDB -->
     </classes>
-  </test> <!-- Test000_AddFilmValid(failed) -->
+  </test> <!-- TestDB(failed) -->
 </suite> <!-- Failed suite [Suite1] -->
