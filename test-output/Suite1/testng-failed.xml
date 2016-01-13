@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite1]" data-provider-thread-count="1">
-  <test name="TestDB(failed)">
+  <test name="Test000_Login(failed)">
     <classes>
       <class name="db.tests.TestDB">
         <methods>
-          <include name="testUntitled"/>
           <include name="init"/>
+          <include name="testUntitled"/>
         </methods>
       </class> <!-- db.tests.TestDB -->
     </classes>
-  </test> <!-- TestDB(failed) -->
+  </test> <!-- Test000_Login(failed) -->
 </suite> <!-- Failed suite [Suite1] -->

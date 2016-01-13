@@ -1,69 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="1" failed="0" total="1" passed="0">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite1" duration-ms="93" started-at="2016-01-13T14:35:55Z" finished-at="2016-01-13T14:35:55Z">
+  <suite name="Suite1" duration-ms="15032" started-at="2016-01-13T15:55:18Z" finished-at="2016-01-13T15:55:33Z">
     <groups>
     </groups>
-    <test name="TestDB" duration-ms="93" started-at="2016-01-13T14:35:55Z" finished-at="2016-01-13T14:35:55Z">
+    <test name="Test000_Login" duration-ms="15032" started-at="2016-01-13T15:55:18Z" finished-at="2016-01-13T15:55:33Z">
       <class name="db.tests.TestDB">
-        <test-method status="FAIL" signature="init()[pri:0, instance:db.tests.TestDB@26f67b76]" name="init" is-config="true" duration-ms="0" started-at="2016-01-13T17:35:55Z" finished-at="2016-01-13T17:35:55Z">
-          <exception class="java.lang.IllegalStateException">
-            <message>
-              <![CDATA[The path to the driver executable must be set by the webdriver.chrome.driver system property; for more information, see https://github.com/SeleniumHQ/selenium/wiki/ChromeDriver. The latest version can be downloaded from http://chromedriver.storage.googleapis.com/index.html]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.IllegalStateException: The path to the driver executable must be set by the webdriver.chrome.driver system property; for more information, see https://github.com/SeleniumHQ/selenium/wiki/ChromeDriver. The latest version can be downloaded from http://chromedriver.storage.googleapis.com/index.html
-	at com.google.common.base.Preconditions.checkState(Preconditions.java:197)
-	at org.openqa.selenium.remote.service.DriverService.findExecutable(DriverService.java:109)
-	at org.openqa.selenium.chrome.ChromeDriverService.access$000(ChromeDriverService.java:32)
-	at org.openqa.selenium.chrome.ChromeDriverService$Builder.findDefaultExecutable(ChromeDriverService.java:137)
-	at org.openqa.selenium.remote.service.DriverService$Builder.build(DriverService.java:290)
-	at org.openqa.selenium.chrome.ChromeDriverService.createDefaultService(ChromeDriverService.java:88)
-	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:116)
-	at denis.trening.webdriver.WebDriverFactory.getInstance(WebDriverFactory.java:147)
-	at denis.trening.webdriver.WebDriverFactory.getInstance(WebDriverFactory.java:74)
-	at denis.trening.applogic2.ApplicationManager2.<init>(ApplicationManager2.java:34)
-	at pages.TestBase.init(TestBase.java:18)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:517)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:140)
-	at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:170)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:104)
-	at org.testng.TestRunner.privateRun(TestRunner.java:771)
-	at org.testng.TestRunner.run(TestRunner.java:621)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:357)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:352)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:310)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:259)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1199)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1124)
-	at org.testng.TestNG.run(TestNG.java:1032)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.IllegalStateException -->
+        <test-method status="PASS" signature="init()[pri:0, instance:db.tests.TestDB@d5fcfe]" name="init" is-config="true" duration-ms="10781" started-at="2016-01-13T18:55:18Z" finished-at="2016-01-13T18:55:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="SKIP" signature="testUntitled()[pri:0, instance:db.tests.TestDB@26f67b76]" name="testUntitled" duration-ms="1" started-at="2016-01-13T17:35:55Z" finished-at="2016-01-13T17:35:55Z">
+        <test-method status="PASS" signature="testUntitled()[pri:0, instance:db.tests.TestDB@d5fcfe]" name="testUntitled" duration-ms="4246" started-at="2016-01-13T18:55:29Z" finished-at="2016-01-13T18:55:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testUntitled -->
-        <test-method status="SKIP" signature="stop()[pri:0, instance:db.tests.TestDB@26f67b76]" name="stop" is-config="true" duration-ms="0" started-at="2016-01-13T17:35:55Z" finished-at="2016-01-13T17:35:55Z">
+        <test-method status="PASS" signature="stop()[pri:0, instance:db.tests.TestDB@d5fcfe]" name="stop" is-config="true" duration-ms="2367" started-at="2016-01-13T18:55:33Z" finished-at="2016-01-13T18:55:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- stop -->
       </class> <!-- db.tests.TestDB -->
-    </test> <!-- TestDB -->
+    </test> <!-- Test000_Login -->
   </suite> <!-- Suite1 -->
 </testng-results>

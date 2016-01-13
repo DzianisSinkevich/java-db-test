@@ -78,7 +78,7 @@ public class WebDriverFactory {
 			capability = DesiredCapabilities.chrome();
 		} else if (FIREFOX.equals(browserName)) {
 			capability = DesiredCapabilities.firefox();
-			
+
 			FirefoxProfile ffProfile = new FirefoxProfile();
 
 			// Authenication Hack for Firefox
@@ -87,15 +87,15 @@ public class WebDriverFactory {
 						255);
 				capability.setCapability(FirefoxDriver.PROFILE, ffProfile);
 			}
-			
+
 			capability.setCapability(CapabilityType.TAKES_SCREENSHOT, true);
 		} else if (INTERNET_EXPLORER.equals(browserName)) {
 
 			capability = DesiredCapabilities.internetExplorer();
 			capability
-			.setCapability(
-					InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,
-					true);
+					.setCapability(
+							InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,
+							true);
 		} else if (SAFARI.equals(browserName)) {
 			capability = DesiredCapabilities.safari();
 		} else {
@@ -144,6 +144,8 @@ public class WebDriverFactory {
 		}
 
 		if (CHROME.equals(browser)) {
+			System.setProperty("webdriver.chrome.driver",
+					"C:\\tools\\chromedriver.exe");
 			webDriver = new ChromeDriver();
 
 		} else if (FIREFOX.equals(browser)) {
