@@ -1,6 +1,5 @@
 package denis.trening.pages;
 
-import static org.openqa.selenium.support.ui.ExpectedConditions.alertIsPresent;
 import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
 
 import java.util.List;
@@ -12,6 +11,12 @@ import org.openqa.selenium.support.FindBy;
 
 public class InternalPage extends AnyPage {
 	public static final String HOME_LINK = "nav a[href = 'http://localhost/php4dvd/']";
+	public static final String MENU_ID = "hamburger";
+	public static final String MENU_SESSION_LINK = "Sessions";
+	public static final String MENU_RECONCILIATION_CASES_LINK = "Reconciliation Cases";
+	public static final String MENU_DATASOURCES_LINK = "Datasources";
+	public static final String MENU_ROUTING_LINK = "Routing";
+	public static final String MENU_LOGOUT_LINK = "Logout";
 
 	public InternalPage(PageManager pages) {
 		super(pages);
@@ -28,6 +33,21 @@ public class InternalPage extends AnyPage {
 	@FindBy(css = HOME_LINK)
 	private WebElement homeLink;
 
+	@FindBy(id = MENU_ID)
+	private WebElement menuLink;
+
+	@FindBy(linkText = MENU_SESSION_LINK)
+	private WebElement menuSessionLink;
+
+	@FindBy(linkText = MENU_RECONCILIATION_CASES_LINK)
+	private WebElement menuReconciliationCasesLink;
+
+	@FindBy(linkText = MENU_DATASOURCES_LINK)
+	private WebElement menuDatasourcesLink;
+
+	@FindBy(linkText = MENU_ROUTING_LINK)
+	private WebElement menuRoutingLink;
+
 	@FindBy(css = "nav a[href $= '?go=profile']")
 	private WebElement userProfileLink;
 
@@ -37,14 +57,8 @@ public class InternalPage extends AnyPage {
 	@FindBy(css = "nav a[href = './?go=add']")
 	private WebElement filmAddLink;
 
-	@FindBy(css = "nav a[href $= '?logout']")
+	@FindBy(linkText = MENU_LOGOUT_LINK)
 	private WebElement logoutLink;
-
-	@FindBy(xpath = "//div[@class='title']")
-	private List<WebElement> searchedFilms;
-
-	@FindBy(id = "q")
-	private WebElement searchField;
 
 	@FindBy(xpath = "/html/body/div[@id='container']/div[@id='wrapper']/div[@id='content']/section/div[@id='results']/*/*/div[@class='movie_cover']/div[@class='nocover']")
 	private List<WebElement> forAmountFilms;
@@ -54,6 +68,31 @@ public class InternalPage extends AnyPage {
 
 	public InternalPage clickHomePage() {
 		homeLink.click();
+		return pages.internalPage;
+	}
+
+	public InternalPage clickMenu() {
+		menuLink.click();
+		return pages.internalPage;
+	}
+
+	public InternalPage clickDatasourcesLink() {
+		menuDatasourcesLink.click();
+		return pages.internalPage;
+	}
+
+	public InternalPage clickReconciliationCasesLink() {
+		menuReconciliationCasesLink.click();
+		return pages.internalPage;
+	}
+
+	public InternalPage clickRoutingLink() {
+		menuRoutingLink.click();
+		return pages.internalPage;
+	}
+
+	public InternalPage clickSessionLink() {
+		menuSessionLink.click();
 		return pages.internalPage;
 	}
 
@@ -69,32 +108,7 @@ public class InternalPage extends AnyPage {
 
 	public LoginPage clickLogoutLink() {
 		logoutLink.click();
-		wait.until(alertIsPresent()).accept();
 		return pages.loginPage;
-	}
-
-	public FilmAddPage clickFilmAddLink() {
-		filmAddLink.click();
-		return pages.filmAddPage;
-	}
-
-	public InternalPage clickSearchLink(String title) {
-		pages.internalPage.clickHomePage();
-		searchField.click();
-		searchField.sendKeys(title + Keys.ENTER);
-		driver.navigate().refresh();
-		return pages.internalPage;
-	}
-
-	public InternalPage clearingSearchField() {
-		String selectAll = Keys.chord(Keys.CONTROL + "a");
-		searchField.sendKeys(selectAll + Keys.DELETE + Keys.ENTER);
-		clickHomePage();
-		return pages.internalPage;
-	}
-
-	public List<WebElement> getSearchedFilms() {
-		return searchedFilms;
 	}
 
 	public void checkAmountAfter() {
@@ -103,7 +117,6 @@ public class InternalPage extends AnyPage {
 	}
 
 	public boolean confirmAmountsAdd() {
-		clearingSearchField();
 		System.out.println("afterAmountFilms " + afterAmountFilms);
 		System.out.println("forAmountFilms " + forAmountFilms.size());
 		if (afterAmountFilms + 1 == forAmountFilms.size()) {
@@ -112,25 +125,12 @@ public class InternalPage extends AnyPage {
 		return false;
 	}
 
-	public FilmManagementPage clickToFilm(String title) {
-		List<WebElement> elements;
-		elements = getSearchedFilms();
-		for (WebElement el : elements) {
-			if (el.getText().equals(title)) {
-				el.click();
-				break;
-			}
-		}
-		return pages.filmManagementPage;
-	}
-
 	public FilmManagementPage clickToFirstFilm() {
 		firstFilm.click();
 		return pages.filmManagementPage;
 	}
 
 	public boolean confirmAmountsDelete() {
-		clearingSearchField();
 		driver.navigate().refresh();
 		pages.internalPage.ensurePageLoaded();
 		System.out.println("afterAmountFilms " + afterAmountFilms);

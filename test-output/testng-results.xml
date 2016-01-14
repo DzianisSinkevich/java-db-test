@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite1" duration-ms="15032" started-at="2016-01-13T15:55:18Z" finished-at="2016-01-13T15:55:33Z">
+  <suite name="Suite1" duration-ms="31089" started-at="2016-01-14T14:59:24Z" finished-at="2016-01-14T14:59:55Z">
     <groups>
     </groups>
-    <test name="Test000_Login" duration-ms="15032" started-at="2016-01-13T15:55:18Z" finished-at="2016-01-13T15:55:33Z">
+    <test name="Test000_Login" duration-ms="31089" started-at="2016-01-14T14:59:24Z" finished-at="2016-01-14T14:59:55Z">
       <class name="db.tests.TestDB">
-        <test-method status="PASS" signature="init()[pri:0, instance:db.tests.TestDB@d5fcfe]" name="init" is-config="true" duration-ms="10781" started-at="2016-01-13T18:55:18Z" finished-at="2016-01-13T18:55:29Z">
+        <test-method status="PASS" signature="init()[pri:0, instance:db.tests.TestDB@13a57a3b]" name="init" is-config="true" duration-ms="5588" started-at="2016-01-14T17:59:24Z" finished-at="2016-01-14T17:59:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="PASS" signature="testUntitled()[pri:0, instance:db.tests.TestDB@d5fcfe]" name="testUntitled" duration-ms="4246" started-at="2016-01-13T18:55:29Z" finished-at="2016-01-13T18:55:33Z">
+        <test-method status="PASS" signature="testUntitled()[pri:0, instance:db.tests.TestDB@13a57a3b]" name="testUntitled" duration-ms="25487" started-at="2016-01-14T17:59:29Z" finished-at="2016-01-14T17:59:55Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testUntitled -->
-        <test-method status="PASS" signature="stop()[pri:0, instance:db.tests.TestDB@d5fcfe]" name="stop" is-config="true" duration-ms="2367" started-at="2016-01-13T18:55:33Z" finished-at="2016-01-13T18:55:36Z">
+        <test-method status="PASS" signature="stop()[pri:0, instance:db.tests.TestDB@13a57a3b]" name="stop" is-config="true" duration-ms="1386" started-at="2016-01-14T17:59:55Z" finished-at="2016-01-14T17:59:56Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- stop -->

@@ -3,7 +3,7 @@ package denis.trening.applogic2;
 import org.openqa.selenium.WebDriver;
 
 import denis.trening.applogic.ApplicationManager;
-import denis.trening.applogic.FilmHelper;
+import denis.trening.applogic.SessionHelper;
 import denis.trening.applogic.NavigationHelper;
 import denis.trening.applogic.UserHelper;
 import denis.trening.util.Browser;
@@ -13,7 +13,7 @@ import denis.trening.webdriver.WebDriverFactory;
 public class ApplicationManager2 implements ApplicationManager {
 
   private UserHelper userHelper;
-  private FilmHelper filmHelper;
+  private SessionHelper sessionHelper;
   private NavigationHelper navHelper;
 
   private WebDriver driver;
@@ -35,7 +35,7 @@ public class ApplicationManager2 implements ApplicationManager {
     // driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
     userHelper = new UserHelper2(this);
-    filmHelper = new FilmHelper2(this);
+    sessionHelper = new SessionHelper2(this);
     navHelper = new NavigationHelper2(this);
 
     getNavigationHelper().openMainPage();
@@ -47,8 +47,8 @@ public class ApplicationManager2 implements ApplicationManager {
   }
 
   @Override
-  public FilmHelper getFilmHelper() {
-    return filmHelper;
+  public SessionHelper getSessionHelper() {
+    return sessionHelper;
   }
 
   @Override

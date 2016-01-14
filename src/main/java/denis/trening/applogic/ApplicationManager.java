@@ -3,7 +3,7 @@ package denis.trening.applogic;
 public interface ApplicationManager {
 
 	UserHelper getUserHelper();
-	FilmHelper getFilmHelper();
+	SessionHelper getSessionHelper();
   NavigationHelper getNavigationHelper();
 
   void stop();

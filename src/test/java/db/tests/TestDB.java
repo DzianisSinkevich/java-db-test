@@ -27,7 +27,10 @@ public class TestDB extends TestBase {
 	// }
 
 	@Test
-	public void testUntitled() {
+	public void testUntitled() throws InterruptedException {
 		app.getUserHelper().loginAs(ADMIN);
+		app.getNavigationHelper().menuSessionClick();
+		app.getSessionHelper().search("%111%");
+		// app.getSessionHelper().search("54321");
 	}
 }

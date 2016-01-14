@@ -12,7 +12,7 @@ public class PageManager {
 	public UserProfilePage userProfilePage;
 	public UserManagementPage userManagementPage;
 	public FilmManagementPage filmManagementPage;
-	public FilmAddPage filmAddPage;	
+	public SessionPage sessionPage;	
 
 	public PageManager(WebDriver driver) {
 		this.driver = driver;
@@ -21,7 +21,7 @@ public class PageManager {
 		userProfilePage = initElements(new UserProfilePage(this));
 		userManagementPage = initElements(new UserManagementPage(this));
 		filmManagementPage = initElements(new FilmManagementPage(this));
-		filmAddPage = initElements(new FilmAddPage(this));
+		sessionPage = initElements(new SessionPage(this));
 	}
 
 	private <T extends Page> T initElements(T page) {

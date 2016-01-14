@@ -5,8 +5,9 @@
     <classes>
       <class name="db.tests.TestDB">
         <methods>
-          <include name="init"/>
           <include name="testUntitled"/>
+          <include name="stop"/>
+          <include name="init"/>
         </methods>
       </class> <!-- db.tests.TestDB -->
     </classes>
