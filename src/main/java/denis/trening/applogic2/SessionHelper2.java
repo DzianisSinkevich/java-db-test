@@ -19,21 +19,21 @@ public class SessionHelper2 extends DriverBasedHelper implements SessionHelper {
 	private WebElement firstSession;
 
 	@Override
-	public List<Session> search(String ssid) {
+	public List<Session> search(String ssid) throws InterruptedException {
 		List<WebElement> elements;
 		List<Session> sessions = new ArrayList<Session>();
 		pages.sessionPage.clickSearchLink(ssid);
 		elements = pages.sessionPage.getSearchedSessions();
 		System.out.println(elements.size());
 		for (WebElement el : elements) {
-			sessions.add(new Session().setSsid(el.getText()));
-			System.out.println(el.getText());
+			sessions.add(new Session().setSsid(el.getAttribute("value")));
+			System.out.println(el.getAttribute("value"));
 		}
 		return sessions;
 	}
 
 	@Override
-	public boolean isSessionOpen(Session session) {
+	public boolean isSessionOpen(Session session) throws InterruptedException {
 		List<Session> sessions = search(session.getSsid());
 		if (pages.internalPage.confirmAmountsAdd()) {
 			for (Session someSession : sessions) {
@@ -46,7 +46,7 @@ public class SessionHelper2 extends DriverBasedHelper implements SessionHelper {
 	}
 
 	@Override
-	public boolean isFilmDeleted(Session session) {
+	public boolean isFilmDeleted(Session session) throws InterruptedException {
 		List<Session> sessions = search(session.getSsid());
 		if (pages.internalPage.confirmAmountsDelete()) {
 			return true;

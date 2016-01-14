@@ -17,7 +17,8 @@ public class SessionPage extends InternalPage {
 
 	public SessionPage ensurePageLoaded() {
 		super.ensurePageLoaded();
-		wait.until(presenceOfElementLocated(By.cssSelector("[name='name']")));
+		wait.until(presenceOfElementLocated(By
+				.cssSelector("[id='SessionDatatableForm']")));
 		return this;
 	}
 
@@ -33,11 +34,12 @@ public class SessionPage extends InternalPage {
 	@FindBy(xpath = "//table[@class='SessionFilterPanelGrid']/tbody/tr[3]/td[@class='width10 padding-bottom-10 align-middle padding-right-10']/*[1]")
 	private WebElement findButton;
 
-	@FindBy(xpath = "/html/body/div[@id='window']/div[@id='area']/div[@id='EverythingOnSession']/form[@id='SessionDatatableForm']/div[@id='SessionDatatableForm:sessions']/div[@class='ui-datatable-scrollable-body']/table/tbody[@id='SessionDatatableForm:sessions_data']/tr[@class='ui-widget-content ui-datatable-even ui-datatable-selectable ui-state-hover']/td[@class='width15']")
-	private List<WebElement> searchedSessions;
+	@FindBy(xpath = "//tbody[@id='SessionDatatableForm:sessions_data']/*")
+	private List<WebElement> sessionsList;
 
-	public List<WebElement> getSearchedSessions() {
-		return searchedSessions;
+	public List<WebElement> getSearchedSessions() throws InterruptedException {
+		// Thread.sleep(2000);
+		return sessionsList;
 	}
 
 	public SessionPage clickSearchLink(String ssid) {
@@ -45,6 +47,7 @@ public class SessionPage extends InternalPage {
 		// clearingSearchField();
 		searchField.sendKeys(ssid);
 		findButton.click();
+		ensurePageLoaded();
 		// driver.navigate().refresh();
 		return pages.sessionPage;
 	}
