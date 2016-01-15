@@ -26,30 +26,30 @@ public class SessionHelper2 extends DriverBasedHelper implements SessionHelper {
 		elements = pages.sessionPage.getSearchedSessions();
 		System.out.println(elements.size());
 		for (WebElement el : elements) {
-			sessions.add(new Session().setSsid(el.getAttribute("value")));
-			System.out.println(el.getAttribute("value"));
+			sessions.add(new Session().setSsid(el.getText().substring(0, el.getText().indexOf(" "))));
+			System.out.println(el.getText().substring(0, el.getText().indexOf(" ")));
 		}
 		return sessions;
 	}
 
 	@Override
-	public boolean isSessionOpen(Session session) throws InterruptedException {
-		List<Session> sessions = search(session.getSsid());
-		if (pages.internalPage.confirmAmountsAdd()) {
-			for (Session someSession : sessions) {
-				if (someSession.getSsid().equals(session.getSsid())) {
-					return true;
-				}
+	public boolean checkSessionInTableNegative(String searchSsid) throws InterruptedException {
+		List<Session> sessions = search(searchSsid);
+		for (Session sess : sessions) {
+			if (sess.getSsid().equals(searchSsid)) {
+				return true;
 			}
 		}
 		return false;
 	}
-
+	
 	@Override
-	public boolean isFilmDeleted(Session session) throws InterruptedException {
-		List<Session> sessions = search(session.getSsid());
-		if (pages.internalPage.confirmAmountsDelete()) {
-			return true;
+	public boolean checkSessionInTablePositive(String searchSsid) throws InterruptedException {
+		List<Session> sessions = search(searchSsid);
+		for (Session sess : sessions) {
+			if (sess.getSsid().equals(searchSsid)) {
+				return true;
+			}
 		}
 		return false;
 	}

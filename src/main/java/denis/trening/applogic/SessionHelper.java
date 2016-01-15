@@ -8,7 +8,7 @@ public interface SessionHelper {
 
 	List<Session> search(String title) throws InterruptedException;
 
-	boolean isFilmDeleted(Session film) throws InterruptedException;
+	boolean checkSessionInTableNegative(String searchSsid) throws InterruptedException;
 
-	boolean isSessionOpen(Session session) throws InterruptedException;
+	boolean checkSessionInTablePositive(String searchSsid) throws InterruptedException;
 }

@@ -2,6 +2,7 @@ package db.tests;
 
 import org.testng.annotations.Test;
 
+import db.operations.TMA.DaoForTmaMovActc;
 import pages.TestBase;
 
 public class TestDB extends TestBase {
@@ -28,9 +29,13 @@ public class TestDB extends TestBase {
 
 	@Test
 	public void testUntitled() throws InterruptedException {
+		DaoForTmaMovActc daoForTmaMovActc = new DaoForTmaMovActc();
+		System.out.println();
 		app.getUserHelper().loginAs(ADMIN);
 		app.getNavigationHelper().menuSessionClick();
-		app.getSessionHelper().search("%111%");
-		// app.getSessionHelper().search("54321");
+		assert(!app.getSessionHelper().checkSessionInTableNegative(""));
+		assert(!app.getSessionHelper().checkSessionInTablePositive(""));
+		daoForTmaMovActc.getOpenSession22();
+		System.out.println("!!");
 	}
 }

@@ -9,6 +9,9 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import antlr.Utils;
+import db.utils.WaitFullPageLoad;
+
 public class SessionPage extends InternalPage {
 
 	public SessionPage(PageManager pages) {
@@ -17,8 +20,7 @@ public class SessionPage extends InternalPage {
 
 	public SessionPage ensurePageLoaded() {
 		super.ensurePageLoaded();
-		wait.until(presenceOfElementLocated(By
-				.cssSelector("[id='SessionDatatableForm']")));
+		wait.until(presenceOfElementLocated(By.cssSelector("[id='SessionDatatableForm']")));
 		return this;
 	}
 
@@ -42,12 +44,11 @@ public class SessionPage extends InternalPage {
 		return sessionsList;
 	}
 
-	public SessionPage clickSearchLink(String ssid) {
-		searchField.click();
-		// clearingSearchField();
+	public SessionPage clickSearchLink(String ssid) throws InterruptedException {
+		clearingSearchField();
 		searchField.sendKeys(ssid);
 		findButton.click();
-		ensurePageLoaded();
+		WaitFullPageLoad.Wait(driver);
 		// driver.navigate().refresh();
 		return pages.sessionPage;
 	}
@@ -61,7 +62,6 @@ public class SessionPage extends InternalPage {
 		searchField.click();
 		String selectAll = Keys.chord(Keys.CONTROL + "a");
 		searchField.sendKeys(selectAll + Keys.DELETE);
-		findButton.click();
 		return pages.sessionPage;
 	}
 }
