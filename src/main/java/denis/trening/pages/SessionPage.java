@@ -9,8 +9,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import antlr.Utils;
-import db.utils.WaitFullPageLoad;
+import db.utils.WaitLoadAndDisplayed;
 
 public class SessionPage extends InternalPage {
 
@@ -36,7 +35,7 @@ public class SessionPage extends InternalPage {
 	@FindBy(xpath = "//table[@class='SessionFilterPanelGrid']/tbody/tr[3]/td[@class='width10 padding-bottom-10 align-middle padding-right-10']/*[1]")
 	private WebElement findButton;
 
-	@FindBy(xpath = "//tbody[@id='SessionDatatableForm:sessions_data']/*")
+	@FindBy(xpath = "//*[@id='SessionDatatableForm:sessions_data']/*")
 	private List<WebElement> sessionsList;
 
 	public List<WebElement> getSearchedSessions() throws InterruptedException {
@@ -48,7 +47,13 @@ public class SessionPage extends InternalPage {
 		clearingSearchField();
 		searchField.sendKeys(ssid);
 		findButton.click();
-		WaitFullPageLoad.Wait(driver);
+		WaitLoadAndDisplayed.isLoadIconVisibility(driver);
+		WaitLoadAndDisplayed.isLoadIconInvisibility(driver);
+		// if (!WaitLoadAndDisplayed.isNoFoundVisibility(driver)) {
+		// WaitLoadAndDisplayed.waitNoFoundVisibility(driver);
+		// } else {
+		// WaitLoadAndDisplayed.waitNoFoundInvisibility(driver);
+		// }
 		// driver.navigate().refresh();
 		return pages.sessionPage;
 	}
