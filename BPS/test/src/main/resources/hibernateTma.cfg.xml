@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 4.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <mapping class="com.danco.nashorn.entity.About"/>
+        <mapping class="com.danco.nashorn.entity.Albom"/>
+        <mapping class="com.danco.nashorn.entity.Event"/>
+        <mapping class="com.danco.nashorn.entity.EventComment"/>
+        <mapping class="com.danco.nashorn.entity.EventDay"/>
+        <mapping class="com.danco.nashorn.entity.Message"/>
+        <mapping class="com.danco.nashorn.entity.Photo"/>
+        <mapping class="com.danco.nashorn.entity.PhotoComment"/>
+        <mapping class="com.danco.nashorn.entity.Role"/>
+        <mapping class="com.danco.nashorn.entity.User"/>     
+        <mapping class="com.danco.nashorn.entity.UserInfo"/>
+    </session-factory>
+</hibernate-configuration>

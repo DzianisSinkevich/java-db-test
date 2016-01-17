@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite1]" data-provider-thread-count="1">
+  <test name="TestDB">
+    <classes>
+      <class name="db.tests.TestDB"/>
+    </classes>
+  </test> <!-- TestDB -->
+  <test name="TestDB(failed)">
+    <classes>
+      <class name="db.tests.TestDB">
+        <methods>
+          <include name="testUntitled"/>
+          <include name="stop"/>
+          <include name="init"/>
+        </methods>
+      </class> <!-- db.tests.TestDB -->
+    </classes>
+  </test> <!-- TestDB(failed) -->
+</suite> <!-- Failed suite [Suite1] -->
