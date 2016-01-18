@@ -3,18 +3,7 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite1]" data-provider-thread-count="1">
   <test name="TestDB">
     <classes>
-      <class name="db.tests.IsSessionClosed"/>
+      <class name="db.tests.OpenSession"/>
     </classes>
   </test> <!-- TestDB -->
-  <test name="TestDB(failed)">
-    <classes>
-      <class name="db.tests.IsSessionClosed">
-        <methods>
-          <include name="stop"/>
-          <include name="testUntitled"/>
-          <include name="init"/>
-        </methods>
-      </class> <!-- db.tests.IsSessionClosed -->
-    </classes>
-  </test> <!-- TestDB(failed) -->
 </suite> <!-- Failed suite [Suite1] -->

@@ -1,62 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" total="1" passed="0">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite1" duration-ms="16198" started-at="2016-01-18T14:27:03Z" finished-at="2016-01-18T14:27:19Z">
+  <suite name="Suite1" duration-ms="7599" started-at="2016-01-18T20:38:03Z" finished-at="2016-01-18T20:38:10Z">
     <groups>
     </groups>
-    <test name="TestDB" duration-ms="16198" started-at="2016-01-18T14:27:03Z" finished-at="2016-01-18T14:27:19Z">
-      <class name="db.tests.IsSessionClosed">
-        <test-method status="PASS" signature="init()[pri:0, instance:db.tests.IsSessionClosed@3c09711b]" name="init" is-config="true" duration-ms="12264" started-at="2016-01-18T17:27:03Z" finished-at="2016-01-18T17:27:15Z">
+    <test name="TestDB" duration-ms="7599" started-at="2016-01-18T20:38:03Z" finished-at="2016-01-18T20:38:10Z">
+      <class name="db.tests.OpenSession">
+        <test-method status="PASS" signature="init()[pri:0, instance:db.tests.OpenSession@9711b]" name="init" is-config="true" duration-ms="7568" started-at="2016-01-18T23:38:03Z" finished-at="2016-01-18T23:38:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="FAIL" signature="testUntitled()[pri:0, instance:db.tests.IsSessionClosed@3c09711b]" name="testUntitled" duration-ms="3923" started-at="2016-01-18T17:27:15Z" finished-at="2016-01-18T17:27:19Z">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[AAAAAAA!!! expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: AAAAAAA!!! expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:94)
-	at org.testng.Assert.failNotEquals(Assert.java:513)
-	at org.testng.Assert.assertTrue(Assert.java:42)
-	at db.tests.IsSessionClosed.testUntitled(IsSessionClosed.java:19)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:782)
-	at org.testng.TestRunner.run(TestRunner.java:632)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
-	at org.testng.TestNG.run(TestNG.java:1064)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:113)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+        <test-method status="PASS" signature="testUntitled()[pri:0, instance:db.tests.OpenSession@9711b]" name="testUntitled" duration-ms="17" started-at="2016-01-18T23:38:10Z" finished-at="2016-01-18T23:38:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testUntitled -->
-        <test-method status="PASS" signature="stop()[pri:0, instance:db.tests.IsSessionClosed@3c09711b]" name="stop" is-config="true" duration-ms="1342" started-at="2016-01-18T17:27:19Z" finished-at="2016-01-18T17:27:20Z">
+        <test-method status="PASS" signature="stop()[pri:0, instance:db.tests.OpenSession@9711b]" name="stop" is-config="true" duration-ms="1758" started-at="2016-01-18T23:38:10Z" finished-at="2016-01-18T23:38:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- stop -->
-      </class> <!-- db.tests.IsSessionClosed -->
+      </class> <!-- db.tests.OpenSession -->
     </test> <!-- TestDB -->
   </suite> <!-- Suite1 -->
 </testng-results>
