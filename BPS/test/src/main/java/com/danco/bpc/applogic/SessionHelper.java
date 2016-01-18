@@ -11,4 +11,8 @@ public interface SessionHelper {
 	boolean checkSessionInTableNegative(String searchSsid) throws InterruptedException;
 
 	boolean checkSessionInTablePositive(String searchSsid) throws InterruptedException;
+
+	String sessionState(String searchSsid) throws InterruptedException;
+
+	void getAllParameterSession(String ssid, Session currSession) throws InterruptedException;
 }

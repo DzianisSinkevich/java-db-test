@@ -6,7 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
-import db.tests.TestDB;
+import db.tests.OpenSession;
 
 public abstract class DBUnitConfig<T> {
 
@@ -33,9 +33,9 @@ public abstract class DBUnitConfig<T> {
 		em.getTransaction().commit();
 	}
 
-	public List<TestDB> getAll() {
-		TypedQuery<TestDB> namedQuery = em.createNamedQuery("Person.getAll",
-				TestDB.class);
+	public List<OpenSession> getAll() {
+		TypedQuery<OpenSession> namedQuery = em.createNamedQuery("Person.getAll",
+				OpenSession.class);
 
 		return namedQuery.getResultList();
 	}

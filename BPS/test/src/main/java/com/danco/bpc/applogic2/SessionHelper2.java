@@ -65,4 +65,19 @@ public class SessionHelper2 extends DriverBasedHelper implements SessionHelper {
 		System.out.println("Session is not open");
 		return false;
 	}
+
+	@Override
+	public String sessionState(String sessionSsid) throws InterruptedException {
+		List<Session> sessions = search(sessionSsid);
+		for (Session sess : sessions) {
+
+		}
+		return null;
+	}
+
+	@Override
+	public void getAllParameterSession(String ssid, Session currSession) throws InterruptedException {
+		pages.sessionPage.clickSearchLink(ssid).getSessionState(currSession).getSessionStatus(currSession).getSessionTe(currSession).getSessionTf(currSession)
+				.getSessionTr(currSession).getSessionTsv(currSession);
+	}
 }

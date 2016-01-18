@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 import com.danco.bpc.entity.api.AbstractBaseEntity;
 
-@Table(name = "TMT_SESSION_MESSAGE", catalog = "mkyong")
+@Table(name = "TMT_SESSION_MESSAGE")
 @Entity
 public class TmtSessionMessage extends AbstractBaseEntity implements java.io.Serializable,
 Comparable<TmtSessionMessage>{

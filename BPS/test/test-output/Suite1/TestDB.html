@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Jan 18 15:15:17 MSK 2016</td>
+<td>Started on:</td><td>Mon Jan 18 17:27:03 MSK 2016</td>
 </tr>
-<tr><td>Total time:</td><td>14 seconds (14344 ms)</td>
+<tr><td>Total time:</td><td>16 seconds (16198 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,16 +75,15 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='db.tests.TestDB.testUntitled()'><b>testUntitled</b><br>Test class: db.tests.TestDB</td>
-<td><div><pre>java.lang.NullPointerException
-	at com.danco.bpc.service.impl.TMA.TmtMovActcTeServiceImpl.addRecord(TmtMovActcTeServiceImpl.java:23)
-	at com.danco.bpc.service.impl.TMA.TmtMovActcTeServiceImpl.addRecord(TmtMovActcTeServiceImpl.java:1)
-	at db.tests.TestDB.testUntitled(TestDB.java:31)
-... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace882962176", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace882962176'><pre>java.lang.NullPointerException
-	at com.danco.bpc.service.impl.TMA.TmtMovActcTeServiceImpl.addRecord(TmtMovActcTeServiceImpl.java:23)
-	at com.danco.bpc.service.impl.TMA.TmtMovActcTeServiceImpl.addRecord(TmtMovActcTeServiceImpl.java:1)
-	at db.tests.TestDB.testUntitled(TestDB.java:31)
+<td title='db.tests.IsSessionClosed.testUntitled()'><b>testUntitled</b><br>Test class: db.tests.IsSessionClosed</td>
+<td><div><pre>java.lang.AssertionError: AAAAAAA!!! expected [true] but found [false]
+	at db.tests.IsSessionClosed.testUntitled(IsSessionClosed.java:19)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1116094714", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1116094714'><pre>java.lang.AssertionError: AAAAAAA!!! expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:513)
+	at org.testng.Assert.assertTrue(Assert.java:42)
+	at db.tests.IsSessionClosed.testUntitled(IsSessionClosed.java:19)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -111,7 +110,7 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)
 </pre></div></td>
 <td>3</td>
-<td>db.tests.TestDB@66d23e4a</td></tr>
+<td>db.tests.IsSessionClosed@3c09711b</td></tr>
 </table><p>
 </body>
 </html>

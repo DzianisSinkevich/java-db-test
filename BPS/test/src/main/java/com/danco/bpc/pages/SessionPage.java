@@ -10,9 +10,13 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import com.danco.bpc.model.Session;
+
 import db.utils.WaitLoadAndDisplayed;
 
 public class SessionPage extends InternalPage {
+
+	Session currentSesion = new Session();
 
 	public SessionPage(PageManager pages) {
 		super(pages);
@@ -20,8 +24,7 @@ public class SessionPage extends InternalPage {
 
 	public SessionPage ensurePageLoaded() {
 		super.ensurePageLoaded();
-		wait.until(presenceOfElementLocated(By
-				.cssSelector("[id='SessionDatatableForm']")));
+		wait.until(presenceOfElementLocated(By.cssSelector("[id='SessionDatatableForm']")));
 		return this;
 	}
 
@@ -43,15 +46,63 @@ public class SessionPage extends InternalPage {
 	@FindBy(xpath = "//*[@id='SessionDatatableForm:sessions_data']/tr/td")
 	private WebElement firstElement;
 
+	@FindBy(xpath = "//*[@id='SessionDatatableForm:sessions_data']/tr[1]/td[3]")
+	private WebElement stateSession;
+	
+	@FindBy(xpath = "//*[@id='SessionDatatableForm:sessions_data']/tr[1]/td[7]")
+	private WebElement statusSession;
+	
+	@FindBy(xpath = "//*[@id='SessionDatatableForm:sessions_data']/tr[1]/td[9]/span")
+	private WebElement teSession;
+	
+	@FindBy(xpath = "//*[@id='SessionDatatableForm:sessions_data']/tr[1]/td[10]/span")
+	private WebElement trSession;
+	
+	@FindBy(xpath = "//*[@id='SessionDatatableForm:sessions_data']/tr[1]/td[11]/span")
+	private WebElement tsvSession;
+	
+	@FindBy(xpath = "//*[@id='SessionDatatableForm:sessions_data']/tr[1]/td[12]/span")
+	private WebElement tfSession;
+
 	public List<WebElement> getSearchedSessions() throws InterruptedException {
 		String str = firstElement.getText();
 		if (!str.equals("No records found.")) {
 			return sessionsList;
-		}else{
+		} else {
 			return new ArrayList<WebElement>();
 		}
 	}
 
+	public SessionPage getSessionState(Session currSession) throws InterruptedException {
+		currSession.setState(stateSession.getText());
+		return pages.sessionPage;
+	}
+
+	public SessionPage getSessionStatus(Session currSession) throws InterruptedException {
+		currSession.setStatus(statusSession.getText());
+		return pages.sessionPage;
+	}
+	
+	public SessionPage getSessionTe(Session currSession) throws InterruptedException {
+		currSession.setTe(teSession.getText());
+		return pages.sessionPage;
+	}
+	
+	public SessionPage getSessionTr(Session currSession) throws InterruptedException {
+		currSession.setTr(trSession.getText());
+		return pages.sessionPage;
+	}
+	
+	public SessionPage getSessionTsv(Session currSession) throws InterruptedException {
+		currSession.setTsv(tsvSession.getText());
+		return pages.sessionPage;
+	}
+	
+	public SessionPage getSessionTf(Session currSession) throws InterruptedException {
+		currSession.setTf(tfSession.getText());
+		return pages.sessionPage;
+	}
+	
 	public SessionPage clickSearchLink(String ssid) throws InterruptedException {
 		clearingSearchField();
 		searchField.sendKeys(ssid);

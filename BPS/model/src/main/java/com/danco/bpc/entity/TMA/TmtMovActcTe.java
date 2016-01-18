@@ -12,7 +12,7 @@ import javax.persistence.Table;
 
 import com.danco.bpc.entity.api.AbstractBaseEntity;
 
-@Table(name = "TMT_MOV_ACTC", catalog = "mkyong")
+@Table(name = "TMT_MOV_ACCT")
 @Entity
 public class TmtMovActcTe extends AbstractBaseEntity implements java.io.Serializable, Comparable<TmtMovActcTe> {
 
@@ -149,7 +149,7 @@ public class TmtMovActcTe extends AbstractBaseEntity implements java.io.Serializ
 	@Column(name = "C0DLCIE1")
 	private Long c0dlcie1 = (long) 220444;
 	@Column(name = "CMTMIEAS")
-	private String cmtmieas = "";
+	private String cmtmieas = "0";
 	@Column(name = "CMTQERRO")
 	private String cmtqerro = "000";
 	@Column(name = "C00LTIP1")
@@ -193,15 +193,15 @@ public class TmtMovActcTe extends AbstractBaseEntity implements java.io.Serializ
 	@Column(name = "CMTMAGRA")
 	private String cmtmagra = "0";
 	@Column(name = "C00LCSBA_AGR")
-	private Long c00lcsba_agr = (long) 0;
+	private Long c00lcsbaAgr = (long) 0;
 	@Column(name = "CMTMICIE")
 	private String cmtmicie = "1";
 	@Column(name = "CMTMCIER")
 	private String cmtmcier = "9";
 	@Column(name = "CMTMCIER_SIO")
-	private String cmtmcier_sio;
+	private String cmtmcierSio;
 	@Column(name = "C0DLCIER_SIO")
-	private Long c0dlcier_sio = (long) 0;
+	private Long c0dlcierSio = (long) 0;
 	@Column(name = "CMTMACTI")
 	private String cmtmacti = "0";
 	@Column(name = "C41LACTI")
@@ -213,13 +213,13 @@ public class TmtMovActcTe extends AbstractBaseEntity implements java.io.Serializ
 	@Column(name = "CMTJIMAX")
 	private Long cmtjimax = (long) 0;
 	@Column(name = "CMTMFSES_SIO")
-	private String cmtmfses_sio;
+	private String cmtmfsesSio;
 	@Column(name = "CMTFSESI_SIO")
-	private Long cmtfsesi_sio = (long) 0;
+	private Long cmtfsesiSio = (long) 0;
 	@Column(name = "CMTMNSES_SIO")
-	private String cmtmnses_sio = "0";
+	private String cmtmnsesSio = "0";
 	@Column(name = "CMTQNSES_SIO")
-	private Long cmtqnses_sio = (long) 0;
+	private Long cmtqnsesSio = (long) 0;
 	@Column(name = "CMTMDCCJ")
 	private String cmtmdccj = "0";
 	@Column(name = "CE0LMONE")
@@ -257,17 +257,17 @@ public class TmtMovActcTe extends AbstractBaseEntity implements java.io.Serializ
 	@Column(name = "CMTICIDI")
 	private Long cmticidi = (long) 0;
 	@Column(name = "CMTIIGTL_EUR")
-	private Long cmtiigtl_eur = (long) 0;
+	private Long cmtiigtlEur = (long) 0;
 	@Column(name = "CMTITRSP_EUR")
-	private Long cmtitrsp_eur = (long) 0;
+	private Long cmtitrspEur = (long) 0;
 	@Column(name = "CMTITRSF_EUR")
-	private Long cmtitrsf_eur = (long) 0;
+	private Long cmtitrsfEur = (long) 0;
 	@Column(name = "CMTIOTRO_EUR")
-	private Long cmtiotro_eur = (long) 0;
+	private Long cmtiotroEur = (long) 0;
 	@Column(name = "SV_INTERNAL_ID")
-	private Long sv_internal_id = null;
+	private Long svInternalId = null;
 	@Column(name = "IS_NEW_FIELD")
-	private Boolean is_new_field = true;
+	private Boolean isNewField = true;
 
 	public TmtMovActcTe() {
 		super();
@@ -961,12 +961,12 @@ public class TmtMovActcTe extends AbstractBaseEntity implements java.io.Serializ
 		this.cmtmagra = cmtmagra;
 	}
 
-	public Long getC00lcsba_agr() {
-		return c00lcsba_agr;
+	public Long getC00lcsbaAgr() {
+		return c00lcsbaAgr;
 	}
 
-	public void setC00lcsba_agr(Long c00lcsba_agr) {
-		this.c00lcsba_agr = c00lcsba_agr;
+	public void setC00lcsbaAgr(Long c00lcsbaAgr) {
+		this.c00lcsbaAgr = c00lcsbaAgr;
 	}
 
 	public String getCmtmicie() {
@@ -985,20 +985,20 @@ public class TmtMovActcTe extends AbstractBaseEntity implements java.io.Serializ
 		this.cmtmcier = cmtmcier;
 	}
 
-	public String getCmtmcier_sio() {
-		return cmtmcier_sio;
+	public String getCmtmcierSio() {
+		return cmtmcierSio;
 	}
 
-	public void setCmtmcier_sio(String cmtmcier_sio) {
-		this.cmtmcier_sio = cmtmcier_sio;
+	public void setCmtmcierSio(String cmtmcierSio) {
+		this.cmtmcierSio = cmtmcierSio;
 	}
 
-	public Long getC0dlcier_sio() {
-		return c0dlcier_sio;
+	public Long getC0dlcierSio() {
+		return c0dlcierSio;
 	}
 
-	public void setC0dlcier_sio(Long c0dlcier_sio) {
-		this.c0dlcier_sio = c0dlcier_sio;
+	public void setC0dlcierSio(Long c0dlcierSio) {
+		this.c0dlcierSio = c0dlcierSio;
 	}
 
 	public String getCmtmacti() {
@@ -1041,36 +1041,36 @@ public class TmtMovActcTe extends AbstractBaseEntity implements java.io.Serializ
 		this.cmtjimax = cmtjimax;
 	}
 
-	public String getCmtmfses_sio() {
-		return cmtmfses_sio;
+	public String getCmtmfsesSio() {
+		return cmtmfsesSio;
 	}
 
-	public void setCmtmfses_sio(String cmtmfses_sio) {
-		this.cmtmfses_sio = cmtmfses_sio;
+	public void setCmtmfsesSio(String cmtmfsesSio) {
+		this.cmtmfsesSio = cmtmfsesSio;
 	}
 
-	public Long getCmtfsesi_sio() {
-		return cmtfsesi_sio;
+	public Long getCmtfsesiSio() {
+		return cmtfsesiSio;
 	}
 
-	public void setCmtfsesi_sio(Long cmtfsesi_sio) {
-		this.cmtfsesi_sio = cmtfsesi_sio;
+	public void setCmtfsesiSio(Long cmtfsesiSio) {
+		this.cmtfsesiSio = cmtfsesiSio;
 	}
 
-	public String getCmtmnses_sio() {
-		return cmtmnses_sio;
+	public String getCmtmnsesSio() {
+		return cmtmnsesSio;
 	}
 
-	public void setCmtmnses_sio(String cmtmnses_sio) {
-		this.cmtmnses_sio = cmtmnses_sio;
+	public void setCmtmnsesSio(String cmtmnsesSio) {
+		this.cmtmnsesSio = cmtmnsesSio;
 	}
 
-	public Long getCmtqnses_sio() {
-		return cmtqnses_sio;
+	public Long getCmtqnsesSio() {
+		return cmtqnsesSio;
 	}
 
-	public void setCmtqnses_sio(Long cmtqnses_sio) {
-		this.cmtqnses_sio = cmtqnses_sio;
+	public void setCmtqnsesSio(Long cmtqnsesSio) {
+		this.cmtqnsesSio = cmtqnsesSio;
 	}
 
 	public String getCmtmdccj() {
@@ -1217,52 +1217,52 @@ public class TmtMovActcTe extends AbstractBaseEntity implements java.io.Serializ
 		this.cmticidi = cmticidi;
 	}
 
-	public Long getCmtiigtl_eur() {
-		return cmtiigtl_eur;
+	public Long getCmtiigtlEur() {
+		return cmtiigtlEur;
 	}
 
-	public void setCmtiigtl_eur(Long cmtiigtl_eur) {
-		this.cmtiigtl_eur = cmtiigtl_eur;
+	public void setCmtiigtlEur(Long cmtiigtlEur) {
+		this.cmtiigtlEur = cmtiigtlEur;
 	}
 
-	public Long getCmtitrsp_eur() {
-		return cmtitrsp_eur;
+	public Long getCmtitrspEur() {
+		return cmtitrspEur;
 	}
 
-	public void setCmtitrsp_eur(Long cmtitrsp_eur) {
-		this.cmtitrsp_eur = cmtitrsp_eur;
+	public void setCmtitrspEur(Long cmtitrspEur) {
+		this.cmtitrspEur = cmtitrspEur;
 	}
 
-	public Long getCmtitrsf_eur() {
-		return cmtitrsf_eur;
+	public Long getCmtitrsfEur() {
+		return cmtitrsfEur;
 	}
 
-	public void setCmtitrsf_eur(Long cmtitrsf_eur) {
-		this.cmtitrsf_eur = cmtitrsf_eur;
+	public void setCmtitrsfEur(Long cmtitrsfEur) {
+		this.cmtitrsfEur = cmtitrsfEur;
 	}
 
-	public Long getCmtiotro_eur() {
-		return cmtiotro_eur;
+	public Long getCmtiotroEur() {
+		return cmtiotroEur;
 	}
 
-	public void setCmtiotro_eur(Long cmtiotro_eur) {
-		this.cmtiotro_eur = cmtiotro_eur;
+	public void setCmtiotroEur(Long cmtiotroEur) {
+		this.cmtiotroEur = cmtiotroEur;
 	}
 
-	public Long getSv_internal_id() {
-		return sv_internal_id;
+	public Long getSvInternalId() {
+		return svInternalId;
 	}
 
-	public void setSv_internal_id(Long sv_internal_id) {
-		this.sv_internal_id = sv_internal_id;
+	public void setSvInternalId(Long svInternalId) {
+		this.svInternalId = svInternalId;
 	}
 
-	public Boolean getIs_new_field() {
-		return is_new_field;
+	public Boolean getIsNewField() {
+		return isNewField;
 	}
 
-	public void setIs_new_field(Boolean is_new_field) {
-		this.is_new_field = is_new_field;
+	public void setIsNewField(Boolean isNewField) {
+		this.isNewField = isNewField;
 	}
 
 	@Override

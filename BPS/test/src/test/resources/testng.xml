@@ -3,7 +3,7 @@
 	preserve-order="true">
 	<test name="TestDB">
 		<classes>
-			<class name="db.tests.TestDB">
+			<class name="db.tests.IsSessionClosed">
 			</class>
 		</classes>
 	</test>

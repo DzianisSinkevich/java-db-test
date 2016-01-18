@@ -2,22 +2,26 @@
 <testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite1" duration-ms="14344" started-at="2016-01-18T12:15:17Z" finished-at="2016-01-18T12:15:32Z">
+  <suite name="Suite1" duration-ms="16198" started-at="2016-01-18T14:27:03Z" finished-at="2016-01-18T14:27:19Z">
     <groups>
     </groups>
-    <test name="TestDB" duration-ms="14344" started-at="2016-01-18T12:15:17Z" finished-at="2016-01-18T12:15:32Z">
-      <class name="db.tests.TestDB">
-        <test-method status="PASS" signature="init()[pri:0, instance:db.tests.TestDB@66d23e4a]" name="init" is-config="true" duration-ms="10826" started-at="2016-01-18T15:15:17Z" finished-at="2016-01-18T15:15:28Z">
+    <test name="TestDB" duration-ms="16198" started-at="2016-01-18T14:27:03Z" finished-at="2016-01-18T14:27:19Z">
+      <class name="db.tests.IsSessionClosed">
+        <test-method status="PASS" signature="init()[pri:0, instance:db.tests.IsSessionClosed@3c09711b]" name="init" is-config="true" duration-ms="12264" started-at="2016-01-18T17:27:03Z" finished-at="2016-01-18T17:27:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="FAIL" signature="testUntitled()[pri:0, instance:db.tests.TestDB@66d23e4a]" name="testUntitled" duration-ms="3503" started-at="2016-01-18T15:15:28Z" finished-at="2016-01-18T15:15:32Z">
-          <exception class="java.lang.NullPointerException">
+        <test-method status="FAIL" signature="testUntitled()[pri:0, instance:db.tests.IsSessionClosed@3c09711b]" name="testUntitled" duration-ms="3923" started-at="2016-01-18T17:27:15Z" finished-at="2016-01-18T17:27:19Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[AAAAAAA!!! expected [true] but found [false]]]>
+            </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-	at com.danco.bpc.service.impl.TMA.TmtMovActcTeServiceImpl.addRecord(TmtMovActcTeServiceImpl.java:23)
-	at com.danco.bpc.service.impl.TMA.TmtMovActcTeServiceImpl.addRecord(TmtMovActcTeServiceImpl.java:1)
-	at db.tests.TestDB.testUntitled(TestDB.java:31)
+              <![CDATA[java.lang.AssertionError: AAAAAAA!!! expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:513)
+	at org.testng.Assert.assertTrue(Assert.java:42)
+	at db.tests.IsSessionClosed.testUntitled(IsSessionClosed.java:19)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -44,15 +48,15 @@
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testUntitled -->
-        <test-method status="PASS" signature="stop()[pri:0, instance:db.tests.TestDB@66d23e4a]" name="stop" is-config="true" duration-ms="1374" started-at="2016-01-18T15:15:32Z" finished-at="2016-01-18T15:15:33Z">
+        <test-method status="PASS" signature="stop()[pri:0, instance:db.tests.IsSessionClosed@3c09711b]" name="stop" is-config="true" duration-ms="1342" started-at="2016-01-18T17:27:19Z" finished-at="2016-01-18T17:27:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- stop -->
-      </class> <!-- db.tests.TestDB -->
+      </class> <!-- db.tests.IsSessionClosed -->
     </test> <!-- TestDB -->
   </suite> <!-- Suite1 -->
 </testng-results>

@@ -5,24 +5,24 @@ public class Session {
 	private String ssid;
 	private String state;
 	private String status;
-	private int te;
-	private int tr;
-	private int tsv;
-	private int tf;
+	private String te;
+	private String tr;
+	private String tsv;
+	private String tf;
 
-	public int getTsv() {
+	public String getTsv() {
 		return tsv;
 	}
 
-	public void setTsv(int tsv) {
+	public void setTsv(String tsv) {
 		this.tsv = tsv;
 	}
 
-	public int getTf() {
+	public String getTf() {
 		return tf;
 	}
 
-	public void setTf(int tf) {
+	public void setTf(String tf) {
 		this.tf = tf;
 	}
 
@@ -53,21 +53,26 @@ public class Session {
 		return this;
 	}
 
-	public int getTe() {
+	public String getTe() {
 		return te;
 	}
 
-	public Session setTe(int te) {
-		this.te = te;
+	public Session setTe(String string) {
+		this.te = string;
 		return this;
 	}
 
-	public int getTr() {
+	public String getTr() {
 		return tr;
 	}
 
-	public Session setTr(int tr) {
+	public Session setTr(String tr) {
 		this.tr = tr;
 		return this;
+	}
+
+	@Override
+	public String toString() {
+		return "Session [ssid=" + ssid + ", state=" + state + ", status=" + status + ", te=" + te + ", tr=" + tr + ", tsv=" + tsv + ", tf=" + tf + "]";
 	}
 }

@@ -3,11 +3,11 @@ package com.danco.bpc.service.impl.TMA;
 import java.io.IOException;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.danco.bpc.dao.api.TMA.ITmtMovActcTrDao;
+import com.danco.bpc.dao.impl.TMA.TmtMovActcTrDaoImpl;
 import com.danco.bpc.entity.TMA.TmtMovActcTr;
 import com.danco.bpc.service.api.TMA.ITmtMovActcTrService;
 
@@ -15,8 +15,7 @@ import com.danco.bpc.service.api.TMA.ITmtMovActcTrService;
 @Transactional
 public class TmtMovActcTrServiceImpl implements ITmtMovActcTrService {
 
-	@Autowired
-	private ITmtMovActcTrDao tmtMovActcTrDao;
+	private ITmtMovActcTrDao tmtMovActcTrDao = new TmtMovActcTrDaoImpl();
 
 	@Override
 	public Long addRecord(TmtMovActcTr entity) {
@@ -51,6 +50,14 @@ public class TmtMovActcTrServiceImpl implements ITmtMovActcTrService {
 	@Override
 	public Integer count() {
 		return tmtMovActcTrDao.count();
+	}
+
+	@Override
+	public TmtMovActcTr copyTmtMovActcTr() {
+		TmtMovActcTr tmtMovActcTr = this.getRecordsPage(1, 1).get(0);
+		tmtMovActcTr.setCmtqnmov(tmtMovActcTr.getCmtqnmov() + 1);
+		tmtMovActcTr.setSvInternalId(null);
+		return tmtMovActcTr;
 	}
 
 }

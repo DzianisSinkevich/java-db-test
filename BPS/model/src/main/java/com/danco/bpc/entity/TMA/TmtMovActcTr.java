@@ -12,7 +12,7 @@ import javax.persistence.Table;
 
 import com.danco.bpc.entity.api.AbstractBaseEntity;
 
-@Table(name = "TMT_MOV_ACTC", catalog = "mkyong")
+@Table(name = "TMT_MOV_ACCT")
 @Entity
 public class TmtMovActcTr extends AbstractBaseEntity implements java.io.Serializable, Comparable<TmtMovActcTr> {
 
