@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sun Jan 17 22:53:41 GMT+03:00 2016</td>
+<td>Started on:</td><td>Mon Jan 18 15:15:17 MSK 2016</td>
 </tr>
-<tr><td>Total time:</td><td>24 seconds (24189 ms)</td>
+<tr><td>Total time:</td><td>14 seconds (14344 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,11 +76,15 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='db.tests.TestDB.testUntitled()'><b>testUntitled</b><br>Test class: db.tests.TestDB</td>
-<td><div><pre>java.lang.AssertionError
-	at db.tests.TestDB.testUntitled(TestDB.java:26)
-... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace17257417", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace17257417'><pre>java.lang.AssertionError
-	at db.tests.TestDB.testUntitled(TestDB.java:26)
+<td><div><pre>java.lang.NullPointerException
+	at com.danco.bpc.service.impl.TMA.TmtMovActcTeServiceImpl.addRecord(TmtMovActcTeServiceImpl.java:23)
+	at com.danco.bpc.service.impl.TMA.TmtMovActcTeServiceImpl.addRecord(TmtMovActcTeServiceImpl.java:1)
+	at db.tests.TestDB.testUntitled(TestDB.java:31)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace882962176", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace882962176'><pre>java.lang.NullPointerException
+	at com.danco.bpc.service.impl.TMA.TmtMovActcTeServiceImpl.addRecord(TmtMovActcTeServiceImpl.java:23)
+	at com.danco.bpc.service.impl.TMA.TmtMovActcTeServiceImpl.addRecord(TmtMovActcTeServiceImpl.java:1)
+	at db.tests.TestDB.testUntitled(TestDB.java:31)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -106,8 +110,8 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)
 </pre></div></td>
-<td>18</td>
-<td>db.tests.TestDB@89713</td></tr>
+<td>3</td>
+<td>db.tests.TestDB@66d23e4a</td></tr>
 </table><p>
 </body>
 </html>

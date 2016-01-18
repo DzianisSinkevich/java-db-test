@@ -14,7 +14,8 @@
         <mapping class="com.danco.bpc.entity.TMA.TmaData"/>
         <mapping class="com.danco.bpc.entity.TMA.TmtData"/>
         <mapping class="com.danco.bpc.entity.TMA.TmaMovActc"/>
-        <mapping class="com.danco.bpc.entity.TMA.TmtMovActc"/>
+        <mapping class="com.danco.bpc.entity.TMA.TmtMovActcTe"/>
+        <mapping class="com.danco.bpc.entity.TMA.TmtMovActcTr"/>
         <mapping class="com.danco.bpc.entity.TMA.TmtSession"/>
         <mapping class="com.danco.bpc.entity.TMA.TmtSessionMessage"/>
     </session-factory>

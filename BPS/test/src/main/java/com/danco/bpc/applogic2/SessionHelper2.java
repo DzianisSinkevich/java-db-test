@@ -49,7 +49,7 @@ public class SessionHelper2 extends DriverBasedHelper implements SessionHelper {
 
 	@Override
 	public boolean checkSessionInTablePositive(String searchSsid) throws InterruptedException {
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < 60; i++) {
 			List<Session> sessions = search(searchSsid);
 			if (sessions.size() > 1) {
 				System.out.println("Count of session not equal 1");

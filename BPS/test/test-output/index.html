@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Suite1">
-                    <span>F:\JAVA\BPC\BPS\test\src\test\resources\testng.xml</span>
+                    <span>D:\BPC\java-db-test\BPS\test\src\test\resources\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -128,8 +128,10 @@
                   <a name="testUntitled">
                   </a> <!-- testUntitled -->
                   <span class="method-name">testUntitled</span>
-                  <div class="stack-trace">java.lang.AssertionError
-	at db.tests.TestDB.testUntitled(TestDB.java:26)
+                  <div class="stack-trace">java.lang.NullPointerException
+	at com.danco.bpc.service.impl.TMA.TmtMovActcTeServiceImpl.addRecord(TmtMovActcTeServiceImpl.java:23)
+	at com.danco.bpc.service.impl.TMA.TmtMovActcTeServiceImpl.addRecord(TmtMovActcTeServiceImpl.java:1)
+	at db.tests.TestDB.testUntitled(TestDB.java:31)
 ... Removed 24 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
@@ -139,7 +141,7 @@
         </div> <!-- panel Suite1 -->
         <div panel-name="test-xml-Suite1" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">F:\JAVA\BPC\BPS\test\src\test\resources\testng.xml</span>
+            <span class="header-content">D:\BPC\java-db-test\BPS\test\src\test\resources\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -206,12 +208,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'testUntitled')
 data.setCell(0, 2, 'db.tests.TestDB')
-data.setCell(0, 3, 18248);
+data.setCell(0, 3, 3503);
 window.suiteTableData['Suite1']= { tableData: data, tableDiv: 'times-div-Suite1'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 18 seconds</span>
+              <span class="suite-total-time">Total running time: 3 seconds</span>
               <div id="times-div-Suite1">
               </div> <!-- times-div-Suite1 -->
             </div> <!-- times-div -->
@@ -246,11 +248,11 @@ return data;
                 <img src="failed.png">
                 </img>
                 <span class="method-name">testUntitled</span>
-                <span class="method-start">5930 ms</span>
+                <span class="method-start">10829 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-suite after">
                 <span class="method-name">stop</span>
-                <span class="method-start">24256 ms</span>
+                <span class="method-start">14350 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

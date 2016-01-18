@@ -2,20 +2,22 @@
 <testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite1" duration-ms="24189" started-at="2016-01-17T19:53:41Z" finished-at="2016-01-17T19:54:05Z">
+  <suite name="Suite1" duration-ms="14344" started-at="2016-01-18T12:15:17Z" finished-at="2016-01-18T12:15:32Z">
     <groups>
     </groups>
-    <test name="TestDB" duration-ms="24189" started-at="2016-01-17T19:53:41Z" finished-at="2016-01-17T19:54:05Z">
+    <test name="TestDB" duration-ms="14344" started-at="2016-01-18T12:15:17Z" finished-at="2016-01-18T12:15:32Z">
       <class name="db.tests.TestDB">
-        <test-method status="PASS" signature="init()[pri:0, instance:db.tests.TestDB@89713]" name="init" is-config="true" duration-ms="5927" started-at="2016-01-17T22:53:41Z" finished-at="2016-01-17T22:53:47Z">
+        <test-method status="PASS" signature="init()[pri:0, instance:db.tests.TestDB@66d23e4a]" name="init" is-config="true" duration-ms="10826" started-at="2016-01-18T15:15:17Z" finished-at="2016-01-18T15:15:28Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="FAIL" signature="testUntitled()[pri:0, instance:db.tests.TestDB@89713]" name="testUntitled" duration-ms="18248" started-at="2016-01-17T22:53:47Z" finished-at="2016-01-17T22:54:05Z">
-          <exception class="java.lang.AssertionError">
+        <test-method status="FAIL" signature="testUntitled()[pri:0, instance:db.tests.TestDB@66d23e4a]" name="testUntitled" duration-ms="3503" started-at="2016-01-18T15:15:28Z" finished-at="2016-01-18T15:15:32Z">
+          <exception class="java.lang.NullPointerException">
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError
-	at db.tests.TestDB.testUntitled(TestDB.java:26)
+              <![CDATA[java.lang.NullPointerException
+	at com.danco.bpc.service.impl.TMA.TmtMovActcTeServiceImpl.addRecord(TmtMovActcTeServiceImpl.java:23)
+	at com.danco.bpc.service.impl.TMA.TmtMovActcTeServiceImpl.addRecord(TmtMovActcTeServiceImpl.java:1)
+	at db.tests.TestDB.testUntitled(TestDB.java:31)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -42,11 +44,11 @@
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testUntitled -->
-        <test-method status="PASS" signature="stop()[pri:0, instance:db.tests.TestDB@89713]" name="stop" is-config="true" duration-ms="2635" started-at="2016-01-17T22:54:05Z" finished-at="2016-01-17T22:54:08Z">
+        <test-method status="PASS" signature="stop()[pri:0, instance:db.tests.TestDB@66d23e4a]" name="stop" is-config="true" duration-ms="1374" started-at="2016-01-18T15:15:32Z" finished-at="2016-01-18T15:15:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- stop -->

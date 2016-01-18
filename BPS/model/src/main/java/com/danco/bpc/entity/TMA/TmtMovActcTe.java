@@ -1,198 +1,276 @@
 package com.danco.bpc.entity.TMA;
 
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import com.danco.bpc.entity.api.AbstractBaseEntity;
 
 @Table(name = "TMT_MOV_ACTC", catalog = "mkyong")
 @Entity
-public class TmtMovActc extends AbstractBaseEntity implements java.io.Serializable, Comparable<TmtMovActc> {
+public class TmtMovActcTe extends AbstractBaseEntity implements java.io.Serializable, Comparable<TmtMovActcTe> {
 
 	private static final long serialVersionUID = 1L;
-	@Id
 	@Column(name = "CMTQPART")
-	private Long cmtqpart;
-	@Column(name = "CMTPALTA")
-	private Calendar cmtpalta;
+	private Long cmtqpart = (long) 3;
+	@Column(name = "CMTPALTA", columnDefinition = "DATE DEFAULT CURRENT_DATE")
+	private Calendar cmtpalta = Calendar.getInstance();
 	@Column(name = "CP0LAPPL")
-	private Long cp0lappl;
+	private Long cp0lappl = (long) 22;
 	@Column(name = "CMTQNSES")
-	private Long cmtqnses;
+	private Long cmtqnses = (long) 8424;
+	@Id
+	@SequenceGenerator(name = "TMT_MOV_ACTC_INT_ID", sequenceName = "TMT_MOV_ACTC_INT_ID")
+	@GeneratedValue(generator = "TMT_MOV_ACTC_INT_ID")
 	@Column(name = "CMTQNMOV")
 	private Long cmtqnmov;
 	@Column(name = "CM0LTMOV")
-	private Long cm0ltmov;
+	private Long cm0ltmov = (long) 23;
+	@Column(name = "CMTMCRTS")
+	private String cmtmcrts = "1";
+	@Column(name = "CMTMFUNC")
+	private String cmtmfunc = "1";
+	@Column(name = "CMTMCLSR")
+	private String cmtmclsr = "1";
+	@Column(name = "CMTMSEAD")
+	private String cmtmsead = "1";
+	@Column(name = "CMTMACCI")
+	private String cmtmacci = "0";
+	@Column(name = "CMTMCOME")
+	private String cmtmcome = "1";
+	@Column(name = "CMTMCUEN")
+	private String cmtmcuen = "1";
+	@Column(name = "CMTMIDTC")
+	private String cmtmidtc = "1";
+	@Column(name = "CMTMNUAB")
+	private String cmtmnuab = "1";
+	@Column(name = "CMTMNUAA")
+	private String cmtmnuaa = "1";
+	@Column(name = "CMTMNUCA")
+	private String cmtmnuca = "1";
+	@Column(name = "CMTMNUAC")
+	private String cmtmnuac = "1";
+	@Column(name = "CMTMIMAB")
+	private String cmtmimab = "1";
+	@Column(name = "CMTMIMAA")
+	private String cmtmimaa = "1";
+	@Column(name = "CMTMIMCA")
+	private String cmtmimca = "1";
+	@Column(name = "CMTMIMAC")
+	private String cmtmimac = "1";
+	@Column(name = "CMTMIMTI")
+	private String cmtmimti = "1";
+	@Column(name = "CMTMIMTA")
+	private String cmtmimta = "0";
+	@Column(name = "CMTMIMTC")
+	private String cmtmimtc = "0";
+	@Column(name = "CMTMENSA")
+	private String cmtmensa = "1";
+	@Column(name = "CMTMRESO")
+	private String cmtmreso = "0";
+	@Column(name = "CMTMIEBC")
+	private String cmtmiebc = "1";
+	@Column(name = "CMTMERRO")
+	private String cmtmerro = "0";
+	@Column(name = "CMTMNCUE")
+	private String cmtmncue = "0";
+	@Column(name = "CMTVNULO")
+	private String cmtvnulo = "0000000";
 	@Column(name = "C0DLCIER")
-	private Long c0dlcier;
+	private Long c0dlcier = (long) 630332;
 	@Column(name = "CMTPTRAN")
-	private Long cmtptran;
+	private Long cmtptran = new Long("150429032816");
 	@Column(name = "CMTQIDTR")
-	private Long cmtqidtr;
+	private Long cmtqidtr = (long) 35;
 	@Column(name = "CMTLMENS")
-	private Long cmtlmens;
+	private Long cmtlmens = (long) 1520;
 	@Column(name = "CM4LFMEN")
-	private Long cm4lfmen;
+	private Long cm4lfmen = (long) 500;
 	@Column(name = "C42LCLSR")
-	private Long c42lclsr;
+	private Long c42lclsr = (long) 56;
 	@Column(name = "CMTQSEAD")
-	private Long cmtqsead;
+	private Long cmtqsead = (long) 160412;
 	@Column(name = "CM1LRESP")
-	private Long cm1lresp;
+	private Long cm1lresp = (long) 0;
 	@Column(name = "C43LECA")
-	private Long c43leca;
+	private Long c43leca = (long) 175;
 	@Column(name = "C43LCOME")
-	private Long c43lcome;
+	private Long c43lcome = (long) 2950;
+	@Column(name = "C43CCHEC")
+	private String c43cchec = "3";
 	@Column(name = "C00LTIPO")
-	private Long c00ltipo;
+	private Long c00ltipo = (long) 0;
 	@Column(name = "C00LCSB")
-	private Long c00lcsb;
+	private Long c00lcsb = (long) 3058;
 	@Column(name = "C45LCSB")
-	private Long c45lcsb;
+	private Long c45lcsb = (long) 0;
 	@Column(name = "CMTQNCTA")
-	private Integer cmtqncta;
+	private int cmtqncta = 1000000001;
+	@Column(name = "C20CCOME")
+	private String c20ccome = "001750000029503";
 	@Column(name = "C20LORDE")
-	private Long c20lorde;
+	private Long c20lorde = (long) 0;
 	@Column(name = "C33LORDE")
-	private Long c33lorde;
+	private Long c33lorde = (long) 0;
 	@Column(name = "CMTLACUM")
-	private Long cmtlacum;
+	private Long cmtlacum = (long) 0;
 	@Column(name = "CMTIABON")
-	private Long cmtiabon;
+	private Long cmtiabon = (long) 0;
 	@Column(name = "CMTIANAB")
-	private Long cmtianab;
+	private Long cmtianab = (long) 0;
 	@Column(name = "CMTICARG")
-	private Long cmticarg;
+	private Long cmticarg = (long) 33;
 	@Column(name = "CMTIANCA")
-	private Long cmtianca;
+	private Long cmtianca = (long) 0;
 	@Column(name = "CMTJABON")
-	private Long cmtjabon;
+	private Long cmtjabon = (long) 0;
 	@Column(name = "CMTJANAB")
-	private Long cmtjanab;
+	private Long cmtjanab = (long) 0;
 	@Column(name = "CMTJCARG")
-	private Long cmtjcarg;
+	private Long cmtjcarg = (long) 123636;
 	@Column(name = "CMTJANCA")
-	private Long cmtjanca;
+	private Long cmtjanca = (long) 0;
 	@Column(name = "CMTJTINT")
-	private Long cmtjtint;
+	private Long cmtjtint = new Long("-123636");
 	@Column(name = "CMTJTABO")
-	private Long cmtjtabo;
+	private Long cmtjtabo = (long) 0;
 	@Column(name = "CMTJTCAR")
-	private Long cmtjtcar;
+	private Long cmtjtcar = (long) 0;
 	@Column(name = "CMTPMVEN")
-	private Calendar cmtpmven;
+	private Calendar cmtpmven = new GregorianCalendar(2013, 0, 31);
 	@Column(name = "CMTPMVSA")
-	private Calendar cmtpmvsa;
+	private Calendar cmtpmvsa = new GregorianCalendar(2013, 0, 31);
 	@Column(name = "C0DLCIE1")
-	private Long c0dlcie1;
+	private Long c0dlcie1 = (long) 220444;
+	@Column(name = "CMTMIEAS")
+	private String cmtmieas = "";
+	@Column(name = "CMTQERRO")
+	private String cmtqerro = "000";
 	@Column(name = "C00LTIP1")
-	private Long c00ltip1;
+	private Long c00ltip1 = (long) 0;
 	@Column(name = "C00LCSB1")
-	private Long c00lcsb1;
+	private Long c00lcsb1 = (long) 0;
 	@Column(name = "C45LCSB1")
-	private Long c45lcsb1;
+	private Long c45lcsb1 = (long) 0;
 	@Column(name = "CMTQNCT1")
-	private Integer cmtqnct1;
+	private int cmtqnct1 = 0;
+	@Column(name = "CMTVNCTA")
+	private String cmtvncta = "";
+	@Column(name = "CMTVNCT1")
+	private String cmtvnct1 = "                    ";
 	@Column(name = "CMTQREME")
-	private Long cmtqreme;
+	private Long cmtqreme = (long) 0;
 	@Column(name = "CMTQSESI")
-	private Long cmtqsesi;
+	private Long cmtqsesi = (long) 0;
+	@Column(name = "CMTNTERM")
+	private String cmtnterm = "M15P";
+	@Column(name = "CMTMP33")
+	private String cmtmp33 = "0";
 	@Column(name = "C0DLP33")
-	private Long c0dlp33;
+	private Long c0dlp33 = (long) 0;
 	@Column(name = "CD1LTDTO")
-	private Long cd1ltdto;
+	private Long cd1ltdto = (long) 0;
 	@Column(name = "CD5JIFIJ")
-	private Double cd5jifij;
+	private Double cd5jifij = (double) 0;
 	@Column(name = "CD5JIPCT")
-	private Double cd5jipct;
+	private Double cd5jipct = (double) 0;
 	@Column(name = "CMTJIDTO")
-	private Long cmtjidto;
+	private Long cmtjidto = (long) 0;
+	@Column(name = "CMTMDDTO")
+	private String cmtmddto = "0";
 	@Column(name = "CA0LTECL")
-	private Long ca0ltecl;
+	private Long ca0ltecl = (long) 0;
+	@Column(name = "CMTMNSIC")
+	private String cmtmnsic = "0";
 	@Column(name = "CMTQNSIC")
-	private Long cmtqnsic;
+	private Long cmtqnsic = (long) 0;
+	@Column(name = "CMTMAGRA")
+	private String cmtmagra = "0";
 	@Column(name = "C00LCSBA_AGR")
-	private Long c00lcsba_agr;
+	private Long c00lcsba_agr = (long) 0;
+	@Column(name = "CMTMICIE")
+	private String cmtmicie = "1";
+	@Column(name = "CMTMCIER")
+	private String cmtmcier = "9";
+	@Column(name = "CMTMCIER_SIO")
+	private String cmtmcier_sio;
 	@Column(name = "C0DLCIER_SIO")
-	private Long c0dlcier_sio;
+	private Long c0dlcier_sio = (long) 0;
+	@Column(name = "CMTMACTI")
+	private String cmtmacti = "0";
 	@Column(name = "C41LACTI")
-	private Long c41lacti;
+	private Long c41lacti = (long) 0;
 	@Column(name = "C40LACTI")
-	private Long c40lacti;
+	private Long c40lacti = (long) 0;
+	@Column(name = "CMTMIMMX")
+	private String cmtmimmx = "0";
 	@Column(name = "CMTJIMAX")
-	private Long cmtjimax;
+	private Long cmtjimax = (long) 0;
+	@Column(name = "CMTMFSES_SIO")
+	private String cmtmfses_sio;
 	@Column(name = "CMTFSESI_SIO")
-	private Long cmtfsesi_sio;
+	private Long cmtfsesi_sio = (long) 0;
+	@Column(name = "CMTMNSES_SIO")
+	private String cmtmnses_sio = "0";
 	@Column(name = "CMTQNSES_SIO")
-	private Long cmtqnses_sio;
+	private Long cmtqnses_sio = (long) 0;
+	@Column(name = "CMTMDCCJ")
+	private String cmtmdccj = "0";
 	@Column(name = "CE0LMONE")
-	private Long ce0lmone;
+	private Long ce0lmone = (long) 0;
 	@Column(name = "CMTJREIN")
-	private Long cmtjrein;
+	private Long cmtjrein = (long) 0;
 	@Column(name = "CMTJINGR")
-	private Long cmtjingr;
+	private Long cmtjingr = (long) 0;
 	@Column(name = "CMTJTALO")
-	private Long cmtjtalo;
+	private Long cmtjtalo = (long) 0;
 	@Column(name = "CMTJOTRO")
-	private Long cmtjotro;
+	private Long cmtjotro = (long) 0;
 	@Column(name = "CMTIOPER")
-	private Long cmtioper;
+	private Long cmtioper = (long) 0;
 	@Column(name = "CMTIREIN")
-	private Long cmtirein;
+	private Long cmtirein = (long) 0;
 	@Column(name = "CMTIIGEF")
-	private Long cmtiigef;
+	private Long cmtiigef = (long) 0;
 	@Column(name = "CMTIIGTL")
-	private Long cmtiigtl;
+	private Long cmtiigtl = (long) 0;
 	@Column(name = "CMTITRSP")
-	private Long cmtitrsp;
+	private Long cmtitrsp = (long) 0;
 	@Column(name = "CMTITRSF")
-	private Long cmtitrsf;
+	private Long cmtitrsf = (long) 0;
 	@Column(name = "CMTICSAL")
-	private Long cmticsal;
+	private Long cmticsal = (long) 0;
 	@Column(name = "CMTIOTRO")
-	private Long cmtiotro;
+	private Long cmtiotro = (long) 0;
 	@Column(name = "CMTIULMV")
-	private Long cmtiulmv;
+	private Long cmtiulmv = (long) 0;
 	@Column(name = "CMTIFTRP")
-	private Long cmtiftrp;
+	private Long cmtiftrp = (long) 0;
 	@Column(name = "CMTICPIN")
-	private Long cmticpin;
+	private Long cmticpin = (long) 0;
 	@Column(name = "CMTICIDI")
-	private Long cmticidi;
+	private Long cmticidi = (long) 0;
 	@Column(name = "CMTIIGTL_EUR")
-	private Long cmtiigtl_eur;
+	private Long cmtiigtl_eur = (long) 0;
 	@Column(name = "CMTITRSP_EUR")
-	private Long cmtitrsp_eur;
+	private Long cmtitrsp_eur = (long) 0;
 	@Column(name = "CMTITRSF_EUR")
-	private Long cmtitrsf_eur;
+	private Long cmtitrsf_eur = (long) 0;
 	@Column(name = "CMTIOTRO_EUR")
-	private Long cmtiotro_eur;
+	private Long cmtiotro_eur = (long) 0;
 	@Column(name = "SV_INTERNAL_ID")
-	private Long sv_internal_id;
+	private Long sv_internal_id = null;
 	@Column(name = "IS_NEW_FIELD")
-	private Boolean is_new_field;
+	private Boolean is_new_field = true;
 
-	public TmtMovActc() {
+	public TmtMovActcTe() {
 		super();
-	}
-
-	@Override
-	public Long getId() {
-		return null;
-	}
-
-	@Override
-	public void setId(Long id) {
-
-	}
-
-	@Override
-	public int compareTo(TmtMovActc o) {
-		return 0;
 	}
 
 	public Long getCmtqpart() {
@@ -241,6 +319,206 @@ public class TmtMovActc extends AbstractBaseEntity implements java.io.Serializab
 
 	public void setCm0ltmov(Long cm0ltmov) {
 		this.cm0ltmov = cm0ltmov;
+	}
+
+	public String getCmtmcrts() {
+		return cmtmcrts;
+	}
+
+	public void setCmtmcrts(String cmtmcrts) {
+		this.cmtmcrts = cmtmcrts;
+	}
+
+	public String getCmtmfunc() {
+		return cmtmfunc;
+	}
+
+	public void setCmtmfunc(String cmtmfunc) {
+		this.cmtmfunc = cmtmfunc;
+	}
+
+	public String getCmtmclsr() {
+		return cmtmclsr;
+	}
+
+	public void setCmtmclsr(String cmtmclsr) {
+		this.cmtmclsr = cmtmclsr;
+	}
+
+	public String getCmtmsead() {
+		return cmtmsead;
+	}
+
+	public void setCmtmsead(String cmtmsead) {
+		this.cmtmsead = cmtmsead;
+	}
+
+	public String getCmtmacci() {
+		return cmtmacci;
+	}
+
+	public void setCmtmacci(String cmtmacci) {
+		this.cmtmacci = cmtmacci;
+	}
+
+	public String getCmtmcome() {
+		return cmtmcome;
+	}
+
+	public void setCmtmcome(String cmtmcome) {
+		this.cmtmcome = cmtmcome;
+	}
+
+	public String getCmtmcuen() {
+		return cmtmcuen;
+	}
+
+	public void setCmtmcuen(String cmtmcuen) {
+		this.cmtmcuen = cmtmcuen;
+	}
+
+	public String getCmtmidtc() {
+		return cmtmidtc;
+	}
+
+	public void setCmtmidtc(String cmtmidtc) {
+		this.cmtmidtc = cmtmidtc;
+	}
+
+	public String getCmtmnuab() {
+		return cmtmnuab;
+	}
+
+	public void setCmtmnuab(String cmtmnuab) {
+		this.cmtmnuab = cmtmnuab;
+	}
+
+	public String getCmtmnuaa() {
+		return cmtmnuaa;
+	}
+
+	public void setCmtmnuaa(String cmtmnuaa) {
+		this.cmtmnuaa = cmtmnuaa;
+	}
+
+	public String getCmtmnuca() {
+		return cmtmnuca;
+	}
+
+	public void setCmtmnuca(String cmtmnuca) {
+		this.cmtmnuca = cmtmnuca;
+	}
+
+	public String getCmtmnuac() {
+		return cmtmnuac;
+	}
+
+	public void setCmtmnuac(String cmtmnuac) {
+		this.cmtmnuac = cmtmnuac;
+	}
+
+	public String getCmtmimab() {
+		return cmtmimab;
+	}
+
+	public void setCmtmimab(String cmtmimab) {
+		this.cmtmimab = cmtmimab;
+	}
+
+	public String getCmtmimaa() {
+		return cmtmimaa;
+	}
+
+	public void setCmtmimaa(String cmtmimaa) {
+		this.cmtmimaa = cmtmimaa;
+	}
+
+	public String getCmtmimca() {
+		return cmtmimca;
+	}
+
+	public void setCmtmimca(String cmtmimca) {
+		this.cmtmimca = cmtmimca;
+	}
+
+	public String getCmtmimac() {
+		return cmtmimac;
+	}
+
+	public void setCmtmimac(String cmtmimac) {
+		this.cmtmimac = cmtmimac;
+	}
+
+	public String getCmtmimti() {
+		return cmtmimti;
+	}
+
+	public void setCmtmimti(String cmtmimti) {
+		this.cmtmimti = cmtmimti;
+	}
+
+	public String getCmtmimta() {
+		return cmtmimta;
+	}
+
+	public void setCmtmimta(String cmtmimta) {
+		this.cmtmimta = cmtmimta;
+	}
+
+	public String getCmtmimtc() {
+		return cmtmimtc;
+	}
+
+	public void setCmtmimtc(String cmtmimtc) {
+		this.cmtmimtc = cmtmimtc;
+	}
+
+	public String getCmtmensa() {
+		return cmtmensa;
+	}
+
+	public void setCmtmensa(String cmtmensa) {
+		this.cmtmensa = cmtmensa;
+	}
+
+	public String getCmtmreso() {
+		return cmtmreso;
+	}
+
+	public void setCmtmreso(String cmtmreso) {
+		this.cmtmreso = cmtmreso;
+	}
+
+	public String getCmtmiebc() {
+		return cmtmiebc;
+	}
+
+	public void setCmtmiebc(String cmtmiebc) {
+		this.cmtmiebc = cmtmiebc;
+	}
+
+	public String getCmtmerro() {
+		return cmtmerro;
+	}
+
+	public void setCmtmerro(String cmtmerro) {
+		this.cmtmerro = cmtmerro;
+	}
+
+	public String getCmtmncue() {
+		return cmtmncue;
+	}
+
+	public void setCmtmncue(String cmtmncue) {
+		this.cmtmncue = cmtmncue;
+	}
+
+	public String getCmtvnulo() {
+		return cmtvnulo;
+	}
+
+	public void setCmtvnulo(String cmtvnulo) {
+		this.cmtvnulo = cmtvnulo;
 	}
 
 	public Long getC0dlcier() {
@@ -323,6 +601,14 @@ public class TmtMovActc extends AbstractBaseEntity implements java.io.Serializab
 		this.c43lcome = c43lcome;
 	}
 
+	public String getC43cchec() {
+		return c43cchec;
+	}
+
+	public void setC43cchec(String c43cchec) {
+		this.c43cchec = c43cchec;
+	}
+
 	public Long getC00ltipo() {
 		return c00ltipo;
 	}
@@ -347,12 +633,20 @@ public class TmtMovActc extends AbstractBaseEntity implements java.io.Serializab
 		this.c45lcsb = c45lcsb;
 	}
 
-	public Integer getCmtqncta() {
+	public int getCmtqncta() {
 		return cmtqncta;
 	}
 
-	public void setCmtqncta(Integer cmtqncta) {
+	public void setCmtqncta(int cmtqncta) {
 		this.cmtqncta = cmtqncta;
+	}
+
+	public String getC20ccome() {
+		return c20ccome;
+	}
+
+	public void setC20ccome(String c20ccome) {
+		this.c20ccome = c20ccome;
 	}
 
 	public Long getC20lorde() {
@@ -491,6 +785,22 @@ public class TmtMovActc extends AbstractBaseEntity implements java.io.Serializab
 		this.c0dlcie1 = c0dlcie1;
 	}
 
+	public String getCmtmieas() {
+		return cmtmieas;
+	}
+
+	public void setCmtmieas(String cmtmieas) {
+		this.cmtmieas = cmtmieas;
+	}
+
+	public String getCmtqerro() {
+		return cmtqerro;
+	}
+
+	public void setCmtqerro(String cmtqerro) {
+		this.cmtqerro = cmtqerro;
+	}
+
 	public Long getC00ltip1() {
 		return c00ltip1;
 	}
@@ -515,12 +825,28 @@ public class TmtMovActc extends AbstractBaseEntity implements java.io.Serializab
 		this.c45lcsb1 = c45lcsb1;
 	}
 
-	public Integer getCmtqnct1() {
+	public int getCmtqnct1() {
 		return cmtqnct1;
 	}
 
-	public void setCmtqnct1(Integer cmtqnct1) {
+	public void setCmtqnct1(int cmtqnct1) {
 		this.cmtqnct1 = cmtqnct1;
+	}
+
+	public String getCmtvncta() {
+		return cmtvncta;
+	}
+
+	public void setCmtvncta(String cmtvncta) {
+		this.cmtvncta = cmtvncta;
+	}
+
+	public String getCmtvnct1() {
+		return cmtvnct1;
+	}
+
+	public void setCmtvnct1(String cmtvnct1) {
+		this.cmtvnct1 = cmtvnct1;
 	}
 
 	public Long getCmtqreme() {
@@ -537,6 +863,22 @@ public class TmtMovActc extends AbstractBaseEntity implements java.io.Serializab
 
 	public void setCmtqsesi(Long cmtqsesi) {
 		this.cmtqsesi = cmtqsesi;
+	}
+
+	public String getCmtnterm() {
+		return cmtnterm;
+	}
+
+	public void setCmtnterm(String cmtnterm) {
+		this.cmtnterm = cmtnterm;
+	}
+
+	public String getCmtmp33() {
+		return cmtmp33;
+	}
+
+	public void setCmtmp33(String cmtmp33) {
+		this.cmtmp33 = cmtmp33;
 	}
 
 	public Long getC0dlp33() {
@@ -579,12 +921,28 @@ public class TmtMovActc extends AbstractBaseEntity implements java.io.Serializab
 		this.cmtjidto = cmtjidto;
 	}
 
+	public String getCmtmddto() {
+		return cmtmddto;
+	}
+
+	public void setCmtmddto(String cmtmddto) {
+		this.cmtmddto = cmtmddto;
+	}
+
 	public Long getCa0ltecl() {
 		return ca0ltecl;
 	}
 
 	public void setCa0ltecl(Long ca0ltecl) {
 		this.ca0ltecl = ca0ltecl;
+	}
+
+	public String getCmtmnsic() {
+		return cmtmnsic;
+	}
+
+	public void setCmtmnsic(String cmtmnsic) {
+		this.cmtmnsic = cmtmnsic;
 	}
 
 	public Long getCmtqnsic() {
@@ -595,6 +953,14 @@ public class TmtMovActc extends AbstractBaseEntity implements java.io.Serializab
 		this.cmtqnsic = cmtqnsic;
 	}
 
+	public String getCmtmagra() {
+		return cmtmagra;
+	}
+
+	public void setCmtmagra(String cmtmagra) {
+		this.cmtmagra = cmtmagra;
+	}
+
 	public Long getC00lcsba_agr() {
 		return c00lcsba_agr;
 	}
@@ -603,12 +969,44 @@ public class TmtMovActc extends AbstractBaseEntity implements java.io.Serializab
 		this.c00lcsba_agr = c00lcsba_agr;
 	}
 
+	public String getCmtmicie() {
+		return cmtmicie;
+	}
+
+	public void setCmtmicie(String cmtmicie) {
+		this.cmtmicie = cmtmicie;
+	}
+
+	public String getCmtmcier() {
+		return cmtmcier;
+	}
+
+	public void setCmtmcier(String cmtmcier) {
+		this.cmtmcier = cmtmcier;
+	}
+
+	public String getCmtmcier_sio() {
+		return cmtmcier_sio;
+	}
+
+	public void setCmtmcier_sio(String cmtmcier_sio) {
+		this.cmtmcier_sio = cmtmcier_sio;
+	}
+
 	public Long getC0dlcier_sio() {
 		return c0dlcier_sio;
 	}
 
 	public void setC0dlcier_sio(Long c0dlcier_sio) {
 		this.c0dlcier_sio = c0dlcier_sio;
+	}
+
+	public String getCmtmacti() {
+		return cmtmacti;
+	}
+
+	public void setCmtmacti(String cmtmacti) {
+		this.cmtmacti = cmtmacti;
 	}
 
 	public Long getC41lacti() {
@@ -627,12 +1025,28 @@ public class TmtMovActc extends AbstractBaseEntity implements java.io.Serializab
 		this.c40lacti = c40lacti;
 	}
 
+	public String getCmtmimmx() {
+		return cmtmimmx;
+	}
+
+	public void setCmtmimmx(String cmtmimmx) {
+		this.cmtmimmx = cmtmimmx;
+	}
+
 	public Long getCmtjimax() {
 		return cmtjimax;
 	}
 
 	public void setCmtjimax(Long cmtjimax) {
 		this.cmtjimax = cmtjimax;
+	}
+
+	public String getCmtmfses_sio() {
+		return cmtmfses_sio;
+	}
+
+	public void setCmtmfses_sio(String cmtmfses_sio) {
+		this.cmtmfses_sio = cmtmfses_sio;
 	}
 
 	public Long getCmtfsesi_sio() {
@@ -643,12 +1057,28 @@ public class TmtMovActc extends AbstractBaseEntity implements java.io.Serializab
 		this.cmtfsesi_sio = cmtfsesi_sio;
 	}
 
+	public String getCmtmnses_sio() {
+		return cmtmnses_sio;
+	}
+
+	public void setCmtmnses_sio(String cmtmnses_sio) {
+		this.cmtmnses_sio = cmtmnses_sio;
+	}
+
 	public Long getCmtqnses_sio() {
 		return cmtqnses_sio;
 	}
 
 	public void setCmtqnses_sio(Long cmtqnses_sio) {
 		this.cmtqnses_sio = cmtqnses_sio;
+	}
+
+	public String getCmtmdccj() {
+		return cmtmdccj;
+	}
+
+	public void setCmtmdccj(String cmtmdccj) {
+		this.cmtmdccj = cmtmdccj;
 	}
 
 	public Long getCe0lmone() {
@@ -835,4 +1265,18 @@ public class TmtMovActc extends AbstractBaseEntity implements java.io.Serializab
 		this.is_new_field = is_new_field;
 	}
 
+	@Override
+	public Long getId() {
+		return null;
+	}
+
+	@Override
+	public void setId(Long id) {
+
+	}
+
+	@Override
+	public int compareTo(TmtMovActcTe arg0) {
+		return 0;
+	}
 }
