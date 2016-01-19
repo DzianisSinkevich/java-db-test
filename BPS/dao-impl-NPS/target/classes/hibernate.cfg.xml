@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<mapping class="com.danco.bpc.entity.NPS.BatchFile" />
+		<mapping class="com.danco.bpc.entity.NPS.ConfigurationOld" />
+		<mapping class="com.danco.bpc.entity.NPS.DatabaseChangeLogLock" />
+		<mapping class="com.danco.bpc.entity.NPS.DatabaseChangeLog" />
+		<mapping class="com.danco.bpc.entity.NPS.EditTransRules" />
+		<mapping class="com.danco.bpc.entity.NPS.FibrnBatch" />
+		<mapping class="com.danco.bpc.entity.NPS.FibrnRecord" />
+		<mapping class="com.danco.bpc.entity.NPS.MusBatch" />
+		<mapping class="com.danco.bpc.entity.NPS.MusRecord" />
+	</session-factory>
+</hibernate-configuration>

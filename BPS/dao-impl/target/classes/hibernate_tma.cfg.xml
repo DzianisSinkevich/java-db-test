@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+    	<property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+        <property name="hibernate.connection.url">jdbc:oracle:thin:@redsys.bt.bpc.in:1521/sv</property>
+        <property name="hibernate.connection.username">TMA_TMT</property>
+        <property name="hibernate.connection.password">Tma_TmT</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property>
+        <property name="hibernate.current_session_context_class">thread</property>
+        <mapping class="com.danco.bpc.entity.TMA.BatchData"/>
+        <mapping class="com.danco.bpc.entity.TMA.TmaData"/>
+        <mapping class="com.danco.bpc.entity.TMA.TmtData"/>
+        <mapping class="com.danco.bpc.entity.TMA.TmaMovActc"/>
+        <mapping class="com.danco.bpc.entity.TMA.TmtMovActcTe"/>
+        <mapping class="com.danco.bpc.entity.TMA.TmtMovActcTr"/>
+        <mapping class="com.danco.bpc.entity.TMA.TmtSession"/>
+        <mapping class="com.danco.bpc.entity.TMA.TmtSessionMessage"/>
+    </session-factory>
+</hibernate-configuration>
