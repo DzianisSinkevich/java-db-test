@@ -4,22 +4,27 @@ import java.io.IOException;
 
 import org.testng.annotations.Test;
 
-import pages.TestBase;
-
+import com.danco.bpc.entity.TMA.TmaMovActc;
+import com.danco.bpc.service.api.TMA.ITmaMovActcService;
+import com.danco.bpc.service.impl.TMA.TmaMovActcServiceImpl;
 import com.danco.bpc.util.SessionPropertyReader;
 
+import pages.TestBase;
+
 public class OpenSession extends TestBase {
+	private ITmaMovActcService tmaMovActcService = new TmaMovActcServiceImpl();
 
 	@Test
 	public void testUntitled() throws InterruptedException, IOException {
 		SessionPropertyReader pr = new SessionPropertyReader();
-		pr.setS220444("161801");
-		//System.out.println(pr.getS220444());
-//		app.getUserHelper().loginAs(ADMIN);
-//		app.getNavigationHelper().menuSessionClick();
-//		TmaMovActc tmaMovActc = new TmaMovActc();
-//		assert(!app.getSessionHelper().checkSessionInTableNegative("22_0444-161801"));
-//		tmaMovActc.setCmaqsere(161801);
-//		assert(app.getSessionHelper().checkSessionInTablePositive("22_0444-161801"));
+		TmaMovActc tmaMovActc = new TmaMovActc();
+
+		// app.getUserHelper().loginAs(ADMIN);
+		app.getNavigationHelper().menuSessionClick();
+		assert(!app.getSessionHelper().checkSessionInTableNegative("22_0444-" + pr.getS220444()));
+		tmaMovActc.setCmaqsere(Integer.parseInt(pr.getS220444()));
+		tmaMovActcService.addRecord(tmaMovActc);
+		assert(app.getSessionHelper().checkSessionInTablePositive("22_0444-" + pr.getS220444()));
+		// app.getNavigationHelper().menuLogoutClick();
 	}
 }

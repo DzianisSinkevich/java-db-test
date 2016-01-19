@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Suite1">
-              <span class="suite-name border-passed">Suite1</span>
+              <span class="suite-name border-failed">Suite1</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -49,12 +49,12 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Suite1">
-                    <span>F:\JAVA\java-db-test\BPS\test\src\test\resources\testng.xml</span>
+                    <span>D:\BPC\java-db-test\BPS\test\src\test\resources\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="testlist-Suite1">
-                    <span class="test-stats">1 test</span>
+                    <span class="test-stats">5 tests</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">4 methods, 1 failed,   3 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite1" class="hide-methods failed suite-Suite1"> (hide)</a> <!-- hide-methods failed suite-Suite1 -->
+                      <a href="#" panel-name="suite-Suite1" class="show-methods failed suite-Suite1"> (show)</a> <!-- show-methods failed suite-Suite1 -->
+                    </span>
+                    <div class="method-list-content failed suite-Suite1">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite1" title="db.tests.IsSessionClosed" hash-for-method="testUntitled">testUntitled</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Suite1 -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,7 +116,17 @@
                     <div class="method-list-content passed suite-Suite1">
                       <span>
                         <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite1" title="db.tests.CheckLastSession" hash-for-method="testUntitled">testUntitled</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Suite1" title="db.tests.OpenSession" hash-for-method="testUntitled">testUntitled</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite1" title="db.tests.CloseSession" hash-for-method="testUntitled">testUntitled</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite1 -->
@@ -117,6 +141,88 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite1" class="panel Suite1">
+          <div class="suite-Suite1-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">db.tests.IsSessionClosed</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testUntitled">
+                  </a> <!-- testUntitled -->
+                  <span class="method-name">testUntitled</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: Timed out after 10 seconds. Unable to locate the element
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.47.1&apos;, revision: &apos;unknown&apos;, time: &apos;2015-07-30 11:02:44&apos;
+System info: host: &apos;dancobygro0020&apos;, ip: &apos;192.168.163.1&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_65&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocator.findElement(AjaxElementLocator.java:89)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy16.getText(Unknown Source)
+	at com.danco.bpc.pages.SessionPage.getSessionTe(SessionPage.java:93)
+	at com.danco.bpc.applogic2.SessionHelper2.getAllParameterSession(SessionHelper2.java:72)
+	at db.tests.IsSessionClosed.testUntitled(IsSessionClosed.java:20)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&apos;SessionDatatableForm:sessions_data&apos;]/tr[1]/td[9]/span&quot;}
+  (Session info: chrome=47.0.2526.111)
+  (Driver info: chromedriver=2.20.353145 (343b531d31eeb933ec778dbcf7081628a1396067),platform=Windows NT 6.3 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 16 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.47.1&apos;, revision: &apos;unknown&apos;, time: &apos;2015-07-30 11:02:44&apos;
+System info: host: &apos;dancobygro0020&apos;, ip: &apos;192.168.163.1&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_65&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, chrome={userDataDir=C:\Users\DZIANI~1\AppData\Local\Temp\scoped_dir8080_2839}, takesHeapSnapshot=true, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=47.0.2526.111, platform=WIN8_1, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 662a8728227677fca5a14bcb57980cff
+*** Element info: {Using=xpath, value=//*[@id=&apos;SessionDatatableForm:sessions_data&apos;]/tr[1]/td[9]/span}
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:595)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:445)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:358)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:340)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocator.access$001(AjaxElementLocator.java:41)
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocator$SlowLoadingElement.isLoaded(AjaxElementLocator.java:157)
+	at org.openqa.selenium.support.ui.SlowLoadableComponent.get(SlowLoadableComponent.java:70)
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocator.findElement(AjaxElementLocator.java:87)
+	... 29 more
+... Removed 27 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite1-class-failed -->
+          <div class="suite-Suite1-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">db.tests.CloseSession</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testUntitled">
+                  </a> <!-- testUntitled -->
+                  <span class="method-name">testUntitled</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite1-class-passed -->
+          <div class="suite-Suite1-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">db.tests.CheckLastSession</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testUntitled">
+                  </a> <!-- testUntitled -->
+                  <span class="method-name">testUntitled</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite1-class-passed -->
           <div class="suite-Suite1-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -135,18 +241,64 @@
         </div> <!-- panel Suite1 -->
         <div panel-name="test-xml-Suite1" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">F:\JAVA\java-db-test\BPS\test\src\test\resources\testng.xml</span>
+            <span class="header-content">D:\BPC\java-db-test\BPS\test\src\test\resources\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Suite1&quot; data-provider-thread-count=&quot;1&quot;&gt;
-  &lt;test name=&quot;TestDB&quot;&gt;
+  &lt;test name=&quot;22_0444C&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;db.tests.CheckLastSession&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- 22_0444C --&gt;
+  &lt;test name=&quot;22_0444O&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;db.tests.OpenSession&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- TestDB --&gt;
+  &lt;/test&gt; &lt;!-- 22_0444O --&gt;
+  &lt;test name=&quot;22_0444Cl&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;db.tests.CloseSession&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- 22_0444Cl --&gt;
+  &lt;test name=&quot;22_0444I&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;db.tests.IsSessionClosed&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- 22_0444I --&gt;
+  &lt;test name=&quot;22_0444I(failed)&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;db.tests.IsSessionClosed&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;login&quot;/&gt;
+          &lt;include name=&quot;logout&quot;/&gt;
+          &lt;include name=&quot;stop&quot;/&gt;
+          &lt;include name=&quot;testUntitled&quot;/&gt;
+          &lt;include name=&quot;init&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- db.tests.IsSessionClosed --&gt;
+      &lt;class name=&quot;db.tests.CloseSession&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;stop&quot;/&gt;
+          &lt;include name=&quot;init&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- db.tests.CloseSession --&gt;
+      &lt;class name=&quot;db.tests.CheckLastSession&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;stop&quot;/&gt;
+          &lt;include name=&quot;init&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- db.tests.CheckLastSession --&gt;
+      &lt;class name=&quot;db.tests.OpenSession&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;stop&quot;/&gt;
+          &lt;include name=&quot;init&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- db.tests.OpenSession --&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- 22_0444I(failed) --&gt;
 &lt;/suite&gt; &lt;!-- Suite1 --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -158,7 +310,19 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">TestDB (1 class)</span>
+                <span class="test-name">22_0444C (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">22_0444O (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">22_0444Cl (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">22_0444I (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">22_0444I(failed) (4 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -184,16 +348,28 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(4);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'testUntitled')
 data.setCell(0, 2, 'db.tests.OpenSession')
-data.setCell(0, 3, 17);
+data.setCell(0, 3, 22451);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'testUntitled')
+data.setCell(1, 2, 'db.tests.IsSessionClosed')
+data.setCell(1, 3, 11305);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'testUntitled')
+data.setCell(2, 2, 'db.tests.CheckLastSession')
+data.setCell(2, 3, 3377);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'testUntitled')
+data.setCell(3, 2, 'db.tests.CloseSession')
+data.setCell(3, 3, 636);
 window.suiteTableData['Suite1']= { tableData: data, tableDiv: 'times-div-Suite1'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 17 ms</span>
+              <span class="suite-total-time">Total running time: 37 seconds</span>
               <div id="times-div-Suite1">
               </div> <!-- times-div-Suite1 -->
             </div> <!-- times-div -->
@@ -219,18 +395,76 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">db.tests.OpenSession</div> <!-- chronological-class-name -->
-              <div class="configuration-class before">
-                <span class="method-name">init</span>
+              <div class="chronological-class-name">db.tests.IsSessionClosed</div> <!-- chronological-class-name -->
+              <div class="configuration-suite before">
+                <span class="method-name">login</span>
                 <span class="method-start">0 ms</span>
-              </div> <!-- configuration-class before -->
+              </div> <!-- configuration-suite before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">db.tests.CheckLastSession</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">init</span>
+                <span class="method-start">12053 ms</span>
+              </div> <!-- configuration-test before -->
               <div class="test-method">
                 <span class="method-name">testUntitled</span>
-                <span class="method-start">7573 ms</span>
+                <span class="method-start">12608 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-suite after">
+              <div class="configuration-test after">
                 <span class="method-name">stop</span>
-                <span class="method-start">7605 ms</span>
+                <span class="method-start">15987 ms</span>
+              </div> <!-- configuration-test after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">db.tests.OpenSession</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">init</span>
+                <span class="method-start">15995 ms</span>
+              </div> <!-- configuration-test before -->
+              <div class="test-method">
+                <span class="method-name">testUntitled</span>
+                <span class="method-start">16449 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-test after">
+                <span class="method-name">stop</span>
+                <span class="method-start">38900 ms</span>
+              </div> <!-- configuration-test after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">db.tests.CloseSession</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">init</span>
+                <span class="method-start">38900 ms</span>
+              </div> <!-- configuration-test before -->
+              <div class="test-method">
+                <span class="method-name">testUntitled</span>
+                <span class="method-start">40585 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-test after">
+                <span class="method-name">stop</span>
+                <span class="method-start">41221 ms</span>
+              </div> <!-- configuration-test after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">db.tests.IsSessionClosed</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">init</span>
+                <span class="method-start">41234 ms</span>
+              </div> <!-- configuration-test before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testUntitled</span>
+                <span class="method-start">42044 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-test after">
+                <span class="method-name">stop</span>
+                <span class="method-start">53364 ms</span>
+              </div> <!-- configuration-test after -->
+              <div class="configuration-suite after">
+                <span class="method-name">logout</span>
+                <span class="method-start">53416 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

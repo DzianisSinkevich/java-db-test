@@ -12,7 +12,7 @@ public interface SessionHelper {
 
 	boolean checkSessionInTablePositive(String searchSsid) throws InterruptedException;
 
-	String sessionState(String searchSsid) throws InterruptedException;
-
 	void getAllParameterSession(String ssid, Session currSession) throws InterruptedException;
+	
+	String lastSession(String sessMask) throws InterruptedException;
 }

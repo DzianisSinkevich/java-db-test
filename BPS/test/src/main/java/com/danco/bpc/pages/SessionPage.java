@@ -46,6 +46,9 @@ public class SessionPage extends InternalPage {
 	@FindBy(xpath = "//*[@id='SessionDatatableForm:sessions_data']/tr/td")
 	private WebElement firstElement;
 
+	@FindBy(xpath = "//*[@id='SessionDatatableForm:sessions_data']/tr[1]/td[2]")
+	private WebElement ssidSession;
+	
 	@FindBy(xpath = "//*[@id='SessionDatatableForm:sessions_data']/tr[1]/td[3]")
 	private WebElement stateSession;
 	
@@ -64,6 +67,9 @@ public class SessionPage extends InternalPage {
 	@FindBy(xpath = "//*[@id='SessionDatatableForm:sessions_data']/tr[1]/td[12]/span")
 	private WebElement tfSession;
 
+	@FindBy(xpath = "//*[@role='columnheader'][2]")
+	private WebElement columnHeaderSessionId;
+	
 	public List<WebElement> getSearchedSessions() throws InterruptedException {
 		String str = firstElement.getText();
 		if (!str.equals("No records found.")) {
@@ -123,5 +129,18 @@ public class SessionPage extends InternalPage {
 		String selectAll = Keys.chord(Keys.CONTROL + "a");
 		searchField.sendKeys(selectAll + Keys.DELETE);
 		return pages.sessionPage;
+	}
+	
+	public SessionPage sortingSessions() {
+		columnHeaderSessionId.click();
+		WaitLoadAndDisplayed.isLoadIconVisibility(driver);
+		WaitLoadAndDisplayed.isLoadIconInvisibility(driver);
+		columnHeaderSessionId.click();
+		return pages.sessionPage;
+	} 
+	
+	public String getFirstSession(){
+		String firstSession = ssidSession.getText();
+		return firstSession;
 	}
 }

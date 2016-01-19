@@ -1,7 +1,9 @@
 package pages;
 
 import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
 
 import com.danco.bpc.applogic.ApplicationManager;
 import com.danco.bpc.applogic2.ApplicationManager2;
@@ -13,13 +15,31 @@ public class TestBase {
 
 	protected ApplicationManager app;
 
-	@BeforeClass
+	@BeforeSuite
+	public void login() {
+		app = new ApplicationManager2();
+		 System.out.println("Before suite");
+		app.getUserHelper().loginAs(ADMIN);
+	}
+
+	@BeforeTest
 	public void init() {
 		app = new ApplicationManager2();
+		 System.out.println("Before test");
+		// app.getUserHelper().loginAs(ADMIN);
+	}
+
+	@AfterTest
+	public void stop() {
+		// app.getNavigationHelper().menuLogoutClick();
+		 System.out.println("After test");
+//		app.stop();
 	}
 
 	@AfterSuite
-	public void stop() {
+	public void logout() {
+		app.getNavigationHelper().menuLogoutClick();
+		 System.out.println("After suite");
 		app.stop();
 	}
 

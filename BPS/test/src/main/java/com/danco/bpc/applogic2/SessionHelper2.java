@@ -67,17 +67,18 @@ public class SessionHelper2 extends DriverBasedHelper implements SessionHelper {
 	}
 
 	@Override
-	public String sessionState(String sessionSsid) throws InterruptedException {
-		List<Session> sessions = search(sessionSsid);
-		for (Session sess : sessions) {
-
-		}
-		return null;
+	public void getAllParameterSession(String ssid, Session currSession) throws InterruptedException {
+		pages.sessionPage.clickSearchLink(ssid).getSessionState(currSession).getSessionStatus(currSession)
+				.getSessionTe(currSession).getSessionTf(currSession).getSessionTr(currSession)
+				.getSessionTsv(currSession);
 	}
 
 	@Override
-	public void getAllParameterSession(String ssid, Session currSession) throws InterruptedException {
-		pages.sessionPage.clickSearchLink(ssid).getSessionState(currSession).getSessionStatus(currSession).getSessionTe(currSession).getSessionTf(currSession)
-				.getSessionTr(currSession).getSessionTsv(currSession);
+	public String lastSession(String sessMask) throws InterruptedException {
+		pages.sessionPage.clickSearchLink(sessMask + "%").sortingSessions();
+		String fullLastSession = pages.sessionPage.getFirstSession();
+		System.out.println(
+				"Last session - " + fullLastSession.substring(fullLastSession.indexOf("-") + 1, fullLastSession.length()));
+		return fullLastSession.substring((fullLastSession.indexOf("-") + 1), fullLastSession.length());
 	}
 }
