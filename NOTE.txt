@@ -1,0 +1,3 @@
+For run test via profile, where "testProfile" - is name profile in pom-file.
+In jenkins command for rum maven:
+test -PtestProfile
