@@ -1,5 +1,6 @@
 package com.danco.bpc.applogic2;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,6 +9,7 @@ import org.openqa.selenium.support.FindBy;
 
 import com.danco.bpc.applogic.SessionHelper;
 import com.danco.bpc.model.Session;
+import com.danco.bpc.util.SessionPropertyReader;
 
 public class SessionHelper2 extends DriverBasedHelper implements SessionHelper {
 
@@ -67,18 +69,22 @@ public class SessionHelper2 extends DriverBasedHelper implements SessionHelper {
 	}
 
 	@Override
-	public void getAllParameterSession(String ssid, Session currSession) throws InterruptedException {
-		pages.sessionPage.clickSearchLink(ssid).getSessionState(currSession).getSessionStatus(currSession)
-				.getSessionTe(currSession).getSessionTf(currSession).getSessionTr(currSession)
-				.getSessionTsv(currSession);
+	public void getAllParameterSession(String ssid, Session currSession) throws InterruptedException, IOException {
+		SessionPropertyReader pr = new SessionPropertyReader();
+		String sessMask = ssid.substring(0, ssid.length() - 4);
+		if ((ssid.substring(ssid.length() - 4, ssid.length())).equals("null")) {
+			pr.setS220444(lastSession(sessMask));
+			ssid = sessMask + pr.getS220444();
+		}
+		pages.sessionPage.clickSearchLink(ssid).getSessionState(currSession).getSessionStatus(currSession).getSessionTe(currSession).getSessionTf(currSession)
+				.getSessionTr(currSession).getSessionTsv(currSession);
 	}
 
 	@Override
 	public String lastSession(String sessMask) throws InterruptedException {
 		pages.sessionPage.clickSearchLink(sessMask + "%").sortingSessions();
 		String fullLastSession = pages.sessionPage.getFirstSession();
-		System.out.println(
-				"Last session - " + fullLastSession.substring(fullLastSession.indexOf("-") + 1, fullLastSession.length()));
+		System.out.println("Last session - " + fullLastSession.substring(fullLastSession.indexOf("-") + 1, fullLastSession.length()));
 		return fullLastSession.substring((fullLastSession.indexOf("-") + 1), fullLastSession.length());
 	}
 }

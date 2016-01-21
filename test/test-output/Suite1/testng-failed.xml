@@ -3,9 +3,7 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite1]" data-provider-thread-count="1">
   <test name="Test001">
     <classes>
-      <class name="db.tests.Test3"/>
-      <class name="db.tests.Test1"/>
-      <class name="db.tests.Test2"/>
+      <class name="db.tests.IsSessionClosed"/>
     </classes>
   </test> <!-- Test001 -->
 </suite> <!-- Failed suite [Suite1] -->

@@ -1,5 +1,6 @@
 package com.danco.bpc.applogic;
 
+import java.io.IOException;
 import java.util.List;
 
 import com.danco.bpc.model.Session;
@@ -12,7 +13,7 @@ public interface SessionHelper {
 
 	boolean checkSessionInTablePositive(String searchSsid) throws InterruptedException;
 
-	void getAllParameterSession(String ssid, Session currSession) throws InterruptedException;
+	void getAllParameterSession(String ssid, Session currSession) throws InterruptedException, IOException;
 	
 	String lastSession(String sessMask) throws InterruptedException;
 }
