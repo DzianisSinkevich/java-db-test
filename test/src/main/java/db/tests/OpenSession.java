@@ -9,6 +9,7 @@ import com.danco.bpc.service.api.TMA.ITmaMovActcService;
 import com.danco.bpc.service.impl.TMA.TmaMovActcServiceImpl;
 import com.danco.bpc.util.SessionPropertyReader;
 
+import db.utils.PropertyLoaderJenkins;
 import pages.TestBase;
 
 public class OpenSession extends TestBase {
@@ -18,13 +19,12 @@ public class OpenSession extends TestBase {
 	public void testUntitled() throws InterruptedException, IOException {
 		SessionPropertyReader pr = new SessionPropertyReader();
 		TmaMovActc tmaMovActc = new TmaMovActc();
+		String currSession = PropertyLoaderJenkins.loadProperty("curr.session");
 
-		// app.getUserHelper().loginAs(ADMIN);
 		app.getNavigationHelper().menuSessionClick();
-		assert(!app.getSessionHelper().checkSessionInTableNegative("22_0444-" + pr.getS220444()));
+		assert(!app.getSessionHelper().checkSessionInTableNegative(currSession + "-" + pr.getS220444()));
 		tmaMovActc.setCmaqsere(Integer.parseInt(pr.getS220444()));
 		tmaMovActcService.addRecord(tmaMovActc);
-		assert(app.getSessionHelper().checkSessionInTablePositive("22_0444-" + pr.getS220444()));
-		// app.getNavigationHelper().menuLogoutClick();
+		assert(app.getSessionHelper().checkSessionInTablePositive(currSession + "-" + pr.getS220444()));
 	}
 }

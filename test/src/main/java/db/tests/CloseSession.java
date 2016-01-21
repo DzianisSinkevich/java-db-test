@@ -22,10 +22,10 @@ public class CloseSession extends TestBase {
 		SessionPropertyReader pr = new SessionPropertyReader();
 		TmtMovActcTe tmtMovActcTe = new TmtMovActcTe();
 		TmtMovActcTr tmtMovActcTr = new TmtMovActcTr();
+		
 		tmtMovActcTe.setCmtqsead(new Long(pr.getS220444()));
 		tmtMovActcTr.setCmtqsead(new Long(pr.getS220444()));
 		tmtMovActcTeService.addRecord(tmtMovActcTe);
 		tmtMovActcTrService.addRecord(tmtMovActcTr);
-//		app.getNavigationHelper().menuLogoutClick();
 	}
 }

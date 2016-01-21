@@ -32,9 +32,6 @@ public class NavigationHelper2 extends DriverBasedHelper implements NavigationHe
 	@Override
 	public void gotoUserManagementPage() {
 		pages.internalPage.ensurePageLoaded().clickUserManagementLink();
-		// driver.findElement(By.cssSelector("nav a[href $= '?go=users']"))
-		// .click();
-		// openRelativeUrl("?go=users");
 	}
 
 	@Override
@@ -44,31 +41,26 @@ public class NavigationHelper2 extends DriverBasedHelper implements NavigationHe
 
 	@Override
 	public void menuSessionClick() {
-		pages.internalPage.clickMenu();
-		pages.internalPage.clickSessionLink();
+		pages.internalPage.clickMenu().clickSessionLink();
 	}
 
 	@Override
 	public void menuReconciliationCesesClick() {
-		pages.internalPage.clickMenu();
-		pages.internalPage.clickReconciliationCasesLink();
+		pages.internalPage.clickMenu().clickReconciliationCasesLink();
 	}
 
 	@Override
 	public void menuDatasourcesClick() {
-		pages.internalPage.clickMenu();
-		pages.internalPage.clickDatasourcesLink();
+		pages.internalPage.clickMenu().clickDatasourcesLink();
 	}
 
 	@Override
 	public void menuRoutingClick() {
-		pages.internalPage.clickMenu();
-		pages.internalPage.clickRoutingLink();
+		pages.internalPage.clickMenu().clickRoutingLink();
 	}
 
 	@Override
 	public void menuLogoutClick() {
-		pages.internalPage.clickMenu();
-		pages.internalPage.clickLogoutLink();
+		pages.internalPage.clickMenu().clickLogoutLink();
 	}
 }

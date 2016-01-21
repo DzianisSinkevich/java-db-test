@@ -126,9 +126,10 @@
 			</properties>
 		</profile>
 		<profile>
-			<id>testProfile</id>
+			<id>jenkinsProfile</id>
 			<properties>
 				<test.param>${env.TEST_PARAM}</test.param>
+				<curr.session>${env.curr_session}</curr.session>
 			</properties>
 		</profile>
 		<profile>
