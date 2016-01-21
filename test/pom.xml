@@ -120,6 +120,12 @@
 	<!-- profiles -->
 	<profiles>
 		<profile>
+			<id>default</id>
+			<properties>
+				<browser.name>chrome</browser.name>
+			</properties>
+		</profile>
+		<profile>
 			<id>testProfile</id>
 			<properties>
 				<test.param>${env.TEST_PARAM}</test.param>
