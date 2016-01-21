@@ -27,7 +27,7 @@ public class OpenSession extends TestBase {
 				+ new Long(currSession.substring(currSession.indexOf("_") + 1, currSession.length())));
 		tmaMovActc.setCmalcsbc(new Long(currSession.substring(currSession.indexOf("_") + 1, currSession.length())));
 		System.out.println("Ssid 2 - " + currSession.replaceAll("_", ""));
-		tmaMovActc.setC0dlcie3(Integer.parseInt(currSession));
+		tmaMovActc.setC0dlcie3(Integer.parseInt(currSession.replaceAll("_", "")));
 		System.out.println("Sess 3 - " + Integer.parseInt(pr.getS220444()));
 		tmaMovActc.setCmaqsere(Integer.parseInt(pr.getS220444()));
 		tmaMovActcService.addRecord(tmaMovActc);
