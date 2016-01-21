@@ -136,6 +136,8 @@ public class SessionPage extends InternalPage {
 		WaitLoadAndDisplayed.isLoadIconVisibility(driver);
 		WaitLoadAndDisplayed.isLoadIconInvisibility(driver);
 		columnHeaderSessionId.click();
+		WaitLoadAndDisplayed.isLoadIconVisibility(driver);
+		WaitLoadAndDisplayed.isLoadIconInvisibility(driver);
 		return pages.sessionPage;
 	} 
 	
