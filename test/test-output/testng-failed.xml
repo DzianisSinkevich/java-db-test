@@ -1,9 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite1]" data-provider-thread-count="1">
-  <test name="Test001">
+  <test name="22_0444C">
     <classes>
-      <class name="db.tests.IsSessionClosed"/>
+      <class name="db.tests.CheckLastSession"/>
     </classes>
-  </test> <!-- Test001 -->
+  </test> <!-- 22_0444C -->
+  <test name="22_0444O">
+    <classes>
+      <class name="db.tests.OpenSession"/>
+    </classes>
+  </test> <!-- 22_0444O -->
+  <test name="22_0444Cl">
+    <classes>
+      <class name="db.tests.CloseSession"/>
+    </classes>
+  </test> <!-- 22_0444Cl -->
+  <test name="22_0444O(failed)">
+    <classes>
+      <class name="db.tests.CloseSession">
+        <methods>
+          <include name="init"/>
+          <include name="stop"/>
+          <include name="login"/>
+          <include name="logout"/>
+        </methods>
+      </class> <!-- db.tests.CloseSession -->
+      <class name="db.tests.CheckLastSession">
+        <methods>
+          <include name="init"/>
+          <include name="stop"/>
+        </methods>
+      </class> <!-- db.tests.CheckLastSession -->
+      <class name="db.tests.OpenSession">
+        <methods>
+          <include name="init"/>
+          <include name="stop"/>
+          <include name="testUntitled"/>
+        </methods>
+      </class> <!-- db.tests.OpenSession -->
+    </classes>
+  </test> <!-- 22_0444O(failed) -->
 </suite> <!-- Failed suite [Suite1] -->

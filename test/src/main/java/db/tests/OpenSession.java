@@ -22,14 +22,15 @@ public class OpenSession extends TestBase {
 		String currSession = PropertyLoaderJenkins.loadProperty("curr.session");
 
 		app.getNavigationHelper().menuSessionClick();
-		assert(!app.getSessionHelper().checkSessionInTableNegative(currSession + "-" + pr.getS220444()));
-		System.out.println("Ssid 1 - " + new Long(currSession.substring(currSession.indexOf("_") + 1, currSession.length())));
+		assert (!app.getSessionHelper().checkSessionInTableNegative(currSession + "-" + pr.getS220444()));
+		System.out.println("Ssid 1 - "
+				+ new Long(currSession.substring(currSession.indexOf("_") + 1, currSession.length())));
 		tmaMovActc.setCmalcsbc(new Long(currSession.substring(currSession.indexOf("_") + 1, currSession.length())));
-		System.out.println("Ssid 2 - " + Integer.parseInt(currSession));
+		System.out.println("Ssid 2 - " + currSession.replaceAll("_", ""));
 		tmaMovActc.setC0dlcie3(Integer.parseInt(currSession));
 		System.out.println("Sess 3 - " + Integer.parseInt(pr.getS220444()));
 		tmaMovActc.setCmaqsere(Integer.parseInt(pr.getS220444()));
 		tmaMovActcService.addRecord(tmaMovActc);
-		assert(app.getSessionHelper().checkSessionInTablePositive(currSession + "-" + pr.getS220444()));
+		assert (app.getSessionHelper().checkSessionInTablePositive(currSession + "-" + pr.getS220444()));
 	}
 }

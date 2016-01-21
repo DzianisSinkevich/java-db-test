@@ -121,8 +121,11 @@
 	<profiles>
 		<profile>
 			<id>default</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
 			<properties>
-				<browser.name>chrome</browser.name>
+				<curr.session>22_0444</curr.session>
 			</properties>
 		</profile>
 		<profile>

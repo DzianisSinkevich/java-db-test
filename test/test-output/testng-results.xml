@@ -1,33 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="1" total="3" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite1" duration-ms="4162" started-at="2016-01-21T10:01:29Z" finished-at="2016-01-21T10:01:33Z">
+  <suite name="Suite1" duration-ms="10189" started-at="2016-01-21T17:45:32Z" finished-at="2016-01-21T17:45:42Z">
     <groups>
     </groups>
-    <test name="Test001" duration-ms="4162" started-at="2016-01-21T10:01:29Z" finished-at="2016-01-21T10:01:33Z">
-      <class name="db.tests.IsSessionClosed">
-        <test-method status="PASS" signature="login()[pri:0, instance:db.tests.IsSessionClosed@5cc7c2a6]" name="login" is-config="true" duration-ms="20245" started-at="2016-01-21T13:01:09Z" finished-at="2016-01-21T13:01:29Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- login -->
-        <test-method status="PASS" signature="init()[pri:0, instance:db.tests.IsSessionClosed@5cc7c2a6]" name="init" is-config="true" duration-ms="1259" started-at="2016-01-21T13:01:29Z" finished-at="2016-01-21T13:01:30Z">
+    <test name="22_0444C" duration-ms="4140" started-at="2016-01-21T17:45:32Z" finished-at="2016-01-21T17:45:36Z">
+      <class name="db.tests.CheckLastSession">
+        <test-method status="PASS" signature="init()[pri:0, instance:db.tests.CheckLastSession@426e05]" name="init" is-config="true" duration-ms="879" started-at="2016-01-21T20:45:32Z" finished-at="2016-01-21T20:45:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="PASS" signature="testUntitled()[pri:0, instance:db.tests.IsSessionClosed@5cc7c2a6]" name="testUntitled" duration-ms="2894" started-at="2016-01-21T13:01:30Z" finished-at="2016-01-21T13:01:33Z">
+        <test-method status="PASS" signature="testUntitled()[pri:0, instance:db.tests.CheckLastSession@426e05]" name="testUntitled" duration-ms="3252" started-at="2016-01-21T20:45:33Z" finished-at="2016-01-21T20:45:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testUntitled -->
-        <test-method status="PASS" signature="stop()[pri:0, instance:db.tests.IsSessionClosed@5cc7c2a6]" name="stop" is-config="true" duration-ms="0" started-at="2016-01-21T13:01:33Z" finished-at="2016-01-21T13:01:33Z">
+        <test-method status="PASS" signature="stop()[pri:0, instance:db.tests.CheckLastSession@426e05]" name="stop" is-config="true" duration-ms="1" started-at="2016-01-21T20:45:36Z" finished-at="2016-01-21T20:45:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- stop -->
-        <test-method status="PASS" signature="logout()[pri:0, instance:db.tests.IsSessionClosed@5cc7c2a6]" name="logout" is-config="true" duration-ms="2432" started-at="2016-01-21T13:01:33Z" finished-at="2016-01-21T13:01:35Z">
+      </class> <!-- db.tests.CheckLastSession -->
+    </test> <!-- 22_0444C -->
+    <test name="22_0444O" duration-ms="4244" started-at="2016-01-21T17:45:36Z" finished-at="2016-01-21T17:45:40Z">
+      <class name="db.tests.OpenSession">
+        <test-method status="PASS" signature="init()[pri:0, instance:db.tests.OpenSession@b6b2ab]" name="init" is-config="true" duration-ms="1269" started-at="2016-01-21T20:45:36Z" finished-at="2016-01-21T20:45:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method status="FAIL" signature="testUntitled()[pri:0, instance:db.tests.OpenSession@b6b2ab]" name="testUntitled" duration-ms="2964" started-at="2016-01-21T20:45:37Z" finished-at="2016-01-21T20:45:40Z">
+          <exception class="java.lang.NumberFormatException">
+            <message>
+              <![CDATA[For input string: "22_0444"]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NumberFormatException: For input string: "22_0444"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Integer.parseInt(Integer.java:492)
+	at java.lang.Integer.parseInt(Integer.java:527)
+	at db.tests.OpenSession.testUntitled(OpenSession.java:30)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:113)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NumberFormatException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUntitled -->
+        <test-method status="PASS" signature="stop()[pri:0, instance:db.tests.OpenSession@b6b2ab]" name="stop" is-config="true" duration-ms="0" started-at="2016-01-21T20:45:40Z" finished-at="2016-01-21T20:45:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- stop -->
+      </class> <!-- db.tests.OpenSession -->
+    </test> <!-- 22_0444O -->
+    <test name="22_0444Cl" duration-ms="1780" started-at="2016-01-21T17:45:40Z" finished-at="2016-01-21T17:45:42Z">
+      <class name="db.tests.CloseSession">
+        <test-method status="PASS" signature="login()[pri:0, instance:db.tests.CloseSession@a93621]" name="login" is-config="true" duration-ms="14158" started-at="2016-01-21T20:45:18Z" finished-at="2016-01-21T20:45:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="init()[pri:0, instance:db.tests.CloseSession@a93621]" name="init" is-config="true" duration-ms="797" started-at="2016-01-21T20:45:40Z" finished-at="2016-01-21T20:45:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method status="PASS" signature="testUntitled()[pri:0, instance:db.tests.CloseSession@a93621]" name="testUntitled" duration-ms="983" started-at="2016-01-21T20:45:41Z" finished-at="2016-01-21T20:45:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUntitled -->
+        <test-method status="PASS" signature="stop()[pri:0, instance:db.tests.CloseSession@a93621]" name="stop" is-config="true" duration-ms="0" started-at="2016-01-21T20:45:42Z" finished-at="2016-01-21T20:45:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- stop -->
+        <test-method status="PASS" signature="logout()[pri:0, instance:db.tests.CloseSession@a93621]" name="logout" is-config="true" duration-ms="3399" started-at="2016-01-21T20:45:42Z" finished-at="2016-01-21T20:45:46Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logout -->
-      </class> <!-- db.tests.IsSessionClosed -->
-    </test> <!-- Test001 -->
+      </class> <!-- db.tests.CloseSession -->
+    </test> <!-- 22_0444Cl -->
   </suite> <!-- Suite1 -->
 </testng-results>
