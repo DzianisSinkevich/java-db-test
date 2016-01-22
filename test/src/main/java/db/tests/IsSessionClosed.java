@@ -5,7 +5,7 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.danco.bpc.model.Session;
+import com.danco.bpc.modelReconWeb.Session;
 import com.danco.bpc.util.SessionPropertyReader;
 
 import pages.TestBase;

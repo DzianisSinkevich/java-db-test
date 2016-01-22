@@ -5,9 +5,9 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 
-import com.danco.bpc.applogic.ApplicationManager;
-import com.danco.bpc.applogic2.ApplicationManager2;
-import com.danco.bpc.model.User;
+import com.danco.bpc.IApplogicReconWeb.ApplicationManager;
+import com.danco.bpc.applogicReconWeb.ApplicationManager2;
+import com.danco.bpc.modelReconWeb.User;
 
 public class TestBase {
 
