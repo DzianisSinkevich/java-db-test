@@ -37,7 +37,7 @@ public class LoginPage extends AnyPage {
 
   public LoginPage ensurePageLoaded() {
     super.ensurePageLoaded();
-    wait.until(presenceOfElementLocated(By.id("loginPanel")));
+    wait.until(presenceOfElementLocated(By.cssSelector("[action='j_security_check']")));
     return this;
   }
 }

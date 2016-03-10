@@ -1,8 +1,8 @@
 package com.danco.bpc.applogicAllWeb;
 
-import com.danco.bpc.IApplogicReconWeb.UserHelper;
-import com.danco.bpc.modelReconWeb.User;
-import com.danco.bpc.pagesReconWeb.UserProfilePage;
+import com.danco.bpc.IApplogicAllWeb.UserHelper;
+import com.danco.bpc.modelAllWeb.User;
+import com.danco.bpc.pagesAllWeb.UserProfilePage;
 
 public class UserHelper2 extends DriverBasedHelper implements UserHelper {
 

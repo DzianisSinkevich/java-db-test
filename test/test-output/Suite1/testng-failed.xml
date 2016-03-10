@@ -1,57 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite1]" data-provider-thread-count="1">
-  <test name="22_0444C">
+  <test name="OpenWeb">
     <classes>
-      <class name="db.tests.CheckLastSession"/>
+      <class name="db.tests.allWeb.OpenAllWeb"/>
+      <class name="db.tests.allWeb.OpenContainerPage"/>
     </classes>
-  </test> <!-- 22_0444C -->
-  <test name="22_0444O">
+  </test> <!-- OpenWeb -->
+  <test name="OpenWeb(failed)">
     <classes>
-      <class name="db.tests.OpenSession"/>
-    </classes>
-  </test> <!-- 22_0444O -->
-  <test name="22_0444Cl">
-    <classes>
-      <class name="db.tests.CloseSession"/>
-    </classes>
-  </test> <!-- 22_0444Cl -->
-  <test name="22_0444C(failed)">
-    <classes>
-      <class name="db.tests.CheckLastSession">
+      <class name="db.tests.allWeb.OpenContainerPage">
         <methods>
-          <include name="testUntitled"/>
+          <include name="openContainerPage"/>
         </methods>
-      </class> <!-- db.tests.CheckLastSession -->
-      <class name="db.tests.CloseSession">
-        <methods>
-          <include name="login"/>
-        </methods>
-      </class> <!-- db.tests.CloseSession -->
+      </class> <!-- db.tests.allWeb.OpenContainerPage -->
     </classes>
-  </test> <!-- 22_0444C(failed) -->
-  <test name="22_0444O(failed)">
-    <classes>
-      <class name="db.tests.OpenSession">
-        <methods>
-          <include name="testUntitled"/>
-        </methods>
-      </class> <!-- db.tests.OpenSession -->
-      <class name="db.tests.CloseSession">
-        <methods>
-          <include name="login"/>
-        </methods>
-      </class> <!-- db.tests.CloseSession -->
-    </classes>
-  </test> <!-- 22_0444O(failed) -->
-  <test name="22_0444Cl(failed)">
-    <classes>
-      <class name="db.tests.CloseSession">
-        <methods>
-          <include name="login"/>
-          <include name="testUntitled"/>
-        </methods>
-      </class> <!-- db.tests.CloseSession -->
-    </classes>
-  </test> <!-- 22_0444Cl(failed) -->
+  </test> <!-- OpenWeb(failed) -->
 </suite> <!-- Failed suite [Suite1] -->

@@ -3,7 +3,7 @@ package com.danco.bpc.IApplogicAllWeb;
 import java.io.IOException;
 import java.util.List;
 
-import com.danco.bpc.modelReconWeb.Session;
+import com.danco.bpc.modelAllWeb.Session;
 
 public interface SessionHelper {
 

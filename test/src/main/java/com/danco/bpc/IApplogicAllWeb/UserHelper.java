@@ -1,6 +1,6 @@
 package com.danco.bpc.IApplogicAllWeb;
 
-import com.danco.bpc.modelReconWeb.User;
+import com.danco.bpc.modelAllWeb.User;
 
 public interface UserHelper {
 

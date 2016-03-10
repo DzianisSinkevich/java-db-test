@@ -2,14 +2,14 @@ package com.danco.bpc.applogicAllWeb;
 
 import org.openqa.selenium.WebDriver;
 
-import com.danco.bpc.IApplogicReconWeb.NavigationHelper;
-import com.danco.bpc.IApplogicReconWeb.SessionHelper;
-import com.danco.bpc.IApplogicReconWeb.UserHelper;
+import com.danco.bpc.IApplogicAllWeb.NavigationHelper;
+import com.danco.bpc.IApplogicAllWeb.SessionHelper;
+import com.danco.bpc.IApplogicAllWeb.UserHelper;
 import com.danco.bpc.pages.util.PropertyLoader;
 import com.danco.bpc.util.Browser;
 import com.danco.bpc.webdriver.WebDriverFactory;
 
-public class ApplicationManager2 implements com.danco.bpc.IApplogicReconWeb.ApplicationManager {
+public class ApplicationManager2 implements com.danco.bpc.IApplogicAllWeb.ApplicationManager {
 
 	private UserHelper userHelper;
 	private SessionHelper sessionHelper;

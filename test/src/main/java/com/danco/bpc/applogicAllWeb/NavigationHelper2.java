@@ -1,6 +1,6 @@
 package com.danco.bpc.applogicAllWeb;
 
-import com.danco.bpc.IApplogicReconWeb.NavigationHelper;
+import com.danco.bpc.IApplogicAllWeb.NavigationHelper;
 
 public class NavigationHelper2 extends DriverBasedHelper implements NavigationHelper {
 
@@ -35,32 +35,38 @@ public class NavigationHelper2 extends DriverBasedHelper implements NavigationHe
 	}
 
 	@Override
-	public void menuClick() {
-		pages.internalPage.clickMenu();
+	public void administrationClick() {
+		pages.internalPage.clickAdministration();
 	}
 
 	@Override
 	public void menuSessionClick() {
-		pages.internalPage.clickMenu().clickSessionLink();
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
 	public void menuReconciliationCesesClick() {
-		pages.internalPage.clickMenu().clickReconciliationCasesLink();
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
 	public void menuDatasourcesClick() {
-		pages.internalPage.clickMenu().clickDatasourcesLink();
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
 	public void menuRoutingClick() {
-		pages.internalPage.clickMenu().clickRoutingLink();
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
 	public void menuLogoutClick() {
-		pages.internalPage.clickMenu().clickLogoutLink();
+		// TODO Auto-generated method stub
+		
 	}
+
 }

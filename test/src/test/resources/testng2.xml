@@ -3,7 +3,9 @@
 	preserve-order="true">
 	<test name="Test001">
 		<classes>
-			<class name="db.tests.IsSessionClosed"></class>
+			<class name="db.tests.Test1"></class>
+			<class name="db.tests.Test3"></class>
+			<class name="db.tests.Test2"></class>
 		</classes>
 	</test>
 </suite> 	

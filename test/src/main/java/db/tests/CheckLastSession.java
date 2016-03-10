@@ -7,9 +7,9 @@ import org.testng.annotations.Test;
 import com.danco.bpc.util.SessionPropertyReader;
 
 import db.utils.PropertyLoaderJenkins;
-import pages.TestBase;
+import pages.TestBaseRecon;
 
-public class CheckLastSession extends TestBase {
+public class CheckLastSession extends TestBaseRecon {
 	@Test
 	public void testUntitled() throws InterruptedException, IOException {
 		SessionPropertyReader pr = new SessionPropertyReader();

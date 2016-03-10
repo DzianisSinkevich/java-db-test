@@ -8,9 +8,9 @@ import org.testng.annotations.Test;
 import com.danco.bpc.modelReconWeb.Session;
 import com.danco.bpc.util.SessionPropertyReader;
 
-import pages.TestBase;
+import pages.TestBaseRecon;
 
-public class IsSessionClosed extends TestBase {
+public class IsSessionClosed extends TestBaseRecon {
 
 	@Test
 	public void testUntitled() throws InterruptedException, IOException {

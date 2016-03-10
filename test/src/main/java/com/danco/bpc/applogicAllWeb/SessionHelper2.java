@@ -7,8 +7,8 @@ import java.util.List;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import com.danco.bpc.IApplogicReconWeb.SessionHelper;
-import com.danco.bpc.modelReconWeb.Session;
+import com.danco.bpc.IApplogicAllWeb.SessionHelper;
+import com.danco.bpc.modelAllWeb.Session;
 import com.danco.bpc.util.SessionPropertyReader;
 
 public class SessionHelper2 extends DriverBasedHelper implements SessionHelper {

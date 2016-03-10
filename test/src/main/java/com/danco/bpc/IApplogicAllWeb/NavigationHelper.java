@@ -10,8 +10,6 @@ public interface NavigationHelper {
 
 	void gotoUserManagementPage();
 
-	void menuClick();
-
 	void menuSessionClick();
 
 	void menuReconciliationCesesClick();
@@ -21,5 +19,7 @@ public interface NavigationHelper {
 	void menuRoutingClick();
 
 	void menuLogoutClick();
+
+	void administrationClick();
 
 }

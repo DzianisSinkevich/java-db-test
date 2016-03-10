@@ -10,9 +10,9 @@ import com.danco.bpc.service.impl.TMA.TmaMovActcServiceImpl;
 import com.danco.bpc.util.SessionPropertyReader;
 
 import db.utils.PropertyLoaderJenkins;
-import pages.TestBase;
+import pages.TestBaseRecon;
 
-public class OpenSession extends TestBase {
+public class OpenSession extends TestBaseRecon {
 	private ITmaMovActcService tmaMovActcService = new TmaMovActcServiceImpl();
 
 	@Test

@@ -1,19 +1,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Suite1" verbose="1" data-provider-thread-count="1"
 	preserve-order="true">
-	<test name="22_0444C">
+	<test name="OpenWeb">
 		<classes>
-			<class name="db.tests.CheckLastSession"></class>
-		</classes>
-	</test>
-	<test name="22_0444O">
-		<classes>
-			<class name="db.tests.OpenSession"></class>
-		</classes>
-	</test>
-	<test name="22_0444Cl">
-		<classes>
-			<class name="db.tests.CloseSession"></class>
+			<class name="db.tests.allWeb.OpenAllWeb"></class>
+			<class name="db.tests.allWeb.OpenContainerPage"></class>
 		</classes>
 	</test>
 </suite> 	

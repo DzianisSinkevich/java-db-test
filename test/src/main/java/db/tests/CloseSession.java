@@ -10,9 +10,9 @@ import com.danco.bpc.service.impl.TMA.TmtMovActcTeServiceImpl;
 import com.danco.bpc.service.impl.TMA.TmtMovActcTrServiceImpl;
 import com.danco.bpc.util.SessionPropertyReader;
 
-import pages.TestBase;
+import pages.TestBaseRecon;
 
-public class CloseSession extends TestBase {
+public class CloseSession extends TestBaseRecon {
 
 	private ITmtMovActcTeService tmtMovActcTeService = new TmtMovActcTeServiceImpl();
 	private ITmtMovActcTrService tmtMovActcTrService = new TmtMovActcTrServiceImpl();

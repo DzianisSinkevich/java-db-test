@@ -2,9 +2,9 @@ package db.tests;
 
 import org.testng.annotations.Test;
 
-import pages.TestBase;
+import pages.TestBaseRecon;
 
-public class Test1 extends TestBase {
+public class Test1 extends TestBaseRecon {
 
 	@Test
 	public void testUntitled() {

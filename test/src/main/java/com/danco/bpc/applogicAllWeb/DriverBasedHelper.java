@@ -3,7 +3,7 @@ package com.danco.bpc.applogicAllWeb;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.danco.bpc.pagesReconWeb.PageManager;
+import com.danco.bpc.pagesAllWeb.PageManager;
 
 public class DriverBasedHelper {
 

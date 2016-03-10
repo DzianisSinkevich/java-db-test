@@ -9,8 +9,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class InternalPage extends AnyPage {
-	public static final String HOME_LINK = "nav a[href = 'http://localhost/php4dvd/']";
-	public static final String MENU_ID = "hamburger";
+	public static final String HOME_LINK = "nav a[href = 'http://10.7.32.216:9080/sv/login.jsf']";
+	public static final String MENU_ADMINISTRATION_CSS = "//span[text()='General View Operations']";
 	public static final String MENU_SESSION_LINK = "Sessions";
 	public static final String MENU_RECONCILIATION_CASES_LINK = "Reconciliation Cases";
 	public static final String MENU_DATASOURCES_LINK = "Datasources";
@@ -32,8 +32,8 @@ public class InternalPage extends AnyPage {
 	@FindBy(css = HOME_LINK)
 	private WebElement homeLink;
 
-	@FindBy(id = MENU_ID)
-	private WebElement menuLink;
+	@FindBy(xpath = MENU_ADMINISTRATION_CSS)
+	private WebElement administrationCss;
 
 	@FindBy(linkText = MENU_SESSION_LINK)
 	private WebElement menuSessionLink;
@@ -70,8 +70,8 @@ public class InternalPage extends AnyPage {
 		return pages.internalPage;
 	}
 
-	public InternalPage clickMenu() {
-		menuLink.click();
+	public InternalPage clickAdministration() {
+		administrationCss.click();
 		return pages.internalPage;
 	}
 
