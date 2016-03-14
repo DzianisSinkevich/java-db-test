@@ -22,4 +22,15 @@ public interface NavigationHelper {
 
 	void administrationClick();
 
+	void administrationProcessesClick();
+
+	void openContainersPage();
+	
+	void insertDataToNameField();
+	
+	void clickSearch();
+	
+	void waitDataLoad();
+	
+	void clickLaunchButton();
 }

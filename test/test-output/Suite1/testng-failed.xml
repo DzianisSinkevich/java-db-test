@@ -7,13 +7,4 @@
       <class name="db.tests.allWeb.OpenContainerPage"/>
     </classes>
   </test> <!-- OpenWeb -->
-  <test name="OpenWeb(failed)">
-    <classes>
-      <class name="db.tests.allWeb.OpenContainerPage">
-        <methods>
-          <include name="openContainerPage"/>
-        </methods>
-      </class> <!-- db.tests.allWeb.OpenContainerPage -->
-    </classes>
-  </test> <!-- OpenWeb(failed) -->
 </suite> <!-- Failed suite [Suite1] -->

@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Suite1">
-              <span class="suite-name border-failed">Suite1</span>
+              <span class="suite-name border-passed">Suite1</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -54,7 +54,7 @@
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="testlist-Suite1">
-                    <span class="test-stats">2 tests</span>
+                    <span class="test-stats">1 test</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,21 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods, 1 failed,   1 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Suite1" class="hide-methods failed suite-Suite1"> (hide)</a> <!-- hide-methods failed suite-Suite1 -->
-                      <a href="#" panel-name="suite-Suite1" class="show-methods failed suite-Suite1"> (show)</a> <!-- show-methods failed suite-Suite1 -->
-                    </span>
-                    <div class="method-list-content failed suite-Suite1">
-                      <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite1" title="db.tests.allWeb.OpenContainerPage" hash-for-method="openContainerPage">openContainerPage</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-Suite1 -->
+                    <span class="method-stats">2 methods,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -114,6 +100,11 @@
                       <a href="#" panel-name="suite-Suite1" class="show-methods passed suite-Suite1"> (show)</a> <!-- show-methods passed suite-Suite1 -->
                     </span>
                     <div class="method-list-content passed suite-Suite1">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite1" title="db.tests.allWeb.OpenContainerPage" hash-for-method="openContainerPage">openContainerPage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Suite1" title="db.tests.allWeb.OpenAllWeb" hash-for-method="openWeb">openWeb</a> <!-- method navigator-link -->
@@ -131,25 +122,6 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite1" class="panel Suite1">
-          <div class="suite-Suite1-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">db.tests.allWeb.OpenContainerPage</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="openContainerPage">
-                  </a> <!-- openContainerPage -->
-                  <span class="method-name">openContainerPage</span>
-                  <div class="stack-trace">java.lang.NullPointerException
-	at db.tests.allWeb.OpenContainerPage.openContainerPage(OpenContainerPage.java:10)
-... Removed 24 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite1-class-failed -->
           <div class="suite-Suite1-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -161,6 +133,21 @@
                   <a name="openWeb">
                   </a> <!-- openWeb -->
                   <span class="method-name">openWeb</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite1-class-passed -->
+          <div class="suite-Suite1-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">db.tests.allWeb.OpenContainerPage</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="openContainerPage">
+                  </a> <!-- openContainerPage -->
+                  <span class="method-name">openContainerPage</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -181,15 +168,6 @@
       &lt;class name=&quot;db.tests.allWeb.OpenContainerPage&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- OpenWeb --&gt;
-  &lt;test name=&quot;OpenWeb(failed)&quot;&gt;
-    &lt;classes&gt;
-      &lt;class name=&quot;db.tests.allWeb.OpenContainerPage&quot;&gt;
-        &lt;methods&gt;
-          &lt;include name=&quot;openContainerPage&quot;/&gt;
-        &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- db.tests.allWeb.OpenContainerPage --&gt;
-    &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- OpenWeb(failed) --&gt;
 &lt;/suite&gt; &lt;!-- Suite1 --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -202,9 +180,6 @@
             <ul>
               <li>
                 <span class="test-name">OpenWeb (2 classes)</span>
-              </li>
-              <li>
-                <span class="test-name">OpenWeb(failed) (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -232,18 +207,18 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'openWeb')
-data.setCell(0, 2, 'db.tests.allWeb.OpenAllWeb')
-data.setCell(0, 3, 20642);
+data.setCell(0, 1, 'openContainerPage')
+data.setCell(0, 2, 'db.tests.allWeb.OpenContainerPage')
+data.setCell(0, 3, 26463);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'openContainerPage')
-data.setCell(1, 2, 'db.tests.allWeb.OpenContainerPage')
-data.setCell(1, 3, 0);
+data.setCell(1, 1, 'openWeb')
+data.setCell(1, 2, 'db.tests.allWeb.OpenAllWeb')
+data.setCell(1, 3, 17524);
 window.suiteTableData['Suite1']= { tableData: data, tableDiv: 'times-div-Suite1'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 20 seconds</span>
+              <span class="suite-total-time">Total running time: 43 seconds</span>
               <div id="times-div-Suite1">
               </div> <!-- times-div-Suite1 -->
             </div> <!-- times-div -->
@@ -278,10 +253,8 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">db.tests.allWeb.OpenContainerPage</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">openContainerPage</span>
-                <span class="method-start">20644 ms</span>
+                <span class="method-start">17531 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -13,6 +13,7 @@ public class PageManager {
 	public UserManagementPage userManagementPage;
 	public FilmManagementPage filmManagementPage;
 	public SessionPage sessionPage;
+	public ContainersPage containersPage;
 
 	public PageManager(WebDriver driver) {
 		this.driver = driver;

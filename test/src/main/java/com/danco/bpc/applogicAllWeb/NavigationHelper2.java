@@ -38,35 +38,51 @@ public class NavigationHelper2 extends DriverBasedHelper implements NavigationHe
 	public void administrationClick() {
 		pages.internalPage.clickAdministration();
 	}
+	
+	@Override
+	public void administrationProcessesClick() {
+		pages.internalPage.clickAdministrationProcesses();
+	}
+	
+	@Override
+	public void openContainersPage() {
+		pages.internalPage.clickAdministration().clickAdministrationProcesses().clickAdministrationProcessesContainers();
+	}
 
 	@Override
 	public void menuSessionClick() {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public void menuReconciliationCesesClick() {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public void menuDatasourcesClick() {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public void menuRoutingClick() {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public void menuLogoutClick() {
-		// TODO Auto-generated method stub
-		
+	}
+
+	@Override
+	public void insertDataToNameField() {
+	}
+
+	@Override
+	public void clickSearch() {
+	}
+
+	@Override
+	public void waitDataLoad() {
+	}
+
+	@Override
+	public void clickLaunchButton() {
 	}
 
 }
