@@ -23,6 +23,7 @@ public class PageManager {
 		userManagementPage = initElements(new UserManagementPage(this));
 		filmManagementPage = initElements(new FilmManagementPage(this));
 		sessionPage = initElements(new SessionPage(this));
+		containersPage = initElements(new ContainersPage(this));
 	}
 
 	private <T extends Page> T initElements(T page) {

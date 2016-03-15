@@ -2,18 +2,18 @@
 <testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite1" duration-ms="44007" started-at="2016-03-14T14:22:19Z" finished-at="2016-03-14T14:23:03Z">
+  <suite name="Suite1" duration-ms="56372" started-at="2016-03-15T08:23:21Z" finished-at="2016-03-15T08:24:18Z">
     <groups>
     </groups>
-    <test name="OpenWeb" duration-ms="44007" started-at="2016-03-14T14:22:19Z" finished-at="2016-03-14T14:23:03Z">
+    <test name="OpenWeb" duration-ms="56372" started-at="2016-03-15T08:23:21Z" finished-at="2016-03-15T08:24:18Z">
       <class name="db.tests.allWeb.OpenContainerPage">
-        <test-method status="PASS" signature="openContainerPage()[pri:0, instance:db.tests.allWeb.OpenContainerPage@13a57a3b]" name="openContainerPage" duration-ms="26463" started-at="2016-03-14T17:22:37Z" finished-at="2016-03-14T17:23:03Z">
+        <test-method status="PASS" signature="openContainerPage()[pri:0, instance:db.tests.allWeb.OpenContainerPage@13a57a3b]" name="openContainerPage" duration-ms="35282" started-at="2016-03-15T11:23:42Z" finished-at="2016-03-15T11:24:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openContainerPage -->
       </class> <!-- db.tests.allWeb.OpenContainerPage -->
       <class name="db.tests.allWeb.OpenAllWeb">
-        <test-method status="PASS" signature="openWeb()[pri:0, instance:db.tests.allWeb.OpenAllWeb@153f5a29]" name="openWeb" duration-ms="17524" started-at="2016-03-14T17:22:19Z" finished-at="2016-03-14T17:22:37Z">
+        <test-method status="PASS" signature="openWeb()[pri:0, instance:db.tests.allWeb.OpenAllWeb@153f5a29]" name="openWeb" duration-ms="21074" started-at="2016-03-15T11:23:21Z" finished-at="2016-03-15T11:23:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openWeb -->

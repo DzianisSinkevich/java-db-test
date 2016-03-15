@@ -48,6 +48,11 @@ public class NavigationHelper2 extends DriverBasedHelper implements NavigationHe
 	public void openContainersPage() {
 		pages.internalPage.clickAdministration().clickAdministrationProcesses().clickAdministrationProcessesContainers();
 	}
+	
+	@Override
+	public void searchAndLaunchContainer(String containerName) {
+		pages.containersPage.insertDataToNameField(containerName).searchButtonClick().launchButtonClick().cancelButtonClick();
+	}
 
 	@Override
 	public void menuSessionClick() {

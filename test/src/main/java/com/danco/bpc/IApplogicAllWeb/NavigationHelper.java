@@ -33,4 +33,6 @@ public interface NavigationHelper {
 	void waitDataLoad();
 	
 	void clickLaunchButton();
+
+	void searchAndLaunchContainer(String s);
 }
