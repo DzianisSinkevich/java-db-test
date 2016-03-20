@@ -6,7 +6,7 @@
 		<artifactId>cms</artifactId>
 		<version>0.0.1</version>
 	</parent>
-	<artifactId>dao-impl-NPS</artifactId>
+	<artifactId>dao-impl-PRICE</artifactId>
 	<dependencies>
 		<dependency>
 			<groupId>com.nashorn.cms</groupId>
@@ -15,7 +15,7 @@
 		</dependency>
 		<dependency>
 			<groupId>com.nashorn.cms</groupId>
-			<artifactId>api-NPS</artifactId>
+			<artifactId>api-PRICE</artifactId>
 			<version>${global.version}</version>
 		</dependency>
 	</dependencies>

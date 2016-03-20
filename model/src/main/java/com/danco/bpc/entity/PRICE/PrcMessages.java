@@ -1,11 +1,21 @@
 package com.danco.bpc.entity.PRICE;
 
-import java.io.Serializable;
-import java.util.Date;
+import java.util.Calendar;
 
-public class PrcMessages implements Serializable {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import com.danco.bpc.entity.api.AbstractBaseEntity;
+
+@Table(name = "PRC_MESSAGES")
+@Entity
+public class PrcMessages extends AbstractBaseEntity implements java.io.Serializable, Comparable<PrcMessages>  {
 
 	private static final long serialVersionUID = 1L;
+	@Id
+	@Column(name = "ID")
 	private int id;
 	private int version;
 	private int userId;
@@ -96,7 +106,7 @@ public class PrcMessages implements Serializable {
 	private String p6216;
 	private int p6217;
 	private int s71;
-	private Date s72;
+	private Calendar s72;
 	private int s74;
 	private int s75;
 	private int s76;
@@ -131,146 +141,6 @@ public class PrcMessages implements Serializable {
 	private int acqNetwork;
 
 	public PrcMessages() {
-	}
-
-	public PrcMessages(int id, int version, int userId, String p02, int p03, int p04, int p05, int p06, int p09, int p10, int p11, int p12, int p14, int p16,
-			int p17, int p18, int p19, int p22, String p23, int p24, int p25, int p26, int p27, int p28, int p29, int p301, int p302, String p31, String p32,
-			String p33, String p35, String p37, String p38, int p39, int p40, String p41, String p42, String p43, String p44, String p45, String p46,
-			String p48, int p4801, int p4802, int p4803, int p4804, String p4805, String p4806, int p4807, int p4808, String p4809, int p4810, int p4812,
-			String p4813, String p4814, String p4815, int p4816, int p4817, int p4818, String p4819, int p4820, String p4821, String p4822, int p4823,
-			String p4824, String p4825, String p4826, int p4828, String p4829, int p4830, String p4831, String p4835, int p49, int p50, int p51, int p53,
-			String p55, int p57, String p58, String p62, int p6201, int p6202, int p6203, int p6204, String p6205, int p6206, String p6213, String p6216,
-			int p6217, int s71, Date s72, int s74, int s75, int s76, int s77, int s80, int s81, int s85, int s86, int s87, int s88, int s89, String s93,
-			String s94, String s95, int s97, String s101, String s102, String s104, int s105, int s106, int s107, int s108, int s109, int s110, String sessId,
-			String p56, String optp, String msgt, int issInst, int issNetwork, int acqInst, int acqNetwork) {
-
-		this.setId(id);
-		this.setVersion(version);
-		this.setUserId(userId);
-		this.setP02(p02);
-		this.setP03(p03);
-		this.setP04(p04);
-		this.setP05(p05);
-		this.setP06(p06);
-		this.setP09(p09);
-		this.setP10(p10);
-		this.setP11(p11);
-		this.setP12(p12);
-		this.setP14(p14);
-		this.setP16(p16);
-		this.setP17(p17);
-		this.setP18(p18);
-		this.setP19(p19);
-		this.setP22(p22);
-		this.setP23(p23);
-		this.setP24(p24);
-		this.setP25(p25);
-		this.setP26(p26);
-		this.setP27(p27);
-		this.setP28(p28);
-		this.setP29(p29);
-		this.setP301(p301);
-		this.setP302(p302);
-		this.setP31(p31);
-		this.setP32(p32);
-		this.setP33(p33);
-		this.setP35(p35);
-		this.setP37(p37);
-		this.setP38(p38);
-		this.setP39(p39);
-		this.setP40(p40);
-		this.setP41(p41);
-		this.setP42(p42);
-		this.setP43(p43);
-		this.setP44(p44);
-		this.setP45(p45);
-		this.setP46(p46);
-		this.setP48(p48);
-		this.setP4801(p4801);
-		this.setP4802(p4802);
-		this.setP4803(p4803);
-		this.setP4804(p4804);
-		this.setP4805(p4805);
-		this.setP4806(p4806);
-		this.setP4807(p4807);
-		this.setP4808(p4808);
-		this.setP4809(p4809);
-		this.setP4810(p4810);
-		this.setP4812(p4812);
-		this.setP4813(p4813);
-		this.setP4814(p4814);
-		this.setP4815(p4815);
-		this.setP4816(p4816);
-		this.setP4817(p4817);
-		this.setP4818(p4818);
-		this.setP4819(p4819);
-		this.setP4820(p4820);
-		this.setP4821(p4821);
-		this.setP4822(p4822);
-		this.setP4823(p4823);
-		this.setP4824(p4824);
-		this.setP4825(p4825);
-		this.setP4826(p4826);
-		this.setP4828(p4828);
-		this.setP4829(p4829);
-		this.setP4830(p4830);
-		this.setP4831(p4831);
-		this.setP4835(p4835);
-		this.setP49(p49);
-		this.setP50(p50);
-		this.setP51(p51);
-		this.setP53(p53);
-		this.setP55(p55);
-		this.setP57(p57);
-		this.setP58(p58);
-		this.setP62(p62);
-		this.setP6201(p6201);
-		this.setP6202(p6202);
-		this.setP6203(p6203);
-		this.setP6204(p6204);
-		this.setP6205(p6205);
-		this.setP6206(p6206);
-		this.setP6213(p6213);
-		this.setP6216(p6216);
-		this.setP6217(p6217);
-		this.setS71(s71);
-		this.setS72(s72);
-		this.setS74(s74);
-		this.setS75(s75);
-		this.setS76(s76);
-		this.setS77(s77);
-		this.setS80(s80);
-		this.setS81(s81);
-		this.setS85(s85);
-		this.setS86(s86);
-		this.setS87(s87);
-		this.setS88(s88);
-		this.setS89(s89);
-		this.setS93(s93);
-		this.setS94(s94);
-		this.setS95(s95);
-		this.setS97(s97);
-		this.setS101(s101);
-		this.setS102(s102);
-		this.setS104(s104);
-		this.setS105(s105);
-		this.setS106(s106);
-		this.setS107(s107);
-		this.setS108(s108);
-		this.setS109(s109);
-		this.setS110(s110);
-		this.setSessId(sessId);
-		this.setP56(p56);
-		this.setOptp(optp);
-		this.setMsgt(msgt);
-		this.setIssInst(issInst);
-		this.setIssNetwork(issNetwork);
-		this.setAcqInst(acqInst);
-		this.setAcqNetwork(acqNetwork);
-	}
-
-	public int getId() {
-		return id;
 	}
 
 	public void setId(int id) {
@@ -989,11 +859,11 @@ public class PrcMessages implements Serializable {
 		this.s71 = s71;
 	}
 
-	public Date getS72() {
+	public Calendar getS72() {
 		return s72;
 	}
 
-	public void setS72(Date s72) {
+	public void setS72(Calendar s72) {
 		this.s72 = s72;
 	}
 
@@ -1251,5 +1121,23 @@ public class PrcMessages implements Serializable {
 
 	public void setAcqNetwork(int acqNetwork) {
 		this.acqNetwork = acqNetwork;
+	}
+
+	@Override
+	public Long getId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setId(Long id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public int compareTo(PrcMessages o) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }

@@ -1,48 +1,45 @@
 package com.danco.bpc.entity.PRICE;
 
-import java.io.Serializable;
-import java.util.Date;
+import java.util.Calendar;
 
-public class PrcFiles implements Serializable {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import com.danco.bpc.entity.api.AbstractBaseEntity;
+
+@Table(name = "PRC_FILES")
+@Entity
+public class PrcFiles extends AbstractBaseEntity implements java.io.Serializable, Comparable<PrcFiles> {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	@Id
+	@Column(name = "ID")
 	private int id;
+	@Column(name = "FILE_NAME")
 	private String fileName;
-	private Date uploadDate;
-	private Date processingDate;
+	@Column(name = "UPLOAD_DATE")
+	private Calendar uploadDate;
+	@Column(name = "PROCESSING_DATE")
+	private Calendar processingDate;
+	@Column(name = "TOTAL_RECORDS")
 	private int totalRecords;
+	@Column(name = "TOTAL_BATCHES")
 	private int totalBatches;
+	@Column(name = "RECIEVED_BATCHES")
 	private int recievedBatches;
+	@Column(name = "SESSION_ID")
 	private String sessionId;
+	@Column(name = "STATUS")
 	private String status;
+	@Column(name = "TYPE")
 	private String type;
 
 	public PrcFiles() {
-	}
-
-	public PrcFiles(int id, String fileName, Date uploadDate, Date processingDate, int totalRecords, int totalBatches, int recievedBatches, String sessionId,
-			String status, String type) {
-		this.setId(id);
-		this.setFileName(fileName);
-		this.setUploadDate(uploadDate);
-		this.setProcessingDate(processingDate);
-		this.setTotalRecords(totalRecords);
-		this.setTotalBatches(totalBatches);
-		this.setRecievedBatches(recievedBatches);
-		this.setSessionId(sessionId);
-		this.setStatus(status);
-		this.setType(type);
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	public String getFileName() {
@@ -53,19 +50,19 @@ public class PrcFiles implements Serializable {
 		this.fileName = fileName;
 	}
 
-	public Date getUploadDate() {
+	public Calendar getUploadDate() {
 		return uploadDate;
 	}
 
-	public void setUploadDate(Date uploadDate) {
+	public void setUploadDate(Calendar uploadDate) {
 		this.uploadDate = uploadDate;
 	}
 
-	public Date getProcessingDate() {
+	public Calendar getProcessingDate() {
 		return processingDate;
 	}
 
-	public void setProcessingDate(Date processingDate) {
+	public void setProcessingDate(Calendar processingDate) {
 		this.processingDate = processingDate;
 	}
 
@@ -115,5 +112,23 @@ public class PrcFiles implements Serializable {
 
 	public void setType(String type) {
 		this.type = type;
+	}
+
+	@Override
+	public Long getId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setId(Long id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public int compareTo(PrcFiles o) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }
