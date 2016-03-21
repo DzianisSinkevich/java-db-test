@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 public class InternalPage extends AnyPage {
@@ -120,6 +121,8 @@ public class InternalPage extends AnyPage {
 	public static final String MENU_ROUTING_LINK = "Routing";
 	public static final String MENU_LOGOUT_LINK = "Logout";
 
+	public static final String DASHBOARD_MENU = ".//*[@id='links_form:dashboardsMenu']/div[1]/a";
+	
 	public InternalPage(PageManager pages) {
 		super(pages);
 	}
@@ -452,6 +455,9 @@ public class InternalPage extends AnyPage {
 
 	@FindBy(xpath = "/html/body/div[@id='container']/div[@id='wrapper']/div[@id='content']/section/div[@id='results']/a[1]")
 	private WebElement firstFilm;
+	
+	@FindBy(xpath = DASHBOARD_MENU)
+	private WebElement dashboardMenu;
 
 	public InternalPage clickHomePage() {
 		homeLink.click();
@@ -508,11 +514,12 @@ public class InternalPage extends AnyPage {
 		return pages.loginPage;
 	}
 
-	public void checkAmountAfter() {
-		afterAmountFilms = forAmountFilms.size();
-		System.out.println("NewafterAmountFilms " + afterAmountFilms);
+	public InternalPage openDashboardMenu() {
+		Actions actions = new Actions(driver);
+		actions.moveToElement(dashboardMenu).build().perform();
+		return pages.internalPage;
 	}
-
+	
 	public boolean confirmAmountsAdd() {
 		System.out.println("afterAmountFilms " + afterAmountFilms);
 		System.out.println("forAmountFilms " + forAmountFilms.size());

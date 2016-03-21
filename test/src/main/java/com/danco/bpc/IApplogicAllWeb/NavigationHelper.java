@@ -25,14 +25,16 @@ public interface NavigationHelper {
 	void administrationProcessesClick();
 
 	void openContainersPage();
-	
+
+	void openDashboardMenu();
+
 	void insertDataToNameField();
-	
+
 	void clickSearch();
-	
+
 	void waitDataLoad();
-	
+
 	void clickLaunchButton();
 
-	void searchAndLaunchContainer(String s);
+	void searchAndLaunchContainer(String s) throws InterruptedException;
 }

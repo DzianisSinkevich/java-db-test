@@ -50,8 +50,8 @@ public class NavigationHelper2 extends DriverBasedHelper implements NavigationHe
 	}
 	
 	@Override
-	public void searchAndLaunchContainer(String containerName) {
-		pages.containersPage.insertDataToNameField(containerName).searchButtonClick().launchButtonClick().cancelButtonClick();
+	public void searchAndLaunchContainer(String containerName) throws InterruptedException {
+		pages.containersPage.insertDataToNameField(containerName).searchButtonClick().launchButtonClick().launchInFormButtonClick().checkContainerSession();
 	}
 
 	@Override
@@ -88,6 +88,11 @@ public class NavigationHelper2 extends DriverBasedHelper implements NavigationHe
 
 	@Override
 	public void clickLaunchButton() {
+	}
+
+	@Override
+	public void openDashboardMenu() {
+		pages.internalPage.openDashboardMenu();
 	}
 
 }

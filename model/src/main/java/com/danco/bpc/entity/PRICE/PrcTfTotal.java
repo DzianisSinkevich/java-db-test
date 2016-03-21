@@ -1,27 +1,33 @@
 package com.danco.bpc.entity.PRICE;
 
-import java.io.Serializable;
-import java.util.Date;
+import java.util.Calendar;
 
-public class PrcTfTotal implements Serializable {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import com.danco.bpc.entity.api.AbstractBaseEntity;
+
+@Table(name = "PRC_TF_TOTAL")
+@Entity
+public class PrcTfTotal extends AbstractBaseEntity implements java.io.Serializable, Comparable<PrcFiles> {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	@Id
+	@Column(name = "FILE_ID")
 	private int fileId;
+	@Column(name = "SESSION_ID")
 	private String sessionId;
+	@Column(name = "TOTAL_AMOUNT")
 	private int totalAmount;
-	private Date storeDate;
+	@Column(name = "STORE_DATE")
+	private Calendar storeDate;
 
 	public PrcTfTotal() {
-	}
-
-	public PrcTfTotal(int fileId, String sessionId, int totalAmount, Date storeDate) {
-		this.setFileId(fileId);
-		this.setSessionId(sessionId);
-		this.setTotalAmount(totalAmount);
-		this.setStoreDate(storeDate);
 	}
 
 	public int getFileId() {
@@ -48,11 +54,29 @@ public class PrcTfTotal implements Serializable {
 		this.totalAmount = totalAmount;
 	}
 
-	public Date getStoreDate() {
+	public Calendar getStoreDate() {
 		return storeDate;
 	}
 
-	public void setStoreDate(Date storeDate) {
+	public void setStoreDate(Calendar storeDate) {
 		this.storeDate = storeDate;
+	}
+
+	@Override
+	public Long getId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setId(Long id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public int compareTo(PrcFiles o) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }

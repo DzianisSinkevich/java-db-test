@@ -11,134 +11,268 @@ import com.danco.bpc.entity.api.AbstractBaseEntity;
 
 @Table(name = "PRC_MESSAGES")
 @Entity
-public class PrcMessages extends AbstractBaseEntity implements java.io.Serializable, Comparable<PrcMessages>  {
+public class PrcMessages extends AbstractBaseEntity implements java.io.Serializable, Comparable<PrcMessages> {
 
 	private static final long serialVersionUID = 1L;
 	@Id
 	@Column(name = "ID")
 	private int id;
+	@Column(name = "VERSION")
 	private int version;
+	@Column(name = "USER_ID")
 	private int userId;
+	@Column(name = "P02")
 	private String p02;
+	@Column(name = "P03")
 	private int p03;
+	@Column(name = "P04")
 	private int p04;
+	@Column(name = "P05")
 	private int p05;
+	@Column(name = "P06")
 	private int p06;
+	@Column(name = "P09")
 	private int p09;
+	@Column(name = "P10")
 	private int p10;
+	@Column(name = "P11")
 	private int p11;
+	@Column(name = "P12")
 	private int p12;
+	@Column(name = "P14")
 	private int p14;
+	@Column(name = "P16")
 	private int p16;
+	@Column(name = "P17")
 	private int p17;
+	@Column(name = "P18")
 	private int p18;
+	@Column(name = "P19")
 	private int p19;
+	@Column(name = "P22")
 	private int p22;
+	@Column(name = "P23")
 	private String p23;
+	@Column(name = "P24")
 	private int p24;
+	@Column(name = "P25")
 	private int p25;
+	@Column(name = "P26")
 	private int p26;
+	@Column(name = "P27")
 	private int p27;
+	@Column(name = "P28")
 	private int p28;
+	@Column(name = "P29")
 	private int p29;
+	@Column(name = "P30_1")
 	private int p301;
+	@Column(name = "P30_2")
 	private int p302;
+	@Column(name = "P31")
 	private String p31;
+	@Column(name = "P32")
 	private String p32;
+	@Column(name = "P33")
 	private String p33;
+	@Column(name = "P35")
 	private String p35;
+	@Column(name = "P37")
 	private String p37;
+	@Column(name = "P38")
 	private String p38;
+	@Column(name = "P39")
 	private int p39;
+	@Column(name = "P40")
 	private int p40;
+	@Column(name = "P41")
 	private String p41;
+	@Column(name = "P42")
 	private String p42;
+	@Column(name = "P43")
 	private String p43;
+	@Column(name = "P44")
 	private String p44;
+	@Column(name = "P45")
 	private String p45;
+	@Column(name = "P46")
 	private String p46;
+	@Column(name = "P48")
 	private String p48;
+	@Column(name = "P48_01")
 	private int p4801;
+	@Column(name = "P48_02")
 	private int p4802;
+	@Column(name = "P48_03")
 	private int p4803;
+	@Column(name = "P48_04")
 	private int p4804;
+	@Column(name = "P48_05")
 	private String p4805;
+	@Column(name = "P48_06")
 	private String p4806;
+	@Column(name = "P48_07")
 	private int p4807;
+	@Column(name = "P48_08")
 	private int p4808;
+	@Column(name = "P48_09")
 	private String p4809;
+	@Column(name = "P48_10")
 	private int p4810;
+	@Column(name = "P48_12")
 	private int p4812;
+	@Column(name = "P48_13")
 	private String p4813;
+	@Column(name = "P48_14")
 	private String p4814;
+	@Column(name = "P48_15")
 	private String p4815;
+	@Column(name = "P48_16")
 	private int p4816;
+	@Column(name = "P48_17")
 	private int p4817;
+	@Column(name = "P48_18")
 	private int p4818;
+	@Column(name = "P48_19")
 	private String p4819;
+	@Column(name = "P48_20")
 	private int p4820;
+	@Column(name = "P48_21")
 	private String p4821;
+	@Column(name = "P48_22")
 	private String p4822;
+	@Column(name = "P48_23")
 	private int p4823;
+	@Column(name = "P48_24")
 	private String p4824;
+	@Column(name = "P48_25")
 	private String p4825;
+	@Column(name = "P48_26")
 	private String p4826;
+	@Column(name = "P48_28")
 	private int p4828;
+	@Column(name = "P48_29")
 	private String p4829;
+	@Column(name = "P48_30")
 	private int p4830;
+	@Column(name = "P48_31")
 	private String p4831;
+	@Column(name = "P48_35")
 	private String p4835;
+	@Column(name = "P49")
 	private int p49;
+	@Column(name = "P50")
 	private int p50;
+	@Column(name = "P51")
 	private int p51;
+	@Column(name = "P53")
 	private int p53;
+	@Column(name = "P55")
 	private String p55;
+	@Column(name = "P57")
 	private int p57;
+	@Column(name = "P58")
 	private String p58;
+	@Column(name = "P62")
 	private String p62;
+	@Column(name = "P62_01")
 	private int p6201;
+	@Column(name = "P62_02")
 	private int p6202;
+	@Column(name = "P62_03")
 	private int p6203;
+	@Column(name = "P62_04")
 	private int p6204;
+	@Column(name = "P62_05")
 	private String p6205;
+	@Column(name = "P62_06")
 	private int p6206;
+	@Column(name = "P62_13")
 	private String p6213;
+	@Column(name = "P62_16")
 	private String p6216;
+	@Column(name = "P62_17")
 	private int p6217;
+	@Column(name = "S71")
 	private int s71;
+	@Column(name = "S72")
 	private Calendar s72;
+	@Column(name = "S74")
 	private int s74;
+	@Column(name = "S75")
 	private int s75;
+	@Column(name = "S76")
 	private int s76;
+	@Column(name = "S77")
 	private int s77;
+	@Column(name = "S80")
 	private int s80;
+	@Column(name = "S81")
 	private int s81;
+	@Column(name = "S85")
 	private int s85;
+	@Column(name = "S86")
 	private int s86;
+	@Column(name = "S87")
 	private int s87;
+	@Column(name = "S88")
 	private int s88;
+	@Column(name = "S89")
 	private int s89;
+	@Column(name = "S93")
 	private String s93;
+	@Column(name = "S94")
 	private String s94;
+	@Column(name = "S95")
 	private String s95;
+	@Column(name = "S97")
 	private int s97;
+	@Column(name = "S101")
 	private String s101;
+	@Column(name = "S102")
 	private String s102;
+	@Column(name = "S104")
 	private String s104;
+	@Column(name = "S105")
 	private int s105;
+	@Column(name = "S106")
 	private int s106;
+	@Column(name = "S107")
 	private int s107;
+	@Column(name = "S108")
 	private int s108;
+	@Column(name = "S109")
 	private int s109;
+	@Column(name = "S110")
 	private int s110;
+	@Column(name = "SESS_ID")
 	private String sessId;
+	@Column(name = "P56")
 	private String p56;
+	@Column(name = "OPTP")
 	private String optp;
+	@Column(name = "MSGT")
 	private String msgt;
+	@Column(name = "ISS_INST")
 	private int issInst;
+	@Column(name = "ISS_NETWORK")
 	private int issNetwork;
+	@Column(name = "ACQ_INST")
 	private int acqInst;
+	@Column(name = "ACQ_NETWORK")
 	private int acqNetwork;
+	@Column(name = "P94_T")
+	private String p94T;
+	@Column(name = "P28_T")
+	private String p28T;
+	@Column(name = "P11_T")
+	private String p11T;
+	@Column(name = "P28L_T")
+	private String p28LT;
+	@Column(name = "P29L_T")
+	private String p29LT;
+	@Column(name = "P11L_T")
+	private String p11LT;
 
 	public PrcMessages() {
 	}
@@ -1132,7 +1266,7 @@ public class PrcMessages extends AbstractBaseEntity implements java.io.Serializa
 	@Override
 	public void setId(Long id) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override

@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Suite1">
-              <span class="suite-name border-passed">Suite1</span>
+              <span class="suite-name border-failed">Suite1</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -54,7 +54,7 @@
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="testlist-Suite1">
-                    <span class="test-stats">1 test</span>
+                    <span class="test-stats">2 tests</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">3 methods, 1 failed,   2 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite1" class="hide-methods failed suite-Suite1"> (hide)</a> <!-- hide-methods failed suite-Suite1 -->
+                      <a href="#" panel-name="suite-Suite1" class="show-methods failed suite-Suite1"> (show)</a> <!-- show-methods failed suite-Suite1 -->
+                    </span>
+                    <div class="method-list-content failed suite-Suite1">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite1" title="db.tests.PRICE.ContainerOperationLoadingExecuition" hash-for-method="openContainerPage">openContainerPage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Suite1 -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -122,6 +136,58 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite1" class="panel Suite1">
+          <div class="suite-Suite1-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">db.tests.PRICE.ContainerOperationLoadingExecuition</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="openContainerPage">
+                  </a> <!-- openContainerPage -->
+                  <span class="method-name">openContainerPage</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: Timed out after 10 seconds. Unable to locate the element
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.47.1&apos;, revision: &apos;unknown&apos;, time: &apos;2015-07-30 11:02:44&apos;
+System info: host: &apos;dancobygro0020&apos;, ip: &apos;192.168.1.126&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_45&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocator.findElement(AjaxElementLocator.java:89)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy4.sendKeys(Unknown Source)
+	at com.danco.bpc.pagesAllWeb.ContainersPage.insertDataToNameField(ContainersPage.java:48)
+	at com.danco.bpc.applogicAllWeb.NavigationHelper2.searchAndLaunchContainer(NavigationHelper2.java:54)
+	at db.tests.PRICE.ContainerOperationLoadingExecuition.openContainerPage(ContainerOperationLoadingExecuition.java:14)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;.//*[@id=&apos;containersSearchForm:nameFilter&apos;]&quot;}
+  (Session info: chrome=49.0.2623.87)
+  (Driver info: chromedriver=2.20.353145 (343b531d31eeb933ec778dbcf7081628a1396067),platform=Windows NT 6.3 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 39 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.47.1&apos;, revision: &apos;unknown&apos;, time: &apos;2015-07-30 11:02:44&apos;
+System info: host: &apos;dancobygro0020&apos;, ip: &apos;192.168.1.126&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_45&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, chrome={userDataDir=C:\Users\DZIANI~1\AppData\Local\Temp\scoped_dir5284_9088}, takesHeapSnapshot=true, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=49.0.2623.87, platform=WIN8_1, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 8918c526288fcdf7719200be6ed032d5
+*** Element info: {Using=xpath, value=.//*[@id=&apos;containersSearchForm:nameFilter&apos;]}
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:595)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:445)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:358)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:340)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocator.access$001(AjaxElementLocator.java:41)
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocator$SlowLoadingElement.isLoaded(AjaxElementLocator.java:157)
+	at org.openqa.selenium.support.ui.SlowLoadableComponent.get(SlowLoadableComponent.java:70)
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocator.findElement(AjaxElementLocator.java:87)
+	... 29 more
+... Removed 27 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite1-class-failed -->
           <div class="suite-Suite1-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -166,8 +232,18 @@
     &lt;classes&gt;
       &lt;class name=&quot;db.tests.allWeb.OpenAllWeb&quot;/&gt;
       &lt;class name=&quot;db.tests.allWeb.OpenContainerPage&quot;/&gt;
+      &lt;class name=&quot;db.tests.PRICE.ContainerOperationLoadingExecuition&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- OpenWeb --&gt;
+  &lt;test name=&quot;OpenWeb(failed)&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;db.tests.PRICE.ContainerOperationLoadingExecuition&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;openContainerPage&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- db.tests.PRICE.ContainerOperationLoadingExecuition --&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- OpenWeb(failed) --&gt;
 &lt;/suite&gt; &lt;!-- Suite1 --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -179,7 +255,10 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">OpenWeb (2 classes)</span>
+                <span class="test-name">OpenWeb (3 classes)</span>
+              </li>
+              <li>
+                <span class="test-name">OpenWeb(failed) (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -205,20 +284,24 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(3);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'openContainerPage')
-data.setCell(0, 2, 'db.tests.allWeb.OpenContainerPage')
-data.setCell(0, 3, 35282);
+data.setCell(0, 1, 'openWeb')
+data.setCell(0, 2, 'db.tests.allWeb.OpenAllWeb')
+data.setCell(0, 3, 23176);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'openWeb')
-data.setCell(1, 2, 'db.tests.allWeb.OpenAllWeb')
-data.setCell(1, 3, 21074);
+data.setCell(1, 1, 'openContainerPage')
+data.setCell(1, 2, 'db.tests.allWeb.OpenContainerPage')
+data.setCell(1, 3, 16231);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'openContainerPage')
+data.setCell(2, 2, 'db.tests.PRICE.ContainerOperationLoadingExecuition')
+data.setCell(2, 3, 15097);
 window.suiteTableData['Suite1']= { tableData: data, tableDiv: 'times-div-Suite1'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 56 seconds</span>
+              <span class="suite-total-time">Total running time: 54 seconds</span>
               <div id="times-div-Suite1">
               </div> <!-- times-div-Suite1 -->
             </div> <!-- times-div -->
@@ -254,7 +337,16 @@ return data;
               <div class="chronological-class-name">db.tests.allWeb.OpenContainerPage</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">openContainerPage</span>
-                <span class="method-start">21076 ms</span>
+                <span class="method-start">23179 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">db.tests.PRICE.ContainerOperationLoadingExecuition</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">openContainerPage</span>
+                <span class="method-start">39411 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

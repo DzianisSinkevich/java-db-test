@@ -12,6 +12,5 @@ public class OpenContainerPage extends TestBaseAll {
 	public void openContainerPage() {
 		app = new ApplicationManager2();
 		app.getNavigationHelper().openContainersPage();
-		app.getNavigationHelper().searchAndLaunchContainer("%price%");
 	}
 }

@@ -1,46 +1,47 @@
 package com.danco.bpc.entity.PRICE;
 
-import java.io.Serializable;
-import java.util.Date;
+import java.util.Calendar;
 
-public class PrcRawMessages implements Serializable {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import com.danco.bpc.entity.api.AbstractBaseEntity;
+
+@Table(name = "PRC_RAW_MESSAGES")
+@Entity
+public class PrcRawMessages extends AbstractBaseEntity implements java.io.Serializable, Comparable<PrcFiles> {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	@Id
+	@Column(name = "ID")
 	private int id;
+	@Column(name = "FILE_ID")
 	private int fileId;
+	@Column(name = "LINE")
 	private int line;
-	private Date createdAt;
+	@Column(name = "CREATE_AT")
+	private Calendar createdAt;
+	@Column(name = "TYPE")
 	private String type;
+	@Column(name = "SEND_COUNT")
 	private int sendCount;
+	@Column(name = "STATUS")
 	private String status;
+	@Column(name = "SESSION_ID")
 	private String sessionId;
+	@Column(name = "SV_OPER_ID")
 	private int svOperId;
+	@Column(name = "SEQUENCE_FILE")
 	private int sequenceFile;
+	@Column(name = "SEQUINCE_LOTE")
 	private int sequinceLote;
 
 	public PrcRawMessages() {
-	}
-
-	public PrcRawMessages(int id, int fileId, int line, Date createdAt, String type, int sendCount, String status, String sessionId, int svOperId,
-			int sequenceFile, int sequinceLote) {
-		this.setId(id);
-		this.setFileId(fileId);
-		this.setLine(line);
-		this.setCreatedAt(createdAt);
-		this.setType(type);
-		this.setSendCount(sendCount);
-		this.setStatus(status);
-		this.setSessionId(sessionId);
-		this.setSvOperId(svOperId);
-		this.setSequenceFile(sequenceFile);
-		this.setSequinceLote(sequinceLote);
-	}
-
-	public int getId() {
-		return id;
 	}
 
 	public void setId(int id) {
@@ -63,11 +64,11 @@ public class PrcRawMessages implements Serializable {
 		this.line = line;
 	}
 
-	public Date getCreatedAt() {
+	public Calendar getCreatedAt() {
 		return createdAt;
 	}
 
-	public void setCreatedAt(Date createdAt) {
+	public void setCreatedAt(Calendar createdAt) {
 		this.createdAt = createdAt;
 	}
 
@@ -125,5 +126,23 @@ public class PrcRawMessages implements Serializable {
 
 	public void setSequinceLote(int sequinceLote) {
 		this.sequinceLote = sequinceLote;
+	}
+
+	@Override
+	public Long getId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setId(Long id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public int compareTo(PrcFiles o) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }

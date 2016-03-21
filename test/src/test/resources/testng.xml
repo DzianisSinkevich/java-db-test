@@ -5,6 +5,7 @@
 		<classes>
 			<class name="db.tests.allWeb.OpenAllWeb"></class>
 			<class name="db.tests.allWeb.OpenContainerPage"></class>
+			<class name="db.tests.PRICE.ContainerOperationLoadingExecuition"></class>
 		</classes>
 	</test>
 </suite> 	

@@ -33,6 +33,8 @@
 		<module>dao-impl-NPS</module>
 		<module>api-PRICE</module>
 		<module>dao-impl-PRICE</module>
+		<module>api-RECON</module>
+		<module>dao-impl-RECON</module>
 		<module>service-impl</module>
     <module>test</module>
 	</modules>
