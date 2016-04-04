@@ -11,6 +11,7 @@ public class OpenAllWeb extends TestBaseAll {
 	@Test
 	public void openWeb() {
 		app = new ApplicationManager2();
+		app.getNavigationHelper().openMainPage();
 		app.getUserHelper().loginAs(ADMIN);
 	}
 }

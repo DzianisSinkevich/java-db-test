@@ -126,17 +126,17 @@ public class WebDriverFactory {
 	 * 
 	 * @return WebDriver instance
 	 */
-	public static WebDriver getInstance(String browser, String username, String password) {
+	public static WebDriver getInstance(String browserName, String username, String password) {
 
 		if (webDriver != null) {
 			return webDriver;
 		}
 
-		if (CHROME.equals(browser)) {
+		if (CHROME.equals(browserName)) {
 			System.setProperty("webdriver.chrome.driver", "C:\\tools\\chromedriver.exe");
 			webDriver = new ChromeDriver();
 
-		} else if (FIREFOX.equals(browser)) {
+		} else if (FIREFOX.equals(browserName)) {
 
 			FirefoxProfile ffProfile = new FirefoxProfile();
 
@@ -147,10 +147,10 @@ public class WebDriverFactory {
 
 			webDriver = new FirefoxDriver(ffProfile);
 
-		} else if (INTERNET_EXPLORER.equals(browser)) {
+		} else if (INTERNET_EXPLORER.equals(browserName)) {
 			webDriver = new InternetExplorerDriver();
 
-		} else if (SAFARI.equals(browser)) {
+		} else if (SAFARI.equals(browserName)) {
 			webDriver = new SafariDriver();
 
 		} else {

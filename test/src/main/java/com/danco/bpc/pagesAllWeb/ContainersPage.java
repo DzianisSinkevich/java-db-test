@@ -61,28 +61,23 @@ public class ContainersPage extends AnyPage {
 		return pages.containersPage;
 	}
 
-	public boolean checkContainerSession() throws InterruptedException{
-		List<String> elements = null;
+	public String checkContainerSession() throws InterruptedException {
 		String ssid = null;
 
 		for (int i = 0; i < 1200; i++) {
-			if (ssidList.size() > 0) {
-				System.out.println("SSID amount = " + ssidList.size());
-				for (WebElement el : ssidList) {
-					elements.add(el.getText());
-					ssid = elements.get(0);
-					System.out.println("SSID = " + ssid);
-					break;
-				}
+			if ((ssidList.size() > 0)
+					&& (ssidList.get(0).getText().length() == 16)) {
+				ssid = ssidList.get(0).getText();
+				System.out.println("SSID = " + ssid);
+				break;
 			}
 			Thread.sleep(1000);
 		}
 		if (ssid.equals("")) {
 			System.out.println("SSID is not detected");
-			return false;
+			return null;
 		}
-		System.out.println("SSID is detected - " + ssid);
-		return true;
+		return ssid;
 	}
 
 	public ContainersPage cancelButtonClick() {

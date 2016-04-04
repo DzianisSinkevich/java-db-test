@@ -12,5 +12,6 @@ public class ContainerOperationLoadingExecuition extends TestBaseAll {
 	public void openContainerPage() throws InterruptedException {
 		app = new ApplicationManager2();
 		app.getNavigationHelper().searchAndLaunchContainer("PRICE. Data loading");
+		
 	}
 }
