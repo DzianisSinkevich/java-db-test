@@ -38,20 +38,26 @@ public class NavigationHelper2 extends DriverBasedHelper implements NavigationHe
 	public void administrationClick() {
 		pages.internalPage.clickAdministration();
 	}
-	
+
 	@Override
 	public void administrationProcessesClick() {
 		pages.internalPage.clickAdministrationProcesses();
 	}
-	
+
 	@Override
 	public void openContainersPage() {
 		pages.internalPage.clickAdministration().clickAdministrationProcesses().clickAdministrationProcessesContainers();
 	}
-	
+
 	@Override
 	public void searchAndLaunchContainer(String containerName) throws InterruptedException {
-		pages.containersPage.insertDataToNameField(containerName).searchButtonClick().launchButtonClick().launchInFormButtonClick().checkContainerSession();
+		pages.containersPage.insertDataToNameField(containerName).searchButtonClick().launchButtonClick().launchInFormButtonClick();
+	}
+
+	@Override
+	public void waitForContainerExecution() throws InterruptedException {
+		String ssid = pages.containersPage.checkContainerSession();
+		
 	}
 
 	@Override
