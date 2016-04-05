@@ -8,7 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Table(name = "BATCH_FILE", catalog = "mkyong")
+@Table(name = "PRC_SESSION", catalog = "mkyong")
 @Entity
 public class PrcSession implements Serializable {
 

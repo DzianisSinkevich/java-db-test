@@ -35,6 +35,8 @@
 		<module>dao-impl-PRICE</module>
 		<module>api-RECON</module>
 		<module>dao-impl-RECON</module>
+		<module>api-MAIN</module>
+		<module>dao-impl-MAIN</module>
 		<module>service-impl</module>
     <module>test</module>
 	</modules>

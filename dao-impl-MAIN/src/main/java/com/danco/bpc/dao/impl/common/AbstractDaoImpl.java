@@ -42,7 +42,7 @@ public class AbstractDaoImpl<T> implements IGenericDao<T> {
 	@SuppressWarnings("rawtypes")
 	public AbstractDaoImpl(Class clazz) {
 		AnnotationConfiguration configuration = new AnnotationConfiguration();
-		configuration.configure("hibernate_price.cfg.xml");
+		configuration.configure("hibernate_main.cfg.xml");
 		this.sessionFactory = configuration.buildSessionFactory();
 		this.clazz = clazz;
 	}

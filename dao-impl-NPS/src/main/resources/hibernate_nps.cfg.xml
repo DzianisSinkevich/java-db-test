@@ -4,6 +4,12 @@
 		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
 	<session-factory>
+		<property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+		<property name="hibernate.connection.url">jdbc:oracle:thin:@redsys.bt.bpc.in:1521/sv</property>
+		<property name="hibernate.connection.username">nps</property>
+		<property name="hibernate.connection.password">nps1</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property>
+		<property name="hibernate.current_session_context_class">thread</property>
 		<mapping class="com.danco.bpc.entity.NPS.BatchFile" />
 		<mapping class="com.danco.bpc.entity.NPS.ConfigurationOld" />
 		<mapping class="com.danco.bpc.entity.NPS.DatabaseChangeLogLock" />

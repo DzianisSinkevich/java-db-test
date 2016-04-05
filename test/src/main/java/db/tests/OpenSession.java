@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 import com.danco.bpc.entity.TMA.TmaMovActc;
 import com.danco.bpc.service.api.TMA.ITmaMovActcService;
-import com.danco.bpc.service.impl.TMA.TmaMovActcServiceImpl;
+import com.danco.bpc.service.impl.SERVICES.TmaMovActcServiceImpl;
 import com.danco.bpc.util.SessionPropertyReader;
 
 import db.utils.PropertyLoaderJenkins;

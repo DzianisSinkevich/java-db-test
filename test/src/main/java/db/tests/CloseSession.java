@@ -6,8 +6,8 @@ import com.danco.bpc.entity.TMA.TmtMovActcTe;
 import com.danco.bpc.entity.TMA.TmtMovActcTr;
 import com.danco.bpc.service.api.TMA.ITmtMovActcTeService;
 import com.danco.bpc.service.api.TMA.ITmtMovActcTrService;
-import com.danco.bpc.service.impl.TMA.TmtMovActcTeServiceImpl;
-import com.danco.bpc.service.impl.TMA.TmtMovActcTrServiceImpl;
+import com.danco.bpc.service.impl.SERVICES.TmtMovActcTeServiceImpl;
+import com.danco.bpc.service.impl.SERVICES.TmtMovActcTrServiceImpl;
 import com.danco.bpc.util.SessionPropertyReader;
 
 import pages.TestBaseRecon;
