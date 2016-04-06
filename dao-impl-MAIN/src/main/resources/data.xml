@@ -10,6 +10,8 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 	
+	<context:component-scan base-package="com.danco.bpc.dao.api.MAIN;com.danco.bpc.service.api.MAIN;com.danco.bpc.dao.impl.common;com.danco.bpc.dao.impl.MAIN;" />
+	
 	<beans:bean
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<beans:property name="ignoreUnresolvablePlaceholders" value="true"/>
@@ -30,7 +32,7 @@
 		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
 		<beans:property name="dataSource" ref="dataSource" />
 		<beans:property name="configLocation">
-			<beans:value>classpath:hibernate.cfg.xml</beans:value>
+			<beans:value>classpath:hibernate_main.cfg.xml</beans:value>
 		</beans:property>
 		<beans:property name="configurationClass">
 			<beans:value>org.hibernate.cfg.AnnotationConfiguration</beans:value>

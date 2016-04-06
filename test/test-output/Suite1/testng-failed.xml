@@ -8,4 +8,38 @@
       <class name="db.tests.PRICE.ContainerOperationLoadingExecuition"/>
     </classes>
   </test> <!-- OpenWeb -->
+  <test name="OpenWeb(failed)">
+    <classes>
+      <class name="db.tests.allWeb.OpenAllWeb">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="openWeb"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- db.tests.allWeb.OpenAllWeb -->
+      <class name="db.tests.allWeb.OpenContainerPage">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="openContainerPage"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- db.tests.allWeb.OpenContainerPage -->
+      <class name="db.tests.PRICE.ContainerOperationLoadingExecuition">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="openContainerPage"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- db.tests.PRICE.ContainerOperationLoadingExecuition -->
+    </classes>
+  </test> <!-- OpenWeb(failed) -->
 </suite> <!-- Failed suite [Suite1] -->

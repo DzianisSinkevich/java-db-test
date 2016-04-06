@@ -38,5 +38,5 @@ public interface NavigationHelper {
 
 	void searchAndLaunchContainer(String s) throws InterruptedException;
 
-	void waitForContainerExecution() throws InterruptedException;
+	String waitForContainerExecution() throws InterruptedException;
 }

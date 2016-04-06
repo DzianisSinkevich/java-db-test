@@ -55,9 +55,9 @@ public class NavigationHelper2 extends DriverBasedHelper implements NavigationHe
 	}
 
 	@Override
-	public void waitForContainerExecution() throws InterruptedException {
+	public String waitForContainerExecution() throws InterruptedException {
 		String ssid = pages.containersPage.checkContainerSession();
-		
+		return ssid;
 	}
 
 	@Override
