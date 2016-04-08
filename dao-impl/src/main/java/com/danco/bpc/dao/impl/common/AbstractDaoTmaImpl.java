@@ -15,14 +15,13 @@ import org.hibernate.exception.ConstraintViolationException;
 
 import com.danco.bpc.dao.api.IGenericDao;
 
-
 /**
  * The Class AbstractDao.
  *
  * @param <T>
  *            the generic type
  */
-public class AbstractDaoImpl<T> implements IGenericDao<T> {
+public class AbstractDaoTmaImpl<T> implements IGenericDao<T> {
 
 	/** The Constant ID. */
 	protected static final String ID = "id";
@@ -41,9 +40,9 @@ public class AbstractDaoImpl<T> implements IGenericDao<T> {
 	 *            the clazz
 	 */
 	@SuppressWarnings("rawtypes")
-	public AbstractDaoImpl(Class clazz) {
+	public AbstractDaoTmaImpl(Class clazz) {
 		AnnotationConfiguration configuration = new AnnotationConfiguration();
-		configuration.configure("hibernate_nps.cfg.xml");
+		configuration.configure("hibernate_tma.cfg.xml");
 		this.sessionFactory = configuration.buildSessionFactory();
 		this.clazz = clazz;
 	}

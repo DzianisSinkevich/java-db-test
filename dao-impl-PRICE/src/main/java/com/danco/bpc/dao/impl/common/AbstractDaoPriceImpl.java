@@ -21,7 +21,7 @@ import com.danco.bpc.dao.api.IGenericDao;
  * @param <T>
  *            the generic type
  */
-public class AbstractDaoImpl<T> implements IGenericDao<T> {
+public class AbstractDaoPriceImpl<T> implements IGenericDao<T> {
 
 	/** The Constant ID. */
 	protected static final String ID = "id";
@@ -40,9 +40,9 @@ public class AbstractDaoImpl<T> implements IGenericDao<T> {
 	 *            the clazz
 	 */
 	@SuppressWarnings("rawtypes")
-	public AbstractDaoImpl(Class clazz) {
+	public AbstractDaoPriceImpl(Class clazz) {
 		AnnotationConfiguration configuration = new AnnotationConfiguration();
-		configuration.configure("hibernate_tma.cfg.xml");
+		configuration.configure("hibernate_price.cfg.xml");
 		this.sessionFactory = configuration.buildSessionFactory();
 		this.clazz = clazz;
 	}

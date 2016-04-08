@@ -1,10 +1,10 @@
 package com.danco.bpc.dao.impl.RECON;
 
 import com.danco.bpc.dao.api.RECON.IReconPriceDao;
-import com.danco.bpc.dao.impl.common.AbstractDaoImpl;
+import com.danco.bpc.dao.impl.common.AbstractDaoReconImpl;
 import com.danco.bpc.entity.RECON.ReconPrice;
 
-public class ReconPriceDaoImpl extends AbstractDaoImpl<ReconPrice> implements IReconPriceDao {
+public class ReconPriceDaoImpl extends AbstractDaoReconImpl<ReconPrice> implements IReconPriceDao {
 
 	/**
 	 * Instantiates a new about dao impl.

@@ -7,10 +7,10 @@ import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 
 import com.danco.bpc.dao.api.MAIN.IPrcSessionDao;
-import com.danco.bpc.dao.impl.common.AbstractDaoImpl;
+import com.danco.bpc.dao.impl.common.AbstractDaoMainImpl;
 import com.danco.bpc.entity.MAIN.PrcSession;
 
-public class PrcSessionDaoImpl extends AbstractDaoImpl<PrcSession>implements IPrcSessionDao {
+public class PrcSessionDaoImpl extends AbstractDaoMainImpl<PrcSession>implements IPrcSessionDao {
 
 	/**
 	 * Instantiates a new about dao impl.
