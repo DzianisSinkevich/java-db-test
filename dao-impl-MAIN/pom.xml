@@ -6,7 +6,7 @@
 		<artifactId>cms</artifactId>
 		<version>0.0.1</version>
 	</parent>
-	<artifactId>dao-impl-RECON</artifactId>
+	<artifactId>dao-impl-MAIN</artifactId>
 	<dependencies>
 		<dependency>
 			<groupId>com.nashorn.cms</groupId>
@@ -15,7 +15,7 @@
 		</dependency>
 		<dependency>
 			<groupId>com.nashorn.cms</groupId>
-			<artifactId>api-RECON</artifactId>
+			<artifactId>api-MAIN</artifactId>
 			<version>${global.version}</version>
 		</dependency>
 	</dependencies>

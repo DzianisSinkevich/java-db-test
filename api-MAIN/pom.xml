@@ -6,7 +6,7 @@
 		<artifactId>cms</artifactId>
 		<version>0.0.1</version>
 	</parent>
-	<artifactId>api-RECON</artifactId>
+	<artifactId>api-MAIN</artifactId>
 
 	<dependencies>
 		<dependency>
