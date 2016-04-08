@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.danco.bpc.dao.api.MAIN.IPrcSessionDao;
+import com.danco.bpc.dao.impl.MAIN.PrcSessionDaoImpl;
 import com.danco.bpc.entity.MAIN.PrcSession;
 import com.danco.bpc.service.api.MAIN.IPrcSessionService;
 
@@ -13,7 +13,7 @@ import com.danco.bpc.service.api.MAIN.IPrcSessionService;
 public class PrcSessionServiceImpl extends DataServiceImpl<PrcSession>implements IPrcSessionService {
 
 	@Autowired
-	private IPrcSessionDao genericDao;
+	private PrcSessionDaoImpl genericDao = new PrcSessionDaoImpl();
 
 	@Override
 	public String getUserByLogin(String login) {

@@ -5,7 +5,7 @@ import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import com.danco.bpc.IApplogicAllWeb.ApplicationManager;
 import com.danco.bpc.modelAllWeb.User;
 
-public class TestBaseAll extends AbstractTestNGSpringContextTests {
+public class TestBaseAll{
 
 	public static User ADMIN = new User().setLogin("admin").setPassword("admin");
 

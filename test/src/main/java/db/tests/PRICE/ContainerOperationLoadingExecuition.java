@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 import com.danco.bpc.applogicAllWeb.ApplicationManager2;
 import com.danco.bpc.entity.MAIN.PrcSession;
-import com.danco.bpc.service.api.MAIN.IPrcSessionService;
+import com.danco.bpc.service.impl.SERVICES.PrcSessionServiceImpl;
 
 import pages.TestBaseAll;
 
@@ -14,7 +14,7 @@ import pages.TestBaseAll;
 public class ContainerOperationLoadingExecuition extends TestBaseAll {
 
 	@Autowired
-	private IPrcSessionService prcSessionService;
+	private PrcSessionServiceImpl prcSessionService = new PrcSessionServiceImpl();
 
 	@Test
 	public void openContainerPage() throws Exception {
