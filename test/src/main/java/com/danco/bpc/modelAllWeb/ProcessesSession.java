@@ -1,8 +1,8 @@
 package com.danco.bpc.modelAllWeb;
 
-public class Session {
+public class ProcessesSession {
 
-	private String ssid;
+	private Long id;
 	private String state;
 	private String status;
 	private String te;
@@ -26,12 +26,12 @@ public class Session {
 		this.tf = tf;
 	}
 
-	public String getSsid() {
-		return ssid;
+	public Long getSsid() {
+		return id;
 	}
 
-	public Session setSsid(String id) {
-		this.ssid = id;
+	public ProcessesSession setSsid(Long id) {
+		this.id = id;
 		return this;
 	}
 
@@ -39,7 +39,7 @@ public class Session {
 		return state;
 	}
 
-	public Session setState(String state) {
+	public ProcessesSession setState(String state) {
 		this.state = state;
 		return this;
 	}
@@ -48,7 +48,7 @@ public class Session {
 		return status;
 	}
 
-	public Session setStatus(String status) {
+	public ProcessesSession setStatus(String status) {
 		this.status = status;
 		return this;
 	}
@@ -57,7 +57,7 @@ public class Session {
 		return te;
 	}
 
-	public Session setTe(String string) {
+	public ProcessesSession setTe(String string) {
 		this.te = string;
 		return this;
 	}
@@ -66,13 +66,13 @@ public class Session {
 		return tr;
 	}
 
-	public Session setTr(String tr) {
+	public ProcessesSession setTr(String tr) {
 		this.tr = tr;
 		return this;
 	}
 
 	@Override
 	public String toString() {
-		return "Session [ssid=" + ssid + ", state=" + state + ", status=" + status + ", te=" + te + ", tr=" + tr + ", tsv=" + tsv + ", tf=" + tf + "]";
+		return "Session [ssid=" + id + ", state=" + state + ", status=" + status + ", te=" + te + ", tr=" + tr + ", tsv=" + tsv + ", tf=" + tf + "]";
 	}
 }

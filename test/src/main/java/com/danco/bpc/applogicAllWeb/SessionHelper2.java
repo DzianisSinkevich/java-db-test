@@ -8,10 +8,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import com.danco.bpc.IApplogicAllWeb.SessionHelper;
-import com.danco.bpc.modelAllWeb.Session;
+import com.danco.bpc.entity.MAIN.PrcSession;
+import com.danco.bpc.modelAllWeb.ProcessesSession;
+import com.danco.bpc.service.impl.SERVICES.PrcSessionServiceImpl;
 import com.danco.bpc.util.SessionPropertyReader;
 
 public class SessionHelper2 extends DriverBasedHelper implements SessionHelper {
+
+	private PrcSessionServiceImpl prcSessionService = new PrcSessionServiceImpl();
 
 	public SessionHelper2(ApplicationManager2 manager) {
 		super(manager.getWebDriver());
@@ -21,26 +25,26 @@ public class SessionHelper2 extends DriverBasedHelper implements SessionHelper {
 	private WebElement firstSession;
 
 	@Override
-	public List<Session> search(String ssid) throws InterruptedException {
+	public List<ProcessesSession> search(String ssid) throws InterruptedException {
 		List<WebElement> elements;
-		List<Session> sessions = new ArrayList<Session>();
+		List<ProcessesSession> sessions = new ArrayList<ProcessesSession>();
 		pages.sessionPage.clickSearchLink(ssid);
 		elements = pages.sessionPage.getSearchedSessions();
 		System.out.println("Size elements - " + elements.size());
 		for (WebElement el : elements) {
-			sessions.add(new Session().setSsid((el.getAttribute("data-rk"))));
+			sessions.add(new ProcessesSession().setSsid(Long.parseLong(el.getAttribute("data-rk"))));
 		}
 		return sessions;
 	}
 
 	@Override
 	public boolean checkSessionInTableNegative(String searchSsid) throws InterruptedException {
-		List<Session> sessions = search(searchSsid);
+		List<ProcessesSession> sessions = search(searchSsid);
 		if (sessions.size() > 1) {
 			System.out.println("Count of session not equal 1");
 			return true;
 		}
-		for (Session sess : sessions) {
+		for (ProcessesSession sess : sessions) {
 			if (sess.getSsid().equals(searchSsid)) {
 				System.out.println("Session is open");
 				return true;
@@ -52,12 +56,12 @@ public class SessionHelper2 extends DriverBasedHelper implements SessionHelper {
 	@Override
 	public boolean checkSessionInTablePositive(String searchSsid) throws InterruptedException {
 		for (int i = 0; i < 60; i++) {
-			List<Session> sessions = search(searchSsid);
+			List<ProcessesSession> sessions = search(searchSsid);
 			if (sessions.size() > 1) {
 				System.out.println("Count of session not equal 1");
 				return false;
 			}
-			for (Session sess : sessions) {
+			for (ProcessesSession sess : sessions) {
 				if (sess.getSsid().equals(searchSsid)) {
 					return true;
 				}
@@ -69,7 +73,7 @@ public class SessionHelper2 extends DriverBasedHelper implements SessionHelper {
 	}
 
 	@Override
-	public void getAllParameterSession(String ssid, Session currSession) throws InterruptedException, IOException {
+	public void getAllParameterSession(String ssid, ProcessesSession currSession) throws InterruptedException, IOException {
 		SessionPropertyReader pr = new SessionPropertyReader();
 		String sessMask = ssid.substring(0, ssid.length() - 4);
 		if ((ssid.substring(ssid.length() - 4, ssid.length())).equals("null")) {
@@ -86,5 +90,19 @@ public class SessionHelper2 extends DriverBasedHelper implements SessionHelper {
 		String fullLastSession = pages.sessionPage.getFirstSession();
 		System.out.println("Last session - " + fullLastSession.substring(fullLastSession.indexOf("-") + 1, fullLastSession.length()));
 		return fullLastSession.substring((fullLastSession.indexOf("-") + 1), fullLastSession.length());
+	}
+
+	@Override
+	public String waitForProcessFinished(String pid) throws Exception {
+		String resultCode = "PRSR0001";
+		for (int i=0;i<=1200;i++){
+			PrcSession prcSession = prcSessionService.selectSession(pid);
+			resultCode = prcSession.getResultCode();
+			if (!resultCode.equals("PRSR0001")){
+				return "Finisht";
+			}
+			Thread.sleep(1000);
+		}
+		return "Not finisht";
 	}
 }

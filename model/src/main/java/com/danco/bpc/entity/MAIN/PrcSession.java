@@ -8,18 +8,18 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Table(name = "PRC_SESSION", catalog = "mkyong")
+@Table(name = "PRC_SESSION")
 @Entity
 public class PrcSession implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	@Id
 	@Column(name = "ID")
-	private int id;
+	private Long id;
 	@Column(name = "PROCESS_ID")
-	private int processId;
+	private Long processId;
 	@Column(name = "PARENT_ID")
-	private int parentId;
+	private Long parentId;
 	@Column(name = "START_TIME")
 	private Date startTime;
 	@Column(name = "END_TIME")
@@ -27,21 +27,21 @@ public class PrcSession implements Serializable {
 	@Column(name = "THREAD_COUNT")
 	private int threadCount;
 	@Column(name = "ESTIMATED_COUNT")
-	private int estimatedCount;
+	private Long estimatedCount;
 	@Column(name = "PROCESSED")
-	private int processed;
+	private Long processed;
 	@Column(name = "REJECTED")
-	private int rejected;
+	private Long rejected;
 	@Column(name = "EXCEPTED")
-	private int escepted;
+	private Long escepted;
 	@Column(name = "USER_ID")
-	private int userId;
+	private Long userId;
 	@Column(name = "RESULT_CODE")
 	private String resultCode;
 	@Column(name = "INST_ID")
 	private int instId;
 	@Column(name = "STTL_DAY")
-	private int sttlDay;
+	private Long sttlDay;
 	@Column(name = "STTL_DATE")
 	private Date sttlDate;
 	@Column(name = "IP_ADDRESS")
@@ -50,27 +50,27 @@ public class PrcSession implements Serializable {
 	public PrcSession() {
 	}
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public int getProcessId() {
+	public Long getProcessId() {
 		return processId;
 	}
 
-	public void setProcessId(int processId) {
+	public void setProcessId(Long processId) {
 		this.processId = processId;
 	}
 
-	public int getParentId() {
+	public Long getParentId() {
 		return parentId;
 	}
 
-	public void setParentId(int parentId) {
+	public void setParentId(Long parentId) {
 		this.parentId = parentId;
 	}
 
@@ -98,43 +98,43 @@ public class PrcSession implements Serializable {
 		this.threadCount = threadCount;
 	}
 
-	public int getEstimatedCount() {
+	public Long getEstimatedCount() {
 		return estimatedCount;
 	}
 
-	public void setEstimatedCount(int estimatedCount) {
+	public void setEstimatedCount(Long estimatedCount) {
 		this.estimatedCount = estimatedCount;
 	}
 
-	public int getProcessed() {
+	public Long getProcessed() {
 		return processed;
 	}
 
-	public void setProcessed(int processed) {
+	public void setProcessed(Long processed) {
 		this.processed = processed;
 	}
 
-	public int getRejected() {
+	public Long getRejected() {
 		return rejected;
 	}
 
-	public void setRejected(int rejected) {
+	public void setRejected(Long rejected) {
 		this.rejected = rejected;
 	}
 
-	public int getEscepted() {
+	public Long getEscepted() {
 		return escepted;
 	}
 
-	public void setEscepted(int escepted) {
+	public void setEscepted(Long escepted) {
 		this.escepted = escepted;
 	}
 
-	public int getUserId() {
+	public Long getUserId() {
 		return userId;
 	}
 
-	public void setUserId(int userId) {
+	public void setUserId(Long userId) {
 		this.userId = userId;
 	}
 
@@ -154,11 +154,11 @@ public class PrcSession implements Serializable {
 		this.instId = instId;
 	}
 
-	public int getSttlDay() {
+	public Long getSttlDay() {
 		return sttlDay;
 	}
 
-	public void setSttlDay(int sttlDay) {
+	public void setSttlDay(Long sttlDay) {
 		this.sttlDay = sttlDay;
 	}
 

@@ -8,13 +8,4 @@
       <class name="db.tests.PRICE.ContainerOperationLoadingExecuition"/>
     </classes>
   </test> <!-- OpenWeb -->
-  <test name="OpenWeb(failed)">
-    <classes>
-      <class name="db.tests.PRICE.ContainerOperationLoadingExecuition">
-        <methods>
-          <include name="openContainerPage"/>
-        </methods>
-      </class> <!-- db.tests.PRICE.ContainerOperationLoadingExecuition -->
-    </classes>
-  </test> <!-- OpenWeb(failed) -->
 </suite> <!-- Failed suite [Suite1] -->

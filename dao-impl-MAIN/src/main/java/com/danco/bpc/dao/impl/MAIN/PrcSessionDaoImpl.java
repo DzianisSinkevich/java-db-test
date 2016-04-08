@@ -25,11 +25,8 @@ public class PrcSessionDaoImpl extends AbstractDaoMainImpl<PrcSession>implements
 		try {
 			Session session = sessionFactory.getCurrentSession();
 			txn = session.beginTransaction();
-			// Query q = session.createQuery("from PrcSession where parentId = :parentId");
-			// q.setString(Integer.parseInt(sessionId), "parentId");
-			// PrcSession prcSession = (PrcSession) q.uniqueResult();
 			Criteria criteria = session.createCriteria(PrcSession.class);
-			criteria.add(Restrictions.eq("parentId", Long.valueOf(sessionId)));
+			criteria.add(Restrictions.eq("parentId", (Long.valueOf(sessionId)) - 1));
 			PrcSession prcSession = (PrcSession) criteria.uniqueResult();
 			txn.commit();
 			return prcSession;

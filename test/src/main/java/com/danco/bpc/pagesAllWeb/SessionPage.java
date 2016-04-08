@@ -10,13 +10,13 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import com.danco.bpc.modelAllWeb.Session;
+import com.danco.bpc.modelAllWeb.ProcessesSession;
 
 import db.utils.WaitLoadAndDisplayed;
 
 public class SessionPage extends InternalPage {
 
-	Session currentSesion = new Session();
+	ProcessesSession currentSesion = new ProcessesSession();
 
 	public SessionPage(PageManager pages) {
 		super(pages);
@@ -79,32 +79,32 @@ public class SessionPage extends InternalPage {
 		}
 	}
 
-	public SessionPage getSessionState(Session currSession) throws InterruptedException {
+	public SessionPage getSessionState(ProcessesSession currSession) throws InterruptedException {
 		currSession.setState(stateSession.getText());
 		return pages.sessionPage;
 	}
 
-	public SessionPage getSessionStatus(Session currSession) throws InterruptedException {
+	public SessionPage getSessionStatus(ProcessesSession currSession) throws InterruptedException {
 		currSession.setStatus(statusSession.getText());
 		return pages.sessionPage;
 	}
 	
-	public SessionPage getSessionTe(Session currSession) throws InterruptedException {
+	public SessionPage getSessionTe(ProcessesSession currSession) throws InterruptedException {
 		currSession.setTe(teSession.getText());
 		return pages.sessionPage;
 	}
 	
-	public SessionPage getSessionTr(Session currSession) throws InterruptedException {
+	public SessionPage getSessionTr(ProcessesSession currSession) throws InterruptedException {
 		currSession.setTr(trSession.getText());
 		return pages.sessionPage;
 	}
 	
-	public SessionPage getSessionTsv(Session currSession) throws InterruptedException {
+	public SessionPage getSessionTsv(ProcessesSession currSession) throws InterruptedException {
 		currSession.setTsv(tsvSession.getText());
 		return pages.sessionPage;
 	}
 	
-	public SessionPage getSessionTf(Session currSession) throws InterruptedException {
+	public SessionPage getSessionTf(ProcessesSession currSession) throws InterruptedException {
 		currSession.setTf(tfSession.getText());
 		return pages.sessionPage;
 	}
