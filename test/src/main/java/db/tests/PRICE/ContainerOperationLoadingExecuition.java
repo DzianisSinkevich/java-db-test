@@ -22,7 +22,6 @@ public class ContainerOperationLoadingExecuition extends TestBaseAll {
 		String ssid = app.getNavigationHelper().waitForContainerExecution();
 		String res = app.getSessionHelper().waitForProcessFinished(ssid);
 		System.out.println("Result = " + res);
-		// PrcSession prcSession = prcSessionService.selectSession(app.getNavigationHelper().waitForContainerExecution());
-		// System.out.println("Status = " + prcSession.getResultCode());
+		assert(res.equals("PRSR0002"));
 	}
 }

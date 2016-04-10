@@ -99,10 +99,10 @@ public class SessionHelper2 extends DriverBasedHelper implements SessionHelper {
 			PrcSession prcSession = prcSessionService.selectSession(pid);
 			resultCode = prcSession.getResultCode();
 			if (!resultCode.equals("PRSR0001")){
-				return "Finisht";
+				return resultCode;
 			}
 			Thread.sleep(1000);
 		}
-		return "Not finisht";
+		return resultCode;
 	}
 }

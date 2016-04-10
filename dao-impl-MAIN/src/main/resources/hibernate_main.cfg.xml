@@ -11,5 +11,6 @@
 		<property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property>
 		<property name="hibernate.current_session_context_class">thread</property>
 		<mapping class="com.danco.bpc.entity.MAIN.PrcSession" />
+		<mapping class="com.danco.bpc.entity.MAIN.EvtEventObject" />
 	</session-factory>
 </hibernate-configuration>
