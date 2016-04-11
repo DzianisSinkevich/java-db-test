@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.danco.bpc.modelReconWeb.Session;
 
-public interface SessionHelper {
+public interface ISessionHelper {
 
 	List<Session> search(String title) throws InterruptedException;
 

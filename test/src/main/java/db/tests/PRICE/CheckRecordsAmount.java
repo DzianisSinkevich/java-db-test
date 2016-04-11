@@ -2,15 +2,17 @@ package db.tests.PRICE;
 
 import org.testng.annotations.Test;
 
-import com.danco.bpc.service.impl.SERVICES.PrcRawMessagesServiceImpl;
-
 import pages.TestBaseAll;
 
+import com.danco.bpc.applogicDB.DBManager;
+
 public class CheckRecordsAmount extends TestBaseAll {
-	private PrcRawMessagesServiceImpl prcRawMessagesService = new PrcRawMessagesServiceImpl();
 
 	@Test
-	public void openContainerPage() throws Exception {
-		System.out.println("Rows count = " + prcRawMessagesService.countRowsForSendToSv());
+	public void checkRecordsAmount() throws Exception {
+		db = new DBManager();
+		System.out.println("" + db.getPriceHelper().idIncomingFile());
+
+		// System.out.println("Rows count = " + prcRawMessagesService.countRowsForSendToSv());
 	}
 }

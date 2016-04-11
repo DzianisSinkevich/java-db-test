@@ -5,15 +5,15 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 
-import com.danco.bpc.IApplogicReconWeb.ApplicationManager;
-import com.danco.bpc.applogicReconWeb.ApplicationManager2;
+import com.danco.bpc.IApplogicReconWeb.IApplicationManager;
+import com.danco.bpc.applogicReconWeb.ApplicationManager;
 import com.danco.bpc.modelReconWeb.User;
 
 public class TestBaseRecon {
 
 	public static User ADMIN = new User().setLogin("admin").setPassword("admin");
 
-	protected ApplicationManager app;
+	protected IApplicationManager app;
 
 //	@BeforeSuite
 //	public void login() {

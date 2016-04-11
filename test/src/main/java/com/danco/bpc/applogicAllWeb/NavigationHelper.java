@@ -1,12 +1,12 @@
 package com.danco.bpc.applogicAllWeb;
 
-import com.danco.bpc.IApplogicAllWeb.NavigationHelper;
+import com.danco.bpc.IApplogicAllWeb.INavigationHelper;
 
-public class NavigationHelper2 extends DriverBasedHelper implements NavigationHelper {
+public class NavigationHelper extends DriverBasedHelper implements INavigationHelper {
 
 	private String baseUrl;
 
-	public NavigationHelper2(ApplicationManager2 manager) {
+	public NavigationHelper(ApplicationManager manager) {
 		super(manager.getWebDriver());
 		this.baseUrl = manager.getBaseUrl();
 	}

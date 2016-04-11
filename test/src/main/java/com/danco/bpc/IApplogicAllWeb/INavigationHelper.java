@@ -1,6 +1,6 @@
 package com.danco.bpc.IApplogicAllWeb;
 
-public interface NavigationHelper {
+public interface INavigationHelper {
 
 	void openMainPage();
 

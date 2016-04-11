@@ -1,12 +1,12 @@
 package com.danco.bpc.applogicReconWeb;
 
-import com.danco.bpc.IApplogicReconWeb.UserHelper;
+import com.danco.bpc.IApplogicReconWeb.IUserHelper;
 import com.danco.bpc.modelReconWeb.User;
 import com.danco.bpc.pagesReconWeb.UserProfilePage;
 
-public class UserHelper2 extends DriverBasedHelper implements UserHelper {
+public class UserHelper extends DriverBasedHelper implements IUserHelper {
 
-	public UserHelper2(ApplicationManager2 manager) {
+	public UserHelper(ApplicationManager manager) {
 		super(manager.getWebDriver());
 	}
 

@@ -2,15 +2,15 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite1" duration-ms="822" started-at="2016-04-11T06:36:50Z" finished-at="2016-04-11T06:36:51Z">
+  <suite name="Suite1" duration-ms="3237" started-at="2016-04-11T21:06:41Z" finished-at="2016-04-11T21:06:44Z">
     <groups>
     </groups>
-    <test name="Test001" duration-ms="822" started-at="2016-04-11T06:36:50Z" finished-at="2016-04-11T06:36:51Z">
+    <test name="Test001" duration-ms="3237" started-at="2016-04-11T21:06:41Z" finished-at="2016-04-11T21:06:44Z">
       <class name="db.tests.PRICE.CheckRecordsAmount">
-        <test-method status="PASS" signature="openContainerPage()[pri:0, instance:db.tests.PRICE.CheckRecordsAmount@6581dc0a]" name="openContainerPage" duration-ms="803" started-at="2016-04-11T09:36:50Z" finished-at="2016-04-11T09:36:51Z">
+        <test-method status="PASS" signature="checkRecordsAmount()[pri:0, instance:db.tests.PRICE.CheckRecordsAmount@9d9c55]" name="checkRecordsAmount" duration-ms="3218" started-at="2016-04-12T00:06:41Z" finished-at="2016-04-12T00:06:44Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- openContainerPage -->
+        </test-method> <!-- checkRecordsAmount -->
       </class> <!-- db.tests.PRICE.CheckRecordsAmount -->
     </test> <!-- Test001 -->
   </suite> <!-- Suite1 -->

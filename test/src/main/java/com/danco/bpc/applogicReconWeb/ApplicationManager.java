@@ -2,23 +2,23 @@ package com.danco.bpc.applogicReconWeb;
 
 import org.openqa.selenium.WebDriver;
 
-import com.danco.bpc.IApplogicReconWeb.NavigationHelper;
-import com.danco.bpc.IApplogicReconWeb.SessionHelper;
-import com.danco.bpc.IApplogicReconWeb.UserHelper;
+import com.danco.bpc.IApplogicReconWeb.INavigationHelper;
+import com.danco.bpc.IApplogicReconWeb.ISessionHelper;
+import com.danco.bpc.IApplogicReconWeb.IUserHelper;
 import com.danco.bpc.pages.util.PropertyLoader;
 import com.danco.bpc.util.Browser;
 import com.danco.bpc.webdriver.WebDriverFactory;
 
-public class ApplicationManager2 implements com.danco.bpc.IApplogicReconWeb.ApplicationManager {
+public class ApplicationManager implements com.danco.bpc.IApplogicReconWeb.IApplicationManager {
 
-	private UserHelper userHelper;
-	private SessionHelper sessionHelper;
-	private NavigationHelper navHelper;
+	private IUserHelper userHelper;
+	private ISessionHelper sessionHelper;
+	private INavigationHelper navHelper;
 
 	private WebDriver driver;
 	private String baseUrl;
 
-	public ApplicationManager2() {
+	public ApplicationManager() {
 		baseUrl = PropertyLoader.loadProperty("site.url");
 		String gridHubUrl = PropertyLoader.loadProperty("grid2.hub");
 
@@ -33,25 +33,25 @@ public class ApplicationManager2 implements com.danco.bpc.IApplogicReconWeb.Appl
 		driver = WebDriverFactory.getInstance(gridHubUrl, browser, username, password);
 		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
-		userHelper = new UserHelper2(this);
-		sessionHelper = new SessionHelper2(this);
-		navHelper = new NavigationHelper2(this);
+		userHelper = new UserHelper(this);
+		sessionHelper = new SessionHelper(this);
+		navHelper = new NavigationHelper(this);
 
 		getNavigationHelper().openMainPage();
 	}
 
 	@Override
-	public UserHelper getUserHelper() {
+	public IUserHelper getUserHelper() {
 		return userHelper;
 	}
 
 	@Override
-	public SessionHelper getSessionHelper() {
+	public ISessionHelper getSessionHelper() {
 		return sessionHelper;
 	}
 
 	@Override
-	public NavigationHelper getNavigationHelper() {
+	public INavigationHelper getNavigationHelper() {
 		return navHelper;
 	}
 

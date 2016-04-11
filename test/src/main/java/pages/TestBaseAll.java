@@ -1,18 +1,18 @@
 package pages;
 
-import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
-
-import com.danco.bpc.IApplogicAllWeb.ApplicationManager;
+import com.danco.bpc.IApplogicAllWeb.IApplicationManager;
+import com.danco.bpc.IApplogicDB.IDBManager;
 import com.danco.bpc.modelAllWeb.User;
 
-public class TestBaseAll{
+public class TestBaseAll {
 
 	public static User ADMIN = new User().setLogin("admin").setPassword("admin");
 
-	protected ApplicationManager app;
+	protected IApplicationManager appAll;
+	protected IDBManager db;
 
 	// @BeforeSuite
-	// public void login() {
+	// public void login() { 
 	// app = new ApplicationManager2();
 	// System.out.println("Before suite BASE");
 	// app.getUserHelper().loginAs(ADMIN);

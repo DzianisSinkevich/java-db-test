@@ -1,8 +1,8 @@
-package com.danco.bpc.IApplogicReconWeb;
+package com.danco.bpc.IApplogicAllWeb;
 
-import com.danco.bpc.modelReconWeb.User;
+import com.danco.bpc.modelAllWeb.User;
 
-public interface UserHelper {
+public interface IUserHelper {
 
 	void loginAs(User user);
 

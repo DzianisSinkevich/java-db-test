@@ -13,13 +13,10 @@ import com.danco.bpc.entity.api.AbstractBaseEntity;
 @Entity
 public class PrcFiles extends AbstractBaseEntity implements java.io.Serializable, Comparable<PrcFiles> {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	@Id
 	@Column(name = "ID")
-	private int id;
+	private Long id;
 	@Column(name = "FILE_NAME")
 	private String fileName;
 	@Column(name = "UPLOAD_DATE")
@@ -27,11 +24,11 @@ public class PrcFiles extends AbstractBaseEntity implements java.io.Serializable
 	@Column(name = "PROCESSING_DATE")
 	private Calendar processingDate;
 	@Column(name = "TOTAL_RECORDS")
-	private int totalRecords;
+	private Long totalRecords;
 	@Column(name = "TOTAL_BATCHES")
-	private int totalBatches;
-	@Column(name = "RECIEVED_BATCHES")
-	private int recievedBatches;
+	private Long totalBatches;
+	@Column(name = "RECEIVED_BATCHES")
+	private Long recievedBatches;
 	@Column(name = "SESSION_ID")
 	private String sessionId;
 	@Column(name = "STATUS")
@@ -39,7 +36,12 @@ public class PrcFiles extends AbstractBaseEntity implements java.io.Serializable
 	@Column(name = "TYPE")
 	private String type;
 
-	public PrcFiles() {
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getFileName() {
@@ -66,27 +68,27 @@ public class PrcFiles extends AbstractBaseEntity implements java.io.Serializable
 		this.processingDate = processingDate;
 	}
 
-	public int getTotalRecords() {
+	public Long getTotalRecords() {
 		return totalRecords;
 	}
 
-	public void setTotalRecords(int totalRecords) {
+	public void setTotalRecords(Long totalRecords) {
 		this.totalRecords = totalRecords;
 	}
 
-	public int getTotalBatches() {
+	public Long getTotalBatches() {
 		return totalBatches;
 	}
 
-	public void setTotalBatches(int totalBatches) {
+	public void setTotalBatches(Long totalBatches) {
 		this.totalBatches = totalBatches;
 	}
 
-	public int getRecievedBatches() {
+	public Long getRecievedBatches() {
 		return recievedBatches;
 	}
 
-	public void setRecievedBatches(int recievedBatches) {
+	public void setRecievedBatches(Long recievedBatches) {
 		this.recievedBatches = recievedBatches;
 	}
 
@@ -115,20 +117,9 @@ public class PrcFiles extends AbstractBaseEntity implements java.io.Serializable
 	}
 
 	@Override
-	public Long getId() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void setId(Long id) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public int compareTo(PrcFiles o) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
 }

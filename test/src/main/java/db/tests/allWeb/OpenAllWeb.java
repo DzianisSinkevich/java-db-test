@@ -2,7 +2,7 @@ package db.tests.allWeb;
 
 import org.testng.annotations.Test;
 
-import com.danco.bpc.applogicAllWeb.ApplicationManager2;
+import com.danco.bpc.applogicAllWeb.ApplicationManager;
 
 import pages.TestBaseAll;
 
@@ -10,8 +10,8 @@ public class OpenAllWeb extends TestBaseAll {
 
 	@Test
 	public void openWeb() {
-		app = new ApplicationManager2();
-		app.getNavigationHelper().openMainPage();
-		app.getUserHelper().loginAs(ADMIN);
+		appAll = new ApplicationManager();
+		appAll.getNavigationHelper().openMainPage();
+		appAll.getUserHelper().loginAs(ADMIN);
 	}
 }

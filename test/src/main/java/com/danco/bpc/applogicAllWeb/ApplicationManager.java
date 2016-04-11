@@ -2,23 +2,21 @@ package com.danco.bpc.applogicAllWeb;
 
 import org.openqa.selenium.WebDriver;
 
-import com.danco.bpc.IApplogicAllWeb.NavigationHelper;
-import com.danco.bpc.IApplogicAllWeb.ProcessesSessionHelper;
-import com.danco.bpc.IApplogicAllWeb.UserHelper;
+import com.danco.bpc.IApplogicAllWeb.INavigationHelper;
+import com.danco.bpc.IApplogicAllWeb.IUserHelper;
 import com.danco.bpc.pages.util.PropertyLoader;
 import com.danco.bpc.util.Browser;
 import com.danco.bpc.webdriver.WebDriverFactory;
 
-public class ApplicationManager2 implements com.danco.bpc.IApplogicAllWeb.ApplicationManager {
+public class ApplicationManager implements com.danco.bpc.IApplogicAllWeb.IApplicationManager {
 
-	private UserHelper userHelper;
-	private ProcessesSessionHelper sessionHelper;
-	private NavigationHelper navHelper;
+	private IUserHelper userHelper;
+	private INavigationHelper navHelper;
 
 	private WebDriver driver;
 	private String baseUrl;
 
-	public ApplicationManager2() {
+	public ApplicationManager() {
 		baseUrl = PropertyLoader.loadProperty("site.url");
 		String gridHubUrl = PropertyLoader.loadProperty("grid2.hub");
 
@@ -33,14 +31,13 @@ public class ApplicationManager2 implements com.danco.bpc.IApplogicAllWeb.Applic
 		driver = WebDriverFactory.getInstance(browser.getName(), username, password);
 		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
-		userHelper = new UserHelper2(this);
-		sessionHelper = new ProcessesSessionHelper2(this);
-		navHelper = new NavigationHelper2(this);
+		userHelper = new UserHelper(this);
+		navHelper = new NavigationHelper(this);
 
-//		getNavigationHelper().openMainPage();
+		// getNavigationHelper().openMainPage();
 	}
-	
-	public ApplicationManager2(boolean isLogined) {
+
+	public ApplicationManager(boolean isLogined) {
 		baseUrl = PropertyLoader.loadProperty("site.url");
 		String gridHubUrl = PropertyLoader.loadProperty("grid2.hub");
 
@@ -55,25 +52,19 @@ public class ApplicationManager2 implements com.danco.bpc.IApplogicAllWeb.Applic
 		driver = WebDriverFactory.getInstance(gridHubUrl, browser, username, password);
 		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
-		userHelper = new UserHelper2(this);
-		sessionHelper = new ProcessesSessionHelper2(this);
-		navHelper = new NavigationHelper2(this);
+		userHelper = new UserHelper(this);
+		navHelper = new NavigationHelper(this);
 
 		getNavigationHelper().openMainPage();
 	}
 
 	@Override
-	public UserHelper getUserHelper() {
+	public IUserHelper getUserHelper() {
 		return userHelper;
 	}
 
 	@Override
-	public ProcessesSessionHelper getSessionHelper() {
-		return sessionHelper;
-	}
-
-	@Override
-	public NavigationHelper getNavigationHelper() {
+	public INavigationHelper getNavigationHelper() {
 		return navHelper;
 	}
 

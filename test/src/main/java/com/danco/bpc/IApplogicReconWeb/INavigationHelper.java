@@ -1,6 +1,6 @@
 package com.danco.bpc.IApplogicReconWeb;
 
-public interface NavigationHelper {
+public interface INavigationHelper {
 
 	void openMainPage();
 

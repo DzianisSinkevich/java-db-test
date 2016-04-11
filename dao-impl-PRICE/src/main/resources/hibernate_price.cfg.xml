@@ -10,6 +10,8 @@
         <property name="hibernate.connection.password">price1</property>
         <property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property>
         <property name="hibernate.current_session_context_class">thread</property>
+        <mapping class="com.danco.bpc.entity.PRICE.PrcFiles" />
+		<mapping class="com.danco.bpc.entity.PRICE.PrcMessages" />
 		<mapping class="com.danco.bpc.entity.PRICE.PrcRawMessages" />
 	</session-factory>
 </hibernate-configuration>
