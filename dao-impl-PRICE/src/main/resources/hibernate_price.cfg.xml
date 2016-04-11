@@ -10,14 +10,6 @@
         <property name="hibernate.connection.password">price1</property>
         <property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property>
         <property name="hibernate.current_session_context_class">thread</property>
-		<mapping class="com.danco.bpc.entity.NPS.BatchFile" />
-		<mapping class="com.danco.bpc.entity.NPS.ConfigurationOld" />
-		<mapping class="com.danco.bpc.entity.NPS.DatabaseChangeLogLock" />
-		<mapping class="com.danco.bpc.entity.NPS.DatabaseChangeLog" />
-		<mapping class="com.danco.bpc.entity.NPS.EditTransRules" />
-		<mapping class="com.danco.bpc.entity.NPS.FibrnBatch" />
-		<mapping class="com.danco.bpc.entity.NPS.FibrnRecord" />
-		<mapping class="com.danco.bpc.entity.NPS.MusBatch" />
-		<mapping class="com.danco.bpc.entity.NPS.MusRecord" />
+		<mapping class="com.danco.bpc.entity.PRICE.PrcRawMessages" />
 	</session-factory>
 </hibernate-configuration>

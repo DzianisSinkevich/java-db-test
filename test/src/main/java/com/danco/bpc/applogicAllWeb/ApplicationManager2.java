@@ -3,7 +3,7 @@ package com.danco.bpc.applogicAllWeb;
 import org.openqa.selenium.WebDriver;
 
 import com.danco.bpc.IApplogicAllWeb.NavigationHelper;
-import com.danco.bpc.IApplogicAllWeb.SessionHelper;
+import com.danco.bpc.IApplogicAllWeb.ProcessesSessionHelper;
 import com.danco.bpc.IApplogicAllWeb.UserHelper;
 import com.danco.bpc.pages.util.PropertyLoader;
 import com.danco.bpc.util.Browser;
@@ -12,7 +12,7 @@ import com.danco.bpc.webdriver.WebDriverFactory;
 public class ApplicationManager2 implements com.danco.bpc.IApplogicAllWeb.ApplicationManager {
 
 	private UserHelper userHelper;
-	private SessionHelper sessionHelper;
+	private ProcessesSessionHelper sessionHelper;
 	private NavigationHelper navHelper;
 
 	private WebDriver driver;
@@ -34,7 +34,7 @@ public class ApplicationManager2 implements com.danco.bpc.IApplogicAllWeb.Applic
 		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
 		userHelper = new UserHelper2(this);
-		sessionHelper = new SessionHelper2(this);
+		sessionHelper = new ProcessesSessionHelper2(this);
 		navHelper = new NavigationHelper2(this);
 
 //		getNavigationHelper().openMainPage();
@@ -56,7 +56,7 @@ public class ApplicationManager2 implements com.danco.bpc.IApplogicAllWeb.Applic
 		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
 		userHelper = new UserHelper2(this);
-		sessionHelper = new SessionHelper2(this);
+		sessionHelper = new ProcessesSessionHelper2(this);
 		navHelper = new NavigationHelper2(this);
 
 		getNavigationHelper().openMainPage();
@@ -68,7 +68,7 @@ public class ApplicationManager2 implements com.danco.bpc.IApplogicAllWeb.Applic
 	}
 
 	@Override
-	public SessionHelper getSessionHelper() {
+	public ProcessesSessionHelper getSessionHelper() {
 		return sessionHelper;
 	}
 

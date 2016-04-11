@@ -7,4 +7,6 @@ public interface IPrcSessionService extends IGenericService<PrcSession>{
 
 	String getUserByLogin(String login);
 	public PrcSession selectSession(String session) throws Exception;
+	
+	public void getAllParametersSessionFromBase(String sessionId) throws Exception;
 }

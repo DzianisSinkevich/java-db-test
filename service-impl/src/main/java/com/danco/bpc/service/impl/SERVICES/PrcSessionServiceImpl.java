@@ -23,4 +23,9 @@ public class PrcSessionServiceImpl extends DataServiceImpl<PrcSession>implements
 	public PrcSession selectSession(String session) throws Exception {
 		return genericDao.selectSession(session);
 	}
+
+	@Override
+	public void getAllParametersSessionFromBase(String sessionId) throws Exception{
+		genericDao.getAllParametersSessionFromBase(sessionId);
+	}
 }

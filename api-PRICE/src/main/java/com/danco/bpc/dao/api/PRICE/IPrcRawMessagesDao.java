@@ -5,4 +5,5 @@ import com.danco.bpc.entity.PRICE.PrcRawMessages;
 
 public interface IPrcRawMessagesDao extends IGenericDao<PrcRawMessages> {
 
+	public Long countRowsForSendToSv() throws Exception;
 }

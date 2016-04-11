@@ -3,76 +3,63 @@ package com.danco.bpc.modelAllWeb;
 public class ProcessesSession {
 
 	private Long id;
-	private String state;
-	private String status;
-	private String te;
-	private String tr;
-	private String tsv;
-	private String tf;
-
-	public String getTsv() {
-		return tsv;
-	}
-
-	public void setTsv(String tsv) {
-		this.tsv = tsv;
-	}
-
-	public String getTf() {
-		return tf;
-	}
-
-	public void setTf(String tf) {
-		this.tf = tf;
-	}
-
-	public Long getSsid() {
-		return id;
-	}
-
-	public ProcessesSession setSsid(Long id) {
-		this.id = id;
-		return this;
-	}
-
-	public String getState() {
-		return state;
-	}
-
-	public ProcessesSession setState(String state) {
-		this.state = state;
-		return this;
-	}
-
-	public String getStatus() {
-		return status;
-	}
-
-	public ProcessesSession setStatus(String status) {
-		this.status = status;
-		return this;
-	}
-
-	public String getTe() {
-		return te;
-	}
-
-	public ProcessesSession setTe(String string) {
-		this.te = string;
-		return this;
-	}
-
-	public String getTr() {
-		return tr;
-	}
-
-	public ProcessesSession setTr(String tr) {
-		this.tr = tr;
-		return this;
-	}
+	private int threadCount;
+	private Long estimatedCount;
+	private Long processed;
+	private Long rejected;
+	private Long excepted;
 
 	@Override
 	public String toString() {
-		return "Session [ssid=" + id + ", state=" + state + ", status=" + status + ", te=" + te + ", tr=" + tr + ", tsv=" + tsv + ", tf=" + tf + "]";
+		return "Session [ID=" + id + ", threadCount=" + threadCount + ", estimatedCount=" + estimatedCount + ", processed=" + processed + ", rejected="
+				+ rejected + ", excepted=" + excepted + "]";
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public int getThreadCount() {
+		return threadCount;
+	}
+
+	public void setThreadCount(int threadCount) {
+		this.threadCount = threadCount;
+	}
+
+	public Long getEstimatedCount() {
+		return estimatedCount;
+	}
+
+	public void setEstimatedCount(Long estimatedCount) {
+		this.estimatedCount = estimatedCount;
+	}
+
+	public Long getProcessed() {
+		return processed;
+	}
+
+	public void setProcessed(Long processed) {
+		this.processed = processed;
+	}
+
+	public Long getRejected() {
+		return rejected;
+	}
+
+	public void setRejected(Long rejected) {
+		this.rejected = rejected;
+	}
+
+	public Long getExcepted() {
+		return excepted;
+	}
+
+	public void setExcepted(Long excepted) {
+		this.excepted = excepted;
 	}
 }

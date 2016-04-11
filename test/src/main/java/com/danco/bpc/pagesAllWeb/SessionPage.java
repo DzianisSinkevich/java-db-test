@@ -79,35 +79,35 @@ public class SessionPage extends InternalPage {
 		}
 	}
 
-	public SessionPage getSessionState(ProcessesSession currSession) throws InterruptedException {
-		currSession.setState(stateSession.getText());
-		return pages.sessionPage;
-	}
-
-	public SessionPage getSessionStatus(ProcessesSession currSession) throws InterruptedException {
-		currSession.setStatus(statusSession.getText());
-		return pages.sessionPage;
-	}
-	
-	public SessionPage getSessionTe(ProcessesSession currSession) throws InterruptedException {
-		currSession.setTe(teSession.getText());
-		return pages.sessionPage;
-	}
-	
-	public SessionPage getSessionTr(ProcessesSession currSession) throws InterruptedException {
-		currSession.setTr(trSession.getText());
-		return pages.sessionPage;
-	}
-	
-	public SessionPage getSessionTsv(ProcessesSession currSession) throws InterruptedException {
-		currSession.setTsv(tsvSession.getText());
-		return pages.sessionPage;
-	}
-	
-	public SessionPage getSessionTf(ProcessesSession currSession) throws InterruptedException {
-		currSession.setTf(tfSession.getText());
-		return pages.sessionPage;
-	}
+//	public SessionPage getSessionState(ProcessesSession currSession) throws InterruptedException {
+//		currSession.setState(stateSession.getText());
+//		return pages.sessionPage;
+//	}
+//
+//	public SessionPage getSessionStatus(ProcessesSession currSession) throws InterruptedException {
+//		currSession.setStatus(statusSession.getText());
+//		return pages.sessionPage;
+//	}
+//	
+//	public SessionPage getSessionTe(ProcessesSession currSession) throws InterruptedException {
+//		currSession.setTe(teSession.getText());
+//		return pages.sessionPage;
+//	}
+//	
+//	public SessionPage getSessionTr(ProcessesSession currSession) throws InterruptedException {
+//		currSession.setTr(trSession.getText());
+//		return pages.sessionPage;
+//	}
+//	
+//	public SessionPage getSessionTsv(ProcessesSession currSession) throws InterruptedException {
+//		currSession.setTsv(tsvSession.getText());
+//		return pages.sessionPage;
+//	}
+//	
+//	public SessionPage getSessionTf(ProcessesSession currSession) throws InterruptedException {
+//		currSession.setTf(tfSession.getText());
+//		return pages.sessionPage;
+//	}
 	
 	public SessionPage clickSearchLink(String ssid) throws InterruptedException {
 		clearingSearchField();

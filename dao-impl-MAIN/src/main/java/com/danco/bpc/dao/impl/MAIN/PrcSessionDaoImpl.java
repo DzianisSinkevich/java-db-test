@@ -4,7 +4,6 @@ import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 
 import com.danco.bpc.dao.api.MAIN.IPrcSessionDao;
@@ -18,6 +17,24 @@ public class PrcSessionDaoImpl extends AbstractDaoMainImpl<PrcSession>implements
 	 */
 	public PrcSessionDaoImpl() {
 		super(PrcSession.class);
+	}
+
+	public void getAllParametersSessionFromBase(String sessionId) throws Exception {
+		Transaction txn = null;
+		try {
+			Session session = sessionFactory.getCurrentSession();
+			txn = session.beginTransaction();
+			Criteria criteria = session.createCriteria(PrcSession.class);
+			criteria.add(Restrictions.eq("parentId", (Long.valueOf(sessionId)) - 1));
+			PrcSession prcSession = (PrcSession) criteria.uniqueResult();
+			txn.commit();
+		} catch (HibernateException e) {
+			if (null != txn) {
+				txn.rollback();
+			}
+			e.printStackTrace();
+			throw new Exception("ERROR");
+		}
 	}
 
 	@Override

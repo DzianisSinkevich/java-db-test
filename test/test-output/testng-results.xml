@@ -1,29 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="3" passed="3">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite1" duration-ms="44393" started-at="2016-04-08T20:57:51Z" finished-at="2016-04-08T20:58:36Z">
+  <suite name="Suite1" duration-ms="822" started-at="2016-04-11T06:36:50Z" finished-at="2016-04-11T06:36:51Z">
     <groups>
     </groups>
-    <test name="OpenWeb" duration-ms="44393" started-at="2016-04-08T20:57:51Z" finished-at="2016-04-08T20:58:36Z">
-      <class name="db.tests.allWeb.OpenContainerPage">
-        <test-method status="PASS" signature="openContainerPage()[pri:0, instance:db.tests.allWeb.OpenContainerPage@e7df6a]" name="openContainerPage" duration-ms="12610" started-at="2016-04-08T23:58:09Z" finished-at="2016-04-08T23:58:22Z">
+    <test name="Test001" duration-ms="822" started-at="2016-04-11T06:36:50Z" finished-at="2016-04-11T06:36:51Z">
+      <class name="db.tests.PRICE.CheckRecordsAmount">
+        <test-method status="PASS" signature="openContainerPage()[pri:0, instance:db.tests.PRICE.CheckRecordsAmount@6581dc0a]" name="openContainerPage" duration-ms="803" started-at="2016-04-11T09:36:50Z" finished-at="2016-04-11T09:36:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openContainerPage -->
-      </class> <!-- db.tests.allWeb.OpenContainerPage -->
-      <class name="db.tests.allWeb.OpenAllWeb">
-        <test-method status="PASS" signature="openWeb()[pri:0, instance:db.tests.allWeb.OpenAllWeb@181dc0a]" name="openWeb" duration-ms="17923" started-at="2016-04-08T23:57:51Z" finished-at="2016-04-08T23:58:09Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- openWeb -->
-      </class> <!-- db.tests.allWeb.OpenAllWeb -->
-      <class name="db.tests.PRICE.ContainerOperationLoadingExecuition">
-        <test-method status="PASS" signature="openContainerPage()[pri:0, instance:db.tests.PRICE.ContainerOperationLoadingExecuition@1ed2870]" name="openContainerPage" duration-ms="13833" started-at="2016-04-08T23:58:22Z" finished-at="2016-04-08T23:58:36Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- openContainerPage -->
-      </class> <!-- db.tests.PRICE.ContainerOperationLoadingExecuition -->
-    </test> <!-- OpenWeb -->
+      </class> <!-- db.tests.PRICE.CheckRecordsAmount -->
+    </test> <!-- Test001 -->
   </suite> <!-- Suite1 -->
 </testng-results>
