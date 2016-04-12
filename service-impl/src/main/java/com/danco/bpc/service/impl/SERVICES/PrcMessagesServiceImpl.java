@@ -15,5 +15,16 @@ public class PrcMessagesServiceImpl extends DataServiceImpl<PrcMessages>implemen
 	@Autowired
 	private PrcMessagesDaoImpl genericDao = new PrcMessagesDaoImpl();
 
-	
+
+	public Long sumPrcMessagesP04(Long fileId) throws Exception {
+		return genericDao.sumPrcMessagesP04(fileId);
+	}
+
+	public Long sumPrcMessagesP05() throws Exception {
+		return null;
+	}
+
+	public Long sumPrcMessagesP76() throws Exception {
+		return null;
+	}
 }

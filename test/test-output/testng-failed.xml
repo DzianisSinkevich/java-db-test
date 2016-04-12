@@ -3,7 +3,16 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite1]" data-provider-thread-count="1">
   <test name="Test001">
     <classes>
-      <class name="db.tests.PRICE.CheckRecordsAmount"/>
+      <class name="db.tests.PRICE.IncomingValidation"/>
     </classes>
   </test> <!-- Test001 -->
+  <test name="Test001(failed)">
+    <classes>
+      <class name="db.tests.PRICE.IncomingValidation">
+        <methods>
+          <include name="checkTotalsCalculation"/>
+        </methods>
+      </class> <!-- db.tests.PRICE.IncomingValidation -->
+    </classes>
+  </test> <!-- Test001(failed) -->
 </suite> <!-- Failed suite [Suite1] -->

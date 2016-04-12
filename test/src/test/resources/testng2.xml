@@ -3,7 +3,7 @@
 	preserve-order="true">
 	<test name="Test001">
 		<classes>
-			<class name="db.tests.PRICE.CheckRecordsAmount"></class>
+			<class name="db.tests.PRICE.IncomingValidation"></class>
 		</classes>
 	</test>
 </suite> 	

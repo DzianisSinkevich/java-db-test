@@ -11,7 +11,7 @@ import com.danco.bpc.entity.api.AbstractBaseEntity;
 
 @Table(name = "PRC_RAW_MESSAGES")
 @Entity
-public class PrcRawMessages extends AbstractBaseEntity implements java.io.Serializable, Comparable<PrcFiles> {
+public class PrcRawMessages extends AbstractBaseEntity implements java.io.Serializable, Comparable<PrcRawMessages> {
 
 	/**
 	 * 
@@ -19,12 +19,12 @@ public class PrcRawMessages extends AbstractBaseEntity implements java.io.Serial
 	private static final long serialVersionUID = 1L;
 	@Id
 	@Column(name = "ID")
-	private int id;
+	private Long id;
 	@Column(name = "FILE_ID")
-	private int fileId;
+	private Long fileId;
 	@Column(name = "LINE")
-	private int line;
-	@Column(name = "CREATE_AT")
+	private Long line;
+	@Column(name = "CREATED_AT")
 	private Calendar createdAt;
 	@Column(name = "TYPE")
 	private String type;
@@ -35,32 +35,36 @@ public class PrcRawMessages extends AbstractBaseEntity implements java.io.Serial
 	@Column(name = "SESSION_ID")
 	private String sessionId;
 	@Column(name = "SV_OPER_ID")
-	private int svOperId;
+	private Long svOperId;
 	@Column(name = "SEQUENCE_FILE")
-	private int sequenceFile;
-	@Column(name = "SEQUINCE_LOTE")
-	private int sequinceLote;
+	private Long sequenceFile;
+	@Column(name = "SEQUENCE_LOTE")
+	private Long sequenceLote;
 
 	public PrcRawMessages() {
 	}
 
-	public void setId(int id) {
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public int getFileId() {
+	public Long getFileId() {
 		return fileId;
 	}
 
-	public void setFileId(int fileId) {
+	public void setFileId(Long fileId) {
 		this.fileId = fileId;
 	}
 
-	public int getLine() {
+	public Long getLine() {
 		return line;
 	}
 
-	public void setLine(int line) {
+	public void setLine(Long line) {
 		this.line = line;
 	}
 
@@ -104,45 +108,34 @@ public class PrcRawMessages extends AbstractBaseEntity implements java.io.Serial
 		this.sessionId = sessionId;
 	}
 
-	public int getSvOperId() {
+	public Long getSvOperId() {
 		return svOperId;
 	}
 
-	public void setSvOperId(int svOperId) {
+	public void setSvOperId(Long svOperId) {
 		this.svOperId = svOperId;
 	}
 
-	public int getSequenceFile() {
+	public Long getSequenceFile() {
 		return sequenceFile;
 	}
 
-	public void setSequenceFile(int sequenceFile) {
+	public void setSequenceFile(Long sequenceFile) {
 		this.sequenceFile = sequenceFile;
 	}
 
-	public int getSequinceLote() {
-		return sequinceLote;
+	public Long getSequenceLote() {
+		return sequenceLote;
 	}
 
-	public void setSequinceLote(int sequinceLote) {
-		this.sequinceLote = sequinceLote;
-	}
-
-	@Override
-	public Long getId() {
-		// TODO Auto-generated method stub
-		return null;
+	public void setSequenceLote(Long sequenceLote) {
+		this.sequenceLote = sequenceLote;
 	}
 
 	@Override
-	public void setId(Long id) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public int compareTo(PrcFiles o) {
+	public int compareTo(PrcRawMessages o) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
 }

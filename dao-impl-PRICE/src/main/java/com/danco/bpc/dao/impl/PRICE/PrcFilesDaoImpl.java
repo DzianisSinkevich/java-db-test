@@ -2,6 +2,7 @@ package com.danco.bpc.dao.impl.PRICE;
 
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
@@ -10,7 +11,7 @@ import com.danco.bpc.dao.api.PRICE.IPrcFilesDao;
 import com.danco.bpc.dao.impl.common.AbstractDaoPriceImpl;
 import com.danco.bpc.entity.PRICE.PrcFiles;
 
-public class PrcFilesDaoImpl extends AbstractDaoPriceImpl<PrcFiles> implements IPrcFilesDao {
+public class PrcFilesDaoImpl extends AbstractDaoPriceImpl<PrcFiles>implements IPrcFilesDao {
 
 	/**
 	 * Instantiates a new about dao impl.
@@ -39,4 +40,5 @@ public class PrcFilesDaoImpl extends AbstractDaoPriceImpl<PrcFiles> implements I
 			throw new Exception("ERROR");
 		}
 	}
+
 }

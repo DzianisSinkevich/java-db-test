@@ -16,29 +16,29 @@ public class PrcMessages extends AbstractBaseEntity implements java.io.Serializa
 	private static final long serialVersionUID = 1L;
 	@Id
 	@Column(name = "ID")
-	private int id;
+	private Long id;
 	@Column(name = "VERSION")
 	private int version;
 	@Column(name = "USER_ID")
-	private int userId;
+	private Long userId;
 	@Column(name = "P02")
 	private String p02;
 	@Column(name = "P03")
 	private int p03;
 	@Column(name = "P04")
-	private int p04;
+	private Long p04;
 	@Column(name = "P05")
-	private int p05;
+	private Long p05;
 	@Column(name = "P06")
-	private int p06;
+	private Long p06;
 	@Column(name = "P09")
-	private int p09;
+	private Long p09;
 	@Column(name = "P10")
-	private int p10;
+	private Long p10;
 	@Column(name = "P11")
 	private int p11;
 	@Column(name = "P12")
-	private int p12;
+	private Long p12;
 	@Column(name = "P14")
 	private int p14;
 	@Column(name = "P16")
@@ -66,9 +66,9 @@ public class PrcMessages extends AbstractBaseEntity implements java.io.Serializa
 	@Column(name = "P29")
 	private int p29;
 	@Column(name = "P30_1")
-	private int p301;
+	private Long p301;
 	@Column(name = "P30_2")
-	private int p302;
+	private Long p302;
 	@Column(name = "P31")
 	private String p31;
 	@Column(name = "P32")
@@ -100,11 +100,11 @@ public class PrcMessages extends AbstractBaseEntity implements java.io.Serializa
 	@Column(name = "P48")
 	private String p48;
 	@Column(name = "P48_01")
-	private int p4801;
+	private Long p4801;
 	@Column(name = "P48_02")
 	private int p4802;
 	@Column(name = "P48_03")
-	private int p4803;
+	private Long p4803;
 	@Column(name = "P48_04")
 	private int p4804;
 	@Column(name = "P48_05")
@@ -166,7 +166,7 @@ public class PrcMessages extends AbstractBaseEntity implements java.io.Serializa
 	@Column(name = "P51")
 	private int p51;
 	@Column(name = "P53")
-	private int p53;
+	private Long p53;
 	@Column(name = "P55")
 	private String p55;
 	@Column(name = "P57")
@@ -178,47 +178,47 @@ public class PrcMessages extends AbstractBaseEntity implements java.io.Serializa
 	@Column(name = "P62_01")
 	private int p6201;
 	@Column(name = "P62_02")
-	private int p6202;
+	private Long p6202;
 	@Column(name = "P62_03")
-	private int p6203;
+	private Long p6203;
 	@Column(name = "P62_04")
 	private int p6204;
 	@Column(name = "P62_05")
 	private String p6205;
 	@Column(name = "P62_06")
-	private int p6206;
+	private Long p6206;
 	@Column(name = "P62_13")
 	private String p6213;
 	@Column(name = "P62_16")
 	private String p6216;
 	@Column(name = "P62_17")
-	private int p6217;
+	private Long p6217;
 	@Column(name = "S71")
-	private int s71;
+	private Long s71;
 	@Column(name = "S72")
 	private Calendar s72;
 	@Column(name = "S74")
-	private int s74;
+	private Long s74;
 	@Column(name = "S75")
-	private int s75;
+	private Long s75;
 	@Column(name = "S76")
-	private int s76;
+	private Long s76;
 	@Column(name = "S77")
-	private int s77;
+	private Long s77;
 	@Column(name = "S80")
-	private int s80;
+	private Long s80;
 	@Column(name = "S81")
-	private int s81;
+	private Long s81;
 	@Column(name = "S85")
-	private int s85;
+	private Long s85;
 	@Column(name = "S86")
-	private int s86;
+	private Long s86;
 	@Column(name = "S87")
-	private int s87;
+	private Long s87;
 	@Column(name = "S88")
-	private int s88;
+	private Long s88;
 	@Column(name = "S89")
-	private int s89;
+	private Long s89;
 	@Column(name = "S93")
 	private String s93;
 	@Column(name = "S94")
@@ -226,7 +226,7 @@ public class PrcMessages extends AbstractBaseEntity implements java.io.Serializa
 	@Column(name = "S95")
 	private String s95;
 	@Column(name = "S97")
-	private int s97;
+	private Long s97;
 	@Column(name = "S101")
 	private String s101;
 	@Column(name = "S102")
@@ -234,17 +234,17 @@ public class PrcMessages extends AbstractBaseEntity implements java.io.Serializa
 	@Column(name = "S104")
 	private String s104;
 	@Column(name = "S105")
-	private int s105;
+	private Long s105;
 	@Column(name = "S106")
-	private int s106;
+	private Long s106;
 	@Column(name = "S107")
-	private int s107;
+	private Long s107;
 	@Column(name = "S108")
-	private int s108;
+	private Long s108;
 	@Column(name = "S109")
-	private int s109;
+	private Long s109;
 	@Column(name = "S110")
-	private int s110;
+	private Long s110;
 	@Column(name = "SESS_ID")
 	private String sessId;
 	@Column(name = "P56")
@@ -277,7 +277,11 @@ public class PrcMessages extends AbstractBaseEntity implements java.io.Serializa
 	public PrcMessages() {
 	}
 
-	public void setId(int id) {
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -289,11 +293,11 @@ public class PrcMessages extends AbstractBaseEntity implements java.io.Serializa
 		this.version = version;
 	}
 
-	public int getUserId() {
+	public Long getUserId() {
 		return userId;
 	}
 
-	public void setUserId(int userId) {
+	public void setUserId(Long userId) {
 		this.userId = userId;
 	}
 
@@ -313,43 +317,43 @@ public class PrcMessages extends AbstractBaseEntity implements java.io.Serializa
 		this.p03 = p03;
 	}
 
-	public int getP04() {
+	public Long getP04() {
 		return p04;
 	}
 
-	public void setP04(int p04) {
+	public void setP04(Long p04) {
 		this.p04 = p04;
 	}
 
-	public int getP05() {
+	public Long getP05() {
 		return p05;
 	}
 
-	public void setP05(int p05) {
+	public void setP05(Long p05) {
 		this.p05 = p05;
 	}
 
-	public int getP06() {
+	public Long getP06() {
 		return p06;
 	}
 
-	public void setP06(int p06) {
+	public void setP06(Long p06) {
 		this.p06 = p06;
 	}
 
-	public int getP09() {
+	public Long getP09() {
 		return p09;
 	}
 
-	public void setP09(int p09) {
+	public void setP09(Long p09) {
 		this.p09 = p09;
 	}
 
-	public int getP10() {
+	public Long getP10() {
 		return p10;
 	}
 
-	public void setP10(int p10) {
+	public void setP10(Long p10) {
 		this.p10 = p10;
 	}
 
@@ -361,11 +365,11 @@ public class PrcMessages extends AbstractBaseEntity implements java.io.Serializa
 		this.p11 = p11;
 	}
 
-	public int getP12() {
+	public Long getP12() {
 		return p12;
 	}
 
-	public void setP12(int p12) {
+	public void setP12(Long p12) {
 		this.p12 = p12;
 	}
 
@@ -473,19 +477,19 @@ public class PrcMessages extends AbstractBaseEntity implements java.io.Serializa
 		this.p29 = p29;
 	}
 
-	public int getP301() {
+	public Long getP301() {
 		return p301;
 	}
 
-	public void setP301(int p301) {
+	public void setP301(Long p301) {
 		this.p301 = p301;
 	}
 
-	public int getP302() {
+	public Long getP302() {
 		return p302;
 	}
 
-	public void setP302(int p302) {
+	public void setP302(Long p302) {
 		this.p302 = p302;
 	}
 
@@ -609,11 +613,11 @@ public class PrcMessages extends AbstractBaseEntity implements java.io.Serializa
 		this.p48 = p48;
 	}
 
-	public int getP4801() {
+	public Long getP4801() {
 		return p4801;
 	}
 
-	public void setP4801(int p4801) {
+	public void setP4801(Long p4801) {
 		this.p4801 = p4801;
 	}
 
@@ -625,11 +629,11 @@ public class PrcMessages extends AbstractBaseEntity implements java.io.Serializa
 		this.p4802 = p4802;
 	}
 
-	public int getP4803() {
+	public Long getP4803() {
 		return p4803;
 	}
 
-	public void setP4803(int p4803) {
+	public void setP4803(Long p4803) {
 		this.p4803 = p4803;
 	}
 
@@ -873,11 +877,11 @@ public class PrcMessages extends AbstractBaseEntity implements java.io.Serializa
 		this.p51 = p51;
 	}
 
-	public int getP53() {
+	public Long getP53() {
 		return p53;
 	}
 
-	public void setP53(int p53) {
+	public void setP53(Long p53) {
 		this.p53 = p53;
 	}
 
@@ -921,19 +925,19 @@ public class PrcMessages extends AbstractBaseEntity implements java.io.Serializa
 		this.p6201 = p6201;
 	}
 
-	public int getP6202() {
+	public Long getP6202() {
 		return p6202;
 	}
 
-	public void setP6202(int p6202) {
+	public void setP6202(Long p6202) {
 		this.p6202 = p6202;
 	}
 
-	public int getP6203() {
+	public Long getP6203() {
 		return p6203;
 	}
 
-	public void setP6203(int p6203) {
+	public void setP6203(Long p6203) {
 		this.p6203 = p6203;
 	}
 
@@ -953,11 +957,11 @@ public class PrcMessages extends AbstractBaseEntity implements java.io.Serializa
 		this.p6205 = p6205;
 	}
 
-	public int getP6206() {
+	public Long getP6206() {
 		return p6206;
 	}
 
-	public void setP6206(int p6206) {
+	public void setP6206(Long p6206) {
 		this.p6206 = p6206;
 	}
 
@@ -977,19 +981,19 @@ public class PrcMessages extends AbstractBaseEntity implements java.io.Serializa
 		this.p6216 = p6216;
 	}
 
-	public int getP6217() {
+	public Long getP6217() {
 		return p6217;
 	}
 
-	public void setP6217(int p6217) {
+	public void setP6217(Long p6217) {
 		this.p6217 = p6217;
 	}
 
-	public int getS71() {
+	public Long getS71() {
 		return s71;
 	}
 
-	public void setS71(int s71) {
+	public void setS71(Long s71) {
 		this.s71 = s71;
 	}
 
@@ -1001,91 +1005,91 @@ public class PrcMessages extends AbstractBaseEntity implements java.io.Serializa
 		this.s72 = s72;
 	}
 
-	public int getS74() {
+	public Long getS74() {
 		return s74;
 	}
 
-	public void setS74(int s74) {
+	public void setS74(Long s74) {
 		this.s74 = s74;
 	}
 
-	public int getS75() {
+	public Long getS75() {
 		return s75;
 	}
 
-	public void setS75(int s75) {
+	public void setS75(Long s75) {
 		this.s75 = s75;
 	}
 
-	public int getS76() {
+	public Long getS76() {
 		return s76;
 	}
 
-	public void setS76(int s76) {
+	public void setS76(Long s76) {
 		this.s76 = s76;
 	}
 
-	public int getS77() {
+	public Long getS77() {
 		return s77;
 	}
 
-	public void setS77(int s77) {
+	public void setS77(Long s77) {
 		this.s77 = s77;
 	}
 
-	public int getS80() {
+	public Long getS80() {
 		return s80;
 	}
 
-	public void setS80(int s80) {
+	public void setS80(Long s80) {
 		this.s80 = s80;
 	}
 
-	public int getS81() {
+	public Long getS81() {
 		return s81;
 	}
 
-	public void setS81(int s81) {
+	public void setS81(Long s81) {
 		this.s81 = s81;
 	}
 
-	public int getS85() {
+	public Long getS85() {
 		return s85;
 	}
 
-	public void setS85(int s85) {
+	public void setS85(Long s85) {
 		this.s85 = s85;
 	}
 
-	public int getS86() {
+	public Long getS86() {
 		return s86;
 	}
 
-	public void setS86(int s86) {
+	public void setS86(Long s86) {
 		this.s86 = s86;
 	}
 
-	public int getS87() {
+	public Long getS87() {
 		return s87;
 	}
 
-	public void setS87(int s87) {
+	public void setS87(Long s87) {
 		this.s87 = s87;
 	}
 
-	public int getS88() {
+	public Long getS88() {
 		return s88;
 	}
 
-	public void setS88(int s88) {
+	public void setS88(Long s88) {
 		this.s88 = s88;
 	}
 
-	public int getS89() {
+	public Long getS89() {
 		return s89;
 	}
 
-	public void setS89(int s89) {
+	public void setS89(Long s89) {
 		this.s89 = s89;
 	}
 
@@ -1113,11 +1117,11 @@ public class PrcMessages extends AbstractBaseEntity implements java.io.Serializa
 		this.s95 = s95;
 	}
 
-	public int getS97() {
+	public Long getS97() {
 		return s97;
 	}
 
-	public void setS97(int s97) {
+	public void setS97(Long s97) {
 		this.s97 = s97;
 	}
 
@@ -1145,51 +1149,51 @@ public class PrcMessages extends AbstractBaseEntity implements java.io.Serializa
 		this.s104 = s104;
 	}
 
-	public int getS105() {
+	public Long getS105() {
 		return s105;
 	}
 
-	public void setS105(int s105) {
+	public void setS105(Long s105) {
 		this.s105 = s105;
 	}
 
-	public int getS106() {
+	public Long getS106() {
 		return s106;
 	}
 
-	public void setS106(int s106) {
+	public void setS106(Long s106) {
 		this.s106 = s106;
 	}
 
-	public int getS107() {
+	public Long getS107() {
 		return s107;
 	}
 
-	public void setS107(int s107) {
+	public void setS107(Long s107) {
 		this.s107 = s107;
 	}
 
-	public int getS108() {
+	public Long getS108() {
 		return s108;
 	}
 
-	public void setS108(int s108) {
+	public void setS108(Long s108) {
 		this.s108 = s108;
 	}
 
-	public int getS109() {
+	public Long getS109() {
 		return s109;
 	}
 
-	public void setS109(int s109) {
+	public void setS109(Long s109) {
 		this.s109 = s109;
 	}
 
-	public int getS110() {
+	public Long getS110() {
 		return s110;
 	}
 
-	public void setS110(int s110) {
+	public void setS110(Long s110) {
 		this.s110 = s110;
 	}
 
@@ -1257,20 +1261,56 @@ public class PrcMessages extends AbstractBaseEntity implements java.io.Serializa
 		this.acqNetwork = acqNetwork;
 	}
 
-	@Override
-	public Long getId() {
-		// TODO Auto-generated method stub
-		return null;
+	public String getP94T() {
+		return p94T;
+	}
+
+	public void setP94T(String p94t) {
+		p94T = p94t;
+	}
+
+	public String getP28T() {
+		return p28T;
+	}
+
+	public void setP28T(String p28t) {
+		p28T = p28t;
+	}
+
+	public String getP11T() {
+		return p11T;
+	}
+
+	public void setP11T(String p11t) {
+		p11T = p11t;
+	}
+
+	public String getP28LT() {
+		return p28LT;
+	}
+
+	public void setP28LT(String p28lt) {
+		p28LT = p28lt;
+	}
+
+	public String getP29LT() {
+		return p29LT;
+	}
+
+	public void setP29LT(String p29lt) {
+		p29LT = p29lt;
+	}
+
+	public String getP11LT() {
+		return p11LT;
+	}
+
+	public void setP11LT(String p11lt) {
+		p11LT = p11lt;
 	}
 
 	@Override
-	public void setId(Long id) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public int compareTo(PrcMessages o) {
+	public int compareTo(PrcMessages arg0) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
