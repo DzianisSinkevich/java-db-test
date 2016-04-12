@@ -3,11 +3,26 @@ package com.danco.bpc.service.api.PRICE;
 import com.danco.bpc.entity.PRICE.PrcMessages;
 import com.danco.bpc.service.api.IGenericService;
 
-public interface IPrcMessagesService extends IGenericService<PrcMessages>{
-
+public interface IPrcMessagesService extends IGenericService<PrcMessages> {
 	public Long sumPrcMessagesP04(Long fileId) throws Exception;
 
-	public Long sumPrcMessagesP05() throws Exception;
+	public Long sumPrcMessagesP05(Long fileId) throws Exception;
 
-	public Long sumPrcMessagesP76() throws Exception;
+	public Long sumPrcMessagesS74(Long fileId) throws Exception;
+
+	public Long sumPrcMessagesS75(Long fileId) throws Exception;
+
+	public Long sumPrcMessagesS76(Long fileId) throws Exception;
+
+	public Long sumPrcMessagesS77(Long fileId) throws Exception;
+
+	public Long sumPrcMessagesS85(Long fileId) throws Exception;
+
+	public Long sumPrcMessagesS105(Long fileId) throws Exception;
+
+	public Long sumPrcMessagesS106(Long fileId) throws Exception;
+
+	public Long sumPrcMessagesS109(Long fileId) throws Exception;
+
+	public Long sumPrcMessagesS110(Long fileId) throws Exception;
 }

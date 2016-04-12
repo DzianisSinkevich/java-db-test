@@ -28,5 +28,7 @@ public class IncomingValidation extends TestBaseAll {
 		PrcMessages prcMessages = new PrcMessages();
 		prcFile = prcFilesService.selectFile(db.getPriceHelper().fileDailyName());
 		db.getPriceHelper().sumPrcMessagesP04(prcFile.getId());
+		db.getPriceHelper().sumPrcMessagesP05(prcFile.getId());
+		db.getPriceHelper().sumPrcMessagesS76(prcFile.getId());
 	}
 }

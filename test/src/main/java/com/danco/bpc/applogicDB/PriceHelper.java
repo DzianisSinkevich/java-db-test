@@ -66,19 +66,84 @@ public class PriceHelper implements IPriceHelper {
 
 	@Override
 	public Long sumPrcMessagesP04(Long fileId) throws Exception {
-		Long sumP4 = prcMessagesService.sumPrcMessagesP04(fileId);
-		return null;
+		Long sumP04 = prcMessagesService.sumPrcMessagesP04(fileId);
+		return sumP04;
 	}
 
 	@Override
-	public Long sumPrcMessagesP05() {
-		
-		return null;
+	public Long sumPrcMessagesP05(Long fileId) throws Exception {
+		Long sumP05 = prcMessagesService.sumPrcMessagesP05(fileId);
+		return sumP05;
 	}
 
 	@Override
-	public Long sumPrcMessagesP76() {
-		
+	public Long sumPrcMessagesS74(Long fileId) throws Exception {
+		Long sumS74 = prcMessagesService.sumPrcMessagesS74(fileId);
+		return sumS74;
+	}
+
+	@Override
+	public Long sumPrcMessagesS75(Long fileId) throws Exception {
+		Long sumS75 = prcMessagesService.sumPrcMessagesS75(fileId);
+		return sumS75;
+	}
+	
+	@Override
+	public Long sumPrcMessagesS76(Long fileId) throws Exception {
+		Long sumS76 = prcMessagesService.sumPrcMessagesS76(fileId);
+		return sumS76;
+	}
+
+	@Override
+	public Long sumPrcMessagesS77(Long fileId) throws Exception {
+		Long sumS77 = prcMessagesService.sumPrcMessagesS77(fileId);
+		return sumS77;
+	}
+
+	@Override
+	public Long sumPrcMessagesS85(Long fileId) throws Exception {
+		Long sumS85 = prcMessagesService.sumPrcMessagesS85(fileId);
+		return sumS85;
+	}
+
+	@Override
+	public Long sumPrcMessagesS105(Long fileId) throws Exception {
+		Long sumS105 = prcMessagesService.sumPrcMessagesS105(fileId);
+		return sumS105;
+	}
+
+	@Override
+	public Long sumPrcMessagesS106(Long fileId) throws Exception {
+		Long sumS106 = prcMessagesService.sumPrcMessagesS106(fileId);
+		return sumS106;
+	}
+
+	@Override
+	public Long sumPrcMessagesS109(Long fileId) throws Exception {
+		Long sumS109 = prcMessagesService.sumPrcMessagesS109(fileId);
+		return sumS109;
+	}
+
+	@Override
+	public Long sumPrcMessagesS110(Long fileId) throws Exception {
+		Long sumS110 = prcMessagesService.sumPrcMessagesS110(fileId);
+		return sumS110;
+	}
+
+	@Override
+	public Long sumPrcMessagesP04andP05(Long p04, Long p05) {
+		if ((p04.equals(null))&&(!p05.equals(null))){
+			Long sum = p05;
+			return sum;
+		}
+		if ((!p04.equals(null))&&(p05.equals(null))){
+			Long sum = p04;
+			return sum;
+		}
+		if ((!p04.equals(null))&&(!p05.equals(null))){
+			Long sum = p05 + p04;
+			return sum;
+		}
 		return null;
 	}
 }
