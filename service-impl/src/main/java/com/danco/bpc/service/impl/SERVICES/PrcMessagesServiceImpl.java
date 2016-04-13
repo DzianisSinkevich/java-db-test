@@ -15,13 +15,14 @@ public class PrcMessagesServiceImpl extends DataServiceImpl<PrcMessages>implemen
 	@Autowired
 	private PrcMessagesDaoImpl genericDao = new PrcMessagesDaoImpl();
 
-
-	public Long sumPrcMessagesP04(Long fileId) throws Exception {
-		return genericDao.sumPrcMessagesP04(fileId);
+	@Override
+	public Long sumPrcMessagesP04(Long fileId, int recordType1, int recordType2, int minPrcc, int maxPrcc) throws Exception {
+		return genericDao.sumPrcMessagesP04(fileId, recordType1, recordType2, minPrcc, maxPrcc);
 	}
 
-	public Long sumPrcMessagesP05(Long fileId) throws Exception {
-		return genericDao.sumPrcMessagesP05(fileId);
+	@Override
+	public Long sumPrcMessagesP05(Long fileId, int recordType1, int recordType2, int minPrcc, int maxPrcc) throws Exception {
+		return genericDao.sumPrcMessagesP05(fileId, recordType1, recordType2, minPrcc, maxPrcc);
 	}
 
 	@Override
@@ -33,7 +34,7 @@ public class PrcMessagesServiceImpl extends DataServiceImpl<PrcMessages>implemen
 	public Long sumPrcMessagesS75(Long fileId) throws Exception {
 		return genericDao.sumPrcMessagesS75(fileId);
 	}
-	
+
 	public Long sumPrcMessagesS76(Long fileId) throws Exception {
 		return genericDao.sumPrcMessagesS76(fileId);
 	}
@@ -67,5 +68,5 @@ public class PrcMessagesServiceImpl extends DataServiceImpl<PrcMessages>implemen
 	public Long sumPrcMessagesS110(Long fileId) throws Exception {
 		return genericDao.sumPrcMessagesS110(fileId);
 	}
-	
+
 }

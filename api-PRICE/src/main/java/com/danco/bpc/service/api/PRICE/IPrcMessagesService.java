@@ -4,9 +4,9 @@ import com.danco.bpc.entity.PRICE.PrcMessages;
 import com.danco.bpc.service.api.IGenericService;
 
 public interface IPrcMessagesService extends IGenericService<PrcMessages> {
-	public Long sumPrcMessagesP04(Long fileId) throws Exception;
+	public Long sumPrcMessagesP04(Long fileId, int recordType1, int recordType2, int minPrcc, int maxPrcc) throws Exception;
 
-	public Long sumPrcMessagesP05(Long fileId) throws Exception;
+	public Long sumPrcMessagesP05(Long fileId, int recordType1, int recordType2, int minPrcc, int maxPrcc) throws Exception;
 
 	public Long sumPrcMessagesS74(Long fileId) throws Exception;
 

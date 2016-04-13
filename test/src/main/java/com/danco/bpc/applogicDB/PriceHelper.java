@@ -65,14 +65,14 @@ public class PriceHelper implements IPriceHelper {
 	}
 
 	@Override
-	public Long sumPrcMessagesP04(Long fileId) throws Exception {
-		Long sumP04 = prcMessagesService.sumPrcMessagesP04(fileId);
+	public Long sumPrcMessagesP04(Long fileId, int recordType1, int recordType2, int minPrcc, int maxPrcc) throws Exception {
+		Long sumP04 = prcMessagesService.sumPrcMessagesP04(fileId, recordType1, recordType2, minPrcc, maxPrcc);
 		return sumP04;
 	}
 
 	@Override
-	public Long sumPrcMessagesP05(Long fileId) throws Exception {
-		Long sumP05 = prcMessagesService.sumPrcMessagesP05(fileId);
+	public Long sumPrcMessagesP05(Long fileId, int recordType1, int recordType2, int minPrcc, int maxPrcc) throws Exception {
+		Long sumP05 = prcMessagesService.sumPrcMessagesP05(fileId, recordType1, recordType2, minPrcc, maxPrcc);
 		return sumP05;
 	}
 
