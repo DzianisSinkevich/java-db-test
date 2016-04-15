@@ -1,9 +1,5 @@
 package com.danco.bpc.entity.PRICE;
 
-import java.io.Serializable;
-
-import java.util.Calendar;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -13,50 +9,40 @@ import com.danco.bpc.entity.api.AbstractBaseEntity;
 
 @Table(name = "PRC_MESSAGES_ERRORS")
 @Entity
-public class PrcMessagesErrors extends AbstractBaseEntity implements java.io.Serializable, Comparable<PrcFiles> {
+public class PrcMessagesErrors extends AbstractBaseEntity implements java.io.Serializable, Comparable<PrcMessagesErrors> {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	@Id
 	@Column(name = "ID")
-	private int id;
+	private Long id;
 	@Column(name = "VERSION")
-	private int version;
+	private Long version;
 	@Column(name = "MSG_ID")
-	private int msgId;
+	private Long msgId;
 	@Column(name = "ERROR")
 	private String error;
 
 	public PrcMessagesErrors() {
 	}
 
-	public PrcMessagesErrors(int instId, int version, int msgId, String error) {
-		this.setId(id);
-		this.setVersion(version);
-		this.setMsgId(msgId);
-		this.setError(error);
-	}
-
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public int getVersion() {
+	public Long getVersion() {
 		return version;
 	}
 
-	public void setVersion(int version) {
+	public void setVersion(Long version) {
 		this.version = version;
 	}
 
-	public int getMsgId() {
+	public Long getMsgId() {
 		return msgId;
 	}
 
 	public void setMsgId(int msgId) {
-		this.msgId = msgId;
+		this.msgId = (long) msgId;
 	}
 
 	public String getError() {
@@ -74,13 +60,7 @@ public class PrcMessagesErrors extends AbstractBaseEntity implements java.io.Ser
 	}
 
 	@Override
-	public void setId(Long id) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public int compareTo(PrcFiles o) {
+	public int compareTo(PrcMessagesErrors arg0) {
 		// TODO Auto-generated method stub
 		return 0;
 	}

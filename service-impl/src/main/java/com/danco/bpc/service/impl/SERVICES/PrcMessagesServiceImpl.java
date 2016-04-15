@@ -41,22 +41,12 @@ public class PrcMessagesServiceImpl extends DataServiceImpl<PrcMessages>implemen
 
 	@Override
 	public Long sumPrcMessagesS77(Long fileId) throws Exception {
-		return genericDao.sumPrcMessagesS76(fileId);
+		return genericDao.sumPrcMessagesS77(fileId);
 	}
 
 	@Override
 	public Long sumPrcMessagesS85(Long fileId) throws Exception {
 		return genericDao.sumPrcMessagesS85(fileId);
-	}
-
-	@Override
-	public Long sumPrcMessagesS105(Long fileId) throws Exception {
-		return genericDao.sumPrcMessagesS105(fileId);
-	}
-
-	@Override
-	public Long sumPrcMessagesS106(Long fileId) throws Exception {
-		return genericDao.sumPrcMessagesS106(fileId);
 	}
 
 	@Override
@@ -69,4 +59,23 @@ public class PrcMessagesServiceImpl extends DataServiceImpl<PrcMessages>implemen
 		return genericDao.sumPrcMessagesS110(fileId);
 	}
 
+	@Override
+	public PrcMessages get1544(Long fileId) throws Exception{
+		return genericDao.get1544(fileId);
+	}
+
+	@Override
+	public Long kolInvalidMess(Long fileId) throws Exception {
+		return genericDao.kolInvalidMess(fileId);
+	}
+
+	@Override
+	public Long kolMessWithError(Long fileId) throws Exception {
+		return genericDao.kolMessWithError(fileId);
+	}
+
+	@Override
+	public Long amountMessagesInPrcMessages(Long fileId) throws Exception {
+		return genericDao.amountMessagesInPrcMessages(fileId);
+	}
 }

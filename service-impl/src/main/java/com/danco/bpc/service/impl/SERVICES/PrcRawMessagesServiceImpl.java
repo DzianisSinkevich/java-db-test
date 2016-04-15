@@ -18,4 +18,9 @@ public class PrcRawMessagesServiceImpl extends DataServiceImpl<PrcRawMessages>im
 	public Long countRowsForSendToSv() throws Exception {
 		return genericDao.countRowsForSendToSv();
 	}
+
+	@Override
+	public Long amountMessagesInPrcRawMessages(Long fileId) throws Exception {
+		return genericDao.amountMessagesInPrcRawMessages(fileId);
+	}
 }

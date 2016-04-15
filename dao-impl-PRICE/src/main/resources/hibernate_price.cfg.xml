@@ -13,5 +13,6 @@
         <mapping class="com.danco.bpc.entity.PRICE.PrcFiles" />
 		<mapping class="com.danco.bpc.entity.PRICE.PrcMessages" />
 		<mapping class="com.danco.bpc.entity.PRICE.PrcRawMessages" />
+		<mapping class="com.danco.bpc.entity.PRICE.PrcMessagesErrors" />
 	</session-factory>
 </hibernate-configuration>

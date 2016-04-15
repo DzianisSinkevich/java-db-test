@@ -18,11 +18,15 @@ public interface IPrcMessagesService extends IGenericService<PrcMessages> {
 
 	public Long sumPrcMessagesS85(Long fileId) throws Exception;
 
-	public Long sumPrcMessagesS105(Long fileId) throws Exception;
-
-	public Long sumPrcMessagesS106(Long fileId) throws Exception;
-
 	public Long sumPrcMessagesS109(Long fileId) throws Exception;
 
 	public Long sumPrcMessagesS110(Long fileId) throws Exception;
+	
+	public PrcMessages get1544(Long fileId) throws Exception;
+	
+	public Long kolInvalidMess(Long fileId) throws Exception;
+	
+	public Long kolMessWithError(Long fileId) throws Exception;
+	
+	public Long amountMessagesInPrcMessages(Long fileId) throws Exception;
 }

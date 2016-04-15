@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite1" duration-ms="8022" started-at="2016-04-12T12:56:16Z" finished-at="2016-04-12T12:56:24Z">
+  <suite name="Suite1" duration-ms="30006" started-at="2016-04-15T13:04:23Z" finished-at="2016-04-15T13:04:53Z">
     <groups>
     </groups>
-    <test name="Test001" duration-ms="8022" started-at="2016-04-12T12:56:16Z" finished-at="2016-04-12T12:56:24Z">
+    <test name="Test001" duration-ms="30006" started-at="2016-04-15T13:04:23Z" finished-at="2016-04-15T13:04:53Z">
       <class name="db.tests.PRICE.IncomingValidation">
-        <test-method status="PASS" signature="checkFilePreferences()[pri:0, instance:db.tests.PRICE.IncomingValidation@663411de]" name="checkFilePreferences" duration-ms="3004" started-at="2016-04-12T15:56:16Z" finished-at="2016-04-12T15:56:19Z">
+        <test-method status="PASS" signature="checkFilePreferences()[pri:0, instance:db.tests.PRICE.IncomingValidation@5b58ed3c]" name="checkFilePreferences" duration-ms="3647" started-at="2016-04-15T16:04:23Z" finished-at="2016-04-15T16:04:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkFilePreferences -->
-        <test-method status="PASS" signature="checkTotalsCalculation()[pri:0, instance:db.tests.PRICE.IncomingValidation@663411de]" name="checkTotalsCalculation" duration-ms="5006" started-at="2016-04-12T15:56:19Z" finished-at="2016-04-12T15:56:24Z">
+        <test-method status="PASS" signature="checkMessageErrors()[pri:0, instance:db.tests.PRICE.IncomingValidation@5b58ed3c]" name="checkMessageErrors" duration-ms="6771" started-at="2016-04-15T16:04:26Z" finished-at="2016-04-15T16:04:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkMessageErrors -->
+        <test-method status="PASS" signature="checkParsingMessages()[pri:0, instance:db.tests.PRICE.IncomingValidation@5b58ed3c]" name="checkParsingMessages" duration-ms="4754" started-at="2016-04-15T16:04:33Z" finished-at="2016-04-15T16:04:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkParsingMessages -->
+        <test-method status="PASS" signature="checkTotalsCalculation()[pri:0, instance:db.tests.PRICE.IncomingValidation@5b58ed3c]" name="checkTotalsCalculation" duration-ms="14811" started-at="2016-04-15T16:04:38Z" finished-at="2016-04-15T16:04:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkTotalsCalculation -->

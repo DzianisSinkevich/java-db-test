@@ -1,6 +1,7 @@
 package com.danco.bpc.dao.impl.PRICE;
 
 import org.hibernate.HibernateException;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Projections;
@@ -30,6 +31,27 @@ public class PrcRawMessagesDaoImpl extends AbstractDaoPriceImpl<PrcRawMessages>i
 					.add(Restrictions.eq("sendCount", 0)).uniqueResult();
 			txn.commit();
 			return countRows;
+		} catch (HibernateException e) {
+			if (null != txn) {
+				txn.rollback();
+			}
+			e.printStackTrace();
+			throw new Exception("ERROR");
+		}
+	}
+
+	@Override
+	public Long amountMessagesInPrcRawMessages(Long fileId) throws Exception {
+		Transaction txn = null;
+		try {
+			Session session = sessionFactory.getCurrentSession();
+			txn = session.beginTransaction();
+			String hql = "select count(*) from PrcRawMessages where fileId = :fId";
+			Query query = session.createQuery(hql);
+			query.setLong("fId", fileId);
+			Long amountMess = (Long) query.uniqueResult();
+			txn.commit();
+			return amountMess;
 		} catch (HibernateException e) {
 			if (null != txn) {
 				txn.rollback();

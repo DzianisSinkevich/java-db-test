@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">4 methods,   4 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,6 +103,16 @@
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Suite1" title="db.tests.PRICE.IncomingValidation" hash-for-method="checkFilePreferences">checkFilePreferences</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite1" title="db.tests.PRICE.IncomingValidation" hash-for-method="checkMessageErrors">checkMessageErrors</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite1" title="db.tests.PRICE.IncomingValidation" hash-for-method="checkParsingMessages">checkParsingMessages</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -133,6 +143,20 @@
                   <a name="checkFilePreferences">
                   </a> <!-- checkFilePreferences -->
                   <span class="method-name">checkFilePreferences</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="checkMessageErrors">
+                  </a> <!-- checkMessageErrors -->
+                  <span class="method-name">checkMessageErrors</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="checkParsingMessages">
+                  </a> <!-- checkParsingMessages -->
+                  <span class="method-name">checkParsingMessages</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -196,20 +220,28 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(4);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'checkTotalsCalculation')
 data.setCell(0, 2, 'db.tests.PRICE.IncomingValidation')
-data.setCell(0, 3, 5006);
+data.setCell(0, 3, 14811);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'checkFilePreferences')
+data.setCell(1, 1, 'checkMessageErrors')
 data.setCell(1, 2, 'db.tests.PRICE.IncomingValidation')
-data.setCell(1, 3, 3004);
+data.setCell(1, 3, 6771);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'checkParsingMessages')
+data.setCell(2, 2, 'db.tests.PRICE.IncomingValidation')
+data.setCell(2, 3, 4754);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'checkFilePreferences')
+data.setCell(3, 2, 'db.tests.PRICE.IncomingValidation')
+data.setCell(3, 3, 3647);
 window.suiteTableData['Suite1']= { tableData: data, tableDiv: 'times-div-Suite1'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 8 seconds</span>
+              <span class="suite-total-time">Total running time: 29 seconds</span>
               <div id="times-div-Suite1">
               </div> <!-- times-div-Suite1 -->
             </div> <!-- times-div -->
@@ -241,8 +273,16 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
+                <span class="method-name">checkMessageErrors</span>
+                <span class="method-start">3650 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">checkParsingMessages</span>
+                <span class="method-start">10424 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
                 <span class="method-name">checkTotalsCalculation</span>
-                <span class="method-start">3005 ms</span>
+                <span class="method-start">15180 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -1,10 +1,11 @@
 package db.tests.PRICE;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.annotations.Test;
 
 import com.danco.bpc.applogicDB.DBManager;
 import com.danco.bpc.entity.PRICE.PrcFiles;
-import com.danco.bpc.entity.PRICE.PrcMessages;
 import com.danco.bpc.service.impl.SERVICES.PrcFilesServiceImpl;
 
 import pages.TestBaseAll;
@@ -12,6 +13,7 @@ import pages.TestBaseAll;
 public class IncomingValidation extends TestBaseAll {
 	private PrcFilesServiceImpl prcFilesService = new PrcFilesServiceImpl();
 	PrcFiles prcFile = new PrcFiles();
+	private static final Logger logger = LogManager.getLogger("");
 
 	@Test
 	public void checkFilePreferences() throws Exception {
@@ -19,16 +21,46 @@ public class IncomingValidation extends TestBaseAll {
 
 		prcFile = prcFilesService.selectFile(db.getPriceHelper().fileDailyName());
 		db.getPriceHelper().checkFilePreferences(prcFile);
-		System.out.println("" + prcFile.getId());
+		logger.warn("File preferences is rigth");
 	}
 
 	@Test
 	public void checkTotalsCalculation() throws Exception {
 		db = new DBManager();
-		PrcMessages prcMessages = new PrcMessages();
+
 		prcFile = prcFilesService.selectFile(db.getPriceHelper().fileDailyName());
-		db.getPriceHelper().sumPrcMessagesP04(prcFile.getId());
-		db.getPriceHelper().sumPrcMessagesP05(prcFile.getId());
-		db.getPriceHelper().sumPrcMessagesS76(prcFile.getId());
+		assert(!db.getPriceHelper().compareTotals(prcFile.getId()));
+	}
+
+	@Test
+	public void checkMessageErrors() throws Exception {
+		Long kolMesWithStutsError = (long) 0;
+		Long kolMesWithError = (long) 0;
+
+		db = new DBManager();
+
+		prcFile = prcFilesService.selectFile(db.getPriceHelper().fileDailyName());
+		kolMesWithStutsError = db.getPriceHelper().checkKolMesWithStatusError(prcFile.getId());
+		// System.out.println("kolMesWithStutsError = " + kolMesWithStutsError);
+		kolMesWithError = db.getPriceHelper().checkKolMesWithError(prcFile.getId());
+		// System.out.println("kolMesWithError = " + kolMesWithError);
+
+		assert(kolMesWithStutsError.equals(kolMesWithError));
+	}
+
+	@Test
+	public void checkParsingMessages() throws Exception {
+		Long amountPrcMessages = (long) 0;
+		Long amountPrcRawMessages = (long) 0;
+
+		db = new DBManager();
+
+		prcFile = prcFilesService.selectFile(db.getPriceHelper().fileDailyName());
+		amountPrcMessages = db.getPriceHelper().amountMessagesInPrcMessages(prcFile.getId());
+		System.out.println("amountPrcMessages = " + amountPrcMessages);
+		amountPrcRawMessages = db.getPriceHelper().amountMessagesInPrcRawMessages(prcFile.getId());
+		System.out.println("amountPrcRawMessages = " + amountPrcRawMessages);
+
+		assert(amountPrcMessages.equals(amountPrcRawMessages));
 	}
 }
