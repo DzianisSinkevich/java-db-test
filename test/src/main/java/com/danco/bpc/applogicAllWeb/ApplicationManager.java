@@ -3,6 +3,7 @@ package com.danco.bpc.applogicAllWeb;
 import org.openqa.selenium.WebDriver;
 
 import com.danco.bpc.IApplogicAllWeb.INavigationHelper;
+import com.danco.bpc.IApplogicAllWeb.IPriceHelper;
 import com.danco.bpc.IApplogicAllWeb.IUserHelper;
 import com.danco.bpc.pages.util.PropertyLoader;
 import com.danco.bpc.util.Browser;
@@ -12,6 +13,7 @@ public class ApplicationManager implements com.danco.bpc.IApplogicAllWeb.IApplic
 
 	private IUserHelper userHelper;
 	private INavigationHelper navHelper;
+	private IPriceHelper priceHelper;
 
 	private WebDriver driver;
 	private String baseUrl;
@@ -33,6 +35,7 @@ public class ApplicationManager implements com.danco.bpc.IApplogicAllWeb.IApplic
 
 		userHelper = new UserHelper(this);
 		navHelper = new NavigationHelper(this);
+		priceHelper = new PriceHelper(this);
 
 		// getNavigationHelper().openMainPage();
 	}
@@ -54,6 +57,7 @@ public class ApplicationManager implements com.danco.bpc.IApplogicAllWeb.IApplic
 
 		userHelper = new UserHelper(this);
 		navHelper = new NavigationHelper(this);
+		priceHelper = new PriceHelper(this);
 
 		getNavigationHelper().openMainPage();
 	}
@@ -66,6 +70,11 @@ public class ApplicationManager implements com.danco.bpc.IApplogicAllWeb.IApplic
 	@Override
 	public INavigationHelper getNavigationHelper() {
 		return navHelper;
+	}
+	
+	@Override
+	public IPriceHelper getPriceHelper() {
+		return priceHelper;
 	}
 
 	protected WebDriver getWebDriver() {

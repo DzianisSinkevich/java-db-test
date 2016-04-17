@@ -45,6 +45,11 @@ public class NavigationHelper extends DriverBasedHelper implements INavigationHe
 	}
 
 	@Override
+	public void openIOOperationPricePage() {
+		pages.internalPage.clickIOOPerations().clickIOOPerationsPrice();
+	}
+	
+	@Override
 	public void openContainersPage() {
 		pages.internalPage.clickAdministration().clickAdministrationProcesses().clickAdministrationProcessesContainers();
 	}

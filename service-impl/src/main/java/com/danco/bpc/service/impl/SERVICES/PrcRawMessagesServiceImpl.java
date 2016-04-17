@@ -1,5 +1,7 @@
 package com.danco.bpc.service.impl.SERVICES;
 
+import java.util.Calendar;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -10,7 +12,7 @@ import com.danco.bpc.service.api.PRICE.IPrcRawMessagesService;
 
 @Service
 @Transactional
-public class PrcRawMessagesServiceImpl extends DataServiceImpl<PrcRawMessages>implements IPrcRawMessagesService {
+public class PrcRawMessagesServiceImpl extends DataServiceImpl<PrcRawMessages> implements IPrcRawMessagesService {
 
 	@Autowired
 	private PrcRawMessagesDaoImpl genericDao = new PrcRawMessagesDaoImpl();
@@ -22,5 +24,10 @@ public class PrcRawMessagesServiceImpl extends DataServiceImpl<PrcRawMessages>im
 	@Override
 	public Long amountMessagesInPrcRawMessages(Long fileId) throws Exception {
 		return genericDao.amountMessagesInPrcRawMessages(fileId);
+	}
+
+	@Override
+	public Long amountMessagesWithCurrentDate(Calendar currDate) throws Exception {
+		return genericDao.amountMessagesWithCurrentDate(currDate);
 	}
 }

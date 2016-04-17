@@ -43,6 +43,15 @@ public class PriceHelper implements IPriceHelper {
 	}
 
 	@Override
+	public Calendar currentDate() {
+		Calendar currDate = Calendar.getInstance();
+		currDate.set(currDate.get(Calendar.YEAR), currDate.get(Calendar.MONTH), currDate.get(Calendar.DAY_OF_MONTH), 0,
+				0, 0);
+		currDate.set(Calendar.MILLISECOND, 0);
+		return currDate;
+	}
+
+	@Override
 	public int idIncomingFile() throws Exception {
 		PrcFiles prcFiles = prcFilesService.selectFile(fileDailyName());
 
@@ -51,29 +60,30 @@ public class PriceHelper implements IPriceHelper {
 
 	@Override
 	public void checkFilePreferences(PrcFiles prcFile) {
-		Calendar currDate = Calendar.getInstance();
+
 		Calendar fileDate = prcFile.getUploadDate();
-		currDate.set(currDate.get(Calendar.YEAR), currDate.get(Calendar.MONTH), currDate.get(Calendar.DAY_OF_MONTH), 0, 0, 0);
-		currDate.set(Calendar.MILLISECOND, 0);
+		Calendar currDate = currentDate();
 		fileDate.set(Calendar.MILLISECOND, 0);
 		fileDate.set(Calendar.SECOND, 0);
 		fileDate.set(Calendar.MINUTE, 0);
 		fileDate.set(Calendar.HOUR_OF_DAY, 0);
 		System.out.println("fileDate - " + fileDate.getTimeInMillis() + " currDate - " + currDate.getTimeInMillis());
-		assert(prcFile.getType().equals("FLTP1"));
-		assert(prcFile.getStatus().equals("FLST1"));
-		assert(prcFile.getTotalRecords().equals(4052L));
-		assert(fileDate.equals(currDate));
+		assert (prcFile.getType().equals("FLTP1"));
+		assert (prcFile.getStatus().equals("FLST1"));
+		assert (prcFile.getTotalRecords().equals(4052L));
+		assert (fileDate.equals(currDate));
 	}
 
 	@Override
-	public Long sumPrcMessagesP04(Long fileId, int recordType1, int recordType2, int minPrcc, int maxPrcc) throws Exception {
+	public Long sumPrcMessagesP04(Long fileId, int recordType1, int recordType2, int minPrcc, int maxPrcc)
+			throws Exception {
 		Long sumP04 = prcMessagesService.sumPrcMessagesP04(fileId, recordType1, recordType2, minPrcc, maxPrcc);
 		return sumP04;
 	}
 
 	@Override
-	public Long sumPrcMessagesP05(Long fileId, int recordType1, int recordType2, int minPrcc, int maxPrcc) throws Exception {
+	public Long sumPrcMessagesP05(Long fileId, int recordType1, int recordType2, int minPrcc, int maxPrcc)
+			throws Exception {
 		Long sumP05 = prcMessagesService.sumPrcMessagesP05(fileId, recordType1, recordType2, minPrcc, maxPrcc);
 		return sumP05;
 	}
@@ -304,6 +314,12 @@ public class PriceHelper implements IPriceHelper {
 	@Override
 	public Long amountMessagesInPrcRawMessages(Long fileId) throws Exception {
 		Long kolMess = prcRawMessagesService.amountMessagesInPrcRawMessages(fileId);
+		return kolMess;
+	}
+
+	@Override
+	public Long amountMessagesWithCurrentDate() throws Exception {
+		Long kolMess = prcRawMessagesService.amountMessagesWithCurrentDate(currentDate());
 		return kolMess;
 	}
 }

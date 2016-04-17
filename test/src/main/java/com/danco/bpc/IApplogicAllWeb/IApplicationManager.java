@@ -5,6 +5,8 @@ public interface IApplicationManager {
 	IUserHelper getUserHelper();
 
 	INavigationHelper getNavigationHelper();
+	
+	IPriceHelper getPriceHelper();
 
 	void stop();
 

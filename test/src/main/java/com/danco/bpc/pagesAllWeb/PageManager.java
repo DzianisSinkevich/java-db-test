@@ -14,6 +14,7 @@ public class PageManager {
 	public FilmManagementPage filmManagementPage;
 	public SessionPage sessionPage;
 	public ContainersPage containersPage;
+	public IOOperationsPricePage IOOperationsPricePage;
 
 	public PageManager(WebDriver driver) {
 		this.driver = driver;
@@ -24,6 +25,7 @@ public class PageManager {
 		filmManagementPage = initElements(new FilmManagementPage(this));
 		sessionPage = initElements(new SessionPage(this));
 		containersPage = initElements(new ContainersPage(this));
+		IOOperationsPricePage = initElements(new IOOperationsPricePage(this));
 	}
 
 	private <T extends Page> T initElements(T page) {

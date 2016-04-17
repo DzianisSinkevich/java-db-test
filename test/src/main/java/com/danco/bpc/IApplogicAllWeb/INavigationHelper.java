@@ -23,6 +23,8 @@ public interface INavigationHelper {
 	void administrationClick();
 
 	void administrationProcessesClick();
+	
+	void openIOOperationPricePage();
 
 	void openContainersPage();
 

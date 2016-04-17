@@ -464,6 +464,16 @@ public class InternalPage extends AnyPage {
 		return pages.internalPage;
 	}
 
+	public InternalPage clickIOOPerations() {
+		menuInputOutputOperations.click();
+		return pages.internalPage;
+	}
+	
+	public InternalPage clickIOOPerationsPrice() {
+		menuInputOutputOperationsPrice.click();
+		return pages.internalPage;
+	}
+		
 	public InternalPage clickAdministration() {
 		menuAdministration.click();
 		return pages.internalPage;
@@ -518,30 +528,5 @@ public class InternalPage extends AnyPage {
 		Actions actions = new Actions(driver);
 		actions.moveToElement(dashboardMenu).build().perform();
 		return pages.internalPage;
-	}
-	
-	public boolean confirmAmountsAdd() {
-		System.out.println("afterAmountFilms " + afterAmountFilms);
-		System.out.println("forAmountFilms " + forAmountFilms.size());
-		if (afterAmountFilms + 1 == forAmountFilms.size()) {
-			return true;
-		}
-		return false;
-	}
-
-	public FilmManagementPage clickToFirstFilm() {
-		firstFilm.click();
-		return pages.filmManagementPage;
-	}
-
-	public boolean confirmAmountsDelete() {
-		driver.navigate().refresh();
-		pages.internalPage.ensurePageLoaded();
-		System.out.println("afterAmountFilms " + afterAmountFilms);
-		System.out.println("forAmountFilms " + forAmountFilms.size());
-		if (afterAmountFilms - 1 == forAmountFilms.size()) {
-			return true;
-		}
-		return false;
 	}
 }

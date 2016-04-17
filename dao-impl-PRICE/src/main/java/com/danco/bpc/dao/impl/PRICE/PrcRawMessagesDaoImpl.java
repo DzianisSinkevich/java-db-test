@@ -1,5 +1,8 @@
 package com.danco.bpc.dao.impl.PRICE;
 
+import java.util.Calendar;
+import java.util.Date;
+
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -11,11 +14,8 @@ import com.danco.bpc.dao.api.PRICE.IPrcRawMessagesDao;
 import com.danco.bpc.dao.impl.common.AbstractDaoPriceImpl;
 import com.danco.bpc.entity.PRICE.PrcRawMessages;
 
-public class PrcRawMessagesDaoImpl extends AbstractDaoPriceImpl<PrcRawMessages>implements IPrcRawMessagesDao {
+public class PrcRawMessagesDaoImpl extends AbstractDaoPriceImpl<PrcRawMessages> implements IPrcRawMessagesDao {
 
-	/**
-	 * Instantiates a new about dao impl.
-	 */
 	public PrcRawMessagesDaoImpl() {
 		super(PrcRawMessages.class);
 	}
@@ -27,8 +27,8 @@ public class PrcRawMessagesDaoImpl extends AbstractDaoPriceImpl<PrcRawMessages>i
 		try {
 			Session session = sessionFactory.getCurrentSession();
 			txn = session.beginTransaction();
-			countRows = (Long) session.createCriteria(PrcRawMessages.class).setProjection(Projections.rowCount()).add(Restrictions.eq("status", "MSST0003"))
-					.add(Restrictions.eq("sendCount", 0)).uniqueResult();
+			countRows = (Long) session.createCriteria(PrcRawMessages.class).setProjection(Projections.rowCount())
+					.add(Restrictions.eq("status", "MSST0003")).add(Restrictions.eq("sendCount", 0)).uniqueResult();
 			txn.commit();
 			return countRows;
 		} catch (HibernateException e) {
@@ -51,6 +51,28 @@ public class PrcRawMessagesDaoImpl extends AbstractDaoPriceImpl<PrcRawMessages>i
 			query.setLong("fId", fileId);
 			Long amountMess = (Long) query.uniqueResult();
 			txn.commit();
+			return amountMess;
+		} catch (HibernateException e) {
+			if (null != txn) {
+				txn.rollback();
+			}
+			e.printStackTrace();
+			throw new Exception("ERROR");
+		}
+	}
+
+	@Override
+	public Long amountMessagesWithCurrentDate(Calendar currDate) throws Exception {
+		Transaction txn = null;
+		try {
+			Session session = sessionFactory.getCurrentSession();
+			txn = session.beginTransaction();
+			String hql = "select count(*) from PrcRawMessages where createdAt = :currDate";
+			Query query = session.createQuery(hql);
+			query.setCalendar("currDate", currDate);
+			Long amountMess = (Long) query.uniqueResult();
+			txn.commit();
+			System.out.println("amountMess=" + amountMess);
 			return amountMess;
 		} catch (HibernateException e) {
 			if (null != txn) {
