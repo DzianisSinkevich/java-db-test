@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Suite1">
-              <span class="suite-name border-failed">Suite1</span>
+              <span class="suite-name border-passed">Suite1</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -49,12 +49,12 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Suite1">
-                    <span>F:\JAVA\java-db-test\test\src\test\resources\testng2.xml</span>
+                    <span>D:\BPC\java-db-test\test\src\test\resources\testng2.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="testlist-Suite1">
-                    <span class="test-stats">2 tests</span>
+                    <span class="test-stats">1 test</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,21 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods, 1 failed,   2 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Suite1" class="hide-methods failed suite-Suite1"> (hide)</a> <!-- hide-methods failed suite-Suite1 -->
-                      <a href="#" panel-name="suite-Suite1" class="show-methods failed suite-Suite1"> (show)</a> <!-- show-methods failed suite-Suite1 -->
-                    </span>
-                    <div class="method-list-content failed suite-Suite1">
-                      <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite1" title="db.tests.PRICE.IOOperationsPrice" hash-for-method="bCheckAndCompareAmountMessages">bCheckAndCompareAmountMessages</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-Suite1 -->
+                    <span class="method-stats">3 methods,   3 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -117,6 +103,11 @@
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Suite1" title="db.tests.PRICE.IOOperationsPrice" hash-for-method="aOpenContainerPage">aOpenContainerPage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite1" title="db.tests.PRICE.IOOperationsPrice" hash-for-method="bCheckAndCompareAmountMessages">bCheckAndCompareAmountMessages</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -136,25 +127,6 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite1" class="panel Suite1">
-          <div class="suite-Suite1-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">db.tests.PRICE.IOOperationsPrice</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="bCheckAndCompareAmountMessages">
-                  </a> <!-- bCheckAndCompareAmountMessages -->
-                  <span class="method-name">bCheckAndCompareAmountMessages</span>
-                  <div class="stack-trace">java.lang.AssertionError
-	at db.tests.PRICE.IOOperationsPrice.bCheckAndCompareAmountMessages(IOOperationsPrice.java:29)
-... Removed 24 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite1-class-failed -->
           <div class="suite-Suite1-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -166,6 +138,13 @@
                   <a name="aOpenContainerPage">
                   </a> <!-- aOpenContainerPage -->
                   <span class="method-name">aOpenContainerPage</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="bCheckAndCompareAmountMessages">
+                  </a> <!-- bCheckAndCompareAmountMessages -->
+                  <span class="method-name">bCheckAndCompareAmountMessages</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -188,7 +167,7 @@
         </div> <!-- panel Suite1 -->
         <div panel-name="test-xml-Suite1" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">F:\JAVA\java-db-test\test\src\test\resources\testng2.xml</span>
+            <span class="header-content">D:\BPC\java-db-test\test\src\test\resources\testng2.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -201,15 +180,6 @@
       &lt;class name=&quot;db.tests.PRICE.IOOperationsPrice&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test001 --&gt;
-  &lt;test name=&quot;Test001(failed)&quot;&gt;
-    &lt;classes&gt;
-      &lt;class name=&quot;db.tests.PRICE.IOOperationsPrice&quot;&gt;
-        &lt;methods&gt;
-          &lt;include name=&quot;bCheckAndCompareAmountMessages&quot;/&gt;
-        &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- db.tests.PRICE.IOOperationsPrice --&gt;
-    &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Test001(failed) --&gt;
 &lt;/suite&gt; &lt;!-- Suite1 --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -222,9 +192,6 @@
             <ul>
               <li>
                 <span class="test-name">Test001 (2 classes)</span>
-              </li>
-              <li>
-                <span class="test-name">Test001(failed) (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -252,22 +219,22 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(3);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'aOpenContainerPage')
-data.setCell(0, 2, 'db.tests.PRICE.IOOperationsPrice')
-data.setCell(0, 3, 37682);
+data.setCell(0, 1, 'openWeb')
+data.setCell(0, 2, 'db.tests.allWeb.OpenAllWeb')
+data.setCell(0, 3, 27239);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'openWeb')
-data.setCell(1, 2, 'db.tests.allWeb.OpenAllWeb')
-data.setCell(1, 3, 20004);
+data.setCell(1, 1, 'aOpenContainerPage')
+data.setCell(1, 2, 'db.tests.PRICE.IOOperationsPrice')
+data.setCell(1, 3, 22986);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'bCheckAndCompareAmountMessages')
 data.setCell(2, 2, 'db.tests.PRICE.IOOperationsPrice')
-data.setCell(2, 3, 5164);
+data.setCell(2, 3, 5416);
 window.suiteTableData['Suite1']= { tableData: data, tableDiv: 'times-div-Suite1'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 55 seconds</span>
               <div id="times-div-Suite1">
               </div> <!-- times-div-Suite1 -->
             </div> <!-- times-div -->
@@ -303,13 +270,11 @@ return data;
               <div class="chronological-class-name">db.tests.PRICE.IOOperationsPrice</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">aOpenContainerPage</span>
-                <span class="method-start">20008 ms</span>
+                <span class="method-start">27241 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">bCheckAndCompareAmountMessages</span>
-                <span class="method-start">57691 ms</span>
+                <span class="method-start">50228 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

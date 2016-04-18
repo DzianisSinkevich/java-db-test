@@ -7,13 +7,4 @@
       <class name="db.tests.PRICE.IOOperationsPrice"/>
     </classes>
   </test> <!-- Test001 -->
-  <test name="Test001(failed)">
-    <classes>
-      <class name="db.tests.PRICE.IOOperationsPrice">
-        <methods>
-          <include name="bCheckAndCompareAmountMessages"/>
-        </methods>
-      </class> <!-- db.tests.PRICE.IOOperationsPrice -->
-    </classes>
-  </test> <!-- Test001(failed) -->
 </suite> <!-- Failed suite [Suite1] -->

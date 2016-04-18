@@ -1,54 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" total="3" passed="2">
+<testng-results skipped="0" failed="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite1" duration-ms="62874" started-at="2016-04-17T21:24:24Z" finished-at="2016-04-17T21:25:27Z">
+  <suite name="Suite1" duration-ms="55654" started-at="2016-04-18T13:25:45Z" finished-at="2016-04-18T13:26:40Z">
     <groups>
     </groups>
-    <test name="Test001" duration-ms="62874" started-at="2016-04-17T21:24:24Z" finished-at="2016-04-17T21:25:27Z">
+    <test name="Test001" duration-ms="55654" started-at="2016-04-18T13:25:45Z" finished-at="2016-04-18T13:26:40Z">
       <class name="db.tests.PRICE.IOOperationsPrice">
-        <test-method status="PASS" signature="aOpenContainerPage()[pri:0, instance:db.tests.PRICE.IOOperationsPrice@174d20a]" name="aOpenContainerPage" duration-ms="37682" started-at="2016-04-18T00:24:44Z" finished-at="2016-04-18T00:25:22Z">
+        <test-method status="PASS" signature="aOpenContainerPage()[pri:0, instance:db.tests.PRICE.IOOperationsPrice@174d20a]" name="aOpenContainerPage" duration-ms="22986" started-at="2016-04-18T16:26:12Z" finished-at="2016-04-18T16:26:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- aOpenContainerPage -->
-        <test-method status="FAIL" signature="bCheckAndCompareAmountMessages()[pri:0, instance:db.tests.PRICE.IOOperationsPrice@174d20a]" name="bCheckAndCompareAmountMessages" duration-ms="5164" started-at="2016-04-18T00:25:22Z" finished-at="2016-04-18T00:25:27Z">
-          <exception class="java.lang.AssertionError">
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError
-	at db.tests.PRICE.IOOperationsPrice.bCheckAndCompareAmountMessages(IOOperationsPrice.java:29)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:782)
-	at org.testng.TestRunner.run(TestRunner.java:632)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
-	at org.testng.TestNG.run(TestNG.java:1064)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:113)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+        <test-method status="PASS" signature="bCheckAndCompareAmountMessages()[pri:0, instance:db.tests.PRICE.IOOperationsPrice@174d20a]" name="bCheckAndCompareAmountMessages" duration-ms="5416" started-at="2016-04-18T16:26:35Z" finished-at="2016-04-18T16:26:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- bCheckAndCompareAmountMessages -->
       </class> <!-- db.tests.PRICE.IOOperationsPrice -->
       <class name="db.tests.allWeb.OpenAllWeb">
-        <test-method status="PASS" signature="openWeb()[pri:0, instance:db.tests.allWeb.OpenAllWeb@a12c19]" name="openWeb" duration-ms="20004" started-at="2016-04-18T00:24:24Z" finished-at="2016-04-18T00:24:44Z">
+        <test-method status="PASS" signature="openWeb()[pri:0, instance:db.tests.allWeb.OpenAllWeb@6ea12c19]" name="openWeb" duration-ms="27239" started-at="2016-04-18T16:25:45Z" finished-at="2016-04-18T16:26:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openWeb -->

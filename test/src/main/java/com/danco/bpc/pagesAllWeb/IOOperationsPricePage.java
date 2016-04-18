@@ -1,6 +1,7 @@
 package com.danco.bpc.pagesAllWeb;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -103,7 +104,7 @@ public class IOOperationsPricePage extends AnyPage {
 
 	@FindBy(xpath = CALENDAR_TO_MONTH_REDUCTION)
 	private WebElement calendarToMonthReduction;
-	
+
 	@FindBy(xpath = CALENDAR_FROM_MONTH_INCREASE)
 	private WebElement calendarFromMonthIncrease;
 
@@ -121,12 +122,17 @@ public class IOOperationsPricePage extends AnyPage {
 		filterDateTo.click();
 		return pages.IOOperationsPricePage;
 	}
+	
+	public IOOperationsPricePage filterStatusClick() throws InterruptedException {
+		filterStatus.click();
+		return pages.IOOperationsPricePage;
+	}
 
 	public IOOperationsPricePage calendarFromYearReduction() throws InterruptedException {
 		calendarFromYearReduction.click();
 		return pages.IOOperationsPricePage;
 	}
-	
+
 	public IOOperationsPricePage calendarToYearReduction() throws InterruptedException {
 		calendarToYearReduction.click();
 		return pages.IOOperationsPricePage;
@@ -136,7 +142,7 @@ public class IOOperationsPricePage extends AnyPage {
 		calendarFromYearIncrease.click();
 		return pages.IOOperationsPricePage;
 	}
-	
+
 	public IOOperationsPricePage calendarToYearIncrease() throws InterruptedException {
 		calendarToYearIncrease.click();
 		return pages.IOOperationsPricePage;
@@ -151,7 +157,7 @@ public class IOOperationsPricePage extends AnyPage {
 		calendarToMonthReduction.click();
 		return pages.IOOperationsPricePage;
 	}
-	
+
 	public IOOperationsPricePage calendarFromMonthIncrease() throws InterruptedException {
 		calendarFromMonthIncrease.click();
 		return pages.IOOperationsPricePage;
@@ -178,13 +184,19 @@ public class IOOperationsPricePage extends AnyPage {
 		return pages.IOOperationsPricePage;
 	}
 
+	public IOOperationsPricePage filterButtonClearAllClick() throws InterruptedException {
+		filterButtonClearAll.click();
+		WaitLoadAndDisplayed.fullCicleWait(driver, waitContentIndicator);
+		return pages.IOOperationsPricePage;
+	}
+
 	public String calendarFromMonthParser() {
 		String monthYear = calendarFromMonthYearString.getText();
 		String month = monthYear.substring(0, monthYear.indexOf(","));
 		System.out.println("month = " + month);
 		return month;
 	}
-	
+
 	public String calendarToMonthParser() {
 		String monthYear = calendarToMonthYearString.getText();
 		String month = monthYear.substring(0, monthYear.indexOf(","));
@@ -205,7 +217,7 @@ public class IOOperationsPricePage extends AnyPage {
 		System.out.println("year = " + year);
 		return year;
 	}
-	
+
 	public void calendarFromYearSelector(String year) throws InterruptedException {
 		calendarFromTodayClick();
 		String currentYear = calendarFromYearParser();
@@ -240,7 +252,7 @@ public class IOOperationsPricePage extends AnyPage {
 		}
 	}
 
-	public void calendarDaySelector(String day) throws InterruptedException {
+	public void calendarFromDaySelector(String day) throws InterruptedException {
 		int i = 0;
 		String currentDay = driver.findElement(By.xpath(CALENDAR_DAY_PREFIX + i + "']")).getText();
 		while (!currentDay.equals("1")) {
@@ -258,5 +270,38 @@ public class IOOperationsPricePage extends AnyPage {
 		String countRec = countRecords.getText();
 		System.out.println("countCerords from web=" + countRec);
 		return countRec;
+	}
+
+	public IOOperationsPricePage selectStatus(String necessaryStatus) throws InterruptedException {
+		int countClickDown = 0;
+		switch (necessaryStatus) {
+		case "Corrupted":
+			countClickDown = 1;
+			break;
+		case "Not validated":
+			countClickDown = 2;
+			break;
+		case "Valid":
+			countClickDown = 3;
+			break;
+		case "Invalid":
+			countClickDown = 4;
+			break;
+		case "Rejected":
+			countClickDown = 5;
+			break;
+		case "Unmatched":
+			countClickDown = 6;
+			break;
+		case "NOT_REQUIRE_PROCESSING":
+			countClickDown = 6;
+			break;
+		}
+		filterStatusClick();
+		for (int i=0;i<countClickDown;i++){
+			filterStatus.sendKeys(Keys.ARROW_DOWN);
+		}
+		filterStatus.sendKeys(Keys.ENTER);
+		return pages.IOOperationsPricePage;
 	}
 }
