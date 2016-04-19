@@ -2,22 +2,22 @@
 <testng-results skipped="0" failed="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite1" duration-ms="55654" started-at="2016-04-18T13:25:45Z" finished-at="2016-04-18T13:26:40Z">
+  <suite name="Suite1" duration-ms="24801" started-at="2016-04-19T11:54:43Z" finished-at="2016-04-19T11:55:08Z">
     <groups>
     </groups>
-    <test name="Test001" duration-ms="55654" started-at="2016-04-18T13:25:45Z" finished-at="2016-04-18T13:26:40Z">
+    <test name="Test001" duration-ms="24801" started-at="2016-04-19T11:54:43Z" finished-at="2016-04-19T11:55:08Z">
       <class name="db.tests.PRICE.IOOperationsPrice">
-        <test-method status="PASS" signature="aOpenContainerPage()[pri:0, instance:db.tests.PRICE.IOOperationsPrice@174d20a]" name="aOpenContainerPage" duration-ms="22986" started-at="2016-04-18T16:26:12Z" finished-at="2016-04-18T16:26:35Z">
+        <test-method status="PASS" signature="aOpenContainerPage()[pri:0, instance:db.tests.PRICE.IOOperationsPrice@174d20a]" name="aOpenContainerPage" duration-ms="8202" started-at="2016-04-19T14:54:55Z" finished-at="2016-04-19T14:55:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- aOpenContainerPage -->
-        <test-method status="PASS" signature="bCheckAndCompareAmountMessages()[pri:0, instance:db.tests.PRICE.IOOperationsPrice@174d20a]" name="bCheckAndCompareAmountMessages" duration-ms="5416" started-at="2016-04-18T16:26:35Z" finished-at="2016-04-18T16:26:40Z">
+        <test-method status="PASS" signature="bCheckAndCompareAmountMessages()[pri:0, instance:db.tests.PRICE.IOOperationsPrice@174d20a]" name="bCheckAndCompareAmountMessages" duration-ms="4098" started-at="2016-04-19T14:55:04Z" finished-at="2016-04-19T14:55:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- bCheckAndCompareAmountMessages -->
       </class> <!-- db.tests.PRICE.IOOperationsPrice -->
       <class name="db.tests.allWeb.OpenAllWeb">
-        <test-method status="PASS" signature="openWeb()[pri:0, instance:db.tests.allWeb.OpenAllWeb@6ea12c19]" name="openWeb" duration-ms="27239" started-at="2016-04-18T16:25:45Z" finished-at="2016-04-18T16:26:12Z">
+        <test-method status="PASS" signature="openWeb()[pri:0, instance:db.tests.allWeb.OpenAllWeb@6ea12c19]" name="openWeb" duration-ms="12487" started-at="2016-04-19T14:54:43Z" finished-at="2016-04-19T14:54:55Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openWeb -->

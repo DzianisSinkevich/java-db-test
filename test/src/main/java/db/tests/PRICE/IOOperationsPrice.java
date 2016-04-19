@@ -3,10 +3,10 @@ package db.tests.PRICE;
 import org.springframework.test.context.ContextConfiguration;
 import org.testng.annotations.Test;
 
-import pages.TestBaseAll;
-
 import com.danco.bpc.applogicAllWeb.ApplicationManager;
 import com.danco.bpc.applogicDB.DBManager;
+
+import pages.TestBaseAll;
 
 @ContextConfiguration(locations = { "classpath:data.xml" })
 public class IOOperationsPrice extends TestBaseAll {
@@ -28,4 +28,17 @@ public class IOOperationsPrice extends TestBaseAll {
 		System.out.println("amountMessagesInDB=" + amountMessagesInDB);
 		assert(appAll.getPriceHelper().compareRecordsCount(amountMessagesInDB));
 	}
+	
+	@Test
+	public void cRejectMessage() throws Exception {
+		String firstRecordId;
+		
+		appAll = new ApplicationManager();
+		db = new DBManager();
+
+		appAll.getPriceHelper().filterStatusSelecter("Invalid");
+		appAll.getPriceHelper().enterDates();
+		firstRecordId = appAll.getPriceHelper().getFirstRecordId();
+		
+	}	
 }

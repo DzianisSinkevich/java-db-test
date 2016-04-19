@@ -16,7 +16,7 @@ public class PriceHelper extends DriverBasedHelper implements IPriceHelper {
 		// pages.IOOperationsPricePage.calendarFromYearSelector(getCurrentYear());
 		// pages.IOOperationsPricePage.calendarFromMonthSelector(getCurrentMonth());
 		// pages.IOOperationsPricePage.calendarFromDaySelector(getCurrentDayOfMonth());
-		pages.IOOperationsPricePage.filterDateToClick().calendarToTodayClick().filterButtonSearchClick();
+		pages.IOOperationsPricePage.filterDateToClick().calendarToTodayClick();
 	}
 
 	@Override
@@ -72,5 +72,28 @@ public class PriceHelper extends DriverBasedHelper implements IPriceHelper {
 		Calendar currentDate = Calendar.getInstance();
 		String currDay = "" + currentDate.get(Calendar.DAY_OF_MONTH);
 		return currDay;
+	}
+
+	@Override
+	public void tabClicker() throws InterruptedException {
+		pages.IOOperationsPricePage.tabErrorsClick().tabDetailsClick().tabErrorsClick();
+	}
+
+	@Override
+	public String getFirstRecordId() throws InterruptedException {
+		String firstRecordId;
+		firstRecordId = pages.IOOperationsPricePage.tableFirstRecordGetId();
+		System.out.println("firstRecordId=" + firstRecordId);
+		return firstRecordId;
+	}
+
+	@Override
+	public void filterStatusSelecter(String status) throws InterruptedException {
+		pages.IOOperationsPricePage.selectStatus(status);
+	}
+
+	@Override
+	public void searchClick() throws InterruptedException {
+		pages.IOOperationsPricePage.filterButtonSearchClick();
 	}
 }

@@ -20,7 +20,7 @@ public class IOOperationsPricePage extends AnyPage {
 	public static final String FILTER_FILE_NAME = ".//*[@id='entitySearchForm:fileName']";
 	public static final String FILTER_AMOUNT_FROM = ".//*[@id='entitySearchForm:amount_from']";
 	public static final String FILTER_AMOUNT_TO = ".//*[@id='entitySearchForm:amount_to']";
-	public static final String FILTER_STATUS = ".//*[@id='entitySearchForm:amount_to']";
+	public static final String FILTER_STATUS = ".//*[@id='entitySearchForm:status']";
 	public static final String FILTER_BUTTON_SEARCH = ".//*[@id='entitySearchForm:searchBtn']";
 	public static final String FILTER_BUTTON_CLEAR_ALL = ".//*[@class='link-clear']";
 
@@ -39,6 +39,17 @@ public class IOOperationsPricePage extends AnyPage {
 	public static final String CALENDAR_FROM_MONTH_YEAR_STRING = ".//*[@id='entitySearchForm:dateFromHeader']/table/tbody/tr/td[3]/div";
 	public static final String CALENDAR_TO_MONTH_YEAR_STRING = ".//*[@id='entitySearchForm:dateFromHeader']/table/tbody/tr/td[3]/div";
 	public static final String CALENDAR_DAY_PREFIX = ".//*[@id='entitySearchForm:dateFromDayCell";
+
+	public static final String BUTTON_ADD = ".//*[@id='entityBtnForm:addBtn']";
+	public static final String BUTTON_EDIT = ".//*[@id='entityBtnForm:editBtn']";
+	public static final String BUTTON_REJECT = ".//*[@id='entityBtnForm:rejectBtn']";
+	public static final String BUTTON_CHANGE_STATUS = ".//*[@id='entityBtnForm:changeStatusBtn']";
+
+	public static final String TAB_DETAILS = "//div[@class='first tab-label']//*[text()='Details']";
+	public static final String TAB_ERRORS = "//div[@class='tab-label']//*[text()='Errors']";
+
+	public static final String FIRST_RECORD = ".//tr[@id='entityForm:entityDetailsTable:n:0']";
+	public static final String FIRST_RECORD_ID = ".//tr[@id='entityForm:entityDetailsTable:n:0']/td[contains(@id,':id')]/div[@class='extdt-cell-div']";
 
 	public static final String COUNT_RECORDS = ".//*[@id='entityBtnForm:pagesNum']/span[3]";
 
@@ -110,8 +121,42 @@ public class IOOperationsPricePage extends AnyPage {
 
 	@FindBy(xpath = CALENDAR_TO_MONTH_INCREASE)
 	private WebElement calendarToMonthIncrease;
+
 	@FindBy(xpath = COUNT_RECORDS)
 	private WebElement countRecords;
+
+	@FindBy(xpath = BUTTON_ADD)
+	private WebElement buttonAdd;
+
+	@FindBy(xpath = BUTTON_EDIT)
+	private WebElement buttonEdit;
+
+	@FindBy(xpath = BUTTON_REJECT)
+	private WebElement buttonReject;
+
+	@FindBy(xpath = BUTTON_CHANGE_STATUS)
+	private WebElement buttonChangeStatus;
+
+	@FindBy(xpath = TAB_DETAILS)
+	private WebElement tabDetails;
+
+	@FindBy(xpath = TAB_ERRORS)
+	private WebElement tabErrors;
+
+	@FindBy(xpath = FIRST_RECORD)
+	private WebElement firstRecord;
+
+	@FindBy(xpath = FIRST_RECORD_ID)
+	private WebElement firstRecordId;
+
+	public String tableFirstRecordGetId() throws InterruptedException {
+		return firstRecordId.getText();
+	}
+
+	public IOOperationsPricePage filterIdSendKeys(String id) throws InterruptedException {
+		filterId.sendKeys(id);
+		return pages.IOOperationsPricePage;
+	}
 
 	public IOOperationsPricePage filterDateFromClick() throws InterruptedException {
 		filterDateFrom.click();
@@ -122,7 +167,27 @@ public class IOOperationsPricePage extends AnyPage {
 		filterDateTo.click();
 		return pages.IOOperationsPricePage;
 	}
-	
+
+	public IOOperationsPricePage filterTypeSendKeys(String type) throws InterruptedException {
+		filterType.sendKeys(type);
+		return pages.IOOperationsPricePage;
+	}
+
+	public IOOperationsPricePage filterFileNameSendKeys(String fileName) throws InterruptedException {
+		filterFileName.sendKeys(fileName);
+		return pages.IOOperationsPricePage;
+	}
+
+	public IOOperationsPricePage filterAmountFromSendKeys(String amountFrom) throws InterruptedException {
+		filterAmountFrom.sendKeys(amountFrom);
+		return pages.IOOperationsPricePage;
+	}
+
+	public IOOperationsPricePage filterAmountToSendKeys(String amountTo) throws InterruptedException {
+		filterAmountTo.sendKeys(amountTo);
+		return pages.IOOperationsPricePage;
+	}
+
 	public IOOperationsPricePage filterStatusClick() throws InterruptedException {
 		filterStatus.click();
 		return pages.IOOperationsPricePage;
@@ -186,6 +251,38 @@ public class IOOperationsPricePage extends AnyPage {
 
 	public IOOperationsPricePage filterButtonClearAllClick() throws InterruptedException {
 		filterButtonClearAll.click();
+		WaitLoadAndDisplayed.fullCicleWait(driver, waitContentIndicator);
+		return pages.IOOperationsPricePage;
+	}
+
+	public IOOperationsPricePage buttonAddClick() throws InterruptedException {
+		buttonAdd.click();
+		return pages.IOOperationsPricePage;
+	}
+
+	public IOOperationsPricePage buttonEditClick() throws InterruptedException {
+		buttonEdit.click();
+		return pages.IOOperationsPricePage;
+	}
+
+	public IOOperationsPricePage buttonRejectClick() throws InterruptedException {
+		buttonReject.click();
+		return pages.IOOperationsPricePage;
+	}
+
+	public IOOperationsPricePage buttonChangeStatusClick() throws InterruptedException {
+		buttonChangeStatus.click();
+		return pages.IOOperationsPricePage;
+	}
+
+	public IOOperationsPricePage tabDetailsClick() throws InterruptedException {
+		tabDetails.click();
+		WaitLoadAndDisplayed.fullCicleWait(driver, waitContentIndicator);
+		return pages.IOOperationsPricePage;
+	}
+
+	public IOOperationsPricePage tabErrorsClick() throws InterruptedException {
+		tabErrors.click();
 		WaitLoadAndDisplayed.fullCicleWait(driver, waitContentIndicator);
 		return pages.IOOperationsPricePage;
 	}
@@ -298,7 +395,7 @@ public class IOOperationsPricePage extends AnyPage {
 			break;
 		}
 		filterStatusClick();
-		for (int i=0;i<countClickDown;i++){
+		for (int i = 0; i < countClickDown; i++) {
 			filterStatus.sendKeys(Keys.ARROW_DOWN);
 		}
 		filterStatus.sendKeys(Keys.ENTER);

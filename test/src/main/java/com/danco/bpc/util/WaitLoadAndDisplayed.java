@@ -21,8 +21,11 @@ public class WaitLoadAndDisplayed {
 	}
 	
 	public static void fullCicleWait(WebDriver driver, WebElement el) throws InterruptedException{
+//		System.out.println("Start waitVisibility");
 		waitVisibility(driver, el);
+//		System.out.println("Start waitInivisibility");
 		waitInvisibility(driver, el);
+//		System.out.println("Finish waitIn/Visibility");
 	}
 
 	public static void waitVisibility(WebDriver driver, WebElement el) throws InterruptedException {

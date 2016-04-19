@@ -1,7 +1,6 @@
 package com.danco.bpc.dao.impl.PRICE;
 
 import java.util.Calendar;
-import java.util.Date;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
@@ -14,7 +13,7 @@ import com.danco.bpc.dao.api.PRICE.IPrcRawMessagesDao;
 import com.danco.bpc.dao.impl.common.AbstractDaoPriceImpl;
 import com.danco.bpc.entity.PRICE.PrcRawMessages;
 
-public class PrcRawMessagesDaoImpl extends AbstractDaoPriceImpl<PrcRawMessages> implements IPrcRawMessagesDao {
+public class PrcRawMessagesDaoImpl extends AbstractDaoPriceImpl<PrcRawMessages>implements IPrcRawMessagesDao {
 
 	public PrcRawMessagesDaoImpl() {
 		super(PrcRawMessages.class);
@@ -27,8 +26,8 @@ public class PrcRawMessagesDaoImpl extends AbstractDaoPriceImpl<PrcRawMessages> 
 		try {
 			Session session = sessionFactory.getCurrentSession();
 			txn = session.beginTransaction();
-			countRows = (Long) session.createCriteria(PrcRawMessages.class).setProjection(Projections.rowCount())
-					.add(Restrictions.eq("status", "MSST0003")).add(Restrictions.eq("sendCount", 0)).uniqueResult();
+			countRows = (Long) session.createCriteria(PrcRawMessages.class).setProjection(Projections.rowCount()).add(Restrictions.eq("status", "MSST0003"))
+					.add(Restrictions.eq("sendCount", 0)).uniqueResult();
 			txn.commit();
 			return countRows;
 		} catch (HibernateException e) {
@@ -65,9 +64,10 @@ public class PrcRawMessagesDaoImpl extends AbstractDaoPriceImpl<PrcRawMessages> 
 	public Long amountMessagesWithCurrentDate(Calendar currDate) throws Exception {
 		Transaction txn = null;
 		try {
+			System.out.println("currDate=" + currDate.getTimeInMillis());
 			Session session = sessionFactory.getCurrentSession();
 			txn = session.beginTransaction();
-			String hql = "select count(*) from PrcRawMessages where createdAt = :currDate";
+			String hql = "select count(*) from PrcRawMessages r where year(r.createdAt) = year(:currDate) and month(r.createdAt) = month(:currDate) and day(r.createdAt) = day(:currDate)";
 			Query query = session.createQuery(hql);
 			query.setCalendar("currDate", currDate);
 			Long amountMess = (Long) query.uniqueResult();
