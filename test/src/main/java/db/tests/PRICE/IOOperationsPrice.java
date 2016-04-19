@@ -39,6 +39,8 @@ public class IOOperationsPrice extends TestBaseAll {
 		appAll.getPriceHelper().filterStatusSelecter("Invalid");
 		appAll.getPriceHelper().enterDates();
 		firstRecordId = appAll.getPriceHelper().getFirstRecordId();
+		assert(db.getPriceHelper().getPrcRawMessagesStatus(firstRecordId).equals("MSST0004"));
 		
+		assert(db.getPriceHelper().getPrcRawMessagesStatus(firstRecordId).equals("MSST0005"));
 	}	
 }

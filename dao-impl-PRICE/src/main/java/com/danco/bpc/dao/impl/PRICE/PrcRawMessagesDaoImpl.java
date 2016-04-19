@@ -82,4 +82,25 @@ public class PrcRawMessagesDaoImpl extends AbstractDaoPriceImpl<PrcRawMessages>i
 			throw new Exception("ERROR");
 		}
 	}
+
+	@Override
+	public String getPrcRawMessagesStatus(String id) throws Exception {
+		Transaction txn = null;
+		try {
+			Session session = sessionFactory.getCurrentSession();
+			txn = session.beginTransaction();
+			String hql = "select status from PrcRawMessages r where r.id = :id";
+			Query query = session.createQuery(hql);
+			query.setString("id", id);
+			String messageStatus = (String) query.uniqueResult();
+			txn.commit();
+			return messageStatus;
+		} catch (HibernateException e) {
+			if (null != txn) {
+				txn.rollback();
+			}
+			e.printStackTrace();
+			throw new Exception("ERROR");
+		}
+	}
 }

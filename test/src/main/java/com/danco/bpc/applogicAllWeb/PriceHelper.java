@@ -79,6 +79,12 @@ public class PriceHelper extends DriverBasedHelper implements IPriceHelper {
 		pages.IOOperationsPricePage.tabErrorsClick().tabDetailsClick().tabErrorsClick();
 	}
 
+
+	@Override
+	public void firstRecordSelect() throws InterruptedException {
+		pages.IOOperationsPricePage.firstRecordClick();
+	}
+	
 	@Override
 	public String getFirstRecordId() throws InterruptedException {
 		String firstRecordId;
@@ -96,4 +102,11 @@ public class PriceHelper extends DriverBasedHelper implements IPriceHelper {
 	public void searchClick() throws InterruptedException {
 		pages.IOOperationsPricePage.filterButtonSearchClick();
 	}
+
+	@Override
+	public void rejectFirstRecord() throws InterruptedException {
+		pages.IOOperationsPricePage.firstRecordClick();
+		pages.IOOperationsPricePage.buttonRejectClick();
+	}
+
 }

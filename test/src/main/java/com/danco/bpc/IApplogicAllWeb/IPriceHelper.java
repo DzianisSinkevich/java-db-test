@@ -14,9 +14,13 @@ public interface IPriceHelper {
 	
 	public void tabClicker() throws InterruptedException;
 	
+	public void firstRecordSelect() throws InterruptedException;
+	
 	public String getFirstRecordId() throws InterruptedException;
 	
 	public void filterStatusSelecter(String status) throws InterruptedException;
 	
 	public void searchClick() throws InterruptedException;
+	
+	public void rejectFirstRecord() throws InterruptedException;
 }

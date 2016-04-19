@@ -293,31 +293,31 @@ public class PriceHelper implements IPriceHelper {
 
 	@Override
 	public Long checkKolMesWithStatusError(Long fileId) throws Exception {
-		Long kolMess = prcMessagesService.kolInvalidMess(fileId);
-		return kolMess;
+		return prcMessagesService.kolInvalidMess(fileId);
 	}
 
 	@Override
 	public Long checkKolMesWithError(Long fileId) throws Exception {
-		Long kolMess = prcMessagesService.kolMessWithError(fileId);
-		return kolMess;
+		return prcMessagesService.kolMessWithError(fileId);
 	}
 
 	@Override
 	public Long amountMessagesInPrcMessages(Long fileId) throws Exception {
-		Long kolMess = prcMessagesService.amountMessagesInPrcMessages(fileId);
-		return kolMess;
+		return prcMessagesService.amountMessagesInPrcMessages(fileId);
 	}
 
 	@Override
 	public Long amountMessagesInPrcRawMessages(Long fileId) throws Exception {
-		Long kolMess = prcRawMessagesService.amountMessagesInPrcRawMessages(fileId);
-		return kolMess;
+		return prcRawMessagesService.amountMessagesInPrcRawMessages(fileId);
 	}
 
 	@Override
 	public Long amountMessagesWithCurrentDate() throws Exception {
-		Long kolMess = prcRawMessagesService.amountMessagesWithCurrentDate(currentDate());
-		return kolMess;
+		return prcRawMessagesService.amountMessagesWithCurrentDate(currentDate());
+	}
+
+	@Override
+	public String getPrcRawMessagesStatus(String id) throws Exception {
+		return prcRawMessagesService.getPrcRawMessagesStatus(id);
 	}
 }

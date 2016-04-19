@@ -12,4 +12,6 @@ public interface IPrcRawMessagesService extends IGenericService<PrcRawMessages> 
 	public Long amountMessagesInPrcRawMessages(Long fileId) throws Exception;
 
 	public Long amountMessagesWithCurrentDate(Calendar currDate) throws Exception;
+	
+	public String getPrcRawMessagesStatus(String id) throws Exception;
 }

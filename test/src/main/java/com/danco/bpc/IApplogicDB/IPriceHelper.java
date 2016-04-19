@@ -61,4 +61,6 @@ public interface IPriceHelper {
 	public Long amountMessagesInPrcRawMessages(Long fileId) throws Exception;
 
 	public Long amountMessagesWithCurrentDate() throws Exception;
+	
+	public String getPrcRawMessagesStatus(String id) throws Exception;
 }

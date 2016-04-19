@@ -30,4 +30,9 @@ public class PrcRawMessagesServiceImpl extends DataServiceImpl<PrcRawMessages> i
 	public Long amountMessagesWithCurrentDate(Calendar currDate) throws Exception {
 		return genericDao.amountMessagesWithCurrentDate(currDate);
 	}
+
+	@Override
+	public String getPrcRawMessagesStatus(String id) throws Exception {
+		return genericDao.getPrcRawMessagesStatus(id);
+	}
 }

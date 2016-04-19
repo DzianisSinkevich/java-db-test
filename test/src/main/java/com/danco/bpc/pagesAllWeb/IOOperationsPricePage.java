@@ -44,6 +44,8 @@ public class IOOperationsPricePage extends AnyPage {
 	public static final String BUTTON_EDIT = ".//*[@id='entityBtnForm:editBtn']";
 	public static final String BUTTON_REJECT = ".//*[@id='entityBtnForm:rejectBtn']";
 	public static final String BUTTON_CHANGE_STATUS = ".//*[@id='entityBtnForm:changeStatusBtn']";
+	public static final String BUTTON_CONFIRM_SAVE = ".//*[@id='rejectView:confirmPanelForm:savebutton']";
+	public static final String BUTTON_CONFIRM_HIDE = ".//*[@id='rejectView:confirmPanelForm:hidebutton']";
 
 	public static final String TAB_DETAILS = "//div[@class='first tab-label']//*[text()='Details']";
 	public static final String TAB_ERRORS = "//div[@class='tab-label']//*[text()='Errors']";
@@ -137,6 +139,12 @@ public class IOOperationsPricePage extends AnyPage {
 	@FindBy(xpath = BUTTON_CHANGE_STATUS)
 	private WebElement buttonChangeStatus;
 
+	@FindBy(xpath = BUTTON_CONFIRM_SAVE)
+	private WebElement buttonConfirmSave;
+
+	@FindBy(xpath = BUTTON_CONFIRM_HIDE)
+	private WebElement buttonConfirmHide;
+	
 	@FindBy(xpath = TAB_DETAILS)
 	private WebElement tabDetails;
 
@@ -149,6 +157,11 @@ public class IOOperationsPricePage extends AnyPage {
 	@FindBy(xpath = FIRST_RECORD_ID)
 	private WebElement firstRecordId;
 
+
+	public void firstRecordClick() {
+		firstRecord.click();
+	}
+	
 	public String tableFirstRecordGetId() throws InterruptedException {
 		return firstRecordId.getText();
 	}
@@ -267,6 +280,7 @@ public class IOOperationsPricePage extends AnyPage {
 
 	public IOOperationsPricePage buttonRejectClick() throws InterruptedException {
 		buttonReject.click();
+		WaitLoadAndDisplayed.fullCicleWait(driver, waitContentIndicator);
 		return pages.IOOperationsPricePage;
 	}
 
