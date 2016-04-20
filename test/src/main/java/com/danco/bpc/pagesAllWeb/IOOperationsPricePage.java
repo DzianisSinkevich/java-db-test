@@ -1,5 +1,8 @@
 package com.danco.bpc.pagesAllWeb;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -49,6 +52,7 @@ public class IOOperationsPricePage extends AnyPage {
 
 	public static final String TAB_DETAILS = "//div[@class='first tab-label']//*[text()='Details']";
 	public static final String TAB_ERRORS = "//div[@class='tab-label']//*[text()='Errors']";
+	public static final String TAB_ERRORS_ERRORS_LIST = ".//tr[contains(@id,'entityErrorsForm:entityErrorsTable:n:')]/td[contains(@id,':key')]";
 
 	public static final String FIRST_RECORD = ".//tr[@id='entityForm:entityDetailsTable:n:0']";
 	public static final String FIRST_RECORD_ID = ".//tr[@id='entityForm:entityDetailsTable:n:0']/td[contains(@id,':id')]/div[@class='extdt-cell-div']";
@@ -144,12 +148,15 @@ public class IOOperationsPricePage extends AnyPage {
 
 	@FindBy(xpath = BUTTON_CONFIRM_HIDE)
 	private WebElement buttonConfirmHide;
-	
+
 	@FindBy(xpath = TAB_DETAILS)
 	private WebElement tabDetails;
 
 	@FindBy(xpath = TAB_ERRORS)
 	private WebElement tabErrors;
+
+	@FindBy(xpath = TAB_ERRORS_ERRORS_LIST)
+	private List<WebElement> tabErrorsErrorsList;
 
 	@FindBy(xpath = FIRST_RECORD)
 	private WebElement firstRecord;
@@ -157,11 +164,10 @@ public class IOOperationsPricePage extends AnyPage {
 	@FindBy(xpath = FIRST_RECORD_ID)
 	private WebElement firstRecordId;
 
-
 	public void firstRecordClick() {
 		firstRecord.click();
 	}
-	
+
 	public String tableFirstRecordGetId() throws InterruptedException {
 		return firstRecordId.getText();
 	}
@@ -284,6 +290,18 @@ public class IOOperationsPricePage extends AnyPage {
 		return pages.IOOperationsPricePage;
 	}
 
+	public IOOperationsPricePage buttonConfirmSaveClick() throws InterruptedException {
+		buttonConfirmSave.click();
+		WaitLoadAndDisplayed.fullCicleWait(driver, waitContentIndicator);
+		return pages.IOOperationsPricePage;
+	}
+
+	public IOOperationsPricePage buttonConfirmHideClick() throws InterruptedException {
+		buttonConfirmHide.click();
+		WaitLoadAndDisplayed.fullCicleWait(driver, waitContentIndicator);
+		return pages.IOOperationsPricePage;
+	}
+
 	public IOOperationsPricePage buttonChangeStatusClick() throws InterruptedException {
 		buttonChangeStatus.click();
 		return pages.IOOperationsPricePage;
@@ -299,6 +317,15 @@ public class IOOperationsPricePage extends AnyPage {
 		tabErrors.click();
 		WaitLoadAndDisplayed.fullCicleWait(driver, waitContentIndicator);
 		return pages.IOOperationsPricePage;
+	}
+
+	public ArrayList<String> tabErrorsGetErrors() throws InterruptedException {
+		ArrayList<String> idErrors = new ArrayList<String>();
+		for (int i = 0; i < tabErrorsErrorsList.size(); i++) {
+			idErrors.add(tabErrorsErrorsList.get(i).getText());
+			System.out.println("idErrors_" + i + " = " + idErrors.get(i));
+		}
+		return idErrors;
 	}
 
 	public String calendarFromMonthParser() {

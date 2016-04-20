@@ -1,5 +1,7 @@
 package db.tests.PRICE;
 
+import java.util.ArrayList;
+
 import org.springframework.test.context.ContextConfiguration;
 import org.testng.annotations.Test;
 
@@ -17,30 +19,53 @@ public class IOOperationsPrice extends TestBaseAll {
 
 		appAll.getNavigationHelper().openIOOperationPricePage();
 		appAll.getPriceHelper().enterDates();
+		appAll.getPriceHelper().startSearch();
 	}
+	//
+	// @Test
+	// public void bCheckAndCompareAmountMessages() throws Exception {
+	// appAll = new ApplicationManager();
+	// db = new DBManager();
+	//
+	// String amountMessagesInDB = "" + db.getPriceHelper().amountMessagesWithCurrentDate();
+	// System.out.println("amountMessagesInDB=" + amountMessagesInDB);
+	// assert(appAll.getPriceHelper().compareRecordsCount(amountMessagesInDB));
+	// }
+	//
+	// @Test
+	// public void cRejectMessage() throws Exception {
+	// String firstRecordId;
+	//
+	// appAll = new ApplicationManager();
+	// db = new DBManager();
+	//
+	// appAll.getPriceHelper().filterClear();
+	// appAll.getPriceHelper().filterStatusSelecter("Invalid");
+	// appAll.getPriceHelper().enterDates();
+	// appAll.getPriceHelper().startSearch();
+	// firstRecordId = appAll.getPriceHelper().getFirstRecordId();
+	// assert(db.getPriceHelper().getPrcRawMessagesStatus(firstRecordId).equals("MSST0004"));
+	// appAll.getPriceHelper().rejectRecord(firstRecordId);
+	// assert(db.getPriceHelper().getPrcRawMessagesStatus(firstRecordId).equals("MSST0005"));
+	// }
 
 	@Test
-	public void bCheckAndCompareAmountMessages() throws Exception {
+	public void dDisplayingErrorsOfMessages() throws Exception {
+		String recordId;
+		ArrayList<String> idErrorsInWeb = new ArrayList<String>();
+		ArrayList<String> idErrorsInDB = new ArrayList<String>();
+
 		appAll = new ApplicationManager();
 		db = new DBManager();
 
-		String amountMessagesInDB = "" + db.getPriceHelper().amountMessagesWithCurrentDate();
-		System.out.println("amountMessagesInDB=" + amountMessagesInDB);
-		assert(appAll.getPriceHelper().compareRecordsCount(amountMessagesInDB));
-	}
-	
-	@Test
-	public void cRejectMessage() throws Exception {
-		String firstRecordId;
-		
-		appAll = new ApplicationManager();
-		db = new DBManager();
-
+		appAll.getPriceHelper().filterClear();
 		appAll.getPriceHelper().filterStatusSelecter("Invalid");
 		appAll.getPriceHelper().enterDates();
-		firstRecordId = appAll.getPriceHelper().getFirstRecordId();
-		assert(db.getPriceHelper().getPrcRawMessagesStatus(firstRecordId).equals("MSST0004"));
-		
-		assert(db.getPriceHelper().getPrcRawMessagesStatus(firstRecordId).equals("MSST0005"));
-	}	
+		appAll.getPriceHelper().startSearch();
+		recordId = appAll.getPriceHelper().getFirstRecordId();
+		System.out.println("recordId = " + recordId);
+		idErrorsInWeb = appAll.getPriceHelper().getErrorsId();
+		idErrorsInDB = db.getPriceHelper().getIdErrors(Long.valueOf(recordId));
+		assert(idErrorsInWeb.containsAll(idErrorsInDB));
+	}
 }

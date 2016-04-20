@@ -1,5 +1,6 @@
 package com.danco.bpc.applogicAllWeb;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 import com.danco.bpc.IApplogicAllWeb.IPriceHelper;
@@ -79,12 +80,11 @@ public class PriceHelper extends DriverBasedHelper implements IPriceHelper {
 		pages.IOOperationsPricePage.tabErrorsClick().tabDetailsClick().tabErrorsClick();
 	}
 
-
 	@Override
 	public void firstRecordSelect() throws InterruptedException {
 		pages.IOOperationsPricePage.firstRecordClick();
 	}
-	
+
 	@Override
 	public String getFirstRecordId() throws InterruptedException {
 		String firstRecordId;
@@ -104,9 +104,33 @@ public class PriceHelper extends DriverBasedHelper implements IPriceHelper {
 	}
 
 	@Override
-	public void rejectFirstRecord() throws InterruptedException {
+	public void rejectRecord(String id) throws InterruptedException {
+		recordClick(id);
+		pages.IOOperationsPricePage.buttonRejectClick().buttonConfirmSaveClick();
+	}
+
+	@Override
+	public void recordClick(String id) throws InterruptedException {
+		pages.IOOperationsPricePage.filterButtonClearAllClick();
+		enterDates();
+		pages.IOOperationsPricePage.filterIdSendKeys(id).filterButtonSearchClick();
 		pages.IOOperationsPricePage.firstRecordClick();
-		pages.IOOperationsPricePage.buttonRejectClick();
+	}
+
+	@Override
+	public void startSearch() throws InterruptedException {
+		pages.IOOperationsPricePage.filterButtonSearchClick();
+	}
+
+	@Override
+	public void filterClear() throws InterruptedException {
+		pages.IOOperationsPricePage.filterButtonClearAllClick();
+	}
+
+	@Override
+	public ArrayList<String> getErrorsId() throws InterruptedException {
+		pages.IOOperationsPricePage.tabErrorsClick();
+		return pages.IOOperationsPricePage.tabErrorsGetErrors();
 	}
 
 }

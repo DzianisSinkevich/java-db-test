@@ -1,5 +1,6 @@
 package com.danco.bpc.IApplogicDB;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 import com.danco.bpc.entity.PRICE.PrcFiles;
@@ -14,11 +15,9 @@ public interface IPriceHelper {
 
 	public void checkFilePreferences(PrcFiles prcFile);
 
-	public Long sumPrcMessagesP04(Long fileId, int recordType1, int recordType2, int minPrcc, int maxPrcc)
-			throws Exception;
+	public Long sumPrcMessagesP04(Long fileId, int recordType1, int recordType2, int minPrcc, int maxPrcc) throws Exception;
 
-	public Long sumPrcMessagesP05(Long fileId, int recordType1, int recordType2, int minPrcc, int maxPrcc)
-			throws Exception;
+	public Long sumPrcMessagesP05(Long fileId, int recordType1, int recordType2, int minPrcc, int maxPrcc) throws Exception;
 
 	public Long sumPrcMessagesS74(Long fileId) throws Exception;
 
@@ -61,6 +60,8 @@ public interface IPriceHelper {
 	public Long amountMessagesInPrcRawMessages(Long fileId) throws Exception;
 
 	public Long amountMessagesWithCurrentDate() throws Exception;
-	
+
 	public String getPrcRawMessagesStatus(String id) throws Exception;
+
+	public ArrayList<String> getIdErrors(Long id) throws Exception;
 }

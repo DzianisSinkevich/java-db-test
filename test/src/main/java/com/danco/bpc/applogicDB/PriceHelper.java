@@ -1,11 +1,14 @@
 package com.danco.bpc.applogicDB;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 import com.danco.bpc.IApplogicDB.IPriceHelper;
 import com.danco.bpc.entity.PRICE.PrcFiles;
 import com.danco.bpc.entity.PRICE.PrcMessages;
+import com.danco.bpc.entity.PRICE.PrcMessagesErrors;
 import com.danco.bpc.service.impl.SERVICES.PrcFilesServiceImpl;
+import com.danco.bpc.service.impl.SERVICES.PrcMessagesErrorsServiceImpl;
 import com.danco.bpc.service.impl.SERVICES.PrcMessagesServiceImpl;
 import com.danco.bpc.service.impl.SERVICES.PrcRawMessagesServiceImpl;
 
@@ -17,6 +20,7 @@ public class PriceHelper implements IPriceHelper {
 	private PrcFilesServiceImpl prcFilesService = new PrcFilesServiceImpl();
 	private PrcMessagesServiceImpl prcMessagesService = new PrcMessagesServiceImpl();
 	private PrcRawMessagesServiceImpl prcRawMessagesService = new PrcRawMessagesServiceImpl();
+	private PrcMessagesErrorsServiceImpl prcMessagesErrorsService = new PrcMessagesErrorsServiceImpl();
 
 	@Override
 	public String fileDailyName() {
@@ -319,5 +323,15 @@ public class PriceHelper implements IPriceHelper {
 	@Override
 	public String getPrcRawMessagesStatus(String id) throws Exception {
 		return prcRawMessagesService.getPrcRawMessagesStatus(id);
+	}
+
+	@Override
+	public ArrayList<String> getIdErrors(Long id) throws Exception {
+		ArrayList<PrcMessagesErrors> records = prcMessagesErrorsService.getErrors(id);
+		ArrayList<String> idErrors = new ArrayList<String>();
+		for (int i = 0; i < records.size(); i++) {
+			idErrors.add(records.get(i).getError());
+		}
+		return idErrors;
 	}
 }
