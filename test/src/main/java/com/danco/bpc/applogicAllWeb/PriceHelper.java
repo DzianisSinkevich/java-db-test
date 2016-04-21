@@ -104,6 +104,11 @@ public class PriceHelper extends DriverBasedHelper implements IPriceHelper {
 	}
 
 	@Override
+	public void addRecord() throws InterruptedException {
+		pages.IOOperationsPricePage.buttonAddClick();
+	}
+
+	@Override
 	public void rejectRecord(String id) throws InterruptedException {
 		recordClick(id);
 		pages.IOOperationsPricePage.buttonRejectClick().buttonConfirmSaveClick();
@@ -133,4 +138,15 @@ public class PriceHelper extends DriverBasedHelper implements IPriceHelper {
 		return pages.IOOperationsPricePage.tabErrorsGetErrors();
 	}
 
+	@Override
+	public void saveNewRecord() throws InterruptedException {
+		pages.IOOperationsPricePage.buttonAddSaveClick();
+	}
+
+	@Override
+	public boolean checkRecordStatus(String id, String expectedStatus) throws InterruptedException {
+		recordClick(id);
+		String flag = pages.IOOperationsPricePage.tableFirstRecordGetStatus();
+		return pages.IOOperationsPricePage.tableFirstRecordGetStatus().equals(expectedStatus);
+	}
 }

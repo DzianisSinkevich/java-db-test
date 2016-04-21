@@ -94,6 +94,7 @@ public class PrcRawMessagesDaoImpl extends AbstractDaoPriceImpl<PrcRawMessages>i
 			query.setString("id", id);
 			String messageStatus = (String) query.uniqueResult();
 			txn.commit();
+//			System.out.println("messageStatus = " + messageStatus);
 			return messageStatus;
 		} catch (HibernateException e) {
 			if (null != txn) {

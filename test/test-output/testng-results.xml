@@ -2,22 +2,22 @@
 <testng-results skipped="0" failed="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite1" duration-ms="75015" started-at="2016-04-20T13:22:25Z" finished-at="2016-04-20T13:23:40Z">
+  <suite name="Suite1" duration-ms="101889" started-at="2016-04-21T09:51:59Z" finished-at="2016-04-21T09:53:40Z">
     <groups>
     </groups>
-    <test name="Test001" duration-ms="75015" started-at="2016-04-20T13:22:25Z" finished-at="2016-04-20T13:23:40Z">
+    <test name="Test001" duration-ms="101889" started-at="2016-04-21T09:51:59Z" finished-at="2016-04-21T09:53:40Z">
       <class name="db.tests.PRICE.IOOperationsPrice">
-        <test-method status="PASS" signature="aOpenContainerPage()[pri:0, instance:db.tests.PRICE.IOOperationsPrice@174d20a]" name="aOpenContainerPage" duration-ms="22041" started-at="2016-04-20T16:22:45Z" finished-at="2016-04-20T16:23:07Z">
+        <test-method status="PASS" signature="aOpenContainerPage()[pri:0, instance:db.tests.PRICE.IOOperationsPrice@174d20a]" name="aOpenContainerPage" duration-ms="24718" started-at="2016-04-21T12:52:13Z" finished-at="2016-04-21T12:52:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- aOpenContainerPage -->
-        <test-method status="PASS" signature="dDisplayingErrorsOfMessages()[pri:0, instance:db.tests.PRICE.IOOperationsPrice@174d20a]" name="dDisplayingErrorsOfMessages" duration-ms="33150" started-at="2016-04-20T16:23:07Z" finished-at="2016-04-20T16:23:40Z">
+        <test-method status="PASS" signature="eAddNewRecordValid()[pri:0, instance:db.tests.PRICE.IOOperationsPrice@174d20a]" name="eAddNewRecordValid" duration-ms="62992" started-at="2016-04-21T12:52:37Z" finished-at="2016-04-21T12:53:40Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- dDisplayingErrorsOfMessages -->
+        </test-method> <!-- eAddNewRecordValid -->
       </class> <!-- db.tests.PRICE.IOOperationsPrice -->
       <class name="db.tests.allWeb.OpenAllWeb">
-        <test-method status="PASS" signature="openWeb()[pri:0, instance:db.tests.allWeb.OpenAllWeb@6ea12c19]" name="openWeb" duration-ms="19804" started-at="2016-04-20T16:22:25Z" finished-at="2016-04-20T16:22:45Z">
+        <test-method status="PASS" signature="openWeb()[pri:0, instance:db.tests.allWeb.OpenAllWeb@6ea12c19]" name="openWeb" duration-ms="14164" started-at="2016-04-21T12:51:59Z" finished-at="2016-04-21T12:52:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openWeb -->

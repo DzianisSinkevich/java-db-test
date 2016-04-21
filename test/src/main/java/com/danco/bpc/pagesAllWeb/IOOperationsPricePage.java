@@ -44,6 +44,8 @@ public class IOOperationsPricePage extends AnyPage {
 	public static final String CALENDAR_DAY_PREFIX = ".//*[@id='entitySearchForm:dateFromDayCell";
 
 	public static final String BUTTON_ADD = ".//*[@id='entityBtnForm:addBtn']";
+	public static final String BUTTON_ADD_SAVE = ".//div[@class='bottom_search_result_left_buttons']/table/tbody/tr/td[2]/button[contains(@id,'prsMethodEditForm:')]/span";
+	public static final String BUTTON_ADD_CANCEL = ".//div[@class='bottom_search_result_left_buttons']/table/tbody/tr/td[3]/button[contains(@id,'prsMethodEditForm:')]/span";
 	public static final String BUTTON_EDIT = ".//*[@id='entityBtnForm:editBtn']";
 	public static final String BUTTON_REJECT = ".//*[@id='entityBtnForm:rejectBtn']";
 	public static final String BUTTON_CHANGE_STATUS = ".//*[@id='entityBtnForm:changeStatusBtn']";
@@ -56,6 +58,7 @@ public class IOOperationsPricePage extends AnyPage {
 
 	public static final String FIRST_RECORD = ".//tr[@id='entityForm:entityDetailsTable:n:0']";
 	public static final String FIRST_RECORD_ID = ".//tr[@id='entityForm:entityDetailsTable:n:0']/td[contains(@id,':id')]/div[@class='extdt-cell-div']";
+	public static final String FIRST_RECORD_STATUS = ".//tr[@id='entityForm:entityDetailsTable:n:0']/td[contains(@id,':status')]/div[@class='extdt-cell-div']/span";
 
 	public static final String COUNT_RECORDS = ".//*[@id='entityBtnForm:pagesNum']/span[3]";
 
@@ -134,6 +137,12 @@ public class IOOperationsPricePage extends AnyPage {
 	@FindBy(xpath = BUTTON_ADD)
 	private WebElement buttonAdd;
 
+	@FindBy(xpath = BUTTON_ADD_SAVE)
+	private WebElement buttonAddSave;
+
+	@FindBy(xpath = BUTTON_ADD_CANCEL)
+	private WebElement buttonAddCancel;
+	
 	@FindBy(xpath = BUTTON_EDIT)
 	private WebElement buttonEdit;
 
@@ -164,12 +173,19 @@ public class IOOperationsPricePage extends AnyPage {
 	@FindBy(xpath = FIRST_RECORD_ID)
 	private WebElement firstRecordId;
 
+	@FindBy(xpath = FIRST_RECORD_STATUS)
+	private WebElement firstRecordStatus;
+	
 	public void firstRecordClick() {
 		firstRecord.click();
 	}
 
 	public String tableFirstRecordGetId() throws InterruptedException {
 		return firstRecordId.getText();
+	}
+	
+	public String tableFirstRecordGetStatus() throws InterruptedException {
+		return firstRecordStatus.getText();
 	}
 
 	public IOOperationsPricePage filterIdSendKeys(String id) throws InterruptedException {
@@ -276,11 +292,25 @@ public class IOOperationsPricePage extends AnyPage {
 
 	public IOOperationsPricePage buttonAddClick() throws InterruptedException {
 		buttonAdd.click();
+		WaitLoadAndDisplayed.fullCicleWait(driver, waitContentIndicator);
+		return pages.IOOperationsPricePage;
+	}
+	
+	public IOOperationsPricePage buttonAddSaveClick() throws InterruptedException {
+		buttonAddSave.click();
+		WaitLoadAndDisplayed.fullCicleWait(driver, waitContentIndicator);
 		return pages.IOOperationsPricePage;
 	}
 
+	public IOOperationsPricePage buttonAddCancelClick() throws InterruptedException {
+		buttonAddCancel.click();
+		WaitLoadAndDisplayed.fullCicleWait(driver, waitContentIndicator);
+		return pages.IOOperationsPricePage;
+	}
+	
 	public IOOperationsPricePage buttonEditClick() throws InterruptedException {
 		buttonEdit.click();
+		WaitLoadAndDisplayed.fullCicleWait(driver, waitContentIndicator);
 		return pages.IOOperationsPricePage;
 	}
 

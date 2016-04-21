@@ -23,6 +23,8 @@ public interface IPriceHelper {
 	public void filterStatusSelecter(String status) throws InterruptedException;
 
 	public void searchClick() throws InterruptedException;
+	
+	public void addRecord() throws InterruptedException;
 
 	public void rejectRecord(String id) throws InterruptedException;
 
@@ -33,4 +35,9 @@ public interface IPriceHelper {
 	public void filterClear() throws InterruptedException;
 
 	public ArrayList<String> getErrorsId() throws InterruptedException;
+	
+	public void saveNewRecord() throws InterruptedException;
+	
+	public boolean checkRecordStatus(String id, String expectedStatus) throws InterruptedException;
+
 }
