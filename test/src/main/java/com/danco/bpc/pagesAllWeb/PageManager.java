@@ -14,7 +14,11 @@ public class PageManager {
 	public FilmManagementPage filmManagementPage;
 	public SessionPage sessionPage;
 	public ContainersPage containersPage;
-	public IOOperationsPricePage IOOperationsPricePage;
+
+	public IOOperationsTMTPage iOOperationsTMTPage;
+	public IOOperationsPricePage iOOperationsPricePage;
+
+	public MonitoringLotesPage monitoringLotesPage;
 
 	public PageManager(WebDriver driver) {
 		this.driver = driver;
@@ -25,7 +29,9 @@ public class PageManager {
 		filmManagementPage = initElements(new FilmManagementPage(this));
 		sessionPage = initElements(new SessionPage(this));
 		containersPage = initElements(new ContainersPage(this));
-		IOOperationsPricePage = initElements(new IOOperationsPricePage(this));
+		iOOperationsTMTPage = initElements(new IOOperationsTMTPage(this));
+		iOOperationsPricePage = initElements(new IOOperationsPricePage(this));
+		monitoringLotesPage = initElements(new MonitoringLotesPage(this));
 	}
 
 	private <T extends Page> T initElements(T page) {

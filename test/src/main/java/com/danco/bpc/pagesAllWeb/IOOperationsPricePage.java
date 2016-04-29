@@ -190,163 +190,163 @@ public class IOOperationsPricePage extends AnyPage {
 
 	public IOOperationsPricePage filterIdSendKeys(String id) throws InterruptedException {
 		filterId.sendKeys(id);
-		return pages.IOOperationsPricePage;
+		return pages.iOOperationsPricePage;
 	}
 
 	public IOOperationsPricePage filterDateFromClick() throws InterruptedException {
 		filterDateFrom.click();
-		return pages.IOOperationsPricePage;
+		return pages.iOOperationsPricePage;
 	}
 
 	public IOOperationsPricePage filterDateToClick() throws InterruptedException {
 		filterDateTo.click();
-		return pages.IOOperationsPricePage;
+		return pages.iOOperationsPricePage;
 	}
 
 	public IOOperationsPricePage filterTypeSendKeys(String type) throws InterruptedException {
 		filterType.sendKeys(type);
-		return pages.IOOperationsPricePage;
+		return pages.iOOperationsPricePage;
 	}
 
 	public IOOperationsPricePage filterFileNameSendKeys(String fileName) throws InterruptedException {
 		filterFileName.sendKeys(fileName);
-		return pages.IOOperationsPricePage;
+		return pages.iOOperationsPricePage;
 	}
 
 	public IOOperationsPricePage filterAmountFromSendKeys(String amountFrom) throws InterruptedException {
 		filterAmountFrom.sendKeys(amountFrom);
-		return pages.IOOperationsPricePage;
+		return pages.iOOperationsPricePage;
 	}
 
 	public IOOperationsPricePage filterAmountToSendKeys(String amountTo) throws InterruptedException {
 		filterAmountTo.sendKeys(amountTo);
-		return pages.IOOperationsPricePage;
+		return pages.iOOperationsPricePage;
 	}
 
 	public IOOperationsPricePage filterStatusClick() throws InterruptedException {
 		filterStatus.click();
-		return pages.IOOperationsPricePage;
+		return pages.iOOperationsPricePage;
 	}
 
 	public IOOperationsPricePage calendarFromYearReduction() throws InterruptedException {
 		calendarFromYearReduction.click();
-		return pages.IOOperationsPricePage;
+		return pages.iOOperationsPricePage;
 	}
 
 	public IOOperationsPricePage calendarToYearReduction() throws InterruptedException {
 		calendarToYearReduction.click();
-		return pages.IOOperationsPricePage;
+		return pages.iOOperationsPricePage;
 	}
 
 	public IOOperationsPricePage calendarFromYearIncrease() throws InterruptedException {
 		calendarFromYearIncrease.click();
-		return pages.IOOperationsPricePage;
+		return pages.iOOperationsPricePage;
 	}
 
 	public IOOperationsPricePage calendarToYearIncrease() throws InterruptedException {
 		calendarToYearIncrease.click();
-		return pages.IOOperationsPricePage;
+		return pages.iOOperationsPricePage;
 	}
 
 	public IOOperationsPricePage calendarFromMonthReduction() throws InterruptedException {
 		calendarFromMonthReduction.click();
-		return pages.IOOperationsPricePage;
+		return pages.iOOperationsPricePage;
 	}
 
 	public IOOperationsPricePage calendarToMonthReduction() throws InterruptedException {
 		calendarToMonthReduction.click();
-		return pages.IOOperationsPricePage;
+		return pages.iOOperationsPricePage;
 	}
 
 	public IOOperationsPricePage calendarFromMonthIncrease() throws InterruptedException {
 		calendarFromMonthIncrease.click();
-		return pages.IOOperationsPricePage;
+		return pages.iOOperationsPricePage;
 	}
 
 	public IOOperationsPricePage calendarToMonthIncrease() throws InterruptedException {
 		calendarToMonthIncrease.click();
-		return pages.IOOperationsPricePage;
+		return pages.iOOperationsPricePage;
 	}
 
 	public IOOperationsPricePage calendarFromTodayClick() throws InterruptedException {
 		calendarFromToday.click();
-		return pages.IOOperationsPricePage;
+		return pages.iOOperationsPricePage;
 	}
 
 	public IOOperationsPricePage calendarToTodayClick() throws InterruptedException {
 		calendarToToday.click();
-		return pages.IOOperationsPricePage;
+		return pages.iOOperationsPricePage;
 	}
 
 	public IOOperationsPricePage filterButtonSearchClick() throws InterruptedException {
 		filterButtonSearch.click();
 		WaitLoadAndDisplayed.fullCicleWait(driver, waitContentIndicator);
-		return pages.IOOperationsPricePage;
+		return pages.iOOperationsPricePage;
 	}
 
 	public IOOperationsPricePage filterButtonClearAllClick() throws InterruptedException {
 		filterButtonClearAll.click();
 		WaitLoadAndDisplayed.fullCicleWait(driver, waitContentIndicator);
-		return pages.IOOperationsPricePage;
+		return pages.iOOperationsPricePage;
 	}
 
 	public IOOperationsPricePage buttonAddClick() throws InterruptedException {
 		buttonAdd.click();
 		WaitLoadAndDisplayed.fullCicleWait(driver, waitContentIndicator);
-		return pages.IOOperationsPricePage;
+		return pages.iOOperationsPricePage;
 	}
 	
 	public IOOperationsPricePage buttonAddSaveClick() throws InterruptedException {
 		buttonAddSave.click();
 		WaitLoadAndDisplayed.fullCicleWait(driver, waitContentIndicator);
-		return pages.IOOperationsPricePage;
+		return pages.iOOperationsPricePage;
 	}
 
 	public IOOperationsPricePage buttonAddCancelClick() throws InterruptedException {
 		buttonAddCancel.click();
 		WaitLoadAndDisplayed.fullCicleWait(driver, waitContentIndicator);
-		return pages.IOOperationsPricePage;
+		return pages.iOOperationsPricePage;
 	}
 	
 	public IOOperationsPricePage buttonEditClick() throws InterruptedException {
 		buttonEdit.click();
 		WaitLoadAndDisplayed.fullCicleWait(driver, waitContentIndicator);
-		return pages.IOOperationsPricePage;
+		return pages.iOOperationsPricePage;
 	}
 
 	public IOOperationsPricePage buttonRejectClick() throws InterruptedException {
 		buttonReject.click();
 		WaitLoadAndDisplayed.fullCicleWait(driver, waitContentIndicator);
-		return pages.IOOperationsPricePage;
+		return pages.iOOperationsPricePage;
 	}
 
 	public IOOperationsPricePage buttonConfirmSaveClick() throws InterruptedException {
 		buttonConfirmSave.click();
 		WaitLoadAndDisplayed.fullCicleWait(driver, waitContentIndicator);
-		return pages.IOOperationsPricePage;
+		return pages.iOOperationsPricePage;
 	}
 
 	public IOOperationsPricePage buttonConfirmHideClick() throws InterruptedException {
 		buttonConfirmHide.click();
 		WaitLoadAndDisplayed.fullCicleWait(driver, waitContentIndicator);
-		return pages.IOOperationsPricePage;
+		return pages.iOOperationsPricePage;
 	}
 
 	public IOOperationsPricePage buttonChangeStatusClick() throws InterruptedException {
 		buttonChangeStatus.click();
-		return pages.IOOperationsPricePage;
+		return pages.iOOperationsPricePage;
 	}
 
 	public IOOperationsPricePage tabDetailsClick() throws InterruptedException {
 		tabDetails.click();
 		WaitLoadAndDisplayed.fullCicleWait(driver, waitContentIndicator);
-		return pages.IOOperationsPricePage;
+		return pages.iOOperationsPricePage;
 	}
 
 	public IOOperationsPricePage tabErrorsClick() throws InterruptedException {
 		tabErrors.click();
 		WaitLoadAndDisplayed.fullCicleWait(driver, waitContentIndicator);
-		return pages.IOOperationsPricePage;
+		return pages.iOOperationsPricePage;
 	}
 
 	public ArrayList<String> tabErrorsGetErrors() throws InterruptedException {
@@ -470,6 +470,6 @@ public class IOOperationsPricePage extends AnyPage {
 			filterStatus.sendKeys(Keys.ARROW_DOWN);
 		}
 		filterStatus.sendKeys(Keys.ENTER);
-		return pages.IOOperationsPricePage;
+		return pages.iOOperationsPricePage;
 	}
 }

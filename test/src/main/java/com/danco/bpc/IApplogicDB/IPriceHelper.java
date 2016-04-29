@@ -64,4 +64,8 @@ public interface IPriceHelper {
 	public String getPrcRawMessagesStatus(String id) throws Exception;
 
 	public ArrayList<String> getIdErrors(Long id) throws Exception;
+	
+	public String p11generator() throws Exception;
+	
+	public String p12generator() throws Exception;
 }

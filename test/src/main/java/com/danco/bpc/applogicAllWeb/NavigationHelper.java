@@ -1,10 +1,17 @@
 package com.danco.bpc.applogicAllWeb;
 
+import java.util.ArrayList;
+import java.util.Random;
+
+import org.openqa.selenium.WebElement;
+
 import com.danco.bpc.IApplogicAllWeb.INavigationHelper;
 
 public class NavigationHelper extends DriverBasedHelper implements INavigationHelper {
 
 	private String baseUrl;
+
+	final Random random = new Random();
 
 	public NavigationHelper(ApplicationManager manager) {
 		super(manager.getWebDriver());
@@ -45,10 +52,15 @@ public class NavigationHelper extends DriverBasedHelper implements INavigationHe
 	}
 
 	@Override
+	public void openIOOperationTMTPage() {
+		pages.internalPage.clickIOOPerations().clickIOOPerationsTMT();
+	}
+
+	@Override
 	public void openIOOperationPricePage() {
 		pages.internalPage.clickIOOPerations().clickIOOPerationsPrice();
 	}
-	
+
 	@Override
 	public void openContainersPage() {
 		pages.internalPage.clickAdministration().clickAdministrationProcesses().clickAdministrationProcessesContainers();
@@ -104,6 +116,29 @@ public class NavigationHelper extends DriverBasedHelper implements INavigationHe
 	@Override
 	public void openDashboardMenu() {
 		pages.internalPage.openDashboardMenu();
+	}
+
+	@Override
+	public void openMonitoringLotesPage() {
+		pages.internalPage.clickMonitoring().clickMonitoringLotes();
+	}
+
+	@Override
+	public void searchAndCloseTotalSessions() throws InterruptedException {
+		pages.monitoringLotesPage.searchButtonClick();
+		pages.monitoringLotesPage.selectMaxRowNum();
+		ArrayList<WebElement> sessionsStatuses = new ArrayList<WebElement>();
+		sessionsStatuses = pages.monitoringLotesPage.readSessionsStatuses();
+		if (sessionsStatuses.size() > 0) {
+			for (int i = 0; i < sessionsStatuses.size(); i++) {
+				if (sessionsStatuses.get(i).getText().equals("Open")) {
+					String sessionNumber = pages.monitoringLotesPage.sessionNumberGetText(i);
+					openIOOperationTMTPage();
+					pages.iOOperationsTMTPage.sessionIdSendKeys(sessionNumber).searchButtonClick().tabTotalsClick().tabTotalsTeButtonClick()
+							.teNetPositionSendKeys("" + random.nextInt(9999) + 1);
+				}
+			}
+		}
 	}
 
 }

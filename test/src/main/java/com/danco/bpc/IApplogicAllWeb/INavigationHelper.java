@@ -23,8 +23,12 @@ public interface INavigationHelper {
 	void administrationClick();
 
 	void administrationProcessesClick();
-	
+
 	void openIOOperationPricePage();
+	
+	void openIOOperationTMTPage();
+
+	void openMonitoringLotesPage();
 
 	void openContainersPage();
 
@@ -41,4 +45,6 @@ public interface INavigationHelper {
 	void searchAndLaunchContainer(String s) throws InterruptedException;
 
 	String waitForContainerExecution() throws InterruptedException;
+
+	void searchAndCloseTotalSessions() throws InterruptedException;
 }

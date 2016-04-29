@@ -469,8 +469,23 @@ public class InternalPage extends AnyPage {
 		return pages.internalPage;
 	}
 	
+	public InternalPage clickIOOPerationsTMT() {
+		menuInputOutputOperationsTmt.click();
+		return pages.internalPage;
+	}
+	
 	public InternalPage clickIOOPerationsPrice() {
 		menuInputOutputOperationsPrice.click();
+		return pages.internalPage;
+	}
+	
+	public InternalPage clickMonitoring() {
+		menuMonitoring.click();
+		return pages.internalPage;
+	}
+	
+	public InternalPage clickMonitoringLotes() {
+		menuMonitoringLotes.click();
 		return pages.internalPage;
 	}
 		

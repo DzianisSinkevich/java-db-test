@@ -334,4 +334,16 @@ public class PriceHelper implements IPriceHelper {
 		}
 		return idErrors;
 	}
+
+	@Override
+	public String p11generator() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String p12generator() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
