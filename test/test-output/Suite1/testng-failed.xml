@@ -3,8 +3,8 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite1]" data-provider-thread-count="1">
   <test name="Test001">
     <classes>
-      <class name="db.tests.allWeb.OpenAllWeb"/>
-      <class name="db.tests.PRICE.IOOperationsPrice"/>
+      <class name="db.tests.allWeb.AOpenAllWeb"/>
+      <class name="db.tests.allWeb.CloseSessionLotes"/>
     </classes>
   </test> <!-- Test001 -->
 </suite> <!-- Failed suite [Suite1] -->

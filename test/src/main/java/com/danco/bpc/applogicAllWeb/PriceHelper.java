@@ -13,16 +13,16 @@ public class PriceHelper extends DriverBasedHelper implements IPriceHelper {
 
 	@Override
 	public void enterDates() throws InterruptedException {
-		pages.IOOperationsPricePage.filterDateFromClick().calendarFromTodayClick();
-		// pages.IOOperationsPricePage.calendarFromYearSelector(getCurrentYear());
-		// pages.IOOperationsPricePage.calendarFromMonthSelector(getCurrentMonth());
-		// pages.IOOperationsPricePage.calendarFromDaySelector(getCurrentDayOfMonth());
-		pages.IOOperationsPricePage.filterDateToClick().calendarToTodayClick();
+		pages.iOOperationsPricePage.filterDateFromClick().calendarFromTodayClick();
+		// pages.iOOperationsPricePage.calendarFromYearSelector(getCurrentYear());
+		// pages.iOOperationsPricePage.calendarFromMonthSelector(getCurrentMonth());
+		// pages.iOOperationsPricePage.calendarFromDaySelector(getCurrentDayOfMonth());
+		pages.iOOperationsPricePage.filterDateToClick().calendarToTodayClick();
 	}
 
 	@Override
 	public boolean compareRecordsCount(String countInDB) throws InterruptedException {
-		if (countInDB.equals(pages.IOOperationsPricePage.checkCountRecords())) {
+		if (countInDB.equals(pages.iOOperationsPricePage.checkCountRecords())) {
 			return true;
 		}
 		return false;
@@ -77,76 +77,76 @@ public class PriceHelper extends DriverBasedHelper implements IPriceHelper {
 
 	@Override
 	public void tabClicker() throws InterruptedException {
-		pages.IOOperationsPricePage.tabErrorsClick().tabDetailsClick().tabErrorsClick();
+		pages.iOOperationsPricePage.tabErrorsClick().tabDetailsClick().tabErrorsClick();
 	}
 
 	@Override
 	public void firstRecordSelect() throws InterruptedException {
-		pages.IOOperationsPricePage.firstRecordClick();
+		pages.iOOperationsPricePage.firstRecordClick();
 	}
 
 	@Override
 	public String getFirstRecordId() throws InterruptedException {
 		String firstRecordId;
-		firstRecordId = pages.IOOperationsPricePage.tableFirstRecordGetId();
+		firstRecordId = pages.iOOperationsPricePage.tableFirstRecordGetId();
 		System.out.println("firstRecordId=" + firstRecordId);
 		return firstRecordId;
 	}
 
 	@Override
 	public void filterStatusSelecter(String status) throws InterruptedException {
-		pages.IOOperationsPricePage.selectStatus(status);
+		pages.iOOperationsPricePage.selectStatus(status);
 	}
 
 	@Override
 	public void searchClick() throws InterruptedException {
-		pages.IOOperationsPricePage.filterButtonSearchClick();
+		pages.iOOperationsPricePage.filterButtonSearchClick();
 	}
 
 	@Override
 	public void addRecord() throws InterruptedException {
-		pages.IOOperationsPricePage.buttonAddClick();
+		pages.iOOperationsPricePage.buttonAddClick();
 	}
 
 	@Override
 	public void rejectRecord(String id) throws InterruptedException {
 		recordClick(id);
-		pages.IOOperationsPricePage.buttonRejectClick().buttonConfirmSaveClick();
+		pages.iOOperationsPricePage.buttonRejectClick().buttonConfirmSaveClick();
 	}
 
 	@Override
 	public void recordClick(String id) throws InterruptedException {
-		pages.IOOperationsPricePage.filterButtonClearAllClick();
+		pages.iOOperationsPricePage.filterButtonClearAllClick();
 		enterDates();
-		pages.IOOperationsPricePage.filterIdSendKeys(id).filterButtonSearchClick();
-		pages.IOOperationsPricePage.firstRecordClick();
+		pages.iOOperationsPricePage.filterIdSendKeys(id).filterButtonSearchClick();
+		pages.iOOperationsPricePage.firstRecordClick();
 	}
 
 	@Override
 	public void startSearch() throws InterruptedException {
-		pages.IOOperationsPricePage.filterButtonSearchClick();
+		pages.iOOperationsPricePage.filterButtonSearchClick();
 	}
 
 	@Override
 	public void filterClear() throws InterruptedException {
-		pages.IOOperationsPricePage.filterButtonClearAllClick();
+		pages.iOOperationsPricePage.filterButtonClearAllClick();
 	}
 
 	@Override
 	public ArrayList<String> getErrorsId() throws InterruptedException {
-		pages.IOOperationsPricePage.tabErrorsClick();
-		return pages.IOOperationsPricePage.tabErrorsGetErrors();
+		pages.iOOperationsPricePage.tabErrorsClick();
+		return pages.iOOperationsPricePage.tabErrorsGetErrors();
 	}
 
 	@Override
 	public void saveNewRecord() throws InterruptedException {
-		pages.IOOperationsPricePage.buttonAddSaveClick();
+		pages.iOOperationsPricePage.buttonAddSaveClick();
 	}
 
 	@Override
 	public boolean checkRecordStatus(String id, String expectedStatus) throws InterruptedException {
 		recordClick(id);
-		String flag = pages.IOOperationsPricePage.tableFirstRecordGetStatus();
-		return pages.IOOperationsPricePage.tableFirstRecordGetStatus().equals(expectedStatus);
+		String flag = pages.iOOperationsPricePage.tableFirstRecordGetStatus();
+		return pages.iOOperationsPricePage.tableFirstRecordGetStatus().equals(expectedStatus);
 	}
 }

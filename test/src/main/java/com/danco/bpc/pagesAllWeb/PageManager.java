@@ -27,11 +27,12 @@ public class PageManager {
 		userProfilePage = initElements(new UserProfilePage(this));
 		userManagementPage = initElements(new UserManagementPage(this));
 		filmManagementPage = initElements(new FilmManagementPage(this));
+		monitoringLotesPage = initElements(new MonitoringLotesPage(this));
 		sessionPage = initElements(new SessionPage(this));
 		containersPage = initElements(new ContainersPage(this));
 		iOOperationsTMTPage = initElements(new IOOperationsTMTPage(this));
 		iOOperationsPricePage = initElements(new IOOperationsPricePage(this));
-		monitoringLotesPage = initElements(new MonitoringLotesPage(this));
+		
 	}
 
 	private <T extends Page> T initElements(T page) {

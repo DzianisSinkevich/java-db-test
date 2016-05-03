@@ -1,8 +1,10 @@
 package com.danco.bpc.applogicAllWeb;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 
 import com.danco.bpc.IApplogicAllWeb.INavigationHelper;
@@ -10,6 +12,7 @@ import com.danco.bpc.IApplogicAllWeb.INavigationHelper;
 public class NavigationHelper extends DriverBasedHelper implements INavigationHelper {
 
 	private String baseUrl;
+	private Logger log = Logger.getLogger("file");
 
 	final Random random = new Random();
 
@@ -127,17 +130,57 @@ public class NavigationHelper extends DriverBasedHelper implements INavigationHe
 	public void searchAndCloseTotalSessions() throws InterruptedException {
 		pages.monitoringLotesPage.searchButtonClick();
 		pages.monitoringLotesPage.selectMaxRowNum();
-		ArrayList<WebElement> sessionsStatuses = new ArrayList<WebElement>();
+		List<WebElement> sessions = new ArrayList<WebElement>();
+		List<WebElement> sessionsNumber = new ArrayList<WebElement>();
+		List<WebElement> sessionsOpenDate = new ArrayList<WebElement>();
+		List<WebElement> sessionsStatuses = new ArrayList<WebElement>();
+		sessions = pages.monitoringLotesPage.readSessions();
+		log.info("-- Read all Session in table is successfully");
+		log.info("-- Count sessions = '" + sessions.size() + "'");
+		sessionsNumber = pages.monitoringLotesPage.readSessionsNumber();
+		log.info("-- Read all Session Number in table is successfully");
+		log.info("-- Count sessionsNumber = '" + sessionsNumber.size() + "'");
+		sessionsOpenDate = pages.monitoringLotesPage.readSessionsOpenDate();
+		log.info("-- Read all Open Date in table is successfully");
+		log.info("-- Count sessionsOpenDate = '" + sessionsOpenDate.size() + "'");
 		sessionsStatuses = pages.monitoringLotesPage.readSessionsStatuses();
+		log.info("-- Read all Statuses in table is successfully");
+		log.info("-- Count sessionsStatuses = '" + sessionsStatuses.size() + "'");
+		log.info("-- Check amount of session");
+		log.info("-- Amount of Session equals '" + sessionsStatuses.size() + "'");
 		if (sessionsStatuses.size() > 0) {
-			for (int i = 0; i < sessionsStatuses.size(); i++) {
-				if (sessionsStatuses.get(i).getText().equals("Open")) {
-					String sessionNumber = pages.monitoringLotesPage.sessionNumberGetText(i);
-					openIOOperationTMTPage();
-					pages.iOOperationsTMTPage.sessionIdSendKeys(sessionNumber).searchButtonClick().tabTotalsClick().tabTotalsTeButtonClick()
-							.teNetPositionSendKeys("" + random.nextInt(9999) + 1);
+			log.info("-- Amount of Session more then 0");
+			log.info("-- Start adding total cicle");
+			for (int i = 0; i < sessions.size(); i++) {
+				log.info("-- Check session status");
+				if (sessionsStatuses.get(i).getText().equals("SSSTOPEN")) {
+					log.info("-- Session status is OPEN");
+					log.info("-- Check Session Number of this session");
+					String sessionNumberS = sessionsNumber.get(i).getText();
+					log.info("-- Session Number is '" + sessionNumberS + "'");
+					log.info("-- Validation Session Number");
+					if (sessionNumberS.length() > 0) {
+						if (sessionNumberS.substring(2, 3).equals("_")
+								&& sessionNumberS.substring(sessionNumberS.length() - 6, sessionNumberS.length()).equals("-")) {
+							log.info("-- Validation Session Number is successfully");
+							openIOOperationTMTPage();
+							pages.iOOperationsTMTPage.sessionIdSendKeys(sessionNumberS).searchButtonClick().firstRowClick().tabTotalsClick()
+									.tabTotalsTeButtonClick().teNetPositionSendKeys("" + random.nextInt(9999) + 1);
+							pages.iOOperationsTMTPage.teTrSaveClick();
+							pages.iOOperationsTMTPage.clearAllButtonClick();
+							pages.iOOperationsTMTPage.sessionIdSendKeys(sessionNumberS).searchButtonClick().tabTotalsClick().tabTotalsTrButtonClick()
+									.trNetPositionSendKeys("" + random.nextInt(9999) + 1);
+							pages.iOOperationsTMTPage.teTrSaveClick();
+						} else {
+							log.info("-- Validation Session Number is failed");
+						}
+					}
+				} else {
+					log.info("-- Session status is not OPEN");
 				}
 			}
+		} else {
+			log.info("-- Amount of Session equals 0");
 		}
 	}
 

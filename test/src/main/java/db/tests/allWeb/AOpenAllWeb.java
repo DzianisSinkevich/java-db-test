@@ -6,7 +6,7 @@ import com.danco.bpc.applogicAllWeb.ApplicationManager;
 
 import pages.TestBaseAll;
 
-public class OpenAllWeb extends TestBaseAll {
+public class AOpenAllWeb extends TestBaseAll {
 
 	@Test
 	public void openWeb() {

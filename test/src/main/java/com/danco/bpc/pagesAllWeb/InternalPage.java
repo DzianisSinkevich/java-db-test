@@ -4,13 +4,17 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.*;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 public class InternalPage extends AnyPage {
+	private Logger log = Logger.getLogger("file");
+	
 	public static final String HOME_LINK = "nav a[href = 'http://10.7.32.216:9080/sv/login.jsf']";
+//	public static final String HOME_LINK = "nav a[href = 'http://rdslicdes.redsys.es:21100/sv/login.jsf']";
 	
 	public static final String MENU_GENERAL_VIEW_OPERATIONS = "//*[text()='General View Operations']";
 	public static final String MENU_GENERAL_VIEW_OPERATIONS_ACQUIRING_OPERATIONS = "//*[text()='Acquiring Operations']";
@@ -465,12 +469,16 @@ public class InternalPage extends AnyPage {
 	}
 
 	public InternalPage clickIOOPerations() {
+		log.info("-- Click menu I/O Operations");
 		menuInputOutputOperations.click();
+		log.info("-- Click menu I/O Operations is successfully");
 		return pages.internalPage;
 	}
 	
 	public InternalPage clickIOOPerationsTMT() {
+		log.info("-- Click menu Input/Output Operations - TMT input totals");
 		menuInputOutputOperationsTmt.click();
+		log.info("-- Click menu Input/Output Operations - TMT input totals is successfully");
 		return pages.internalPage;
 	}
 	
@@ -480,22 +488,30 @@ public class InternalPage extends AnyPage {
 	}
 	
 	public InternalPage clickMonitoring() {
+		log.info("-- Click menu Monitoring");
 		menuMonitoring.click();
+		log.info("-- Click menu Monitoring is successfully");
 		return pages.internalPage;
 	}
 	
 	public InternalPage clickMonitoringLotes() {
+		log.info("-- Click menu Monitoring - Lotes");
 		menuMonitoringLotes.click();
+		log.info("-- Click menu Monitoring - Lotes is successfully");
 		return pages.internalPage;
 	}
 		
 	public InternalPage clickAdministration() {
+		
 		menuAdministration.click();
+		log.info("-- Click menu Administration is successfully");
 		return pages.internalPage;
 	}
 	
 	public InternalPage clickAdministrationProcesses() {
+		log.info("-- Click menu Administration");
 		menuAdministrationProcesses.click();
+		log.info("-- Click menu Administration - Processes is successfully");
 		return pages.internalPage;
 	}
 

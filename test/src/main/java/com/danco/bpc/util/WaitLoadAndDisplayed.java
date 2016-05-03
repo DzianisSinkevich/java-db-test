@@ -1,5 +1,6 @@
 package com.danco.bpc.util;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -8,7 +9,8 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WaitLoadAndDisplayed {
-
+	private static Logger log = Logger.getLogger("file");	
+	
 	public static void wait(WebDriver driver) throws InterruptedException {
 		Thread.sleep(200);
 		new WebDriverWait(driver, 1000).until(new ExpectedCondition<Boolean>() {
@@ -21,11 +23,12 @@ public class WaitLoadAndDisplayed {
 	}
 	
 	public static void fullCicleWait(WebDriver driver, WebElement el) throws InterruptedException{
-//		System.out.println("Start waitVisibility");
+		log.info("-- Start Wait Visibility load icon");
 		waitVisibility(driver, el);
-//		System.out.println("Start waitInivisibility");
+		log.info("-- Wait Visibility is finisht");
+		log.info("-- Start Wait Invisibility load icon");
 		waitInvisibility(driver, el);
-//		System.out.println("Finish waitIn/Visibility");
+		log.info("-- Wait Invisibility is finisht");
 	}
 
 	public static void waitVisibility(WebDriver driver, WebElement el) throws InterruptedException {

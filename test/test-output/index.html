@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Suite1">
-                    <span>D:\BPC\java-db-test\test\src\test\resources\testng2.xml</span>
+                    <span>D:\BPC\java-db-test\test\src\test\resources\testng3.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods,   3 passed</span>
+                    <span class="method-stats">2 methods,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,17 +102,12 @@
                     <div class="method-list-content passed suite-Suite1">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite1" title="db.tests.PRICE.IOOperationsPrice" hash-for-method="aOpenContainerPage">aOpenContainerPage</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite1" title="db.tests.allWeb.AOpenAllWeb" hash-for-method="openWeb">openWeb</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite1" title="db.tests.PRICE.IOOperationsPrice" hash-for-method="eAddNewRecordValid">eAddNewRecordValid</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite1" title="db.tests.allWeb.OpenAllWeb" hash-for-method="openWeb">openWeb</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite1" title="db.tests.allWeb.CloseSessionLotes" hash-for-method="readAndCloseActiveSession">readAndCloseActiveSession</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite1 -->
@@ -130,21 +125,14 @@
           <div class="suite-Suite1-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">db.tests.PRICE.IOOperationsPrice</span>
+              <span class="class-name">db.tests.allWeb.CloseSessionLotes</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="aOpenContainerPage">
-                  </a> <!-- aOpenContainerPage -->
-                  <span class="method-name">aOpenContainerPage</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="eAddNewRecordValid">
-                  </a> <!-- eAddNewRecordValid -->
-                  <span class="method-name">eAddNewRecordValid</span>
+                  <a name="readAndCloseActiveSession">
+                  </a> <!-- readAndCloseActiveSession -->
+                  <span class="method-name">readAndCloseActiveSession</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -152,7 +140,7 @@
           <div class="suite-Suite1-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">db.tests.allWeb.OpenAllWeb</span>
+              <span class="class-name">db.tests.allWeb.AOpenAllWeb</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
@@ -167,7 +155,7 @@
         </div> <!-- panel Suite1 -->
         <div panel-name="test-xml-Suite1" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">D:\BPC\java-db-test\test\src\test\resources\testng2.xml</span>
+            <span class="header-content">D:\BPC\java-db-test\test\src\test\resources\testng3.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -176,8 +164,8 @@
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Suite1&quot; data-provider-thread-count=&quot;1&quot;&gt;
   &lt;test name=&quot;Test001&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;db.tests.allWeb.OpenAllWeb&quot;/&gt;
-      &lt;class name=&quot;db.tests.PRICE.IOOperationsPrice&quot;/&gt;
+      &lt;class name=&quot;db.tests.allWeb.AOpenAllWeb&quot;/&gt;
+      &lt;class name=&quot;db.tests.allWeb.CloseSessionLotes&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test001 --&gt;
 &lt;/suite&gt; &lt;!-- Suite1 --&gt;
@@ -217,24 +205,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(3);
+data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'eAddNewRecordValid')
-data.setCell(0, 2, 'db.tests.PRICE.IOOperationsPrice')
-data.setCell(0, 3, 62992);
+data.setCell(0, 1, 'readAndCloseActiveSession')
+data.setCell(0, 2, 'db.tests.allWeb.CloseSessionLotes')
+data.setCell(0, 3, 153882);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'aOpenContainerPage')
-data.setCell(1, 2, 'db.tests.PRICE.IOOperationsPrice')
-data.setCell(1, 3, 24718);
-data.setCell(2, 0, 2)
-data.setCell(2, 1, 'openWeb')
-data.setCell(2, 2, 'db.tests.allWeb.OpenAllWeb')
-data.setCell(2, 3, 14164);
+data.setCell(1, 1, 'openWeb')
+data.setCell(1, 2, 'db.tests.allWeb.AOpenAllWeb')
+data.setCell(1, 3, 11009);
 window.suiteTableData['Suite1']= { tableData: data, tableDiv: 'times-div-Suite1'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 2 minutes</span>
               <div id="times-div-Suite1">
               </div> <!-- times-div-Suite1 -->
             </div> <!-- times-div -->
@@ -260,21 +244,17 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">db.tests.allWeb.OpenAllWeb</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">db.tests.allWeb.AOpenAllWeb</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">openWeb</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
-              <div class="chronological-class-name">db.tests.PRICE.IOOperationsPrice</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">db.tests.allWeb.CloseSessionLotes</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">aOpenContainerPage</span>
-                <span class="method-start">14166 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">eAddNewRecordValid</span>
-                <span class="method-start">38885 ms</span>
+                <span class="method-name">readAndCloseActiveSession</span>
+                <span class="method-start">11011 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

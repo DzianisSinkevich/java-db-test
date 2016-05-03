@@ -1,16 +1,17 @@
 package com.danco.bpc.pagesAllWeb;
 
-import java.util.ArrayList;
+import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import com.danco.bpc.util.WaitLoadAndDisplayed;
 
-import net.thucydides.core.annotations.findby.By;
-
 public class MonitoringLotesPage extends AnyPage {
+
+	private Logger log = Logger.getLogger("file");
 
 	public MonitoringLotesPage(PageManager pages) {
 		super(pages);
@@ -22,10 +23,10 @@ public class MonitoringLotesPage extends AnyPage {
 	public static final String FILTER_LOTE = ".//*[@id='searchForm:lotIdFilter']";
 
 	public static final String TABLE_ROWS_NUM = ".//*[@id='reportsBtnForm:rows_num']";
-	public static final String TABLE_SESSION_READ = "";
-	public static final String TABLE_SESSION_NUMBER_READ = "";
-	public static final String TABLE_STATUS_READ = "";
-	public static final String TABLE_OPEN_DATE_READ = "";
+	public static final String TABLE_SESSION_READ = "//table[@class='extdt-table-layout res-table']//tr[contains(@id,'searchResultForm:searchResultTable:n:')]/td[contains(@id,':id')]";
+	public static final String TABLE_SESSION_NUMBER_READ = "//table[@class='extdt-table-layout res-table']//tr[contains(@id,'searchResultForm:searchResultTable:n:')]/td[contains(@id,':sessionNumber')]";
+	public static final String TABLE_STATUS_READ = "//table[@class='extdt-table-layout res-table']//tr[contains(@id,'searchResultForm:searchResultTable:n:')]/td[contains(@id,':status')]";
+	public static final String TABLE_OPEN_DATE_READ = "//table[@class='extdt-table-layout res-table']//tr[contains(@id,'searchResultForm:searchResultTable:n:')]/td[contains(@id,':openDate')]";
 
 	public static final String WAIT_CONTENT_INDICATOR = ".//*[@id='waitContentTable']";
 
@@ -48,23 +49,25 @@ public class MonitoringLotesPage extends AnyPage {
 	private WebElement tableRowsNum;
 
 	@FindBy(xpath = TABLE_SESSION_READ)
-	private WebElement tableSessionRead;
+	private List<WebElement> tableSession;
 
 	@FindBy(xpath = TABLE_SESSION_NUMBER_READ)
-	private WebElement tableSessionNumber;
+	private List<WebElement> tableSessionNumber;
 
 	@FindBy(xpath = TABLE_STATUS_READ)
-	private ArrayList<WebElement> tableStatuses;
+	private List<WebElement> tableStatuses;
 
 	@FindBy(xpath = TABLE_OPEN_DATE_READ)
-	private WebElement tableOpenDate;
+	private List<WebElement> tableOpenDate;
 
 	@FindBy(xpath = TABLE_ROWS_NUM)
 	private WebElement tableRowsNumDropdown;
 
 	public MonitoringLotesPage searchButtonClick() throws InterruptedException {
+		log.info("-- Click Search button");
 		searchButton.click();
 		WaitLoadAndDisplayed.fullCicleWait(driver, waitContentIndicator);
+		log.info("-- Click Search button is successfully");
 		return pages.monitoringLotesPage;
 	}
 
@@ -85,26 +88,37 @@ public class MonitoringLotesPage extends AnyPage {
 	}
 
 	public MonitoringLotesPage selectMaxRowNum() throws InterruptedException {
+		log.info("-- Click to Rows Num dropdown");
 		tableRowsNumDropdown.click();
-		tableRowsNumDropdown.sendKeys("1", "3", "3", Keys.ENTER);
+		log.info("-- Click to Rows Num dropdown is successfully");
+		log.info("-- Sendkeys data in to Rows Num dropdown");
+		tableRowsNumDropdown.sendKeys("1", Keys.ENTER);
 		WaitLoadAndDisplayed.fullCicleWait(driver, waitContentIndicator);
+		tableRowsNumDropdown.sendKeys("3", Keys.ENTER);
+		WaitLoadAndDisplayed.fullCicleWait(driver, waitContentIndicator);
+		tableRowsNumDropdown.sendKeys("3", Keys.ENTER);
+		WaitLoadAndDisplayed.fullCicleWait(driver, waitContentIndicator);
+		log.info("-- Sendkeys data in to Rows Num dropdown is successfully");
 		return pages.monitoringLotesPage;
 	}
 
-	public String sessionGetText() {
-		return tableSessionRead.getText();
+	public List<WebElement> readSessions() {
+		log.info("-- Read all Session in table");
+		return tableSession;
 	}
 
-	public String sessionNumberGetText(int i) {
-		WebElement el = driver.findElement(By.xpath(TABLE_SESSION_NUMBER_READ + i + "]']"));
-		return el.getText();
+	public List<WebElement> readSessionsNumber() {
+		log.info("-- Read all Session Number in table");
+		return tableSessionNumber;
 	}
 
-	public String openDateGetText() {
-		return tableOpenDate.getText();
+	public List<WebElement> readSessionsOpenDate() {
+		log.info("-- Read all Open Date in table");
+		return tableOpenDate;
 	}
 
-	public ArrayList<WebElement> readSessionsStatuses() {
+	public List<WebElement> readSessionsStatuses() {
+		log.info("-- Read all Statuses in table");
 		return tableStatuses;
 	}
 }

@@ -1,27 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="3" passed="3">
+<testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite1" duration-ms="101889" started-at="2016-04-21T09:51:59Z" finished-at="2016-04-21T09:53:40Z">
+  <suite name="Suite1" duration-ms="164904" started-at="2016-05-03T13:23:50Z" finished-at="2016-05-03T13:26:35Z">
     <groups>
     </groups>
-    <test name="Test001" duration-ms="101889" started-at="2016-04-21T09:51:59Z" finished-at="2016-04-21T09:53:40Z">
-      <class name="db.tests.PRICE.IOOperationsPrice">
-        <test-method status="PASS" signature="aOpenContainerPage()[pri:0, instance:db.tests.PRICE.IOOperationsPrice@174d20a]" name="aOpenContainerPage" duration-ms="24718" started-at="2016-04-21T12:52:13Z" finished-at="2016-04-21T12:52:37Z">
+    <test name="Test001" duration-ms="164904" started-at="2016-05-03T13:23:50Z" finished-at="2016-05-03T13:26:35Z">
+      <class name="db.tests.allWeb.CloseSessionLotes">
+        <test-method status="PASS" signature="readAndCloseActiveSession()[pri:0, instance:db.tests.allWeb.CloseSessionLotes@396e2f39]" name="readAndCloseActiveSession" duration-ms="153882" started-at="2016-05-03T16:24:01Z" finished-at="2016-05-03T16:26:35Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- aOpenContainerPage -->
-        <test-method status="PASS" signature="eAddNewRecordValid()[pri:0, instance:db.tests.PRICE.IOOperationsPrice@174d20a]" name="eAddNewRecordValid" duration-ms="62992" started-at="2016-04-21T12:52:37Z" finished-at="2016-04-21T12:53:40Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- eAddNewRecordValid -->
-      </class> <!-- db.tests.PRICE.IOOperationsPrice -->
-      <class name="db.tests.allWeb.OpenAllWeb">
-        <test-method status="PASS" signature="openWeb()[pri:0, instance:db.tests.allWeb.OpenAllWeb@6ea12c19]" name="openWeb" duration-ms="14164" started-at="2016-04-21T12:51:59Z" finished-at="2016-04-21T12:52:13Z">
+        </test-method> <!-- readAndCloseActiveSession -->
+      </class> <!-- db.tests.allWeb.CloseSessionLotes -->
+      <class name="db.tests.allWeb.AOpenAllWeb">
+        <test-method status="PASS" signature="openWeb()[pri:0, instance:db.tests.allWeb.AOpenAllWeb@3891771e]" name="openWeb" duration-ms="11009" started-at="2016-05-03T16:23:50Z" finished-at="2016-05-03T16:24:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openWeb -->
-      </class> <!-- db.tests.allWeb.OpenAllWeb -->
+      </class> <!-- db.tests.allWeb.AOpenAllWeb -->
     </test> <!-- Test001 -->
   </suite> <!-- Suite1 -->
 </testng-results>

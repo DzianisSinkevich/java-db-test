@@ -1,6 +1,5 @@
 package com.danco.bpc.pagesAllWeb;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.WebElement;
@@ -65,8 +64,7 @@ public class ContainersPage extends AnyPage {
 		String ssid = null;
 
 		for (int i = 0; i < 1200; i++) {
-			if ((ssidList.size() > 0)
-					&& (ssidList.get(0).getText().length() == 16)) {
+			if ((ssidList.size() > 0) && (ssidList.get(0).getText().length() == 16)) {
 				ssid = ssidList.get(0).getText();
 				System.out.println("SSID = " + ssid);
 				break;

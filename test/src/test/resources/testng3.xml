@@ -3,7 +3,8 @@
 	preserve-order="true">
 	<test name="Test001">
 		<classes>
-			<class name="db.tests.PRICE.IncomingValidation"></class>
+			<class name="db.tests.allWeb.AOpenAllWeb"></class>
+			<class name="db.tests.allWeb.CloseSessionLotes"></class>
 		</classes>
 	</test>
 </suite> 	
