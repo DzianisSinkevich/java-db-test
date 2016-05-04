@@ -1,6 +1,7 @@
 package com.danco.bpc.util;
 
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -9,8 +10,8 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WaitLoadAndDisplayed {
-	private static Logger log = Logger.getLogger("file");	
-	
+	private static Logger log = Logger.getLogger("file");
+
 	public static void wait(WebDriver driver) throws InterruptedException {
 		Thread.sleep(200);
 		new WebDriverWait(driver, 1000).until(new ExpectedCondition<Boolean>() {
@@ -21,8 +22,8 @@ public class WaitLoadAndDisplayed {
 			};
 		});
 	}
-	
-	public static void fullCicleWait(WebDriver driver, WebElement el) throws InterruptedException{
+
+	public static void fullCicleWait(WebDriver driver, WebElement el) throws InterruptedException {
 		log.info("-- Start Wait Visibility load icon");
 		waitVisibility(driver, el);
 		log.info("-- Wait Visibility is finisht");
@@ -32,29 +33,49 @@ public class WaitLoadAndDisplayed {
 	}
 
 	public static void waitVisibility(WebDriver driver, WebElement el) throws InterruptedException {
-		Boolean flag = false;
-		for (int i = 0; i < 300; i++) {
-			flag = isVisibility(driver, el);
-			Thread.sleep(100);
-			if (flag) {
-//				System.out.println("Is visibility");
-				break;
-			}
-//			System.out.println("In invisibility");
+		// Boolean flag = false;
+		// for (int i = 0; i < 300; i++) {
+		// flag = isVisibility(driver, el);
+		// Thread.sleep(100);
+		// if (flag) {
+		// break;
+		// }
+		// }
+		try {
+			(new WebDriverWait(driver, 3)).until(new ExpectedCondition<Boolean>() {
+				public Boolean apply(WebDriver d) {
+					try {
+						System.err.println("Start visibility wait");
+						return d.findElement(By.xpath(".//div[@id='waitDiv']")).isDisplayed();
+					} catch (NoSuchElementException e) {
+						return false;
+					}
+				}
+			});
+		} catch (Exception e) {
+
 		}
 	}
 
 	public static void waitInvisibility(WebDriver driver, WebElement el) throws InterruptedException {
-		Boolean flag = false;
-		for (int i = 0; i < 300; i++) {
-			flag = isInvisibility(driver, el);
-			Thread.sleep(100);
-			if (flag) {
-//				System.out.println("In invisibility");
-				break;
+		// Boolean flag = false;
+		// for (int i = 0; i < 300; i++) {
+		// flag = isInvisibility(driver, el);
+		// Thread.sleep(100);
+		// if (flag) {
+		// break;
+		// }
+		// }
+		(new WebDriverWait(driver, 10)).until(new ExpectedCondition<Boolean>() {
+			public Boolean apply(WebDriver d) {
+				try {
+					System.err.println("Start invisibility wait");
+					return !d.findElement(By.xpath(".//div[@id='waitDiv']")).isDisplayed();
+				} catch (NoSuchElementException e) {
+					return true;
+				}
 			}
-//			System.out.println("Is visibility");
-		}
+		});
 	}
 
 	private static boolean isVisibility(WebDriver driver, WebElement el) {
@@ -77,7 +98,7 @@ public class WaitLoadAndDisplayed {
 	// (new WebDriverWait(driver, 10)).until(new ExpectedCondition<Boolean>() {
 	// public Boolean apply(WebDriver d) {
 	// try {
-	// return d.findElement(By.xpath("//*[@id='statusIndicator']")).isDisplayed();
+	// return d.findElement(By.xpath(".//*[@id='waitDiv']")).isDisplayed();
 	// } catch (NoSuchElementException e) {
 	// return false;
 	// }
@@ -89,7 +110,7 @@ public class WaitLoadAndDisplayed {
 	// (new WebDriverWait(driver, 10)).until(new ExpectedCondition<Boolean>() {
 	// public Boolean apply(WebDriver d) {
 	// try {
-	// return !d.findElement(By.xpath("//*[@id='statusIndicator']")).isDisplayed();
+	// return !d.findElement(By.xpath(".//*[@id='waitDiv']")).isDisplayed();
 	// } catch (NoSuchElementException e) {
 	// return true;
 	// }

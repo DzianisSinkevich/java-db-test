@@ -161,7 +161,7 @@ public class NavigationHelper extends DriverBasedHelper implements INavigationHe
 					log.info("-- Validation Session Number");
 					if (sessionNumberS.length() > 0) {
 						if (sessionNumberS.substring(2, 3).equals("_")
-								&& sessionNumberS.substring(sessionNumberS.length() - 6, sessionNumberS.length()).equals("-")) {
+								&& sessionNumberS.substring(sessionNumberS.length() - 7, sessionNumberS.length() - 6).equals("-")) {
 							log.info("-- Validation Session Number is successfully");
 							openIOOperationTMTPage();
 							pages.iOOperationsTMTPage.sessionIdSendKeys(sessionNumberS).searchButtonClick().firstRowClick().tabTotalsClick()

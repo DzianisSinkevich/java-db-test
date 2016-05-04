@@ -22,7 +22,7 @@ public class IOOperationsTMTPage extends AnyPage {
 	public static final String TABLE_FIRST_ROW = ".//tr[@id='rejectedTmaForm:rejectedTmaTable:n:0']";
 
 	public static final String TAB_DETAILS = "//div[@class='first tab-label']//*[text()='Details']";
-	public static final String TAB_TOTALS = "//div[@class='tab-label']//*[text()='Totals']";
+	public static final String TAB_TOTALS = "//div[@class='first tab-label']//span[@title='Totals']";
 	public static final String TAB_TOTALS_TE_BUTTON = "//div[@class='bottom_search_result_left_buttons']/button[0]";
 	public static final String TAB_TOTALS_TE_NET_POSITION = "//div[@id='tmtTotalAddForm:netPosition']";
 	public static final String TAB_TOTALS_TE_PAYMENT_AMOUNTS = "//div[@id='tmtTotalAddForm:paymentAmounts']";
