@@ -1,5 +1,6 @@
 package com.danco.bpc.pagesAllWeb;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -102,23 +103,39 @@ public class MonitoringLotesPage extends AnyPage {
 		return pages.monitoringLotesPage;
 	}
 
-	public List<WebElement> readSessions() {
+	public List<String> readSessions() {
+		List<String> sessions = new ArrayList<String>();
 		log.info("-- Read all Session in table");
-		return tableSession;
+		for (WebElement el: tableSession){
+			sessions.add(el.getText());
+		}
+		return sessions;
 	}
 
-	public List<WebElement> readSessionsNumber() {
+	public List<String> readSessionsNumber() {
+		List<String> sessionsNumber = new ArrayList<String>();
 		log.info("-- Read all Session Number in table");
-		return tableSessionNumber;
+		for (WebElement el: tableSessionNumber){
+			sessionsNumber.add(el.getText());
+		}
+		return sessionsNumber;
 	}
 
-	public List<WebElement> readSessionsOpenDate() {
+	public List<String> readSessionsOpenDate() {
+		List<String> sessionsOperDate = new ArrayList<String>();
 		log.info("-- Read all Open Date in table");
-		return tableOpenDate;
+		for (WebElement el: tableOpenDate){
+			sessionsOperDate.add(el.getText());
+		}
+		return sessionsOperDate;
 	}
 
-	public List<WebElement> readSessionsStatuses() {
+	public List<String> readSessionsStatuses() {
+		List<String> sessionsStatuses = new ArrayList<String>();
 		log.info("-- Read all Statuses in table");
-		return tableStatuses;
+		for (WebElement el: tableStatuses){
+			sessionsStatuses.add(el.getText());
+		}
+		return sessionsStatuses;
 	}
 }

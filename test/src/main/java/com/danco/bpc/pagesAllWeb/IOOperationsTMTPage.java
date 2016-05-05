@@ -1,14 +1,15 @@
 package com.danco.bpc.pagesAllWeb;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import com.danco.bpc.util.WaitLoadAndDisplayed;
 
-import jline.internal.Log;
-
 public class IOOperationsTMTPage extends AnyPage {
+
+	private Logger log = Logger.getLogger("file");
 
 	public IOOperationsTMTPage(PageManager pages) {
 		super(pages);
@@ -23,13 +24,15 @@ public class IOOperationsTMTPage extends AnyPage {
 
 	public static final String TAB_DETAILS = "//div[@class='first tab-label']//*[text()='Details']";
 	public static final String TAB_TOTALS = "//div[@class='first tab-label']//span[@title='Totals']";
-	public static final String TAB_TOTALS_TE_BUTTON = "//div[@class='bottom_search_result_left_buttons']/button[0]";
-	public static final String TAB_TOTALS_TE_NET_POSITION = "//div[@id='tmtTotalAddForm:netPosition']";
-	public static final String TAB_TOTALS_TE_PAYMENT_AMOUNTS = "//div[@id='tmtTotalAddForm:paymentAmounts']";
-	public static final String TAB_TOTALS_TE_SAVE = "//form[@id='tmtTotalAddForm']/div[@class='bottom_search_result_left_buttons']//button[@class='pzKpfwBtn']//*[.='Save']";
-	public static final String TAB_TOTALS_TR_BUTTON = "//div[@class='bottom_search_result_left_buttons']/button[1]";
-	public static final String TAB_TOTALS_TR_NET_POSITION = "//div[@id='tmtTotalAddForm:netPosition']";
-	public static final String TAB_TOTALS_TR_PAYMENT_AMOUNTS = "//div[@id='tmtTotalAddForm:paymentAmounts']";
+	public static final String TAB_TOTALS_TE_BUTTON = "//div[@class='bottom_search_result_left_buttons']/*/*[text()='Add TE total']";
+	public static final String TAB_TOTALS_TE_NET_POSITION = "//input[@id='tmtTotalAddForm:netPosition']";
+	public static final String TAB_TOTALS_TE_PAYMENT_AMOUNTS = "//input[@id='tmtTotalAddForm:paymentAmounts']";
+	public static final String TAB_TOTALS_TE_SAVE = "//form[@id='tmtTotalAddForm']/div[@class='bottom_search_result_block_buttons']//button[@class='pzKpfwBtn']//*[text()='Save']";
+	public static final String TAB_TOTALS_TR_BUTTON = "//div[@class='bottom_search_result_left_buttons']/*/*[text()='Add TR total']";
+	public static final String TAB_TOTALS_TR_NET_POSITION = "//input[@id='tmtTotalAddForm:netPosition']";
+	public static final String TAB_TOTALS_TR_PAYMENT_AMOUNTS = "//input[@id='tmtTotalAddForm:paymentAmounts']";
+
+	public static final String TABLE_STATUS_READ = "//tr[@id='rejectedTmaForm:rejectedTmaTable:n:0']/td[contains(@id,':status')]";
 
 	public static final String WAIT_CONTENT_INDICATOR = ".//*[@id='waitContentTable']";
 
@@ -78,6 +81,9 @@ public class IOOperationsTMTPage extends AnyPage {
 	@FindBy(xpath = WAIT_CONTENT_INDICATOR)
 	private WebElement waitContentIndicator;
 
+	@FindBy(xpath = TABLE_STATUS_READ)
+	private WebElement firstRowStatus;
+
 	public IOOperationsTMTPage searchButtonClick() throws InterruptedException {
 		filterSerachButton.click();
 		WaitLoadAndDisplayed.fullCicleWait(driver, waitContentIndicator);
@@ -85,15 +91,15 @@ public class IOOperationsTMTPage extends AnyPage {
 	}
 
 	public IOOperationsTMTPage clearAllButtonClick() throws InterruptedException {
-		Log.info("-- Clear all button click");
+		log.info("-- Clear all button click");
 		filterClearAllButton.click();
 		WaitLoadAndDisplayed.fullCicleWait(driver, waitContentIndicator);
-		Log.info("-- Clear all button click is successfully");
+		log.info("-- Clear all button click is successfully");
 		return pages.iOOperationsTMTPage;
 	}
 
 	public IOOperationsTMTPage sessionIdSendKeys(String ssid) {
-		Log.info("-- Input data to field Session ID");
+		log.info("-- Input data to field Session ID");
 		filterSessionId.sendKeys(ssid);
 		return pages.iOOperationsTMTPage;
 	}
@@ -110,25 +116,25 @@ public class IOOperationsTMTPage extends AnyPage {
 	}
 
 	public IOOperationsTMTPage tabTotalsClick() throws InterruptedException {
-		Log.info("-- Tab totals click");
+		log.info("-- Tab totals click");
 		tabTotals.click();
 		WaitLoadAndDisplayed.fullCicleWait(driver, waitContentIndicator);
-		Log.info("-- Tab totals click is successfully");
+		log.info("-- Tab totals click is successfully");
 		return pages.iOOperationsTMTPage;
 	}
 
 	public IOOperationsTMTPage tabTotalsTeButtonClick() throws InterruptedException {
-		Log.info("-- Tab totals Add TE button click");
+		log.info("-- Tab totals Add TE button click");
 		tabTotalsTeButton.click();
 		WaitLoadAndDisplayed.fullCicleWait(driver, waitContentIndicator);
-		Log.info("-- Tab totals Add TE button click is successfully");
+		log.info("-- Tab totals Add TE button click is successfully");
 		return pages.iOOperationsTMTPage;
 	}
 
 	public IOOperationsTMTPage teNetPositionSendKeys(String netPosition) {
-		Log.info("-- Sendkeys to TE Net position");
+		log.info("-- Sendkeys to TE Net position");
 		tabTotalsTeNetPositionField.sendKeys(netPosition);
-		Log.info("-- Sendkeys to TE Net position is successfully");
+		log.info("-- Sendkeys to TE Net position is successfully");
 		return pages.iOOperationsTMTPage;
 	}
 
@@ -138,17 +144,17 @@ public class IOOperationsTMTPage extends AnyPage {
 	}
 
 	public IOOperationsTMTPage tabTotalsTrButtonClick() throws InterruptedException {
-		Log.info("-- Tab totals Add TR button click");
+		log.info("-- Tab totals Add TR button click");
 		tabTotalsTrButton.click();
 		WaitLoadAndDisplayed.fullCicleWait(driver, waitContentIndicator);
-		Log.info("-- Tab totals Add TR button click is successfully");
+		log.info("-- Tab totals Add TR button click is successfully");
 		return pages.iOOperationsTMTPage;
 	}
 
 	public IOOperationsTMTPage trNetPositionSendKeys(String netPosition) {
-		Log.info("-- Sendkeys to TR Net position");
+		log.info("-- Sendkeys to TR Net position");
 		tabTotalsTrNetPositionField.sendKeys(netPosition);
-		Log.info("-- Sendkeys to TR Net position is successfully");
+		log.info("-- Sendkeys to TR Net position is successfully");
 		return pages.iOOperationsTMTPage;
 	}
 
@@ -165,18 +171,23 @@ public class IOOperationsTMTPage extends AnyPage {
 	}
 
 	public IOOperationsTMTPage firstRowClick() throws InterruptedException {
-		Log.info("-- First row click");
+		log.info("-- First row click");
 		tableFirstRow.click();
 		WaitLoadAndDisplayed.fullCicleWait(driver, waitContentIndicator);
-		Log.info("-- First row click is successfully");
+		log.info("-- First row click is successfully");
 		return pages.iOOperationsTMTPage;
 	}
 
 	public IOOperationsTMTPage teTrSaveClick() throws InterruptedException {
-		Log.info("-- TE/TR Save button click");
+		log.info("-- TE/TR Save button click");
 		teSave.click();
 		WaitLoadAndDisplayed.fullCicleWait(driver, waitContentIndicator);
-		Log.info("-- TE/TR Save button click is successfully");
+		log.info("-- TE/TR Save button click is successfully");
 		return pages.iOOperationsTMTPage;
+	}
+
+	public String readFirstRowStatus() {
+		log.info("-- Reading status of first row");
+		return firstRowStatus.getText();
 	}
 }

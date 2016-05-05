@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Random;
 
 import org.apache.log4j.Logger;
-import org.openqa.selenium.WebElement;
 
 import com.danco.bpc.IApplogicAllWeb.INavigationHelper;
 
@@ -13,7 +12,6 @@ public class NavigationHelper extends DriverBasedHelper implements INavigationHe
 
 	private String baseUrl;
 	private Logger log = Logger.getLogger("file");
-
 	final Random random = new Random();
 
 	public NavigationHelper(ApplicationManager manager) {
@@ -128,59 +126,63 @@ public class NavigationHelper extends DriverBasedHelper implements INavigationHe
 
 	@Override
 	public void searchAndCloseTotalSessions() throws InterruptedException {
+		List<String> sessions = new ArrayList<String>();
+		List<String> sessionsNumber = new ArrayList<String>();
+		List<String> sessionsOpenDate = new ArrayList<String>();
+		List<String> sessionsStatuses = new ArrayList<String>();
+
 		pages.monitoringLotesPage.searchButtonClick();
 		pages.monitoringLotesPage.selectMaxRowNum();
-		List<WebElement> sessions = new ArrayList<WebElement>();
-		List<WebElement> sessionsNumber = new ArrayList<WebElement>();
-		List<WebElement> sessionsOpenDate = new ArrayList<WebElement>();
-		List<WebElement> sessionsStatuses = new ArrayList<WebElement>();
-		sessions = pages.monitoringLotesPage.readSessions();
-		log.info("-- Read all Session in table is successfully");
-		log.info("-- Count sessions = '" + sessions.size() + "'");
-		sessionsNumber = pages.monitoringLotesPage.readSessionsNumber();
+		// sessions.addAll(pages.monitoringLotesPage.readSessions());
+		// log.info("-- Read all Session in table is successfully");
+		// log.info("-- Count sessions = '" + sessions.size() + "'");
+		sessionsNumber.addAll(pages.monitoringLotesPage.readSessionsNumber());
 		log.info("-- Read all Session Number in table is successfully");
 		log.info("-- Count sessionsNumber = '" + sessionsNumber.size() + "'");
-		sessionsOpenDate = pages.monitoringLotesPage.readSessionsOpenDate();
-		log.info("-- Read all Open Date in table is successfully");
-		log.info("-- Count sessionsOpenDate = '" + sessionsOpenDate.size() + "'");
-		sessionsStatuses = pages.monitoringLotesPage.readSessionsStatuses();
+		// sessionsOpenDate.addAll(pages.monitoringLotesPage.readSessionsOpenDate());
+		// log.info("-- Read all Open Date in table is successfully");
+		// log.info("-- Count sessionsOpenDate = '" + sessionsOpenDate.size() + "'");
+		sessionsStatuses.addAll(pages.monitoringLotesPage.readSessionsStatuses());
 		log.info("-- Read all Statuses in table is successfully");
 		log.info("-- Count sessionsStatuses = '" + sessionsStatuses.size() + "'");
-		log.info("-- Check amount of session");
-		log.info("-- Amount of Session equals '" + sessionsStatuses.size() + "'");
+		openIOOperationTMTPage();
 		if (sessionsStatuses.size() > 0) {
 			log.info("-- Amount of Session more then 0");
-			log.info("-- Start adding total cicle");
-			for (int i = 0; i < sessions.size(); i++) {
+			log.info("-- Start adding total cycle");
+			for (int i = 0; i < sessionsNumber.size(); i++) {
 				log.info("-- Check session status");
-				if (sessionsStatuses.get(i).getText().equals("SSSTOPEN")) {
+				if (sessionsStatuses.get(i).equals("SSSTOPEN")) {
 					log.info("-- Session status is OPEN");
 					log.info("-- Check Session Number of this session");
-					String sessionNumberS = sessionsNumber.get(i).getText();
-					log.info("-- Session Number is '" + sessionNumberS + "'");
+					log.info("-- Session Number is '" + sessionsNumber.get(i) + "'");
 					log.info("-- Validation Session Number");
-					if (sessionNumberS.length() > 0) {
-						if (sessionNumberS.substring(2, 3).equals("_")
-								&& sessionNumberS.substring(sessionNumberS.length() - 7, sessionNumberS.length() - 6).equals("-")) {
+					if (sessionsNumber.get(i).length() > 0) {
+						if (sessionsNumber.get(i).substring(2, 3).equals("_")
+								&& sessionsNumber.get(i).substring(sessionsNumber.get(i).length() - 7, sessionsNumber.get(i).length() - 6).equals("-")) {
 							log.info("-- Validation Session Number is successfully");
-							openIOOperationTMTPage();
-							pages.iOOperationsTMTPage.sessionIdSendKeys(sessionNumberS).searchButtonClick().firstRowClick().tabTotalsClick()
-									.tabTotalsTeButtonClick().teNetPositionSendKeys("" + random.nextInt(9999) + 1);
-							pages.iOOperationsTMTPage.teTrSaveClick();
 							pages.iOOperationsTMTPage.clearAllButtonClick();
-							pages.iOOperationsTMTPage.sessionIdSendKeys(sessionNumberS).searchButtonClick().tabTotalsClick().tabTotalsTrButtonClick()
-									.trNetPositionSendKeys("" + random.nextInt(9999) + 1);
-							pages.iOOperationsTMTPage.teTrSaveClick();
+							pages.iOOperationsTMTPage.sessionIdSendKeys(sessionsNumber.get(i)).searchButtonClick();
+							log.info("-- Validation Status field. Expected 'ACTIVE'");
+							if (pages.iOOperationsTMTPage.readFirstRowStatus().equals("ACTIVE")) {
+								log.info("-- Validation Status field is successfully. Status is 'ACTIVE'");
+								pages.iOOperationsTMTPage.firstRowClick().tabTotalsClick().tabTotalsTeButtonClick()
+										.teNetPositionSendKeys("" + random.nextInt(9999) + 1);
+								pages.iOOperationsTMTPage.teTrSaveClick();
+								pages.iOOperationsTMTPage.tabTotalsTrButtonClick().trNetPositionSendKeys("" + random.nextInt(9999) + 1);
+								pages.iOOperationsTMTPage.teTrSaveClick();
+							} else {
+								log.error("-- Validation Status field is failed. Status not 'ACTIVE'");
+							}
 						} else {
-							log.info("-- Validation Session Number is failed");
+							log.error("-- Validation Session Number is failed");
 						}
 					}
 				} else {
-					log.info("-- Session status is not OPEN");
+					log.error("-- Session status is not OPEN");
 				}
 			}
 		} else {
-			log.info("-- Amount of Session equals 0");
+			log.error("-- Amount of Session equals 0");
 		}
 	}
 

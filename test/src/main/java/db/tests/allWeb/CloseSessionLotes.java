@@ -15,7 +15,7 @@ public class CloseSessionLotes extends TestBaseAll {
 	public void readAndCloseActiveSession() throws InterruptedException {
 		log.info("-- Start application manager");
 		appAll = new ApplicationManager();
-		log.info("-- Application manager is started");
+		log.info("-- Start application manager is successfully");
 		
 		appAll.getNavigationHelper().openMonitoringLotesPage();
 		appAll.getNavigationHelper().searchAndCloseTotalSessions();

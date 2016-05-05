@@ -31,6 +31,7 @@ public class ApplicationManager implements com.danco.bpc.IApplogicAllWeb.IApplic
 		String password = PropertyLoader.loadProperty("user.password");
 
 		driver = WebDriverFactory.getInstance(browser.getName(), username, password);
+		driver.manage().window().maximize();
 		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
 		userHelper = new UserHelper(this);

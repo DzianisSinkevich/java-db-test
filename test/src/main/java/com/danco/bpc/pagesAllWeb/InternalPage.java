@@ -13,8 +13,8 @@ import org.openqa.selenium.support.FindBy;
 public class InternalPage extends AnyPage {
 	private Logger log = Logger.getLogger("file");
 	
-	public static final String HOME_LINK = "nav a[href = 'http://10.7.32.216:9080/sv/login.jsf']";
-//	public static final String HOME_LINK = "nav a[href = 'http://rdslicdes.redsys.es:21100/sv/login.jsf']";
+//	public static final String HOME_LINK = "nav a[href = 'http://10.7.32.216:9080/sv/login.jsf']";
+	public static final String HOME_LINK = "nav a[href = 'http://rdslicdes.redsys.es:21100/sv/login.jsf']";
 	
 	public static final String MENU_GENERAL_VIEW_OPERATIONS = "//*[text()='General View Operations']";
 	public static final String MENU_GENERAL_VIEW_OPERATIONS_ACQUIRING_OPERATIONS = "//*[text()='Acquiring Operations']";

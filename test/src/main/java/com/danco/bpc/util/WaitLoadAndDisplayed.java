@@ -24,12 +24,12 @@ public class WaitLoadAndDisplayed {
 	}
 
 	public static void fullCicleWait(WebDriver driver, WebElement el) throws InterruptedException {
-		log.info("-- Start Wait Visibility load icon");
+		// log.info("-- Start Wait Visibility load icon");
 		waitVisibility(driver, el);
-		log.info("-- Wait Visibility is finisht");
-		log.info("-- Start Wait Invisibility load icon");
+		// log.info("-- Wait Visibility is finisht");
+		// log.info("-- Start Wait Invisibility load icon");
 		waitInvisibility(driver, el);
-		log.info("-- Wait Invisibility is finisht");
+		// log.info("-- Wait Invisibility is finisht");
 	}
 
 	public static void waitVisibility(WebDriver driver, WebElement el) throws InterruptedException {
@@ -42,10 +42,10 @@ public class WaitLoadAndDisplayed {
 		// }
 		// }
 		try {
-			(new WebDriverWait(driver, 3)).until(new ExpectedCondition<Boolean>() {
+			(new WebDriverWait(driver, 2)).until(new ExpectedCondition<Boolean>() {
 				public Boolean apply(WebDriver d) {
 					try {
-						System.err.println("Start visibility wait");
+						// System.err.println("Start visibility wait");
 						return d.findElement(By.xpath(".//div[@id='waitDiv']")).isDisplayed();
 					} catch (NoSuchElementException e) {
 						return false;
@@ -69,7 +69,7 @@ public class WaitLoadAndDisplayed {
 		(new WebDriverWait(driver, 10)).until(new ExpectedCondition<Boolean>() {
 			public Boolean apply(WebDriver d) {
 				try {
-					System.err.println("Start invisibility wait");
+					// System.err.println("Start invisibility wait");
 					return !d.findElement(By.xpath(".//div[@id='waitDiv']")).isDisplayed();
 				} catch (NoSuchElementException e) {
 					return true;
