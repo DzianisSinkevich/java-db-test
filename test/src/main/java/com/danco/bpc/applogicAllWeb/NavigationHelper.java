@@ -130,21 +130,26 @@ public class NavigationHelper extends DriverBasedHelper implements INavigationHe
 		List<String> sessionsNumber = new ArrayList<String>();
 		List<String> sessionsOpenDate = new ArrayList<String>();
 		List<String> sessionsStatuses = new ArrayList<String>();
+		int countCompletedClosed = 0;
 
 		pages.monitoringLotesPage.searchButtonClick();
 		pages.monitoringLotesPage.selectMaxRowNum();
-		// sessions.addAll(pages.monitoringLotesPage.readSessions());
-		// log.info("-- Read all Session in table is successfully");
-		// log.info("-- Count sessions = '" + sessions.size() + "'");
-		sessionsNumber.addAll(pages.monitoringLotesPage.readSessionsNumber());
-		log.info("-- Read all Session Number in table is successfully");
-		log.info("-- Count sessionsNumber = '" + sessionsNumber.size() + "'");
-		// sessionsOpenDate.addAll(pages.monitoringLotesPage.readSessionsOpenDate());
-		// log.info("-- Read all Open Date in table is successfully");
-		// log.info("-- Count sessionsOpenDate = '" + sessionsOpenDate.size() + "'");
-		sessionsStatuses.addAll(pages.monitoringLotesPage.readSessionsStatuses());
-		log.info("-- Read all Statuses in table is successfully");
-		log.info("-- Count sessionsStatuses = '" + sessionsStatuses.size() + "'");
+		for (int i = 1; i <= pages.monitoringLotesPage.countPage(); i++) {
+			pages.monitoringLotesPage.pageClick(i);
+			
+			// sessions.addAll(pages.monitoringLotesPage.readSessions());
+			// log.info("-- Read all Session in table is successfully");
+			// log.info("-- Count sessions = '" + sessions.size() + "'");
+			sessionsNumber.addAll(pages.monitoringLotesPage.readSessionsNumber());
+			log.info("-- Read all Session Number in table is successfully");
+			log.info("-- Count sessionsNumber = '" + sessionsNumber.size() + "'");
+			// sessionsOpenDate.addAll(pages.monitoringLotesPage.readSessionsOpenDate());
+			// log.info("-- Read all Open Date in table is successfully");
+			// log.info("-- Count sessionsOpenDate = '" + sessionsOpenDate.size() + "'");
+			sessionsStatuses.addAll(pages.monitoringLotesPage.readSessionsStatuses());
+			log.info("-- Read all Statuses in table is successfully");
+			log.info("-- Count sessionsStatuses = '" + sessionsStatuses.size() + "'");
+		}
 		openIOOperationTMTPage();
 		if (sessionsStatuses.size() > 0) {
 			log.info("-- Amount of Session more then 0");
@@ -170,6 +175,7 @@ public class NavigationHelper extends DriverBasedHelper implements INavigationHe
 								pages.iOOperationsTMTPage.teTrSaveClick();
 								pages.iOOperationsTMTPage.tabTotalsTrButtonClick().trNetPositionSendKeys("" + random.nextInt(9999) + 1);
 								pages.iOOperationsTMTPage.teTrSaveClick();
+								countCompletedClosed++;
 							} else {
 								log.error("-- Validation Status field is failed. Status not 'ACTIVE'");
 							}
@@ -184,6 +190,7 @@ public class NavigationHelper extends DriverBasedHelper implements INavigationHe
 		} else {
 			log.error("-- Amount of Session equals 0");
 		}
+		log.info("COUNT OF CLOSED SESSIONS - " + countCompletedClosed);
 	}
 
 }

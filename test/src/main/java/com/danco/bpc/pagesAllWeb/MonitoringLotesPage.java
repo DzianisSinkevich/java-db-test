@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -24,6 +25,9 @@ public class MonitoringLotesPage extends AnyPage {
 	public static final String FILTER_LOTE = ".//*[@id='searchForm:lotIdFilter']";
 
 	public static final String TABLE_ROWS_NUM = ".//*[@id='reportsBtnForm:rows_num']";
+	public static final String TABLE_PAGES_NUM = ".//*[@id='reportsBtnForm:pagesNum']/span[1]";
+	public static final String TABLE_PAGES_PREFIX = ".//*[@id='reportsBtnForm:dsreports_table']/tbody/tr/td[";
+	public static final String TABLE_PAGES_POSTFIX = "]";
 	public static final String TABLE_SESSION_READ = "//table[@class='extdt-table-layout res-table']//tr[contains(@id,'searchResultForm:searchResultTable:n:')]/td[contains(@id,':id')]";
 	public static final String TABLE_SESSION_NUMBER_READ = "//table[@class='extdt-table-layout res-table']//tr[contains(@id,'searchResultForm:searchResultTable:n:')]/td[contains(@id,':sessionNumber')]";
 	public static final String TABLE_STATUS_READ = "//table[@class='extdt-table-layout res-table']//tr[contains(@id,'searchResultForm:searchResultTable:n:')]/td[contains(@id,':status')]";
@@ -48,6 +52,9 @@ public class MonitoringLotesPage extends AnyPage {
 
 	@FindBy(xpath = TABLE_ROWS_NUM)
 	private WebElement tableRowsNum;
+
+	@FindBy(xpath = TABLE_PAGES_NUM)
+	private WebElement tablePagesNum;
 
 	@FindBy(xpath = TABLE_SESSION_READ)
 	private List<WebElement> tableSession;
@@ -106,7 +113,7 @@ public class MonitoringLotesPage extends AnyPage {
 	public List<String> readSessions() {
 		List<String> sessions = new ArrayList<String>();
 		log.info("-- Read all Session in table");
-		for (WebElement el: tableSession){
+		for (WebElement el : tableSession) {
 			sessions.add(el.getText());
 		}
 		return sessions;
@@ -115,7 +122,7 @@ public class MonitoringLotesPage extends AnyPage {
 	public List<String> readSessionsNumber() {
 		List<String> sessionsNumber = new ArrayList<String>();
 		log.info("-- Read all Session Number in table");
-		for (WebElement el: tableSessionNumber){
+		for (WebElement el : tableSessionNumber) {
 			sessionsNumber.add(el.getText());
 		}
 		return sessionsNumber;
@@ -124,7 +131,7 @@ public class MonitoringLotesPage extends AnyPage {
 	public List<String> readSessionsOpenDate() {
 		List<String> sessionsOperDate = new ArrayList<String>();
 		log.info("-- Read all Open Date in table");
-		for (WebElement el: tableOpenDate){
+		for (WebElement el : tableOpenDate) {
 			sessionsOperDate.add(el.getText());
 		}
 		return sessionsOperDate;
@@ -133,9 +140,20 @@ public class MonitoringLotesPage extends AnyPage {
 	public List<String> readSessionsStatuses() {
 		List<String> sessionsStatuses = new ArrayList<String>();
 		log.info("-- Read all Statuses in table");
-		for (WebElement el: tableStatuses){
+		for (WebElement el : tableStatuses) {
 			sessionsStatuses.add(el.getText());
 		}
 		return sessionsStatuses;
+	}
+
+	public Integer countPage() {
+		return Integer.parseInt(tablePagesNum.getText());
+	}
+
+	public MonitoringLotesPage pageClick(Integer pageNum) throws InterruptedException {
+		int finalNumPage = 2 + pageNum;
+		driver.findElement(By.xpath(TABLE_PAGES_PREFIX + finalNumPage + TABLE_PAGES_POSTFIX)).click();
+		WaitLoadAndDisplayed.fullCicleWait(driver, waitContentIndicator);
+		return pages.monitoringLotesPage;
 	}
 }
