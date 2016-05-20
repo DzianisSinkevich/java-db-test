@@ -1,5 +1,8 @@
 package com.danco.bpc.pagesAllWeb;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.log4j.Logger;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -24,6 +27,7 @@ public class IOOperationsTMTPage extends AnyPage {
 
 	public static final String TAB_DETAILS = "//div[@class='first tab-label']//*[text()='Details']";
 	public static final String TAB_TOTALS = "//div[@class='first tab-label']//span[@title='Totals']";
+	public static final String TAB_TOTALS_EXIST_TOTALS = "//table[@id='tmtTotalsForm:tmtTotalsTable:n']/tbody[@id='tmtTotalsForm:tmtTotalsTable:tb']/tr[*]/td[*]/div[@class='extdt-cell-div']";
 	public static final String TAB_TOTALS_TE_BUTTON = "//div[@class='bottom_search_result_left_buttons']/*/*[text()='Add TE total']";
 	public static final String TAB_TOTALS_TE_NET_POSITION = "//input[@id='tmtTotalAddForm:netPosition']";
 	public static final String TAB_TOTALS_TE_PAYMENT_AMOUNTS = "//input[@id='tmtTotalAddForm:paymentAmounts']";
@@ -57,6 +61,9 @@ public class IOOperationsTMTPage extends AnyPage {
 	@FindBy(xpath = TAB_TOTALS)
 	private WebElement tabTotals;
 
+	@FindBy(xpath = TAB_TOTALS_EXIST_TOTALS)
+	private List<WebElement> existTotals;
+
 	@FindBy(xpath = TAB_TOTALS_TE_BUTTON)
 	private WebElement tabTotalsTeButton;
 
@@ -84,6 +91,14 @@ public class IOOperationsTMTPage extends AnyPage {
 	@FindBy(xpath = TABLE_STATUS_READ)
 	private WebElement firstRowStatus;
 
+	public List<String> existTotalsCheck() throws InterruptedException {
+		List<String> existTotalsText = new ArrayList<String>();
+		for (WebElement el: existTotals){
+			existTotalsText.add(el.getText());
+		}
+		return existTotalsText;
+	}
+	
 	public IOOperationsTMTPage searchButtonClick() throws InterruptedException {
 		filterSerachButton.click();
 		WaitLoadAndDisplayed.fullCicleWait(driver, waitContentIndicator);

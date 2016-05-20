@@ -130,13 +130,17 @@ public class NavigationHelper extends DriverBasedHelper implements INavigationHe
 		List<String> sessionsNumber = new ArrayList<String>();
 		List<String> sessionsOpenDate = new ArrayList<String>();
 		List<String> sessionsStatuses = new ArrayList<String>();
+		List<String> existTotals = new ArrayList<String>();
 		int countCompletedClosed = 0;
+		String s = "";
+		boolean te = false;
+		boolean tr = false;
 
 		pages.monitoringLotesPage.searchButtonClick();
 		pages.monitoringLotesPage.selectMaxRowNum();
 		for (int i = 1; i <= pages.monitoringLotesPage.countPage(); i++) {
 			pages.monitoringLotesPage.pageClick(i);
-			
+
 			// sessions.addAll(pages.monitoringLotesPage.readSessions());
 			// log.info("-- Read all Session in table is successfully");
 			// log.info("-- Count sessions = '" + sessions.size() + "'");
@@ -170,11 +174,31 @@ public class NavigationHelper extends DriverBasedHelper implements INavigationHe
 							log.info("-- Validation Status field. Expected 'ACTIVE'");
 							if (pages.iOOperationsTMTPage.readFirstRowStatus().equals("ACTIVE")) {
 								log.info("-- Validation Status field is successfully. Status is 'ACTIVE'");
-								pages.iOOperationsTMTPage.firstRowClick().tabTotalsClick().tabTotalsTeButtonClick()
-										.teNetPositionSendKeys("" + random.nextInt(9999) + 1);
-								pages.iOOperationsTMTPage.teTrSaveClick();
-								pages.iOOperationsTMTPage.tabTotalsTrButtonClick().trNetPositionSendKeys("" + random.nextInt(9999) + 1);
-								pages.iOOperationsTMTPage.teTrSaveClick();
+								pages.iOOperationsTMTPage.firstRowClick().tabTotalsClick();
+								existTotals.addAll(pages.iOOperationsTMTPage.existTotalsCheck());
+								String totalsText = "";
+								for (String item : existTotals) {
+									totalsText = totalsText + item + " ";
+								}
+								System.out.println("totalsText = " + totalsText);
+								for (int j = 0; j < existTotals.size(); j++) {
+									System.out.println("existTotals.get(j)" + existTotals.get(j));
+									s = existTotals.get(j);
+									if (s.equals("TE")) {
+										te = true;
+									}
+									if (s.equals("TR")) {
+										tr = true;
+									}
+								}
+								if (!te) {
+									pages.iOOperationsTMTPage.tabTotalsTeButtonClick().teNetPositionSendKeys("" + random.nextInt(9999) + 1);
+									pages.iOOperationsTMTPage.teTrSaveClick();
+								}
+								if (!tr) {
+									pages.iOOperationsTMTPage.tabTotalsTrButtonClick().trNetPositionSendKeys("" + random.nextInt(9999) + 1);
+									pages.iOOperationsTMTPage.teTrSaveClick();
+								}
 								countCompletedClosed++;
 							} else {
 								log.error("-- Validation Status field is failed. Status not 'ACTIVE'");
@@ -191,6 +215,22 @@ public class NavigationHelper extends DriverBasedHelper implements INavigationHe
 			log.error("-- Amount of Session equals 0");
 		}
 		log.info("COUNT OF CLOSED SESSIONS - " + countCompletedClosed);
+	}
+
+	@Override
+	public void testTMTpage() throws InterruptedException {
+		List<String> existTotals = new ArrayList<String>();
+		String totalsText = "";
+		
+		openIOOperationTMTPage();
+		pages.iOOperationsTMTPage.searchButtonClick();
+		pages.iOOperationsTMTPage.firstRowClick().tabTotalsClick();
+		existTotals.addAll(pages.iOOperationsTMTPage.existTotalsCheck());
+		for (String item : existTotals) {
+			totalsText = totalsText + item + " ";
+		}
+		System.out.println("totalsText = " + totalsText);
+		
 	}
 
 }

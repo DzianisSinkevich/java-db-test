@@ -47,4 +47,6 @@ public interface INavigationHelper {
 	String waitForContainerExecution() throws InterruptedException;
 
 	void searchAndCloseTotalSessions() throws InterruptedException;
+	
+	void testTMTpage() throws InterruptedException;
 }
