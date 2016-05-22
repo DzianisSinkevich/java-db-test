@@ -52,7 +52,7 @@ public class MonitoringLotesPage extends AnyPage {
 
 	@FindBy(xpath = TABLE_ROWS_NUM)
 	private WebElement tableRowsNum;
-
+ 
 	@FindBy(xpath = TABLE_PAGES_NUM)
 	private WebElement tablePagesNum;
 

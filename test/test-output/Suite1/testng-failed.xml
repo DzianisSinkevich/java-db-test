@@ -7,13 +7,4 @@
       <class name="db.tests.allWeb.CloseSessionLotes"/>
     </classes>
   </test> <!-- Test001 -->
-  <test name="Test001(failed)">
-    <classes>
-      <class name="db.tests.allWeb.CloseSessionLotes">
-        <methods>
-          <include name="readAndCloseActiveSession"/>
-        </methods>
-      </class> <!-- db.tests.allWeb.CloseSessionLotes -->
-    </classes>
-  </test> <!-- Test001(failed) -->
 </suite> <!-- Failed suite [Suite1] -->

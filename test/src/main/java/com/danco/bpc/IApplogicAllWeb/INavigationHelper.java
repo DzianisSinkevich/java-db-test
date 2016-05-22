@@ -48,5 +48,7 @@ public interface INavigationHelper {
 
 	void searchAndCloseTotalSessions() throws InterruptedException;
 	
+	void searchAndCloseTotalSessionsOnlyTMTPage() throws InterruptedException;
+	
 	void testTMTpage() throws InterruptedException;
 }

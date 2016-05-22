@@ -17,9 +17,9 @@ public class CloseSessionLotes extends TestBaseAll {
 		appAll = new ApplicationManager();
 		log.info("-- Start application manager is successfully");
 		
-//		appAll.getNavigationHelper().testTMTpage();
+		appAll.getNavigationHelper().searchAndCloseTotalSessionsOnlyTMTPage();
 		
-		appAll.getNavigationHelper().openMonitoringLotesPage();
-		appAll.getNavigationHelper().searchAndCloseTotalSessions();
+//		appAll.getNavigationHelper().openMonitoringLotesPage();
+//		appAll.getNavigationHelper().searchAndCloseTotalSessions();
 	}
 }
