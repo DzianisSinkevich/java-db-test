@@ -12,6 +12,7 @@ public class AOpenAllWeb extends TestBaseAll {
 	public void openWeb() {
 		appAll = new ApplicationManager();
 		appAll.getNavigationHelper().openMainPage();
+		System.out.println("Open web!");
 		appAll.getUserHelper().loginAs(ADMIN);
 	}
 }
