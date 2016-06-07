@@ -37,6 +37,7 @@ public class InternalPage extends AnyPage {
 	
 	public static final String MENU_INPUT_OUTPUT_OPERATIONS = "//*[text()='Input/Output Operations']";
 	public static final String MENU_INPUT_OUTPUT_OPERATIONS_TMA = "//*[text()='TMA input operations']";
+//	public static final String MENU_INPUT_OUTPUT_OPERATIONS_TMT = "//*[text()='Transactional input totals']";
 	public static final String MENU_INPUT_OUTPUT_OPERATIONS_TMT = "//*[text()='TMT input totals']";
 	public static final String MENU_INPUT_OUTPUT_OPERATIONS_PRICE = "//*[text()='Format: PRICE']";
 	public static final String MENU_INPUT_OUTPUT_OPERATIONS_VISA = "//*[text()='Format: VISA ']";

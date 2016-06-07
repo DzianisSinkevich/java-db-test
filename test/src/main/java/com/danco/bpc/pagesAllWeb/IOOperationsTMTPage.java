@@ -27,11 +27,11 @@ public class IOOperationsTMTPage extends AnyPage {
 	public static final String FILTER_STATUS = "//*[@id='searchForm:statuses']";
 
 	public static final String TABLE_SESSION_READ = "//table[@class='extdt-table-layout res-table']//tr[contains(@id,'rejectedTmaForm:rejectedTmaTable:n:')]/td[contains(@id,':id')]";
-	public static final String TABLE_ROWS_NUM = ".//*[@id='reportsBtnForm:rows_num']";
+	public static final String TABLE_ROWS_NUM = ".//*[@id='rejectedTmaBtnForm:rows_num']";
 	public static final String TABLE_FIRST_ROW = ".//tr[@id='rejectedTmaForm:rejectedTmaTable:n:0']";
 	public static final String TABLE_PAGES_NUM = ".//*[@id='rejectedTmaBtnForm:pagesNum']/span[1]";
 	public static final String TABLE_RECORS_NUM = ".//*[@id='rejectedTmaBtnForm:pagesNum']/span[3]";
-	public static final String TABLE_PAGES_PREFIX = ".//*[@id='reportsBtnForm:dsreports_table']/tbody/tr/td[";
+	public static final String TABLE_PAGES_PREFIX = ".//*[@id='rejectedTmaBtnForm:rejectedTmaDs_table']/tbody/tr/td[";
 	public static final String TABLE_PAGES_POSTFIX = "]";
 
 	public static final String TAB_DETAILS = "//div[@class='first tab-label']//*[text()='Details']";
@@ -131,10 +131,9 @@ public class IOOperationsTMTPage extends AnyPage {
 		filterStatus.click();
 		log.info("-- Click to Status dropdown on filters is successfully");
 		log.info("-- Sendkeys data in to Status dropdown");
-		// filterStatus.sendKeys("a", Keys.ENTER);
-		// WaitLoadAndDisplayed.fullCicleWait(driver, waitContentIndicator);
-		filterStatus.sendKeys("c");
-		filterStatus.sendKeys("c", Keys.ENTER);
+		filterStatus.sendKeys("a", Keys.ENTER);
+		// filterStatus.sendKeys("c");
+		// filterStatus.sendKeys("c", Keys.ENTER);
 		WaitLoadAndDisplayed.fullCicleWait(driver, waitContentIndicator);
 		log.info("-- Sendkeys data in to Status dropdown is successfully");
 		return pages.iOOperationsTMTPage;

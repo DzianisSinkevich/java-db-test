@@ -20,6 +20,6 @@ public class CloseSessionLotes extends TestBaseAll {
 		appAll.getNavigationHelper().searchAndCloseTotalSessionsOnlyTMTPage();
 		
 //		appAll.getNavigationHelper().openMonitoringLotesPage();
-//		appAll.getNavigationHelper().searchAndCloseTotalSessions();
+//		appAll.getNavigationHelper().testTMTpage();
 	}
 }
