@@ -152,7 +152,7 @@
 				<version>2.19.1</version>
 				<configuration>
 					<suiteXmlFiles>
-						<suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
+						<suiteXmlFile>src/test/resources/${env.TEST_PARAM}</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
@@ -182,6 +182,7 @@
 			<id>allWeb</id>
 			<properties>
 				<site.url>http://10.7.32.216:9080/sv/login.jsf</site.url>
+				<xml.name>${env.TEST_PARAM}</xml.name>
 			</properties>
 		</profile>
 		<profile>
