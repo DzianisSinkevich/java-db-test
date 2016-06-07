@@ -182,7 +182,6 @@
 			<id>allWeb</id>
 			<properties>
 				<site.url>http://10.7.32.216:9080/sv/login.jsf</site.url>
-				<xml.name>${env.TEST_PARAM}</xml.name>
 			</properties>
 		</profile>
 		<profile>
