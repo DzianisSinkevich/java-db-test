@@ -1,19 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite1]" data-provider-thread-count="1">
-  <test name="Test001">
+  <test name="OpenWeb">
     <classes>
       <class name="db.tests.allWeb.AOpenAllWeb"/>
-      <class name="db.tests.allWeb.CloseSessionLotes"/>
     </classes>
-  </test> <!-- Test001 -->
-  <test name="Test001(failed)">
-    <classes>
-      <class name="db.tests.allWeb.CloseSessionLotes">
-        <methods>
-          <include name="readAndCloseActiveSession"/>
-        </methods>
-      </class> <!-- db.tests.allWeb.CloseSessionLotes -->
-    </classes>
-  </test> <!-- Test001(failed) -->
+  </test> <!-- OpenWeb -->
 </suite> <!-- Failed suite [Suite1] -->
