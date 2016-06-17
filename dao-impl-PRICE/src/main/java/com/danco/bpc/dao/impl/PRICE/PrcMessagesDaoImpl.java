@@ -7,7 +7,6 @@ import org.hibernate.Transaction;
 
 import com.danco.bpc.dao.api.PRICE.IPrcMessagesDao;
 import com.danco.bpc.dao.impl.common.AbstractDaoPriceImpl;
-import com.danco.bpc.entity.PRICE.PrcFiles;
 import com.danco.bpc.entity.PRICE.PrcMessages;
 
 public class PrcMessagesDaoImpl extends AbstractDaoPriceImpl<PrcMessages>implements IPrcMessagesDao {

@@ -68,4 +68,8 @@ public interface IPriceHelper {
 	public String p11generator() throws Exception;
 	
 	public String p12generator() throws Exception;
+	
+	public void listIncomingFiles() throws Exception;
+	
+	public ArrayList<String> listIncomingFilesId() throws Exception;
 }

@@ -1,5 +1,7 @@
 package com.danco.bpc.dao.impl.PRICE;
 
+import java.util.ArrayList;
+
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
@@ -32,6 +34,27 @@ public class PrcFilesDaoImpl extends AbstractDaoPriceImpl<PrcFiles>implements IP
 			txn.commit();
 			System.out.println(prcFiles);
 			return prcFiles;
+		} catch (HibernateException e) {
+			if (null != txn) {
+				txn.rollback();
+			}
+			e.printStackTrace();
+			throw new Exception("ERROR");
+		}
+	}
+
+	@Override
+	public ArrayList<PrcFiles> listIncomingFiles() throws Exception {
+		Transaction txn = null;
+		try {
+			Session session = sessionFactory.getCurrentSession();
+			txn = session.beginTransaction();
+			String hql = "from PrcFiles where type = 'FLTP1' and status = 'FLST2'";
+			Query query = session.createQuery(hql);
+//			query.setLong("fId", fileId);
+			ArrayList<PrcFiles> listIncomingFiles = (ArrayList<PrcFiles>) query.list();
+			txn.commit();
+			return listIncomingFiles;
 		} catch (HibernateException e) {
 			if (null != txn) {
 				txn.rollback();

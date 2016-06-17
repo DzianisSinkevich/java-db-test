@@ -16,7 +16,8 @@ public class PriceHelper implements IPriceHelper {
 
 	public PriceHelper(DBManager dbManager) {
 	}
-
+	ArrayList<PrcFiles> incomingFiles = new ArrayList<PrcFiles>();
+	
 	private PrcFilesServiceImpl prcFilesService = new PrcFilesServiceImpl();
 	private PrcMessagesServiceImpl prcMessagesService = new PrcMessagesServiceImpl();
 	private PrcRawMessagesServiceImpl prcRawMessagesService = new PrcRawMessagesServiceImpl();
@@ -345,5 +346,19 @@ public class PriceHelper implements IPriceHelper {
 	public String p12generator() throws Exception {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public void listIncomingFiles() throws Exception {
+		incomingFiles = prcFilesService.listIncomingFiles();
+	}
+
+	@Override
+	public ArrayList<String> listIncomingFilesId() throws Exception {
+		ArrayList<String> incomingFilesId = new ArrayList<String>();
+		for (PrcFiles el : incomingFiles){
+			incomingFilesId.add(String.valueOf(el.getId()));
+		}
+		return incomingFilesId;
 	}
 }

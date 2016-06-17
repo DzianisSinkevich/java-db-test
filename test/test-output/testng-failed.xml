@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite1]" data-provider-thread-count="1">
-  <test name="OpenWeb">
+  <test name="Test001">
     <classes>
-      <class name="db.tests.allWeb.AOpenAllWeb"/>
+      <class name="db.tests.PRICE.IncomingValidation"/>
     </classes>
-  </test> <!-- OpenWeb -->
+  </test> <!-- Test001 -->
 </suite> <!-- Failed suite [Suite1] -->

@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite1" duration-ms="14795" started-at="2016-06-07T08:55:48Z" finished-at="2016-06-07T08:56:03Z">
+  <suite name="Suite1" duration-ms="4766" started-at="2016-06-17T07:25:16Z" finished-at="2016-06-17T07:25:21Z">
     <groups>
     </groups>
-    <test name="OpenWeb" duration-ms="14795" started-at="2016-06-07T08:55:48Z" finished-at="2016-06-07T08:56:03Z">
-      <class name="db.tests.allWeb.AOpenAllWeb">
-        <test-method status="PASS" signature="openWeb()[pri:0, instance:db.tests.allWeb.AOpenAllWeb@39fb3ab6]" name="openWeb" duration-ms="14772" started-at="2016-06-07T11:55:48Z" finished-at="2016-06-07T11:56:03Z">
+    <test name="Test001" duration-ms="4766" started-at="2016-06-17T07:25:16Z" finished-at="2016-06-17T07:25:21Z">
+      <class name="db.tests.PRICE.IncomingValidation">
+        <test-method status="PASS" signature="raedFilesId()[pri:0, instance:db.tests.PRICE.IncomingValidation@6e521c1e]" name="raedFilesId" duration-ms="4749" started-at="2016-06-17T10:25:16Z" finished-at="2016-06-17T10:25:21Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- openWeb -->
-      </class> <!-- db.tests.allWeb.AOpenAllWeb -->
-    </test> <!-- OpenWeb -->
+        </test-method> <!-- raedFilesId -->
+      </class> <!-- db.tests.PRICE.IncomingValidation -->
+    </test> <!-- Test001 -->
   </suite> <!-- Suite1 -->
 </testng-results>

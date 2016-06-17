@@ -1,5 +1,7 @@
 package com.danco.bpc.service.impl.SERVICES;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,5 +20,10 @@ public class PrcFilesServiceImpl extends DataServiceImpl<PrcFiles>implements IPr
 	@Override
 	public PrcFiles selectFile(String filename) throws Exception {
 		return genericDao.selectFile(filename);
+	}
+
+	@Override
+	public ArrayList<PrcFiles> listIncomingFiles() throws Exception {
+		return genericDao.listIncomingFiles();
 	}
 }
