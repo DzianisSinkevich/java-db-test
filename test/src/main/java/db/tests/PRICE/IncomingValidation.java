@@ -6,11 +6,11 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.annotations.Test;
 
+import pages.TestBaseAll;
+
 import com.danco.bpc.applogicDB.DBManager;
 import com.danco.bpc.entity.PRICE.PrcFiles;
 import com.danco.bpc.service.impl.SERVICES.PrcFilesServiceImpl;
-
-import pages.TestBaseAll;
 
 public class IncomingValidation extends TestBaseAll {
 	private PrcFilesServiceImpl prcFilesService = new PrcFilesServiceImpl();
@@ -32,8 +32,12 @@ public class IncomingValidation extends TestBaseAll {
 	@Test
 	public void bCompareRecorsCount() throws Exception {
 		for (int i = 0; i < filesList.size(); i++) {
-			assert(db.getPriceHelper().amountMessagesInPrcMessages(filesList.get(i).getId()) != db.getPriceHelper()
-					.amountMessagesInPrcRawMessages(filesList.get(i).getId()));
+			Long prcMess = db.getPriceHelper().amountMessagesInPrcMessages(filesList.get(i).getId());
+			Long prcRawMess = db.getPriceHelper().amountMessagesInPrcRawMessages(filesList.get(i).getId());
+			Long totalRecordsInFile = filesList.get(i).getTotalRecords();
+			System.out.println("File amount Mess = " + totalRecordsInFile);
+			assert (prcMess != prcRawMess);
+			assert (prcMess != totalRecordsInFile);
 		}
 	}
 
@@ -41,9 +45,17 @@ public class IncomingValidation extends TestBaseAll {
 	public void cCheckTotalsCalculation() throws Exception {
 		db = new DBManager();
 		for (PrcFiles el : filesList) {
+			messagesFlags.clear();
 			messagesFlags.addAll(db.getPriceHelper().messageFlagsSearch(el.getId()));
+			System.out.println("MessagesFlags.size = " + messagesFlags.size());
+			for (Long el2 : messagesFlags) {
+				System.out.println(el2);
+			}
+			System.out.println("----- START FILE WITH ID " + el.getId() + " -----");
 
-			for (int i = 0; i + 1 < messagesFlags.size(); i++) {
+			for (int i = 0; i + 2 < messagesFlags.size(); i++) {
+				System.out.print("----- START 1544 MESSAGE WITH ID " + messagesFlags.get(i + 1) + " -- ");
+				System.out.println(" Start ID: " + messagesFlags.get(i) + " - Finish ID: " + messagesFlags.get(i + 1) );
 				db.getPriceHelper().compareTotals(el.getId(), messagesFlags.get(i), messagesFlags.get(i + 1));
 			}
 		}

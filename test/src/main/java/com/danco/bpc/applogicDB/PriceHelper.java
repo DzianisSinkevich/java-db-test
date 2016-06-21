@@ -25,6 +25,15 @@ public class PriceHelper implements IPriceHelper {
 	private PrcMessagesErrorsServiceImpl prcMessagesErrorsService = new PrcMessagesErrorsServiceImpl();
 
 	@Override
+	public boolean comparer(Long first, Long second) throws Exception {
+		if (first.equals(second)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	@Override
 	public String fileDailyName() {
 		Calendar calendar = Calendar.getInstance();
 
@@ -51,7 +60,8 @@ public class PriceHelper implements IPriceHelper {
 	@Override
 	public Calendar currentDate() {
 		Calendar currDate = Calendar.getInstance();
-		currDate.set(currDate.get(Calendar.YEAR), currDate.get(Calendar.MONTH), currDate.get(Calendar.DAY_OF_MONTH), 0, 0, 0);
+		currDate.set(currDate.get(Calendar.YEAR), currDate.get(Calendar.MONTH), currDate.get(Calendar.DAY_OF_MONTH), 0,
+				0, 0);
 		currDate.set(Calendar.MILLISECOND, 0);
 		System.out.println("Current date = " + currDate.getTimeInMillis());
 		return currDate;
@@ -74,20 +84,22 @@ public class PriceHelper implements IPriceHelper {
 		fileDate.set(Calendar.MINUTE, 0);
 		fileDate.set(Calendar.HOUR_OF_DAY, 0);
 		System.out.println("fileDate - " + fileDate.getTimeInMillis() + " currDate - " + currDate.getTimeInMillis());
-		assert(prcFile.getType().equals("FLTP1"));
-		assert(prcFile.getStatus().equals("FLST1"));
-		assert(prcFile.getTotalRecords().equals(4052L));
-		assert(fileDate.equals(currDate));
+		assert (prcFile.getType().equals("FLTP1"));
+		assert (prcFile.getStatus().equals("FLST1"));
+		assert (prcFile.getTotalRecords().equals(4052L));
+		assert (fileDate.equals(currDate));
 	}
 
 	@Override
-	public Long sumPrcMessagesP04(Long fileId, int recordType1, int recordType2, int minPrcc, int maxPrcc) throws Exception {
+	public Long sumPrcMessagesP04(Long fileId, int recordType1, int recordType2, int minPrcc, int maxPrcc)
+			throws Exception {
 		Long sumP04 = prcMessagesService.sumPrcMessagesP04(fileId, recordType1, recordType2, minPrcc, maxPrcc);
 		return sumP04;
 	}
 
 	@Override
-	public Long sumPrcMessagesP05(Long fileId, int recordType1, int recordType2, int minPrcc, int maxPrcc) throws Exception {
+	public Long sumPrcMessagesP05(Long fileId, int recordType1, int recordType2, int minPrcc, int maxPrcc)
+			throws Exception {
 		Long sumP05 = prcMessagesService.sumPrcMessagesP05(fileId, recordType1, recordType2, minPrcc, maxPrcc);
 		return sumP05;
 	}
@@ -224,7 +236,7 @@ public class PriceHelper implements IPriceHelper {
 
 	@Override
 	public boolean compareTotals(Long fileId, Long startId, Long endId) throws Exception {
-		PrcMessages get1544 = prcMessagesService.get1544(fileId);
+		PrcMessages get1544 = prcMessagesService.get1544(endId);
 		boolean isError = false;
 		Long sumPrcMessagesS74 = sumPrcMessagesS74(fileId, startId, endId);
 		Long sumPrcMessagesS75 = sumPrcMessagesS75(fileId, startId, endId);
@@ -239,29 +251,19 @@ public class PriceHelper implements IPriceHelper {
 		// Long sumPrcMessagesS106 = sumPrcMessagesS106(fileId);
 
 		System.out.println("getS74 = " + get1544.getS74() + ", sum = " + sumPrcMessagesS74);
-		if (!compare(get1544.getS74(), sumPrcMessagesS74)) {
-			isError = true;
-		}
+		isError = comparer(get1544.getS74(), sumPrcMessagesS74);
 		System.out.println(isError);
 		System.out.println("getS75 = " + get1544.getS75() + ", sum = " + sumPrcMessagesS75);
-		if (!compare(get1544.getS75(), sumPrcMessagesS75)) {
-			isError = true;
-		}
+		isError = comparer(get1544.getS75(), sumPrcMessagesS75);
 		System.out.println(isError);
 		System.out.println("getS76 = " + get1544.getS76() + ", sum = " + sumPrcMessagesS76);
-		if (!compare(get1544.getS76(), sumPrcMessagesS76)) {
-			isError = true;
-		}
+		isError = comparer(get1544.getS76(), sumPrcMessagesS76);
 		System.out.println(isError);
 		System.out.println("getS77 = " + get1544.getS77() + ", sum = " + sumPrcMessagesS77);
-		if (!compare(get1544.getS77(), sumPrcMessagesS77)) {
-			isError = true;
-		}
+		isError = comparer(get1544.getS77(), sumPrcMessagesS77);
 		System.out.println(isError);
 		System.out.println("getS85 = " + get1544.getS85() + ", sum = " + sumPrcMessagesS85);
-		if (!compare(get1544.getS85(), sumPrcMessagesS85)) {
-			isError = true;
-		}
+		isError = comparer(get1544.getS85(), sumPrcMessagesS85);
 		System.out.println(isError);
 		// System.out.println("getS86 = " + get1544.getS86() + ", sum = " + sumPrcMessagesS86);
 		// if (!compare(get1544.getS86(), sumPrcMessagesS86)) {
@@ -382,8 +384,8 @@ public class PriceHelper implements IPriceHelper {
 		mess1544.addAll(prcMessagesService.get1544list(fileId));
 
 		messageFlags.add(firstMessageInFile(fileId));
-		for (PrcMessages el: mess1544) {
-			messageFlags.add(el.getId());
+		for (int j = 0; j < mess1544.size(); j++) {
+			messageFlags.add(mess1544.get(j).getId());
 		}
 		messageFlags.add(lastMessageInFile(fileId));
 

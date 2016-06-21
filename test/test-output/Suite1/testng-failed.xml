@@ -6,13 +6,4 @@
       <class name="db.tests.PRICE.IncomingValidation"/>
     </classes>
   </test> <!-- Test001 -->
-  <test name="Test001(failed)">
-    <classes>
-      <class name="db.tests.PRICE.IncomingValidation">
-        <methods>
-          <include name="cCheckTotalsCalculation"/>
-        </methods>
-      </class> <!-- db.tests.PRICE.IncomingValidation -->
-    </classes>
-  </test> <!-- Test001(failed) -->
 </suite> <!-- Failed suite [Suite1] -->

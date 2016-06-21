@@ -120,7 +120,7 @@ public class PrcMessagesDaoImpl extends AbstractDaoPriceImpl<PrcMessages>impleme
 		try {
 			Session session = sessionFactory.getCurrentSession();
 			txn = session.beginTransaction();
-			String hql = "select count(*) from PrcMessages m, PrcRawMessages r where m.id=r.id and r.fileId = :fId and (r.type = 1240 or r.type = 1244) and (m.p03>=2000000 and m.p03<=290000) and m.id >= :startId and m.id <= endId";
+			String hql = "select count(*) from PrcMessages m, PrcRawMessages r where m.id=r.id and r.fileId = :fId and (r.type = 1240 or r.type = 1244) and (m.p03>=2000000 and m.p03<=290000) and m.id between :startId and :endId";
 			Query query = session.createQuery(hql);
 			query.setLong("fId", fileId);
 			query.setLong("startId", startId);
@@ -144,7 +144,7 @@ public class PrcMessagesDaoImpl extends AbstractDaoPriceImpl<PrcMessages>impleme
 		try {
 			Session session = sessionFactory.getCurrentSession();
 			txn = session.beginTransaction();
-			String hql = "select count(*) from PrcMessages m, PrcRawMessages r where m.id=r.id and r.fileId = :fId and (r.type = 1440 or r.type = 1444) and (m.p03>=0 and m.p03<=190000) and m.id >= :startId and m.id <= endId";
+			String hql = "select count(*) from PrcMessages m, PrcRawMessages r where m.id=r.id and r.fileId = :fId and (r.type = 1440 or r.type = 1444) and (m.p03>=0 and m.p03<=190000) and m.id between :startId and :endId";
 			Query query = session.createQuery(hql);
 			query.setLong("fId", fileId);
 			query.setLong("startId", startId);
@@ -168,7 +168,7 @@ public class PrcMessagesDaoImpl extends AbstractDaoPriceImpl<PrcMessages>impleme
 		try {
 			Session session = sessionFactory.getCurrentSession();
 			txn = session.beginTransaction();
-			String hql = "select count(*) from PrcMessages m, PrcRawMessages r where m.id=r.id and r.fileId = :fId and (r.type = 1240 or r.type = 1244) and (m.p03>=0 and m.p03<=190000) and m.id >= :startId and m.id <= endId";
+			String hql = "select count(*) from PrcMessages m, PrcRawMessages r where m.id=r.id and r.fileId = :fId and (r.type = 1240 or r.type = 1244) and (m.p03>=0 and m.p03<=190000) and m.id between :startId and :endId";
 			Query query = session.createQuery(hql);
 			query.setLong("fId", fileId);
 			query.setLong("startId", startId);
@@ -192,7 +192,7 @@ public class PrcMessagesDaoImpl extends AbstractDaoPriceImpl<PrcMessages>impleme
 		try {
 			Session session = sessionFactory.getCurrentSession();
 			txn = session.beginTransaction();
-			String hql = "select count(*) from PrcMessages m, PrcRawMessages r where m.id=r.id and r.fileId = :fId and (r.type = 1440 or r.type = 1444) and (m.p03>=200000 and m.p03<=290000) and m.id >= :startId and m.id <= endId";
+			String hql = "select count(*) from PrcMessages m, PrcRawMessages r where m.id=r.id and r.fileId = :fId and (r.type = 1440 or r.type = 1444) and (m.p03>=200000 and m.p03<=290000) and m.id between :startId and :endId";
 			Query query = session.createQuery(hql);
 			query.setLong("fId", fileId);
 			query.setLong("startId", startId);
@@ -216,7 +216,7 @@ public class PrcMessagesDaoImpl extends AbstractDaoPriceImpl<PrcMessages>impleme
 		try {
 			Session session = sessionFactory.getCurrentSession();
 			txn = session.beginTransaction();
-			String hql = "select count(*) from PrcMessages m, PrcRawMessages r where m.id=r.id and r.fileId = :fId and r.type = 1744 and m.id >= :startId and m.id <= endId";
+			String hql = "select count(*) from PrcMessages m, PrcRawMessages r where m.id=r.id and r.fileId = :fId and r.type = 1744 and m.id between :startId and :endId";
 			Query query = session.createQuery(hql);
 			query.setLong("fId", fileId);
 			query.setLong("startId", startId);
@@ -252,7 +252,7 @@ public class PrcMessagesDaoImpl extends AbstractDaoPriceImpl<PrcMessages>impleme
 		try {
 			Session session = sessionFactory.getCurrentSession();
 			txn = session.beginTransaction();
-			String hql = "select m.id from PrcMessages m, PrcRawMessages r where m.id=r.id and r.fileId = :fId and r.type = 1544 order by m.id";
+			String hql = "select m from PrcMessages m, PrcRawMessages r where m.id=r.id and r.fileId = :fId and r.type = 1544 order by m.id";
 			Query query = session.createQuery(hql);
 			query.setLong("fId", fileId);
 			ArrayList<PrcMessages> get1544 = (ArrayList<PrcMessages>) query.list();

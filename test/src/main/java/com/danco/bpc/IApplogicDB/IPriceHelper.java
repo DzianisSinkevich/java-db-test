@@ -15,9 +15,11 @@ public interface IPriceHelper {
 
 	public void checkFilePreferences(PrcFiles prcFile);
 
-	public Long sumPrcMessagesP04(Long fileId, int recordType1, int recordType2, int minPrcc, int maxPrcc) throws Exception;
+	public Long sumPrcMessagesP04(Long fileId, int recordType1, int recordType2, int minPrcc, int maxPrcc)
+			throws Exception;
 
-	public Long sumPrcMessagesP05(Long fileId, int recordType1, int recordType2, int minPrcc, int maxPrcc) throws Exception;
+	public Long sumPrcMessagesP05(Long fileId, int recordType1, int recordType2, int minPrcc, int maxPrcc)
+			throws Exception;
 
 	public Long sumPrcMessagesS86(Long fileId) throws Exception;
 
@@ -48,34 +50,36 @@ public interface IPriceHelper {
 	public String getPrcRawMessagesStatus(String id) throws Exception;
 
 	public ArrayList<String> getIdErrors(Long id) throws Exception;
-	
+
 	public String p11generator() throws Exception;
-	
+
 	public String p12generator() throws Exception;
-	
+
 	public ArrayList<PrcFiles> listIncomingFiles() throws Exception;
-	
+
 	public ArrayList<String> listIncomingFilesId() throws Exception;
 
-	ArrayList<Long> messageFlagsSearch(Long fileId) throws Exception;
+	public ArrayList<Long> messageFlagsSearch(Long fileId) throws Exception;
 
-	Long firstMessageInFile(Long fileId) throws Exception;
+	public Long firstMessageInFile(Long fileId) throws Exception;
 
-	Long lastMessageInFile(Long fileId) throws Exception;
+	public Long lastMessageInFile(Long fileId) throws Exception;
 
-	Long sumPrcMessagesS74(Long fileId, Long startId, Long endId) throws Exception;
+	public Long sumPrcMessagesS74(Long fileId, Long startId, Long endId) throws Exception;
 
-	Long sumPrcMessagesS75(Long fileId, Long startId, Long endId) throws Exception;
+	public Long sumPrcMessagesS75(Long fileId, Long startId, Long endId) throws Exception;
 
-	Long sumPrcMessagesS76(Long fileId, Long startId, Long endId) throws Exception;
+	public Long sumPrcMessagesS76(Long fileId, Long startId, Long endId) throws Exception;
 
-	Long sumPrcMessagesS77(Long fileId, Long startId, Long endId) throws Exception;
+	public Long sumPrcMessagesS77(Long fileId, Long startId, Long endId) throws Exception;
 
-	Long sumPrcMessagesS85(Long fileId, Long startId, Long endId) throws Exception;
+	public Long sumPrcMessagesS85(Long fileId, Long startId, Long endId) throws Exception;
 
-	Long sumPrcMessagesS109(Long fileId, Long startId, Long endId) throws Exception;
+	public Long sumPrcMessagesS109(Long fileId, Long startId, Long endId) throws Exception;
 
-	Long sumPrcMessagesS110(Long fileId, Long startId, Long endId) throws Exception;
+	public Long sumPrcMessagesS110(Long fileId, Long startId, Long endId) throws Exception;
 
 	boolean compareTotals(Long fileId, Long startId, Long endId) throws Exception;
+
+	boolean comparer(Long first, Long second) throws Exception;
 }
