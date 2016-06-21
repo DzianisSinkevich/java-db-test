@@ -23,13 +23,13 @@ public class PrcFilesDaoImpl extends AbstractDaoPriceImpl<PrcFiles>implements IP
 	}
 
 	@Override
-	public PrcFiles selectFile(String filename) throws Exception {
+	public PrcFiles selectFile(String fileId) throws Exception {
 		Transaction txn = null;
 		try {
 			Session session = sessionFactory.getCurrentSession();
 			txn = session.beginTransaction();
 			Criteria criteria = session.createCriteria(PrcFiles.class);
-			criteria.add(Restrictions.eq("fileName", filename));
+			criteria.add(Restrictions.eq("id", fileId));
 			PrcFiles prcFiles = (PrcFiles) criteria.uniqueResult();
 			txn.commit();
 			System.out.println(prcFiles);

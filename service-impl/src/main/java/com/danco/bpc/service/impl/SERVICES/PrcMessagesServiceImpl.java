@@ -1,5 +1,7 @@
 package com.danco.bpc.service.impl.SERVICES;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -26,39 +28,45 @@ public class PrcMessagesServiceImpl extends DataServiceImpl<PrcMessages>implemen
 	}
 
 	@Override
-	public Long sumPrcMessagesS74(Long fileId) throws Exception {
-		return genericDao.sumPrcMessagesS74(fileId);
+	public Long sumPrcMessagesS74(Long fileId, Long startId, Long endId) throws Exception {
+		return genericDao.sumPrcMessagesS74(fileId, startId, endId);
 	}
 
 	@Override
-	public Long sumPrcMessagesS75(Long fileId) throws Exception {
-		return genericDao.sumPrcMessagesS75(fileId);
-	}
-
-	public Long sumPrcMessagesS76(Long fileId) throws Exception {
-		return genericDao.sumPrcMessagesS76(fileId);
+	public Long sumPrcMessagesS75(Long fileId, Long startId, Long endId) throws Exception {
+		return genericDao.sumPrcMessagesS75(fileId, startId, endId);
 	}
 
 	@Override
-	public Long sumPrcMessagesS77(Long fileId) throws Exception {
-		return genericDao.sumPrcMessagesS77(fileId);
+	public Long sumPrcMessagesS76(Long fileId, Long startId, Long endId) throws Exception {
+		return genericDao.sumPrcMessagesS76(fileId, startId, endId);
 	}
 
 	@Override
-	public Long sumPrcMessagesS85(Long fileId) throws Exception {
-		return genericDao.sumPrcMessagesS85(fileId);
+	public Long sumPrcMessagesS77(Long fileId, Long startId, Long endId) throws Exception {
+		return genericDao.sumPrcMessagesS77(fileId, startId, endId);
 	}
 
 	@Override
-	public Long sumPrcMessagesS109(Long fileId) throws Exception {
-		return genericDao.sumPrcMessagesS109(fileId);
+	public Long sumPrcMessagesS85(Long fileId, Long startId, Long endId) throws Exception {
+		return genericDao.sumPrcMessagesS85(fileId, startId, endId);
 	}
 
 	@Override
-	public Long sumPrcMessagesS110(Long fileId) throws Exception {
-		return genericDao.sumPrcMessagesS110(fileId);
+	public Long sumPrcMessagesS109(Long fileId, Long startId, Long endId) throws Exception {
+		return genericDao.sumPrcMessagesS109(fileId, startId, endId);
 	}
 
+	@Override
+	public Long sumPrcMessagesS110(Long fileId, Long startId, Long endId) throws Exception {
+		return genericDao.sumPrcMessagesS110(fileId, startId, endId);
+	}
+
+	@Override
+	public ArrayList<PrcMessages> get1544list(Long fileId) throws Exception{
+		return genericDao.get1544List(fileId);
+	}
+	
 	@Override
 	public PrcMessages get1544(Long fileId) throws Exception{
 		return genericDao.get1544(fileId);
@@ -77,5 +85,15 @@ public class PrcMessagesServiceImpl extends DataServiceImpl<PrcMessages>implemen
 	@Override
 	public Long amountMessagesInPrcMessages(Long fileId) throws Exception {
 		return genericDao.amountMessagesInPrcMessages(fileId);
+	}
+	
+	@Override
+	public Long firstMessageInFile(Long fileId) throws Exception {
+		return genericDao.firstMessage(fileId);
+	}
+
+	@Override
+	public Long lastMessageInFile(Long fileId) throws Exception {
+		return genericDao.lastMessage(fileId);
 	}
 }

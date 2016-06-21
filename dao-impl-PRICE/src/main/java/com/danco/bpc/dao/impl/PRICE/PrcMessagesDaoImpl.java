@@ -1,5 +1,7 @@
 package com.danco.bpc.dao.impl.PRICE;
 
+import java.util.ArrayList;
+
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -16,6 +18,48 @@ public class PrcMessagesDaoImpl extends AbstractDaoPriceImpl<PrcMessages>impleme
 	 */
 	public PrcMessagesDaoImpl() {
 		super(PrcMessages.class);
+	}
+
+	@Override
+	public Long firstMessage(Long fileId) throws Exception {
+		Transaction txn = null;
+		try {
+			Session session = sessionFactory.getCurrentSession();
+			txn = session.beginTransaction();
+			String hql = "select min(m.id) from PrcMessages m, PrcRawMessages r where m.id=r.id and r.fileId = :fId";
+			Query query = session.createQuery(hql);
+			query.setLong("fId", fileId);
+			Long firstMessageInFile = (Long) query.uniqueResult();
+			txn.commit();
+			return firstMessageInFile;
+		} catch (HibernateException e) {
+			if (null != txn) {
+				txn.rollback();
+			}
+			e.printStackTrace();
+			throw new Exception("ERROR");
+		}
+	}
+
+	@Override
+	public Long lastMessage(Long fileId) throws Exception {
+		Transaction txn = null;
+		try {
+			Session session = sessionFactory.getCurrentSession();
+			txn = session.beginTransaction();
+			String hql = "select max(m.id) from PrcMessages m, PrcRawMessages r where m.id=r.id and r.fileId = :fId";
+			Query query = session.createQuery(hql);
+			query.setLong("fId", fileId);
+			Long lastMessageInFile = (Long) query.uniqueResult();
+			txn.commit();
+			return lastMessageInFile;
+		} catch (HibernateException e) {
+			if (null != txn) {
+				txn.rollback();
+			}
+			e.printStackTrace();
+			throw new Exception("ERROR");
+		}
 	}
 
 	@Override
@@ -71,14 +115,16 @@ public class PrcMessagesDaoImpl extends AbstractDaoPriceImpl<PrcMessages>impleme
 	}
 
 	@Override
-	public Long sumPrcMessagesS74(Long fileId) throws Exception {
+	public Long sumPrcMessagesS74(Long fileId, Long startId, Long endId) throws Exception {
 		Transaction txn = null;
 		try {
 			Session session = sessionFactory.getCurrentSession();
 			txn = session.beginTransaction();
-			String hql = "select count(*) from PrcMessages m, PrcRawMessages r where m.id=r.id and r.fileId = :fId and (r.type = 1240 or r.type = 1244) and (m.p03>=2000000 and m.p03<=290000)";
+			String hql = "select count(*) from PrcMessages m, PrcRawMessages r where m.id=r.id and r.fileId = :fId and (r.type = 1240 or r.type = 1244) and (m.p03>=2000000 and m.p03<=290000) and m.id >= :startId and m.id <= endId";
 			Query query = session.createQuery(hql);
 			query.setLong("fId", fileId);
+			query.setLong("startId", startId);
+			query.setLong("endId", endId);
 			Long sumS74 = (Long) query.uniqueResult();
 			txn.commit();
 			// System.out.println("SumS74 = " + sumS74);
@@ -93,14 +139,16 @@ public class PrcMessagesDaoImpl extends AbstractDaoPriceImpl<PrcMessages>impleme
 	}
 
 	@Override
-	public Long sumPrcMessagesS75(Long fileId) throws Exception {
+	public Long sumPrcMessagesS75(Long fileId, Long startId, Long endId) throws Exception {
 		Transaction txn = null;
 		try {
 			Session session = sessionFactory.getCurrentSession();
 			txn = session.beginTransaction();
-			String hql = "select count(*) from PrcMessages m, PrcRawMessages r where m.id=r.id and r.fileId = :fId and (r.type = 1440 or r.type = 1444) and (m.p03>=0 and m.p03<=190000)";
+			String hql = "select count(*) from PrcMessages m, PrcRawMessages r where m.id=r.id and r.fileId = :fId and (r.type = 1440 or r.type = 1444) and (m.p03>=0 and m.p03<=190000) and m.id >= :startId and m.id <= endId";
 			Query query = session.createQuery(hql);
 			query.setLong("fId", fileId);
+			query.setLong("startId", startId);
+			query.setLong("endId", endId);
 			Long sumS75 = (Long) query.uniqueResult();
 			txn.commit();
 			// System.out.println("SumS75 = " + sumS75);
@@ -115,14 +163,16 @@ public class PrcMessagesDaoImpl extends AbstractDaoPriceImpl<PrcMessages>impleme
 	}
 
 	@Override
-	public Long sumPrcMessagesS76(Long fileId) throws Exception {
+	public Long sumPrcMessagesS76(Long fileId, Long startId, Long endId) throws Exception {
 		Transaction txn = null;
 		try {
 			Session session = sessionFactory.getCurrentSession();
 			txn = session.beginTransaction();
-			String hql = "select count(*) from PrcMessages m, PrcRawMessages r where m.id=r.id and r.fileId = :fId and (r.type = 1240 or r.type = 1244) and (m.p03>=0 and m.p03<=190000)";
+			String hql = "select count(*) from PrcMessages m, PrcRawMessages r where m.id=r.id and r.fileId = :fId and (r.type = 1240 or r.type = 1244) and (m.p03>=0 and m.p03<=190000) and m.id >= :startId and m.id <= endId";
 			Query query = session.createQuery(hql);
 			query.setLong("fId", fileId);
+			query.setLong("startId", startId);
+			query.setLong("endId", endId);
 			Long sumS76 = (Long) query.uniqueResult();
 			txn.commit();
 			// System.out.println("SumS76 = " + sumS76);
@@ -137,14 +187,16 @@ public class PrcMessagesDaoImpl extends AbstractDaoPriceImpl<PrcMessages>impleme
 	}
 
 	@Override
-	public Long sumPrcMessagesS77(Long fileId) throws Exception {
+	public Long sumPrcMessagesS77(Long fileId, Long startId, Long endId) throws Exception {
 		Transaction txn = null;
 		try {
 			Session session = sessionFactory.getCurrentSession();
 			txn = session.beginTransaction();
-			String hql = "select count(*) from PrcMessages m, PrcRawMessages r where m.id=r.id and r.fileId = :fId and (r.type = 1440 or r.type = 1444) and (m.p03>=200000 and m.p03<=290000)";
+			String hql = "select count(*) from PrcMessages m, PrcRawMessages r where m.id=r.id and r.fileId = :fId and (r.type = 1440 or r.type = 1444) and (m.p03>=200000 and m.p03<=290000) and m.id >= :startId and m.id <= endId";
 			Query query = session.createQuery(hql);
 			query.setLong("fId", fileId);
+			query.setLong("startId", startId);
+			query.setLong("endId", endId);
 			Long sumS77 = (Long) query.uniqueResult();
 			txn.commit();
 			// System.out.println("SumS77 = " + sumS77);
@@ -159,14 +211,16 @@ public class PrcMessagesDaoImpl extends AbstractDaoPriceImpl<PrcMessages>impleme
 	}
 
 	@Override
-	public Long sumPrcMessagesS85(Long fileId) throws Exception {
+	public Long sumPrcMessagesS85(Long fileId, Long startId, Long endId) throws Exception {
 		Transaction txn = null;
 		try {
 			Session session = sessionFactory.getCurrentSession();
 			txn = session.beginTransaction();
-			String hql = "select count(*) from PrcMessages m, PrcRawMessages r where m.id=r.id and r.fileId = :fId and r.type = 1744";
+			String hql = "select count(*) from PrcMessages m, PrcRawMessages r where m.id=r.id and r.fileId = :fId and r.type = 1744 and m.id >= :startId and m.id <= endId";
 			Query query = session.createQuery(hql);
 			query.setLong("fId", fileId);
+			query.setLong("startId", startId);
+			query.setLong("endId", endId);
 			Long sumS85 = (Long) query.uniqueResult();
 			txn.commit();
 			// System.out.println("SumS85 = " + sumS85);
@@ -181,26 +235,47 @@ public class PrcMessagesDaoImpl extends AbstractDaoPriceImpl<PrcMessages>impleme
 	}
 
 	@Override
-	public Long sumPrcMessagesS109(Long fileId) throws Exception {
+	public Long sumPrcMessagesS109(Long fileId, Long startId, Long endId) throws Exception {
 
 		return null;
 	}
 
 	@Override
-	public Long sumPrcMessagesS110(Long fileId) throws Exception {
+	public Long sumPrcMessagesS110(Long fileId, Long startId, Long endId) throws Exception {
 
 		return null;
 	}
 
 	@Override
-	public PrcMessages get1544(Long fileId) throws Exception {
+	public ArrayList<PrcMessages> get1544List(Long fileId) throws Exception {
 		Transaction txn = null;
 		try {
 			Session session = sessionFactory.getCurrentSession();
 			txn = session.beginTransaction();
-			String hql = "select m from PrcMessages m, PrcRawMessages r where m.id=r.id and r.fileId = :fId and r.type = 1544";
+			String hql = "select m.id from PrcMessages m, PrcRawMessages r where m.id=r.id and r.fileId = :fId and r.type = 1544 order by m.id";
 			Query query = session.createQuery(hql);
 			query.setLong("fId", fileId);
+			ArrayList<PrcMessages> get1544 = (ArrayList<PrcMessages>) query.list();
+			txn.commit();
+			return get1544;
+		} catch (HibernateException e) {
+			if (null != txn) {
+				txn.rollback();
+			}
+			e.printStackTrace();
+			throw new Exception("ERROR");
+		}
+	}
+
+	@Override
+	public PrcMessages get1544(Long messId) throws Exception {
+		Transaction txn = null;
+		try {
+			Session session = sessionFactory.getCurrentSession();
+			txn = session.beginTransaction();
+			String hql = "select m from PrcMessages m where m.id=:mId";
+			Query query = session.createQuery(hql);
+			query.setLong("mId", messId);
 			PrcMessages get1544 = (PrcMessages) query.uniqueResult();
 			txn.commit();
 			return get1544;
@@ -266,6 +341,7 @@ public class PrcMessagesDaoImpl extends AbstractDaoPriceImpl<PrcMessages>impleme
 			query.setLong("fId", fileId);
 			Long amountMess = (Long) query.uniqueResult();
 			txn.commit();
+			System.out.println("Messages amountMess = " + amountMess);
 			return amountMess;
 		} catch (HibernateException e) {
 			if (null != txn) {

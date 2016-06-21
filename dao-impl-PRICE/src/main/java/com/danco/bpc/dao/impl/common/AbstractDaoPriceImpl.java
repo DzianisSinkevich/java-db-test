@@ -14,6 +14,7 @@ import org.hibernate.criterion.Restrictions;
 import org.hibernate.exception.ConstraintViolationException;
 
 import com.danco.bpc.dao.api.IGenericDao;
+import com.danco.bpc.entity.PRICE.PrcMessages;
 
 /**
  * The Class AbstractDao.

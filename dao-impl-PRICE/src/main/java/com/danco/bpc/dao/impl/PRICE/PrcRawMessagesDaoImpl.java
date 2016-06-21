@@ -50,6 +50,7 @@ public class PrcRawMessagesDaoImpl extends AbstractDaoPriceImpl<PrcRawMessages>i
 			query.setLong("fId", fileId);
 			Long amountMess = (Long) query.uniqueResult();
 			txn.commit();
+			System.out.println("PrcMessages amountMess = " + amountMess);
 			return amountMess;
 		} catch (HibernateException e) {
 			if (null != txn) {
