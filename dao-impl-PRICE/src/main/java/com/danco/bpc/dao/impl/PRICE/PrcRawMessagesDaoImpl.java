@@ -2,6 +2,8 @@ package com.danco.bpc.dao.impl.PRICE;
 
 import java.util.Calendar;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -15,6 +17,8 @@ import com.danco.bpc.entity.PRICE.PrcRawMessages;
 
 public class PrcRawMessagesDaoImpl extends AbstractDaoPriceImpl<PrcRawMessages>implements IPrcRawMessagesDao {
 
+	private static final Logger logger = LogManager.getLogger("");
+	
 	public PrcRawMessagesDaoImpl() {
 		super(PrcRawMessages.class);
 	}
@@ -50,7 +54,7 @@ public class PrcRawMessagesDaoImpl extends AbstractDaoPriceImpl<PrcRawMessages>i
 			query.setLong("fId", fileId);
 			Long amountMess = (Long) query.uniqueResult();
 			txn.commit();
-			System.out.println("PrcMessages amountMess = " + amountMess);
+			logger.info("PrcMessages amountMess = " + amountMess);
 			return amountMess;
 		} catch (HibernateException e) {
 			if (null != txn) {
@@ -73,7 +77,7 @@ public class PrcRawMessagesDaoImpl extends AbstractDaoPriceImpl<PrcRawMessages>i
 			query.setCalendar("currDate", currDate);
 			Long amountMess = (Long) query.uniqueResult();
 			txn.commit();
-			System.out.println("amountMess=" + amountMess);
+			logger.info("amountMess=" + amountMess);
 			return amountMess;
 		} catch (HibernateException e) {
 			if (null != txn) {

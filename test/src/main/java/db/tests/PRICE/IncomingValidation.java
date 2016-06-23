@@ -6,18 +6,15 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.annotations.Test;
 
-import pages.TestBaseAll;
-
 import com.danco.bpc.applogicDB.DBManager;
 import com.danco.bpc.entity.PRICE.PrcFiles;
-import com.danco.bpc.service.impl.SERVICES.PrcFilesServiceImpl;
+
+import pages.TestBaseAll;
 
 public class IncomingValidation extends TestBaseAll {
-	private PrcFilesServiceImpl prcFilesService = new PrcFilesServiceImpl();
 	PrcFiles prcFile = new PrcFiles();
 	private static final Logger logger = LogManager.getLogger("");
 	ArrayList<PrcFiles> filesList = new ArrayList<PrcFiles>();
-	ArrayList<Long> messagesFlags = new ArrayList<Long>();
 
 	@Test
 	public void aReadFilesId() throws Exception {
@@ -25,7 +22,7 @@ public class IncomingValidation extends TestBaseAll {
 		filesList = db.getPriceHelper().listIncomingFiles();
 
 		for (PrcFiles el : filesList) {
-			System.out.println(el.getId());
+			logger.info(el.getId());
 		}
 	}
 
@@ -35,9 +32,9 @@ public class IncomingValidation extends TestBaseAll {
 			Long prcMess = db.getPriceHelper().amountMessagesInPrcMessages(filesList.get(i).getId());
 			Long prcRawMess = db.getPriceHelper().amountMessagesInPrcRawMessages(filesList.get(i).getId());
 			Long totalRecordsInFile = filesList.get(i).getTotalRecords();
-			System.out.println("File amount Mess = " + totalRecordsInFile);
-			assert (prcMess != prcRawMess);
-			assert (prcMess != totalRecordsInFile);
+			logger.info("File amount Mess = " + totalRecordsInFile);
+			assert(prcMess != prcRawMess);
+			assert(prcMess != totalRecordsInFile);
 		}
 	}
 
@@ -45,19 +42,8 @@ public class IncomingValidation extends TestBaseAll {
 	public void cCheckTotalsCalculation() throws Exception {
 		db = new DBManager();
 		for (PrcFiles el : filesList) {
-			messagesFlags.clear();
-			messagesFlags.addAll(db.getPriceHelper().messageFlagsSearch(el.getId()));
-			System.out.println("MessagesFlags.size = " + messagesFlags.size());
-			for (Long el2 : messagesFlags) {
-				System.out.println(el2);
-			}
-			System.out.println("----- START FILE WITH ID " + el.getId() + " -----");
-
-			for (int i = 0; i + 2 < messagesFlags.size(); i++) {
-				System.out.print("----- START 1544 MESSAGE WITH ID " + messagesFlags.get(i + 1) + " -- ");
-				System.out.println(" Start ID: " + messagesFlags.get(i) + " - Finish ID: " + messagesFlags.get(i + 1) );
-				db.getPriceHelper().compareTotals(el.getId(), messagesFlags.get(i), messagesFlags.get(i + 1));
-			}
+			logger.info("----- START FILE WITH ID " + el.getId() + " -----");
+			db.getPriceHelper().compareTotals(el.getId());
 		}
 	}
 

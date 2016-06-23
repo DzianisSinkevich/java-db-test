@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite1" duration-ms="15512" started-at="2016-06-22T10:57:59Z" finished-at="2016-06-22T10:58:14Z">
+  <suite name="Suite1" duration-ms="17854" started-at="2016-06-23T13:11:38Z" finished-at="2016-06-23T13:11:56Z">
     <groups>
     </groups>
-    <test name="Test001" duration-ms="15512" started-at="2016-06-22T10:57:59Z" finished-at="2016-06-22T10:58:14Z">
+    <test name="Test001" duration-ms="17854" started-at="2016-06-23T13:11:38Z" finished-at="2016-06-23T13:11:56Z">
       <class name="db.tests.PRICE.IncomingValidation">
-        <test-method status="PASS" signature="aReadFilesId()[pri:0, instance:db.tests.PRICE.IncomingValidation@5ab14cb9]" name="aReadFilesId" duration-ms="3475" started-at="2016-06-22T13:57:59Z" finished-at="2016-06-22T13:58:02Z">
+        <test-method status="PASS" signature="aReadFilesId()[pri:0, instance:db.tests.PRICE.IncomingValidation@5fe94a96]" name="aReadFilesId" duration-ms="6505" started-at="2016-06-23T16:11:38Z" finished-at="2016-06-23T16:11:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- aReadFilesId -->
-        <test-method status="PASS" signature="bCompareRecorsCount()[pri:0, instance:db.tests.PRICE.IncomingValidation@5ab14cb9]" name="bCompareRecorsCount" duration-ms="266" started-at="2016-06-22T13:58:02Z" finished-at="2016-06-22T13:58:03Z">
+        <test-method status="PASS" signature="bCompareRecorsCount()[pri:0, instance:db.tests.PRICE.IncomingValidation@5fe94a96]" name="bCompareRecorsCount" duration-ms="1427" started-at="2016-06-23T16:11:45Z" finished-at="2016-06-23T16:11:46Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- bCompareRecorsCount -->
-        <test-method status="PASS" signature="cCheckTotalsCalculation()[pri:0, instance:db.tests.PRICE.IncomingValidation@5ab14cb9]" name="cCheckTotalsCalculation" duration-ms="11760" started-at="2016-06-22T13:58:03Z" finished-at="2016-06-22T13:58:14Z">
+        <test-method status="PASS" signature="cCheckTotalsCalculation()[pri:0, instance:db.tests.PRICE.IncomingValidation@5fe94a96]" name="cCheckTotalsCalculation" duration-ms="9900" started-at="2016-06-23T16:11:46Z" finished-at="2016-06-23T16:11:56Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cCheckTotalsCalculation -->

@@ -3,6 +3,9 @@ package com.danco.bpc.applogicDB;
 import java.util.ArrayList;
 import java.util.Calendar;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.danco.bpc.IApplogicDB.IPriceHelper;
 import com.danco.bpc.entity.PRICE.PrcFiles;
 import com.danco.bpc.entity.PRICE.PrcMessages;
@@ -13,6 +16,8 @@ import com.danco.bpc.service.impl.SERVICES.PrcMessagesServiceImpl;
 import com.danco.bpc.service.impl.SERVICES.PrcRawMessagesServiceImpl;
 
 public class PriceHelper implements IPriceHelper {
+
+	private static final Logger logger = LogManager.getLogger("");
 
 	public PriceHelper(DBManager dbManager) {
 	}
@@ -60,8 +65,7 @@ public class PriceHelper implements IPriceHelper {
 	@Override
 	public Calendar currentDate() {
 		Calendar currDate = Calendar.getInstance();
-		currDate.set(currDate.get(Calendar.YEAR), currDate.get(Calendar.MONTH), currDate.get(Calendar.DAY_OF_MONTH), 0,
-				0, 0);
+		currDate.set(currDate.get(Calendar.YEAR), currDate.get(Calendar.MONTH), currDate.get(Calendar.DAY_OF_MONTH), 0, 0, 0);
 		currDate.set(Calendar.MILLISECOND, 0);
 		System.out.println("Current date = " + currDate.getTimeInMillis());
 		return currDate;
@@ -84,53 +88,51 @@ public class PriceHelper implements IPriceHelper {
 		fileDate.set(Calendar.MINUTE, 0);
 		fileDate.set(Calendar.HOUR_OF_DAY, 0);
 		System.out.println("fileDate - " + fileDate.getTimeInMillis() + " currDate - " + currDate.getTimeInMillis());
-		assert (prcFile.getType().equals("FLTP1"));
-		assert (prcFile.getStatus().equals("FLST1"));
-		assert (prcFile.getTotalRecords().equals(4052L));
-		assert (fileDate.equals(currDate));
+		assert(prcFile.getType().equals("FLTP1"));
+		assert(prcFile.getStatus().equals("FLST1"));
+		assert(prcFile.getTotalRecords().equals(4052L));
+		assert(fileDate.equals(currDate));
 	}
 
 	@Override
-	public Long sumPrcMessagesP04(Long fileId, int recordType1, int recordType2, int minPrcc, int maxPrcc)
-			throws Exception {
+	public Long sumPrcMessagesP04(Long fileId, int recordType1, int recordType2, int minPrcc, int maxPrcc) throws Exception {
 		Long sumP04 = prcMessagesService.sumPrcMessagesP04(fileId, recordType1, recordType2, minPrcc, maxPrcc);
 		return sumP04;
 	}
 
 	@Override
-	public Long sumPrcMessagesP05(Long fileId, int recordType1, int recordType2, int minPrcc, int maxPrcc)
-			throws Exception {
+	public Long sumPrcMessagesP05(Long fileId, int recordType1, int recordType2, int minPrcc, int maxPrcc) throws Exception {
 		Long sumP05 = prcMessagesService.sumPrcMessagesP05(fileId, recordType1, recordType2, minPrcc, maxPrcc);
 		return sumP05;
 	}
 
 	@Override
-	public Long sumPrcMessagesS74(Long fileId, Long startId, Long endId) throws Exception {
-		Long sumS74 = prcMessagesService.sumPrcMessagesS74(fileId, startId, endId);
+	public Long sumPrcMessagesS74(Long fileId) throws Exception {
+		Long sumS74 = prcMessagesService.sumPrcMessagesS74(fileId);
 		return sumS74;
 	}
 
 	@Override
-	public Long sumPrcMessagesS75(Long fileId, Long startId, Long endId) throws Exception {
-		Long sumS75 = prcMessagesService.sumPrcMessagesS75(fileId, startId, endId);
+	public Long sumPrcMessagesS75(Long fileId) throws Exception {
+		Long sumS75 = prcMessagesService.sumPrcMessagesS75(fileId);
 		return sumS75;
 	}
 
 	@Override
-	public Long sumPrcMessagesS76(Long fileId, Long startId, Long endId) throws Exception {
-		Long sumS76 = prcMessagesService.sumPrcMessagesS76(fileId, startId, endId);
+	public Long sumPrcMessagesS76(Long fileId) throws Exception {
+		Long sumS76 = prcMessagesService.sumPrcMessagesS76(fileId);
 		return sumS76;
 	}
 
 	@Override
-	public Long sumPrcMessagesS77(Long fileId, Long startId, Long endId) throws Exception {
-		Long sumS77 = prcMessagesService.sumPrcMessagesS77(fileId, startId, endId);
+	public Long sumPrcMessagesS77(Long fileId) throws Exception {
+		Long sumS77 = prcMessagesService.sumPrcMessagesS77(fileId);
 		return sumS77;
 	}
 
 	@Override
-	public Long sumPrcMessagesS85(Long fileId, Long startId, Long endId) throws Exception {
-		Long sumS85 = prcMessagesService.sumPrcMessagesS85(fileId, startId, endId);
+	public Long sumPrcMessagesS85(Long fileId) throws Exception {
+		Long sumS85 = prcMessagesService.sumPrcMessagesS85(fileId);
 		return sumS85;
 	}
 
@@ -152,13 +154,13 @@ public class PriceHelper implements IPriceHelper {
 
 	@Override
 	public Long sumPrcMessagesS109(Long fileId, Long startId, Long endId) throws Exception {
-		Long sumS109 = prcMessagesService.sumPrcMessagesS109(fileId, startId, endId);
+		Long sumS109 = prcMessagesService.sumPrcMessagesS109(fileId);
 		return sumS109;
 	}
 
 	@Override
 	public Long sumPrcMessagesS110(Long fileId, Long startId, Long endId) throws Exception {
-		Long sumS110 = prcMessagesService.sumPrcMessagesS110(fileId, startId, endId);
+		Long sumS110 = prcMessagesService.sumPrcMessagesS110(fileId);
 		return sumS110;
 	}
 
@@ -218,31 +220,20 @@ public class PriceHelper implements IPriceHelper {
 		return get1544;
 	}
 
-	private boolean compare(Long a, Long b) {
-		if (a == null && b == null) {
-			return true;
-		}
-		if (a == null && b == 0) {
-			return true;
-		}
-		if (b == null && a == 0) {
-			return true;
-		}
-		if (a == null) {
-			return false;
-		}
-		return a.equals(b);
-	}
-
 	@Override
-	public boolean compareTotals(Long fileId, Long startId, Long endId) throws Exception {
-		PrcMessages get1544 = prcMessagesService.get1544(endId);
+	public boolean compareTotals(Long fileId) throws Exception {
 		boolean isError = false;
-		Long sumPrcMessagesS74 = sumPrcMessagesS74(fileId, startId, endId);
-		Long sumPrcMessagesS75 = sumPrcMessagesS75(fileId, startId, endId);
-		Long sumPrcMessagesS76 = sumPrcMessagesS76(fileId, startId, endId);
-		Long sumPrcMessagesS77 = sumPrcMessagesS77(fileId, startId, endId);
-		Long sumPrcMessagesS85 = sumPrcMessagesS85(fileId, startId, endId);
+		Long sum1544S74 = prcMessagesService.sum1544S74(fileId);
+		Long sum1544S75 = prcMessagesService.sum1544S75(fileId);
+		Long sum1544S76 = prcMessagesService.sum1544S76(fileId);
+		Long sum1544S77 = prcMessagesService.sum1544S77(fileId);
+		Long sum1544S85 = prcMessagesService.sum1544S85(fileId);
+
+		Long sumPrcMessagesS74 = sumPrcMessagesS74(fileId);
+		Long sumPrcMessagesS75 = sumPrcMessagesS75(fileId);
+		Long sumPrcMessagesS76 = sumPrcMessagesS76(fileId);
+		Long sumPrcMessagesS77 = sumPrcMessagesS77(fileId);
+		Long sumPrcMessagesS85 = sumPrcMessagesS85(fileId);
 		// Long sumPrcMessagesS86 = sumPrcMessagesS86(fileId);
 		// Long sumPrcMessagesS87 = sumPrcMessagesS87(fileId);
 		// Long sumPrcMessagesS88 = sumPrcMessagesS88(fileId);
@@ -250,21 +241,24 @@ public class PriceHelper implements IPriceHelper {
 		// Long sumPrcMessagesS105 = sumPrcMessagesS105(fileId);
 		// Long sumPrcMessagesS106 = sumPrcMessagesS106(fileId);
 
-		System.out.println("getS74 = " + get1544.getS74() + ", sum = " + sumPrcMessagesS74);
-		isError = comparer(get1544.getS74(), sumPrcMessagesS74);
-		System.out.println(isError);
-		System.out.println("getS75 = " + get1544.getS75() + ", sum = " + sumPrcMessagesS75);
-		isError = comparer(get1544.getS75(), sumPrcMessagesS75);
-		System.out.println(isError);
-		System.out.println("getS76 = " + get1544.getS76() + ", sum = " + sumPrcMessagesS76);
-		isError = comparer(get1544.getS76(), sumPrcMessagesS76);
-		System.out.println(isError);
-		System.out.println("getS77 = " + get1544.getS77() + ", sum = " + sumPrcMessagesS77);
-		isError = comparer(get1544.getS77(), sumPrcMessagesS77);
-		System.out.println(isError);
-		System.out.println("getS85 = " + get1544.getS85() + ", sum = " + sumPrcMessagesS85);
-		isError = comparer(get1544.getS85(), sumPrcMessagesS85);
-		System.out.println(isError);
+		isError = comparer(sum1544S74, sumPrcMessagesS74);
+		logger.info("Sum S74 in 1544 = " + sum1544S74 + ", Sum S74 from messages = " + sumPrcMessagesS74 + " - " + isError);
+		isError = comparer(sum1544S75, sumPrcMessagesS75);
+		logger.info("Sum S75 in 1544 = " + sum1544S75 + ", Sum S75 from messages = " + sumPrcMessagesS75 + " - " + isError);
+		isError = comparer(sum1544S76, sumPrcMessagesS76);
+		logger.info("Sum S76 in 1544 = " + sum1544S76 + ", Sum S76 from messages = " + sumPrcMessagesS76 + " - " + isError);
+		isError = comparer(sum1544S77, sumPrcMessagesS77);
+		logger.info("Sum S77 in 1544 = " + sum1544S77 + ", Sum S77 from messages = " + sumPrcMessagesS77 + " - " + isError);
+		isError = comparer(sum1544S85, sumPrcMessagesS85);
+		logger.info("Sum S85 in 1544 = " + sum1544S85 + ", Sum S85 from messages = " + sumPrcMessagesS85 + " - " + isError);
+		// isError = comparer(get1544.getS75(), sumPrcMessagesS75);
+		// logger.info("getS75 = " + get1544.getS75() + ", sum = " + sumPrcMessagesS75 + " - " + isError);
+		// isError = comparer(get1544.getS76(), sumPrcMessagesS76);
+		// logger.info("getS76 = " + get1544.getS76() + ", sum = " + sumPrcMessagesS76 + " - " + isError);
+		// isError = comparer(get1544.getS77(), sumPrcMessagesS77);
+		// logger.info("getS77 = " + get1544.getS77() + ", sum = " + sumPrcMessagesS77 + " - " + isError);
+		// isError = comparer(get1544.getS85(), sumPrcMessagesS85);
+		// logger.info("getS85 = " + get1544.getS85() + ", sum = " + sumPrcMessagesS85 + " - " + isError);
 		// System.out.println("getS86 = " + get1544.getS86() + ", sum = " + sumPrcMessagesS86);
 		// if (!compare(get1544.getS86(), sumPrcMessagesS86)) {
 		// isError = true;
@@ -341,13 +335,11 @@ public class PriceHelper implements IPriceHelper {
 
 	@Override
 	public String p11generator() throws Exception {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public String p12generator() throws Exception {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -364,31 +356,5 @@ public class PriceHelper implements IPriceHelper {
 			incomingFilesId.add(String.valueOf(el.getId()));
 		}
 		return incomingFilesId;
-	}
-
-	@Override
-	public Long firstMessageInFile(Long fileId) throws Exception {
-		return prcMessagesService.firstMessageInFile(fileId);
-	}
-
-	@Override
-	public Long lastMessageInFile(Long fileId) throws Exception {
-		return prcMessagesService.lastMessageInFile(fileId);
-	}
-
-	@Override
-	public ArrayList<Long> messageFlagsSearch(Long fileId) throws Exception {
-		ArrayList<Long> messageFlags = new ArrayList<Long>();
-		ArrayList<PrcMessages> mess1544 = new ArrayList<PrcMessages>();
-
-		mess1544.addAll(prcMessagesService.get1544list(fileId));
-
-		messageFlags.add(firstMessageInFile(fileId));
-		for (int j = 0; j < mess1544.size(); j++) {
-			messageFlags.add(mess1544.get(j).getId());
-		}
-		messageFlags.add(lastMessageInFile(fileId));
-
-		return messageFlags;
 	}
 }

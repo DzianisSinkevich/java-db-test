@@ -59,27 +59,21 @@ public interface IPriceHelper {
 
 	public ArrayList<String> listIncomingFilesId() throws Exception;
 
-	public ArrayList<Long> messageFlagsSearch(Long fileId) throws Exception;
+	public Long sumPrcMessagesS74(Long fileId) throws Exception;
 
-	public Long firstMessageInFile(Long fileId) throws Exception;
+	public Long sumPrcMessagesS75(Long fileId) throws Exception;
 
-	public Long lastMessageInFile(Long fileId) throws Exception;
+	public Long sumPrcMessagesS76(Long fileId) throws Exception;
 
-	public Long sumPrcMessagesS74(Long fileId, Long startId, Long endId) throws Exception;
+	public Long sumPrcMessagesS77(Long fileId) throws Exception;
 
-	public Long sumPrcMessagesS75(Long fileId, Long startId, Long endId) throws Exception;
-
-	public Long sumPrcMessagesS76(Long fileId, Long startId, Long endId) throws Exception;
-
-	public Long sumPrcMessagesS77(Long fileId, Long startId, Long endId) throws Exception;
-
-	public Long sumPrcMessagesS85(Long fileId, Long startId, Long endId) throws Exception;
+	public Long sumPrcMessagesS85(Long fileId) throws Exception;
 
 	public Long sumPrcMessagesS109(Long fileId, Long startId, Long endId) throws Exception;
 
 	public Long sumPrcMessagesS110(Long fileId, Long startId, Long endId) throws Exception;
 
-	boolean compareTotals(Long fileId, Long startId, Long endId) throws Exception;
-
 	boolean comparer(Long first, Long second) throws Exception;
+
+	boolean compareTotals(Long fileId) throws Exception;
 }

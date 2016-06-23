@@ -19,23 +19,27 @@ public interface IPrcMessagesDao extends IGenericDao<PrcMessages> {
 	
 	public Long amountMessagesInPrcMessages(Long fileId) throws Exception;
 
-	public ArrayList<PrcMessages> get1544List(Long fileId) throws Exception;
+	Long sumPrcMessagesS74(Long fileId) throws Exception;
 
-	public Long firstMessage(Long fileId) throws Exception;
+	Long sumPrcMessagesS75(Long fileId) throws Exception;
 
-	public Long lastMessage(Long fileId) throws Exception;
+	Long sumPrcMessagesS76(Long fileId) throws Exception;
 
-	Long sumPrcMessagesS74(Long fileId, Long startId, Long endId) throws Exception;
+	Long sumPrcMessagesS77(Long fileId) throws Exception;
 
-	Long sumPrcMessagesS75(Long fileId, Long startId, Long endId) throws Exception;
+	Long sumPrcMessagesS85(Long fileId) throws Exception;
 
-	Long sumPrcMessagesS76(Long fileId, Long startId, Long endId) throws Exception;
+	Long sumPrcMessagesS109(Long fileId) throws Exception;
 
-	Long sumPrcMessagesS77(Long fileId, Long startId, Long endId) throws Exception;
+	Long sumPrcMessagesS110(Long fileId) throws Exception;
 
-	Long sumPrcMessagesS85(Long fileId, Long startId, Long endId) throws Exception;
-
-	Long sumPrcMessagesS109(Long fileId, Long startId, Long endId) throws Exception;
-
-	Long sumPrcMessagesS110(Long fileId, Long startId, Long endId) throws Exception;
+	public Long sum1544S74(Long fileId) throws Exception;
+	
+	public Long sum1544S75(Long fileId) throws Exception;
+	
+	public Long sum1544S76(Long fileId) throws Exception;
+	
+	public Long sum1544S77(Long fileId) throws Exception;
+	
+	public Long sum1544S85(Long fileId) throws Exception;
 }
