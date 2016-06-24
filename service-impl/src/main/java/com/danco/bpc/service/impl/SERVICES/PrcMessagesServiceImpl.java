@@ -1,7 +1,5 @@
 package com.danco.bpc.service.impl.SERVICES;
 
-import java.util.ArrayList;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,13 +16,13 @@ public class PrcMessagesServiceImpl extends DataServiceImpl<PrcMessages>implemen
 	private PrcMessagesDaoImpl genericDao = new PrcMessagesDaoImpl();
 
 	@Override
-	public Long sumPrcMessagesP04(Long fileId, int recordType1, int recordType2, int minPrcc, int maxPrcc) throws Exception {
-		return genericDao.sumPrcMessagesP04(fileId, recordType1, recordType2, minPrcc, maxPrcc);
+	public Long sumPrcMessagesP04(Long fileId, int recordType1, String p56RT1, int recordType2, String p56RT2, int minPrcc, int maxPrcc) throws Exception {
+		return genericDao.sumPrcMessagesP04(fileId, recordType1, p56RT1, recordType2, p56RT2, minPrcc, maxPrcc);
 	}
 
 	@Override
-	public Long sumPrcMessagesP05(Long fileId, int recordType1, int recordType2, int minPrcc, int maxPrcc) throws Exception {
-		return genericDao.sumPrcMessagesP05(fileId, recordType1, recordType2, minPrcc, maxPrcc);
+	public Long sumPrcMessagesP05(Long fileId, int recordType1, String p56RT1, int recordType2, String p56RT2, int minPrcc, int maxPrcc) throws Exception {
+		return genericDao.sumPrcMessagesP05(fileId, recordType1, p56RT1, recordType2, p56RT2, minPrcc, maxPrcc);
 	}
 
 	@Override
@@ -63,32 +61,12 @@ public class PrcMessagesServiceImpl extends DataServiceImpl<PrcMessages>implemen
 	}
 
 	@Override
-	public Long sum1544S74(Long fileId) throws Exception{
-		return genericDao.sum1544S74(fileId);
-	}
-	
-	@Override
-	public Long sum1544S75(Long fileId) throws Exception{
-		return genericDao.sum1544S75(fileId);
+	public Long sum1544Sxx(Long fileId, String fieldName) throws Exception {
+		return genericDao.sum1544Sxx(fileId, fieldName);
 	}
 
 	@Override
-	public Long sum1544S76(Long fileId) throws Exception{
-		return genericDao.sum1544S76(fileId);
-	}
-
-	@Override
-	public Long sum1544S77(Long fileId) throws Exception{
-		return genericDao.sum1544S77(fileId);
-	}
-
-	@Override
-	public Long sum1544S85(Long fileId) throws Exception{
-		return genericDao.sum1544S85(fileId);
-	}
-	
-	@Override
-	public PrcMessages get1544(Long fileId) throws Exception{
+	public PrcMessages get1544(Long fileId) throws Exception {
 		return genericDao.get1544(fileId);
 	}
 

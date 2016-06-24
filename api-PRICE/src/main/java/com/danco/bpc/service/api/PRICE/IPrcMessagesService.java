@@ -6,9 +6,9 @@ import com.danco.bpc.entity.PRICE.PrcMessages;
 import com.danco.bpc.service.api.IGenericService;
 
 public interface IPrcMessagesService extends IGenericService<PrcMessages> {
-	public Long sumPrcMessagesP04(Long fileId, int recordType1, int recordType2, int minPrcc, int maxPrcc) throws Exception;
+	public Long sumPrcMessagesP04(Long fileId, int recordType1, String p56RT1, int recordType2, String p56RT2, int minPrcc, int maxPrcc) throws Exception;
 
-	public Long sumPrcMessagesP05(Long fileId, int recordType1, int recordType2, int minPrcc, int maxPrcc) throws Exception;
+	public Long sumPrcMessagesP05(Long fileId, int recordType1, String p56RT1, int recordType2, String p56RT2, int minPrcc, int maxPrcc) throws Exception;
 
 	public PrcMessages get1544(Long fileId) throws Exception;
 	
@@ -32,13 +32,5 @@ public interface IPrcMessagesService extends IGenericService<PrcMessages> {
 
 	Long sumPrcMessagesS110(Long fileId) throws Exception;
 
-	Long sum1544S74(Long fileId) throws Exception;
-	
-	Long sum1544S75(Long fileId) throws Exception;
-	
-	Long sum1544S76(Long fileId) throws Exception;
-	
-	Long sum1544S77(Long fileId) throws Exception;
-	
-	Long sum1544S85(Long fileId) throws Exception;
+	Long sum1544Sxx(Long fileId, String filedName) throws Exception;
 }

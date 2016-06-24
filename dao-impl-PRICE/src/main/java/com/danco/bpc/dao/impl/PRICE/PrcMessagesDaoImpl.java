@@ -20,12 +20,13 @@ public class PrcMessagesDaoImpl extends AbstractDaoPriceImpl<PrcMessages>impleme
 	}
 
 	@Override
-	public Long sumPrcMessagesP04(Long fileId, int recordType1, int recordType2, int minPrcc, int maxPrcc) throws Exception {
+	public Long sumPrcMessagesP04(Long fileId, int recordType1, String p56RT1, int recordType2, String p56RT2, int minPrcc, int maxPrcc) throws Exception {
 		Transaction txn = null;
 		try {
 			Session session = sessionFactory.getCurrentSession();
 			txn = session.beginTransaction();
-			String hql = "select SUM(m.p04) from PrcMessages m, PrcRawMessages r where m.id=r.id and r.fileId = :fId and (r.type = :rType1 or r.type = :rType2) and (m.p03>=:minPrcc and m.p03<=:maxPrcc)";
+			String hql = "select SUM(m.p04) from PrcMessages m, PrcRawMessages r where m.id=r.id and r.fileId = :fId and (r.type = :rType1 and (m.p03>=:minPrcc and m.p03<=:maxPrcc) and m.p56 like '"
+					+ p56RT1 + "%')or r.type = :rType2 and (m.p03>=:minPrcc and m.p03<=:maxPrcc) and m.p56 like '" + p56RT2 + "%') ";
 			Query query = session.createQuery(hql);
 			query.setLong("fId", fileId);
 			query.setInteger("rType1", recordType1);
@@ -34,7 +35,6 @@ public class PrcMessagesDaoImpl extends AbstractDaoPriceImpl<PrcMessages>impleme
 			query.setInteger("maxPrcc", maxPrcc);
 			Long sumP04 = (Long) query.uniqueResult();
 			txn.commit();
-			// System.out.println("SumP04 = " + sumP04);
 			return sumP04;
 		} catch (HibernateException e) {
 			if (null != txn) {
@@ -46,12 +46,13 @@ public class PrcMessagesDaoImpl extends AbstractDaoPriceImpl<PrcMessages>impleme
 	}
 
 	@Override
-	public Long sumPrcMessagesP05(Long fileId, int recordType1, int recordType2, int minPrcc, int maxPrcc) throws Exception {
+	public Long sumPrcMessagesP05(Long fileId, int recordType1, String p56RT1, int recordType2, String p56RT2, int minPrcc, int maxPrcc) throws Exception {
 		Transaction txn = null;
 		try {
 			Session session = sessionFactory.getCurrentSession();
 			txn = session.beginTransaction();
-			String hql = "select SUM(m.p05) from PrcMessages m, PrcRawMessages r where m.id=r.id and r.fileId = :fId and (r.type = :rType1 or r.type = :rType2) and (m.p03>=:minPrcc and m.p03<=:maxPrcc)";
+			String hql = "select SUM(m.p05) from PrcMessages m, PrcRawMessages r where m.id=r.id and r.fileId = :fId and (r.type = :rType1 and (m.p03>=:minPrcc and m.p03<=:maxPrcc) and m.p56 like '"
+					+ p56RT1 + "%')or r.type = :rType2 and (m.p03>=:minPrcc and m.p03<=:maxPrcc) and m.p56 like '" + p56RT2 + "%') ";
 			Query query = session.createQuery(hql);
 			query.setLong("fId", fileId);
 			query.setInteger("rType1", recordType1);
@@ -60,7 +61,6 @@ public class PrcMessagesDaoImpl extends AbstractDaoPriceImpl<PrcMessages>impleme
 			query.setInteger("maxPrcc", maxPrcc);
 			Long sumP05 = (Long) query.uniqueResult();
 			txn.commit();
-			// System.out.println("SumP05 = " + sumP05);
 			return sumP05;
 		} catch (HibernateException e) {
 			if (null != txn) {
@@ -82,7 +82,6 @@ public class PrcMessagesDaoImpl extends AbstractDaoPriceImpl<PrcMessages>impleme
 			query.setLong("fId", fileId);
 			Long sumS74 = (Long) query.uniqueResult();
 			txn.commit();
-			// System.out.println("SumS74 = " + sumS74);
 			return sumS74;
 		} catch (HibernateException e) {
 			if (null != txn) {
@@ -104,7 +103,6 @@ public class PrcMessagesDaoImpl extends AbstractDaoPriceImpl<PrcMessages>impleme
 			query.setLong("fId", fileId);
 			Long sumS75 = (Long) query.uniqueResult();
 			txn.commit();
-			// System.out.println("SumS75 = " + sumS75);
 			return sumS75;
 		} catch (HibernateException e) {
 			if (null != txn) {
@@ -126,7 +124,6 @@ public class PrcMessagesDaoImpl extends AbstractDaoPriceImpl<PrcMessages>impleme
 			query.setLong("fId", fileId);
 			Long sumS76 = (Long) query.uniqueResult();
 			txn.commit();
-			// System.out.println("SumS76 = " + sumS76);
 			return sumS76;
 		} catch (HibernateException e) {
 			if (null != txn) {
@@ -148,7 +145,6 @@ public class PrcMessagesDaoImpl extends AbstractDaoPriceImpl<PrcMessages>impleme
 			query.setLong("fId", fileId);
 			Long sumS77 = (Long) query.uniqueResult();
 			txn.commit();
-			// System.out.println("SumS77 = " + sumS77);
 			return sumS77;
 		} catch (HibernateException e) {
 			if (null != txn) {
@@ -170,7 +166,6 @@ public class PrcMessagesDaoImpl extends AbstractDaoPriceImpl<PrcMessages>impleme
 			query.setLong("fId", fileId);
 			Long sumS85 = (Long) query.uniqueResult();
 			txn.commit();
-			// System.out.println("SumS85 = " + sumS85);
 			return sumS85;
 		} catch (HibernateException e) {
 			if (null != txn) {
@@ -194,101 +189,17 @@ public class PrcMessagesDaoImpl extends AbstractDaoPriceImpl<PrcMessages>impleme
 	}
 
 	@Override
-	public Long sum1544S74(Long fileId) throws Exception {
+	public Long sum1544Sxx(Long fileId, String fieldName) throws Exception {
 		Transaction txn = null;
 		try {
 			Session session = sessionFactory.getCurrentSession();
 			txn = session.beginTransaction();
-			String hql = "select SUM(m.s74) from PrcMessages m, PrcRawMessages r where m.id = r.id and r.fileId = :fId and r.type = 1544";
+			String hql = "select SUM(m." + fieldName + ") from PrcMessages m, PrcRawMessages r where m.id = r.id and r.fileId = :fId and r.type = 1544";
 			Query query = session.createQuery(hql);
 			query.setLong("fId", fileId);
-			Long sumS74 = (long) query.uniqueResult();
+			Long sumSxx = (long) query.uniqueResult();
 			txn.commit();
-			return sumS74;
-		} catch (HibernateException e) {
-			if (null != txn) {
-				txn.rollback();
-			}
-			e.printStackTrace();
-			throw new Exception("ERROR");
-		}
-	}
-
-	@Override
-	public Long sum1544S75(Long fileId) throws Exception {
-		Transaction txn = null;
-		try {
-			Session session = sessionFactory.getCurrentSession();
-			txn = session.beginTransaction();
-			String hql = "select SUM(m.s75) from PrcMessages m, PrcRawMessages r where m.id=r.id and r.fileId = :fId and r.type = 1544";
-			Query query = session.createQuery(hql);
-			query.setLong("fId", fileId);
-			Long sumS75 = (long) query.uniqueResult();
-			txn.commit();
-			return sumS75;
-		} catch (HibernateException e) {
-			if (null != txn) {
-				txn.rollback();
-			}
-			e.printStackTrace();
-			throw new Exception("ERROR");
-		}
-	}
-
-	@Override
-	public Long sum1544S76(Long fileId) throws Exception {
-		Transaction txn = null;
-		try {
-			Session session = sessionFactory.getCurrentSession();
-			txn = session.beginTransaction();
-			String hql = "select SUM(m.s76) from PrcMessages m, PrcRawMessages r where m.id=r.id and r.fileId = :fId and r.type = 1544";
-			Query query = session.createQuery(hql);
-			query.setLong("fId", fileId);
-			Long sumS76 = (long) query.uniqueResult();
-			txn.commit();
-			return sumS76;
-		} catch (HibernateException e) {
-			if (null != txn) {
-				txn.rollback();
-			}
-			e.printStackTrace();
-			throw new Exception("ERROR");
-		}
-	}
-
-	@Override
-	public Long sum1544S77(Long fileId) throws Exception {
-		Transaction txn = null;
-		try {
-			Session session = sessionFactory.getCurrentSession();
-			txn = session.beginTransaction();
-			String hql = "select SUM(m.s77) from PrcMessages m, PrcRawMessages r where m.id=r.id and r.fileId = :fId and r.type = 1544";
-			Query query = session.createQuery(hql);
-			query.setLong("fId", fileId);
-			Long sumS77 = (long) query.uniqueResult();
-			txn.commit();
-			return sumS77;
-		} catch (HibernateException e) {
-			if (null != txn) {
-				txn.rollback();
-			}
-			e.printStackTrace();
-			throw new Exception("ERROR");
-		}
-	}
-
-	@Override
-	public Long sum1544S85(Long fileId) throws Exception {
-		Transaction txn = null;
-		try {
-			Session session = sessionFactory.getCurrentSession();
-			txn = session.beginTransaction();
-			String hql = "select SUM(m.s85) from PrcMessages m, PrcRawMessages r where m.id=r.id and r.fileId = :fId and r.type = 1544";
-			Query query = session.createQuery(hql);
-			query.setLong("fId", fileId);
-			Long sumS85 = (long) query.uniqueResult();
-			txn.commit();
-			return sumS85;
+			return sumSxx;
 		} catch (HibernateException e) {
 			if (null != txn) {
 				txn.rollback();

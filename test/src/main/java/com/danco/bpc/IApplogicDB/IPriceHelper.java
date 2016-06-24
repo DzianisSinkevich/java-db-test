@@ -15,11 +15,9 @@ public interface IPriceHelper {
 
 	public void checkFilePreferences(PrcFiles prcFile);
 
-	public Long sumPrcMessagesP04(Long fileId, int recordType1, int recordType2, int minPrcc, int maxPrcc)
-			throws Exception;
+	public Long sumPrcMessagesP04(Long fileId, int recordType1, String p56RT1, int recordType2, String p56RT2, int minPrcc, int maxPrcc) throws Exception;
 
-	public Long sumPrcMessagesP05(Long fileId, int recordType1, int recordType2, int minPrcc, int maxPrcc)
-			throws Exception;
+	public Long sumPrcMessagesP05(Long fileId, int recordType1, String p56RT1, int recordType2, String p56RT2, int minPrcc, int maxPrcc) throws Exception;
 
 	public Long sumPrcMessagesS86(Long fileId) throws Exception;
 
