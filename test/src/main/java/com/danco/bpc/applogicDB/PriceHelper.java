@@ -68,7 +68,8 @@ public class PriceHelper implements IPriceHelper {
 	@Override
 	public Calendar currentDate() {
 		Calendar currDate = Calendar.getInstance();
-		currDate.set(currDate.get(Calendar.YEAR), currDate.get(Calendar.MONTH), currDate.get(Calendar.DAY_OF_MONTH), 0, 0, 0);
+		currDate.set(currDate.get(Calendar.YEAR), currDate.get(Calendar.MONTH), currDate.get(Calendar.DAY_OF_MONTH), 0,
+				0, 0);
 		currDate.set(Calendar.MILLISECOND, 0);
 		System.out.println("Current date = " + currDate.getTimeInMillis());
 		return currDate;
@@ -91,21 +92,25 @@ public class PriceHelper implements IPriceHelper {
 		fileDate.set(Calendar.MINUTE, 0);
 		fileDate.set(Calendar.HOUR_OF_DAY, 0);
 		System.out.println("fileDate - " + fileDate.getTimeInMillis() + " currDate - " + currDate.getTimeInMillis());
-		assert(prcFile.getType().equals("FLTP1"));
-		assert(prcFile.getStatus().equals("FLST1"));
-		assert(prcFile.getTotalRecords().equals(4052L));
-		assert(fileDate.equals(currDate));
+		assert (prcFile.getType().equals("FLTP1"));
+		assert (prcFile.getStatus().equals("FLST1"));
+		assert (prcFile.getTotalRecords().equals(4052L));
+		assert (fileDate.equals(currDate));
 	}
 
 	@Override
-	public Long sumPrcMessagesP04(Long fileId, int recordType1, String p56RT1, int recordType2, String p56RT2, int minPrcc, int maxPrcc) throws Exception {
-		Long sumP04 = prcMessagesService.sumPrcMessagesP04(fileId, recordType1, p56RT1, recordType2, p56RT2, minPrcc, maxPrcc);
+	public Long sumPrcMessagesP04(Long fileId, int recordType1, String p56RT1, int recordType2, String p56RT2,
+			int minPrcc, int maxPrcc) throws Exception {
+		Long sumP04 = prcMessagesService.sumPrcMessagesP04(fileId, recordType1, p56RT1, recordType2, p56RT2, minPrcc,
+				maxPrcc);
 		return sumP04;
 	}
 
 	@Override
-	public Long sumPrcMessagesP05(Long fileId, int recordType1, String p56RT1, int recordType2, String p56RT2, int minPrcc, int maxPrcc) throws Exception {
-		Long sumP05 = prcMessagesService.sumPrcMessagesP05(fileId, recordType1, p56RT1, recordType2, p56RT2, minPrcc, maxPrcc);
+	public Long sumPrcMessagesP05(Long fileId, int recordType1, String p56RT1, int recordType2, String p56RT2,
+			int minPrcc, int maxPrcc) throws Exception {
+		Long sumP05 = prcMessagesService.sumPrcMessagesP05(fileId, recordType1, p56RT1, recordType2, p56RT2, minPrcc,
+				maxPrcc);
 		return sumP05;
 	}
 
@@ -156,13 +161,13 @@ public class PriceHelper implements IPriceHelper {
 	}
 
 	@Override
-	public Long sumPrcMessagesS109(Long fileId, Long startId, Long endId) throws Exception {
+	public Long sumPrcMessagesS109(Long fileId) throws Exception {
 		Long sumS109 = prcMessagesService.sumPrcMessagesS109(fileId);
 		return sumS109;
 	}
 
 	@Override
-	public Long sumPrcMessagesS110(Long fileId, Long startId, Long endId) throws Exception {
+	public Long sumPrcMessagesS110(Long fileId) throws Exception {
 		Long sumS110 = prcMessagesService.sumPrcMessagesS110(fileId);
 		return sumS110;
 	}
@@ -235,8 +240,8 @@ public class PriceHelper implements IPriceHelper {
 		Long sum1544S87 = prcMessagesService.sum1544Sxx(fileId, "s87");
 		Long sum1544S88 = prcMessagesService.sum1544Sxx(fileId, "s88");
 		Long sum1544S89 = prcMessagesService.sum1544Sxx(fileId, "s89");
-		Long sum1544S105 = prcMessagesService.sum1544Sxx(fileId, "s105");
-		Long sum1544S106 = prcMessagesService.sum1544Sxx(fileId, "s106");
+		Long sum1544S109 = prcMessagesService.sum1544Sxx(fileId, "s109");
+		Long sum1544S110 = prcMessagesService.sum1544Sxx(fileId, "s110");
 
 		Long sumPrcMessagesS74 = sumPrcMessagesS74(fileId);
 		Long sumPrcMessagesS75 = sumPrcMessagesS75(fileId);
@@ -247,31 +252,42 @@ public class PriceHelper implements IPriceHelper {
 		Long sumPrcMessagesS87 = sumPrcMessagesS87(fileId);
 		Long sumPrcMessagesS88 = sumPrcMessagesS88(fileId);
 		Long sumPrcMessagesS89 = sumPrcMessagesS89(fileId);
-		Long sumPrcMessagesS105 = sumPrcMessagesS105(fileId);
-		Long sumPrcMessagesS106 = sumPrcMessagesS106(fileId);
+		Long sumPrcMessagesS109 = sumPrcMessagesS109(fileId);
+		Long sumPrcMessagesS110 = sumPrcMessagesS110(fileId);
 
 		isError = comparer(sum1544S74, sumPrcMessagesS74);
-		logger.info("Sum S74 in 1544 = " + sum1544S74 + ", Sum S74 from messages = " + sumPrcMessagesS74 + " - " + isError);
+		logger.info("Sum S74 in 1544 = " + sum1544S74 + ", Sum S74 from messages = " + sumPrcMessagesS74 + " - "
+				+ isError);
 		isError = comparer(sum1544S75, sumPrcMessagesS75);
-		logger.info("Sum S75 in 1544 = " + sum1544S75 + ", Sum S75 from messages = " + sumPrcMessagesS75 + " - " + isError);
+		logger.info("Sum S75 in 1544 = " + sum1544S75 + ", Sum S75 from messages = " + sumPrcMessagesS75 + " - "
+				+ isError);
 		isError = comparer(sum1544S76, sumPrcMessagesS76);
-		logger.info("Sum S76 in 1544 = " + sum1544S76 + ", Sum S76 from messages = " + sumPrcMessagesS76 + " - " + isError);
+		logger.info("Sum S76 in 1544 = " + sum1544S76 + ", Sum S76 from messages = " + sumPrcMessagesS76 + " - "
+				+ isError);
 		isError = comparer(sum1544S77, sumPrcMessagesS77);
-		logger.info("Sum S77 in 1544 = " + sum1544S77 + ", Sum S77 from messages = " + sumPrcMessagesS77 + " - " + isError);
+		logger.info("Sum S77 in 1544 = " + sum1544S77 + ", Sum S77 from messages = " + sumPrcMessagesS77 + " - "
+				+ isError);
 		isError = comparer(sum1544S85, sumPrcMessagesS85);
-		logger.info("Sum S85 in 1544 = " + sum1544S85 + ", Sum S85 from messages = " + sumPrcMessagesS85 + " - " + isError);
+		logger.info("Sum S85 in 1544 = " + sum1544S85 + ", Sum S85 from messages = " + sumPrcMessagesS85 + " - "
+				+ isError);
 		isError = comparer(sum1544S86, sumPrcMessagesS86);
-		logger.info("Sum S86 in 1544 = " + sum1544S86 + ", Sum S86 from messages = " + sumPrcMessagesS86 + " - " + isError);
+		logger.info("Sum S86 in 1544 = " + sum1544S86 + ", Sum S86 from messages = " + sumPrcMessagesS86 + " - "
+				+ isError);
 		isError = comparer(sum1544S87, sumPrcMessagesS87);
-		logger.info("Sum S87 in 1544 = " + sum1544S87 + ", Sum S87 from messages = " + sumPrcMessagesS87 + " - " + isError);
+		logger.info("Sum S87 in 1544 = " + sum1544S87 + ", Sum S87 from messages = " + sumPrcMessagesS87 + " - "
+				+ isError);
 		isError = comparer(sum1544S88, sumPrcMessagesS88);
-		logger.info("Sum S88 in 1544 = " + sum1544S88 + ", Sum S88 from messages = " + sumPrcMessagesS88 + " - " + isError);
+		logger.info("Sum S88 in 1544 = " + sum1544S88 + ", Sum S88 from messages = " + sumPrcMessagesS88 + " - "
+				+ isError);
 		isError = comparer(sum1544S89, sumPrcMessagesS89);
-		logger.info("Sum S89 in 1544 = " + sum1544S89 + ", Sum S89 from messages = " + sumPrcMessagesS89 + " - " + isError);
-		// isError = comparer(sum1544S105, sumPrcMessagesS105);
-		// logger.info("Sum S105 in 1544 = " + sum1544S105 + ", Sum S105 from messages = " + sumPrcMessagesS105 + " - " + isError);
-		// isError = comparer(sum1544S106, sumPrcMessagesS106);
-		// logger.info("Sum S106 in 1544 = " + sum1544S106 + ", Sum S106 from messages = " + sumPrcMessagesS106 + " - " + isError);
+		logger.info("Sum S89 in 1544 = " + sum1544S89 + ", Sum S89 from messages = " + sumPrcMessagesS89 + " - "
+				+ isError);
+		isError = comparer(sum1544S109, sumPrcMessagesS109);
+		logger.info("Sum S109 in 1544 = " + sum1544S109 + ", Sum S109 from messages = " + sumPrcMessagesS109 + " - "
+				+ isError);
+		isError = comparer(sum1544S110, sumPrcMessagesS110);
+		logger.info("Sum S110 in 1544 = " + sum1544S110 + ", Sum S110 from messages = " + sumPrcMessagesS110 + " - "
+				+ isError);
 
 		return isError;
 	}

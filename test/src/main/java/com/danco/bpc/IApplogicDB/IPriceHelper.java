@@ -67,9 +67,9 @@ public interface IPriceHelper {
 
 	public Long sumPrcMessagesS85(Long fileId) throws Exception;
 
-	public Long sumPrcMessagesS109(Long fileId, Long startId, Long endId) throws Exception;
+	public Long sumPrcMessagesS109(Long fileId) throws Exception;
 
-	public Long sumPrcMessagesS110(Long fileId, Long startId, Long endId) throws Exception;
+	public Long sumPrcMessagesS110(Long fileId) throws Exception;
 
 	boolean comparer(Long first, Long second) throws Exception;
 
