@@ -22,7 +22,7 @@ public class IncomingValidation extends TestBaseAll {
 		filesList = db.getPriceHelper().listIncomingFiles();
 
 		for (PrcFiles el : filesList) {
-			logger.info(el.getId());
+			logger.info("Detect valid incoming file in DB with ID = " + el.getId());
 		}
 	}
 

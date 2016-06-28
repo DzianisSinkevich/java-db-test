@@ -106,7 +106,7 @@ public class PrcMessagesDaoImpl extends AbstractDaoPriceImpl<PrcMessages> implem
 		try {
 			Session session = sessionFactory.getCurrentSession();
 			txn = session.beginTransaction();
-			String hql = "select count(*) from PrcMessages m, PrcRawMessages r where m.id=r.id and r.fileId = :fId and (r.type = 1440 or r.type = 1444) and (m.p03>=0 and m.p03<=190000)";
+			String hql = "select count(*) from PrcMessages m, PrcRawMessages r where m.id=r.id and r.fileId = :fId and ((r.type = 1440 and m.p56 like '1240%') or r.type = 1444) and (m.p03>=0 and m.p03<=190000)";
 			Query query = session.createQuery(hql);
 			query.setLong("fId", fileId);
 			Long sumS75 = (Long) query.uniqueResult();
