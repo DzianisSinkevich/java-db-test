@@ -1,29 +1,32 @@
 package db.tests.PRICE;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.test.context.ContextConfiguration;
 import org.testng.annotations.Test;
 
 import com.danco.bpc.applogicAllWeb.ApplicationManager;
 import com.danco.bpc.applogicDB.DBManager;
-import com.danco.bpc.service.impl.SERVICES.PrcSessionServiceImpl;
 
 import pages.TestBaseAll;
 
 @ContextConfiguration(locations = { "classpath:data.xml" })
 public class ContainerOperationLoadingExecuition extends TestBaseAll {
-
-	@Autowired
-	private PrcSessionServiceImpl prcSessionService = new PrcSessionServiceImpl();
+	private static final Logger logger = LogManager.getLogger("");
+	String ssid = "";
 
 	@Test
-	public void openContainerPage() throws Exception {
+	public void launchContainer() throws Exception {
 		appAll = new ApplicationManager();
 		db = new DBManager();
 		appAll.getNavigationHelper().searchAndLaunchContainer("PRICE. Data loading");
-		String ssid = appAll.getNavigationHelper().waitForContainerExecution();
+		ssid = appAll.getNavigationHelper().waitForContainerExecution();
+	}
+
+	@Test
+	public void waitFinish() throws Exception {
 		String res = db.getMainHelper().waitForProcessFinished(ssid);
-		System.out.println("Result = " + res);
+		logger.info("Session " + ssid + " - Status = " + res);
 		assert(res.equals("PRSR0002"));
 	}
 }
